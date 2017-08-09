@@ -35,7 +35,7 @@ class Department
     private $incidences;
 
     public function __construct() {
-        $this->features = new ArrayCollection();
+        $this->incidences = new ArrayCollection();
     }
 
     /**

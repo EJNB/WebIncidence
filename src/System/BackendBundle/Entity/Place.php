@@ -28,6 +28,14 @@ class Place
      */
     private $name;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Incidence", mappedBy="place")
+     **/
+    private $incidences;
+
+    public function __construct() {
+        $this->incidences = new ArrayCollection();
+    }
 
     /**
      * Get id
