@@ -1,0 +1,4 @@
+services:
+#    system_incidence.example:
+#        class: System\IncidenceBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

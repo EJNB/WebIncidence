@@ -1,3 +1,11 @@
+system_backend:
+    resource: "@SystemBackendBundle/Resources/config/routing.yml"
+    prefix:   /
+
+system_incidence:
+    resource: "@SystemIncidenceBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation

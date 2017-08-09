@@ -1,0 +1,3 @@
+system_incidence_homepage:
+    path:     /
+    defaults: { _controller: SystemIncidenceBundle:Default:index }
