@@ -31,12 +31,11 @@ class Department
 
     /**
      * @ORM\OneToMany(targetEntity="Incidence", mappedBy="department")
-     */
+     **/
     private $incidences;
 
-    public function __construct()
-    {
-        $this->incidences = new ArrayCollection();
+    public function __construct() {
+        $this->features = new ArrayCollection();
     }
 
     /**

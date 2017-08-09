@@ -56,8 +56,8 @@ class Incidence
     private $incidencetypes;
 
     /**
-     * ORM\ManyToOne(targetEntity="Department", inversedBy="incidences")
-     * ORM\JoinColumn(name="department_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Department", inversedBy="incidences")
+     * @ORM\JoinColumn(name="department_id", referencedColumnName="id")
      **/
     private $department;
 

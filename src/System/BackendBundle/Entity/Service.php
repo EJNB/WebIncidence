@@ -59,7 +59,6 @@ class Service
         $this->incidences = new ArrayCollection();
     }
 
-
     /**
      * Get id
      *
