@@ -166,37 +166,4 @@ class Incidence
     {
         return $this->document;
     }
-
-    /**
-     * Add incidencetypes
-     *
-     * @param \System\BackendBundle\Entity\IncidenceType $incidencetypes
-     * @return Incidence
-     */
-    public function addIncidencetype(\System\BackendBundle\Entity\IncidenceType $incidencetypes)
-    {
-        $this->incidencetypes[] = $incidencetypes;
-
-        return $this;
-    }
-
-    /**
-     * Remove incidencetypes
-     *
-     * @param \System\BackendBundle\Entity\IncidenceType $incidencetypes
-     */
-    public function removeIncidencetype(\System\BackendBundle\Entity\IncidenceType $incidencetypes)
-    {
-        $this->incidencetypes->removeElement($incidencetypes);
-    }
-
-    /**
-     * Get incidencetypes
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getIncidencetypes()
-    {
-        return $this->incidencetypes;
-    }
 }

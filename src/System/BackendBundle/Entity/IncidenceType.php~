@@ -66,27 +66,4 @@ class IncidenceType
     {
         return $this->name;
     }
-
-    /**
-     * Set incidence
-     *
-     * @param \System\BackendBundle\Entity\Incidence $incidence
-     * @return IncidenceType
-     */
-    public function setIncidence(\System\BackendBundle\Entity\Incidence $incidence = null)
-    {
-        $this->incidence = $incidence;
-
-        return $this;
-    }
-
-    /**
-     * Get incidence
-     *
-     * @return \System\BackendBundle\Entity\Incidence 
-     */
-    public function getIncidence()
-    {
-        return $this->incidence;
-    }
 }

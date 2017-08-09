@@ -5,12 +5,12 @@ namespace System\BackendBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * IncidenceType
+ * Supplier
  *
- * @ORM\Table(name="incidence_type")
- * @ORM\Entity(repositoryClass="System\BackendBundle\Repository\IncidenceTypeRepository")
+ * @ORM\Table(name="supplier")
+ * @ORM\Entity(repositoryClass="System\BackendBundle\Repository\SupplierRepository")
  */
-class IncidenceType
+class Supplier
 {
     /**
      * @var int
@@ -29,10 +29,12 @@ class IncidenceType
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Incidence", inversedBy="incidencetypes")
-     * @ORM\JoinColumn(name="incidence_id", referencedColumnName="id")
-     **/
-    private $incidence;
+     * @var int
+     *
+     * @ORM\Column(name="code", type="integer")
+     */
+    private $code;
+
 
     /**
      * Get id
@@ -48,7 +50,7 @@ class IncidenceType
      * Set name
      *
      * @param string $name
-     * @return IncidenceType
+     * @return Supplier
      */
     public function setName($name)
     {
@@ -68,25 +70,25 @@ class IncidenceType
     }
 
     /**
-     * Set incidence
+     * Set code
      *
-     * @param \System\BackendBundle\Entity\Incidence $incidence
-     * @return IncidenceType
+     * @param integer $code
+     * @return Supplier
      */
-    public function setIncidence(\System\BackendBundle\Entity\Incidence $incidence = null)
+    public function setCode($code)
     {
-        $this->incidence = $incidence;
+        $this->code = $code;
 
         return $this;
     }
 
     /**
-     * Get incidence
+     * Get code
      *
-     * @return \System\BackendBundle\Entity\Incidence 
+     * @return integer 
      */
-    public function getIncidence()
+    public function getCode()
     {
-        return $this->incidence;
+        return $this->code;
     }
 }

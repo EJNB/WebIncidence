@@ -5,12 +5,12 @@ namespace System\BackendBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * IncidenceType
+ * Person
  *
- * @ORM\Table(name="incidence_type")
- * @ORM\Entity(repositoryClass="System\BackendBundle\Repository\IncidenceTypeRepository")
+ * @ORM\Table(name="person")
+ * @ORM\Entity(repositoryClass="System\BackendBundle\Repository\PersonRepository")
  */
-class IncidenceType
+class Person
 {
     /**
      * @var int
@@ -29,10 +29,12 @@ class IncidenceType
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Incidence", inversedBy="incidencetypes")
-     * @ORM\JoinColumn(name="incidence_id", referencedColumnName="id")
-     **/
-    private $incidence;
+     * @var string
+     *
+     * @ORM\Column(name="consultant", type="string", length=255)
+     */
+    private $consultant;
+
 
     /**
      * Get id
@@ -48,7 +50,7 @@ class IncidenceType
      * Set name
      *
      * @param string $name
-     * @return IncidenceType
+     * @return Person
      */
     public function setName($name)
     {
@@ -68,25 +70,25 @@ class IncidenceType
     }
 
     /**
-     * Set incidence
+     * Set consultant
      *
-     * @param \System\BackendBundle\Entity\Incidence $incidence
-     * @return IncidenceType
+     * @param string $consultant
+     * @return Person
      */
-    public function setIncidence(\System\BackendBundle\Entity\Incidence $incidence = null)
+    public function setConsultant($consultant)
     {
-        $this->incidence = $incidence;
+        $this->consultant = $consultant;
 
         return $this;
     }
 
     /**
-     * Get incidence
+     * Get consultant
      *
-     * @return \System\BackendBundle\Entity\Incidence 
+     * @return string 
      */
-    public function getIncidence()
+    public function getConsultant()
     {
-        return $this->incidence;
+        return $this->consultant;
     }
 }
