@@ -55,6 +55,12 @@ class Service
      **/
     private $incidences;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Supplier", inversedBy="services")
+     * @ORM\JoinColumn(name="supplier_id", referencedColumnName="id")
+     **/
+    private $supplier;
+
     public function __construct() {
         $this->incidences = new ArrayCollection();
     }
