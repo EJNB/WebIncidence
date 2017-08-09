@@ -61,6 +61,12 @@ class Incidence
      **/
     private $department;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Service", inversedBy="incidences")
+     * @ORM\JoinColumn(name="service_id", referencedColumnName="id")
+     **/
+    private $service;
+
     public function __construct() {
         $this->incidencetypes = new ArrayCollection();
     }

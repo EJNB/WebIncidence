@@ -2,6 +2,7 @@
 
 namespace System\BackendBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -48,6 +49,15 @@ class Service
      * @ORM\Column(name="location", type="string", length=255)
      */
     private $location;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Incidence", mappedBy="service")
+     **/
+    private $incidences;
+
+    public function __construct() {
+        $this->incidences = new ArrayCollection();
+    }
 
 
     /**
