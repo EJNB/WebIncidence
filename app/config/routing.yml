@@ -1,3 +1,11 @@
+system_claim:
+    resource: "@SystemClaimBundle/Resources/config/routing.yml"
+    prefix:   /
+
+system_reportes:
+    resource: "@SystemReportesBundle/Resources/config/routing.yml"
+    prefix:   /
+
 system_backend:
     resource: "@SystemBackendBundle/Resources/config/routing.yml"
     prefix:   /

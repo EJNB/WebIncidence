@@ -1,0 +1,3 @@
+system_claim_homepage:
+    path:     /
+    defaults: { _controller: SystemClaimBundle:Default:index }

@@ -1,0 +1,4 @@
+services:
+#    system_reportes.example:
+#        class: System\ReportesBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

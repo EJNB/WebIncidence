@@ -18,6 +18,8 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new System\IncidenceBundle\SystemIncidenceBundle(),
             new System\BackendBundle\SystemBackendBundle(),
+            new System\ReportesBundle\SystemReportesBundle(),
+            new System\ClaimBundle\SystemClaimBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
