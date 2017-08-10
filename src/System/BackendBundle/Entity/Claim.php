@@ -76,6 +76,12 @@ class Claim
      **/
     private $incidences;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Booking", inversedBy="claims")
+     * @ORM\JoinColumn(name="booking_id", referencedColumnName="id")
+     **/
+    private $booking;
+
     public function __construct() {
         $this->incidences = new ArrayCollection();
     }
