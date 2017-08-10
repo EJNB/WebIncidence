@@ -21,6 +21,11 @@ class Item
      */
     private $id;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Claim", inversedBy="items")
+     * @ORM\JoinColumn(name="claim_id", referencedColumnName="id")
+     **/
+    private $claim;
 
     /**
      * Get id
