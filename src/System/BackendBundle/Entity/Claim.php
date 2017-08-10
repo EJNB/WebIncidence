@@ -2,6 +2,7 @@
 
 namespace System\BackendBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -69,6 +70,15 @@ class Claim
      * @ORM\Column(name="state", type="string", length=255)
      */
     private $state;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Incidence", mappedBy="claim")
+     **/
+    private $incidences;
+
+    public function __construct() {
+        $this->incidences = new ArrayCollection();
+    }
 
 
     /**
