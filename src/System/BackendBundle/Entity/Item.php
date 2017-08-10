@@ -28,6 +28,12 @@ class Item
     private $claim;
 
     /**
+     * @ORM\ManyToOne(targetEntity="ItemType", inversedBy="items")
+     * @ORM\JoinColumn(name="item_id", referencedColumnName="id")
+     **/
+    private $itemtype;
+
+    /**
      * Get id
      *
      * @return integer 

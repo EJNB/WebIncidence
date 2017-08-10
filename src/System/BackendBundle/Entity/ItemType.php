@@ -28,6 +28,16 @@ class ItemType
      */
     private $name;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Item", mappedBy="itemtype")
+     **/
+    private $items;
+
+    public function __construct() {
+        $this->features = new ArrayCollection();
+        $this->items = new ArrayCollection();
+    }
+
 
     /**
      * Get id
