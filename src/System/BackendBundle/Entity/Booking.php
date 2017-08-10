@@ -56,6 +56,14 @@ class Booking
      */
     private $pax;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Incidence", mappedBy="booking")
+     **/
+    private $incidences;
+
+    public function __construct() {
+        $this->incidences = new ArrayCollection();
+    }
 
     /**
      * Get id
