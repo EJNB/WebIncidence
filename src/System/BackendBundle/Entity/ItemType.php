@@ -33,9 +33,15 @@ class ItemType
      **/
     private $items;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Category", mappedBy="itemtype")
+     **/
+    private $categories;
+
     public function __construct() {
         $this->features = new ArrayCollection();
         $this->items = new ArrayCollection();
+        $this->categories = new ArrayCollection();
     }
 
 
