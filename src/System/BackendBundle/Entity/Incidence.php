@@ -85,8 +85,14 @@ class Incidence
      **/
     private $booking;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Incidence_Person", mappedBy="incidence")
+     **/
+    private $incidendes_persons;
+
     public function __construct() {
         $this->incidencetypes = new ArrayCollection();
+        $this->incidendes_persons = new ArrayCollection();
     }
 
     /**
