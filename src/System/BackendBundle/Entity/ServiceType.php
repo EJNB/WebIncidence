@@ -35,6 +35,11 @@ class ServiceType
      */
     private $name;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="ItemType", inversedBy="services_types")
+     * @ORM\JoinColumn(name="itemtype_id", referencedColumnName="id")
+     **/
+    private $itemtype;
 
     /**
      * Get id

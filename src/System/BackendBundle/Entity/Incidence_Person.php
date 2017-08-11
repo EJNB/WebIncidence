@@ -40,7 +40,6 @@ class Incidence_Person
      */
     private $rol;
 
-
     /**
      * Get id
      *

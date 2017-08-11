@@ -2,6 +2,7 @@
 
 namespace System\BackendBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -38,12 +39,17 @@ class ItemType
      **/
     private $categories;
 
+    /**
+     * @ORM\OneToMany(targetEntity="ServiceType", mappedBy="itemtype")
+     **/
+    private $services_types;
+
     public function __construct() {
         $this->features = new ArrayCollection();
         $this->items = new ArrayCollection();
         $this->categories = new ArrayCollection();
+        $this->services_types = new ArrayCollection();
     }
-
 
     /**
      * Get id
