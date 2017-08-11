@@ -35,6 +35,16 @@ class Category
     private $itemtype;
 
     /**
+     * @ORM\OneToMany(targetEntity="SubCategory", mappedBy="category")
+     **/
+    private $subcategories;
+
+    public function __construct() {
+        $this->categories = new ArrayCollection();
+        $this->subcategories = new ArrayCollection();
+    }
+
+    /**
      * Get id
      *
      * @return integer 
