@@ -28,6 +28,11 @@ class Client
      */
     private $name;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Booking", inversedBy="clients")
+     * @ORM\JoinColumn(name="booking_id", referencedColumnName="id")
+     **/
+    private $booking;
 
     /**
      * Get id

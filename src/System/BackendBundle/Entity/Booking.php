@@ -66,9 +66,15 @@ class Booking
      **/
     private $claims;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Client", mappedBy="booking")
+     **/
+    private $clients;
+
     public function __construct() {
         $this->incidences = new ArrayCollection();
         $this->claims = new ArrayCollection();
+        $this->clients = new ArrayCollection();
     }
 
     /**
