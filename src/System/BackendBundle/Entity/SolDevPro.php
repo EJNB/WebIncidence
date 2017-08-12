@@ -5,12 +5,12 @@ namespace System\BackendBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Item
+ * SolDevPro
  *
- * @ORM\Table(name="item")
- * @ORM\Entity(repositoryClass="System\BackendBundle\Repository\ItemRepository")
+ * @ORM\Table(name="sol_dev_pro")
+ * @ORM\Entity(repositoryClass="System\BackendBundle\Repository\SolDevProRepository")
  */
-class Item
+class SolDevPro
 {
     /**
      * @var int
@@ -22,21 +22,19 @@ class Item
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Claim", inversedBy="items")
-     * @ORM\JoinColumn(name="claim_id", referencedColumnName="id")
-     **/
-    private $claim;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="ItemType", inversedBy="items")
+     * @ORM\OneToOne(targetEntity="Item", inversedBy="soldevpro")
      * @ORM\JoinColumn(name="item_id", referencedColumnName="id")
      **/
-    private $itemtype;
+    private $item;
 
     /**
-     * @ORM\OneToOne(targetEntity="SolDevPro", mappedBy="item")
+     * @ORM\OneToMany(targetEntity="Reminder", mappedBy="soldevpro")
      **/
-    private $soldevpro;
+    private $reminders;
+
+    public function __construct() {
+        $this->reminders = new ArrayCollection();
+    }
 
     /**
      * Get id
