@@ -72,4 +72,50 @@ class Incidence_Person
     {
         return $this->rol;
     }
+
+    /**
+     * Set person
+     *
+     * @param \System\BackendBundle\Entity\Person $person
+     * @return Incidence_Person
+     */
+    public function setPerson(\System\BackendBundle\Entity\Person $person = null)
+    {
+        $this->person = $person;
+
+        return $this;
+    }
+
+    /**
+     * Get person
+     *
+     * @return \System\BackendBundle\Entity\Person 
+     */
+    public function getPerson()
+    {
+        return $this->person;
+    }
+
+    /**
+     * Set incidence
+     *
+     * @param \System\BackendBundle\Entity\Incidence $incidence
+     * @return Incidence_Person
+     */
+    public function setIncidence(\System\BackendBundle\Entity\Incidence $incidence = null)
+    {
+        $this->incidence = $incidence;
+
+        return $this;
+    }
+
+    /**
+     * Get incidence
+     *
+     * @return \System\BackendBundle\Entity\Incidence 
+     */
+    public function getIncidence()
+    {
+        return $this->incidence;
+    }
 }

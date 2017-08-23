@@ -45,4 +45,60 @@ class SolDevPro
     {
         return $this->id;
     }
+
+    /**
+     * Set item
+     *
+     * @param \System\BackendBundle\Entity\Item $item
+     * @return SolDevPro
+     */
+    public function setItem(\System\BackendBundle\Entity\Item $item = null)
+    {
+        $this->item = $item;
+
+        return $this;
+    }
+
+    /**
+     * Get item
+     *
+     * @return \System\BackendBundle\Entity\Item 
+     */
+    public function getItem()
+    {
+        return $this->item;
+    }
+
+    /**
+     * Add reminders
+     *
+     * @param \System\BackendBundle\Entity\Reminder $reminders
+     * @return SolDevPro
+     */
+    public function addReminder(\System\BackendBundle\Entity\Reminder $reminders)
+    {
+        $this->reminders[] = $reminders;
+
+        return $this;
+    }
+
+    /**
+     * Remove reminders
+     *
+     * @param \System\BackendBundle\Entity\Reminder $reminders
+     */
+    public function removeReminder(\System\BackendBundle\Entity\Reminder $reminders)
+    {
+        $this->reminders->removeElement($reminders);
+    }
+
+    /**
+     * Get reminders
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getReminders()
+    {
+        return $this->reminders;
+    }
 }

@@ -76,4 +76,60 @@ class Category
     {
         return $this->name;
     }
+
+    /**
+     * Set itemtype
+     *
+     * @param \System\BackendBundle\Entity\ItemType $itemtype
+     * @return Category
+     */
+    public function setItemtype(\System\BackendBundle\Entity\ItemType $itemtype = null)
+    {
+        $this->itemtype = $itemtype;
+
+        return $this;
+    }
+
+    /**
+     * Get itemtype
+     *
+     * @return \System\BackendBundle\Entity\ItemType 
+     */
+    public function getItemtype()
+    {
+        return $this->itemtype;
+    }
+
+    /**
+     * Add subcategories
+     *
+     * @param \System\BackendBundle\Entity\SubCategory $subcategories
+     * @return Category
+     */
+    public function addSubcategory(\System\BackendBundle\Entity\SubCategory $subcategories)
+    {
+        $this->subcategories[] = $subcategories;
+
+        return $this;
+    }
+
+    /**
+     * Remove subcategories
+     *
+     * @param \System\BackendBundle\Entity\SubCategory $subcategories
+     */
+    public function removeSubcategory(\System\BackendBundle\Entity\SubCategory $subcategories)
+    {
+        $this->subcategories->removeElement($subcategories);
+    }
+
+    /**
+     * Get subcategories
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSubcategories()
+    {
+        return $this->subcategories;
+    }
 }

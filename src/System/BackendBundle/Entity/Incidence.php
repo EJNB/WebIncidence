@@ -229,4 +229,152 @@ class Incidence
     {
         return $this->incidencetypes;
     }
+
+    /**
+     * Set department
+     *
+     * @param \System\BackendBundle\Entity\Department $department
+     * @return Incidence
+     */
+    public function setDepartment(\System\BackendBundle\Entity\Department $department = null)
+    {
+        $this->department = $department;
+
+        return $this;
+    }
+
+    /**
+     * Get department
+     *
+     * @return \System\BackendBundle\Entity\Department 
+     */
+    public function getDepartment()
+    {
+        return $this->department;
+    }
+
+    /**
+     * Set service
+     *
+     * @param \System\BackendBundle\Entity\Service $service
+     * @return Incidence
+     */
+    public function setService(\System\BackendBundle\Entity\Service $service = null)
+    {
+        $this->service = $service;
+
+        return $this;
+    }
+
+    /**
+     * Get service
+     *
+     * @return \System\BackendBundle\Entity\Service 
+     */
+    public function getService()
+    {
+        return $this->service;
+    }
+
+    /**
+     * Set place
+     *
+     * @param \System\BackendBundle\Entity\Place $place
+     * @return Incidence
+     */
+    public function setPlace(\System\BackendBundle\Entity\Place $place = null)
+    {
+        $this->place = $place;
+
+        return $this;
+    }
+
+    /**
+     * Get place
+     *
+     * @return \System\BackendBundle\Entity\Place 
+     */
+    public function getPlace()
+    {
+        return $this->place;
+    }
+
+    /**
+     * Set claim
+     *
+     * @param \System\BackendBundle\Entity\Claim $claim
+     * @return Incidence
+     */
+    public function setClaim(\System\BackendBundle\Entity\Claim $claim = null)
+    {
+        $this->claim = $claim;
+
+        return $this;
+    }
+
+    /**
+     * Get claim
+     *
+     * @return \System\BackendBundle\Entity\Claim 
+     */
+    public function getClaim()
+    {
+        return $this->claim;
+    }
+
+    /**
+     * Set booking
+     *
+     * @param \System\BackendBundle\Entity\Booking $booking
+     * @return Incidence
+     */
+    public function setBooking(\System\BackendBundle\Entity\Booking $booking = null)
+    {
+        $this->booking = $booking;
+
+        return $this;
+    }
+
+    /**
+     * Get booking
+     *
+     * @return \System\BackendBundle\Entity\Booking 
+     */
+    public function getBooking()
+    {
+        return $this->booking;
+    }
+
+    /**
+     * Add incidendes_persons
+     *
+     * @param \System\BackendBundle\Entity\Incidence_Person $incidendesPersons
+     * @return Incidence
+     */
+    public function addIncidendesPerson(\System\BackendBundle\Entity\Incidence_Person $incidendesPersons)
+    {
+        $this->incidendes_persons[] = $incidendesPersons;
+
+        return $this;
+    }
+
+    /**
+     * Remove incidendes_persons
+     *
+     * @param \System\BackendBundle\Entity\Incidence_Person $incidendesPersons
+     */
+    public function removeIncidendesPerson(\System\BackendBundle\Entity\Incidence_Person $incidendesPersons)
+    {
+        $this->incidendes_persons->removeElement($incidendesPersons);
+    }
+
+    /**
+     * Get incidendes_persons
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getIncidendesPersons()
+    {
+        return $this->incidendes_persons;
+    }
 }

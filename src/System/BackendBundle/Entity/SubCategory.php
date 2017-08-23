@@ -66,4 +66,27 @@ class SubCategory
     {
         return $this->name;
     }
+
+    /**
+     * Set category
+     *
+     * @param \System\BackendBundle\Entity\Category $category
+     * @return SubCategory
+     */
+    public function setCategory(\System\BackendBundle\Entity\Category $category = null)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \System\BackendBundle\Entity\Category 
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
 }

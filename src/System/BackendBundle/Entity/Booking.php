@@ -202,4 +202,103 @@ class Booking
     {
         return $this->pax;
     }
+
+    /**
+     * Add incidences
+     *
+     * @param \System\BackendBundle\Entity\Incidence $incidences
+     * @return Booking
+     */
+    public function addIncidence(\System\BackendBundle\Entity\Incidence $incidences)
+    {
+        $this->incidences[] = $incidences;
+
+        return $this;
+    }
+
+    /**
+     * Remove incidences
+     *
+     * @param \System\BackendBundle\Entity\Incidence $incidences
+     */
+    public function removeIncidence(\System\BackendBundle\Entity\Incidence $incidences)
+    {
+        $this->incidences->removeElement($incidences);
+    }
+
+    /**
+     * Get incidences
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getIncidences()
+    {
+        return $this->incidences;
+    }
+
+    /**
+     * Add claims
+     *
+     * @param \System\BackendBundle\Entity\Claim $claims
+     * @return Booking
+     */
+    public function addClaim(\System\BackendBundle\Entity\Claim $claims)
+    {
+        $this->claims[] = $claims;
+
+        return $this;
+    }
+
+    /**
+     * Remove claims
+     *
+     * @param \System\BackendBundle\Entity\Claim $claims
+     */
+    public function removeClaim(\System\BackendBundle\Entity\Claim $claims)
+    {
+        $this->claims->removeElement($claims);
+    }
+
+    /**
+     * Get claims
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getClaims()
+    {
+        return $this->claims;
+    }
+
+    /**
+     * Add clients
+     *
+     * @param \System\BackendBundle\Entity\Client $clients
+     * @return Booking
+     */
+    public function addClient(\System\BackendBundle\Entity\Client $clients)
+    {
+        $this->clients[] = $clients;
+
+        return $this;
+    }
+
+    /**
+     * Remove clients
+     *
+     * @param \System\BackendBundle\Entity\Client $clients
+     */
+    public function removeClient(\System\BackendBundle\Entity\Client $clients)
+    {
+        $this->clients->removeElement($clients);
+    }
+
+    /**
+     * Get clients
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getClients()
+    {
+        return $this->clients;
+    }
 }

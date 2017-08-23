@@ -96,4 +96,27 @@ class ServiceType
     {
         return $this->name;
     }
+
+    /**
+     * Set itemtype
+     *
+     * @param \System\BackendBundle\Entity\ItemType $itemtype
+     * @return ServiceType
+     */
+    public function setItemtype(\System\BackendBundle\Entity\ItemType $itemtype = null)
+    {
+        $this->itemtype = $itemtype;
+
+        return $this;
+    }
+
+    /**
+     * Get itemtype
+     *
+     * @return \System\BackendBundle\Entity\ItemType 
+     */
+    public function getItemtype()
+    {
+        return $this->itemtype;
+    }
 }

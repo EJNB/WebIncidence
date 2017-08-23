@@ -263,4 +263,93 @@ class Claim
     {
         return $this->state;
     }
+
+    /**
+     * Add incidences
+     *
+     * @param \System\BackendBundle\Entity\Incidence $incidences
+     * @return Claim
+     */
+    public function addIncidence(\System\BackendBundle\Entity\Incidence $incidences)
+    {
+        $this->incidences[] = $incidences;
+
+        return $this;
+    }
+
+    /**
+     * Remove incidences
+     *
+     * @param \System\BackendBundle\Entity\Incidence $incidences
+     */
+    public function removeIncidence(\System\BackendBundle\Entity\Incidence $incidences)
+    {
+        $this->incidences->removeElement($incidences);
+    }
+
+    /**
+     * Get incidences
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getIncidences()
+    {
+        return $this->incidences;
+    }
+
+    /**
+     * Set booking
+     *
+     * @param \System\BackendBundle\Entity\Booking $booking
+     * @return Claim
+     */
+    public function setBooking(\System\BackendBundle\Entity\Booking $booking = null)
+    {
+        $this->booking = $booking;
+
+        return $this;
+    }
+
+    /**
+     * Get booking
+     *
+     * @return \System\BackendBundle\Entity\Booking 
+     */
+    public function getBooking()
+    {
+        return $this->booking;
+    }
+
+    /**
+     * Add items
+     *
+     * @param \System\BackendBundle\Entity\Item $items
+     * @return Claim
+     */
+    public function addItem(\System\BackendBundle\Entity\Item $items)
+    {
+        $this->items[] = $items;
+
+        return $this;
+    }
+
+    /**
+     * Remove items
+     *
+     * @param \System\BackendBundle\Entity\Item $items
+     */
+    public function removeItem(\System\BackendBundle\Entity\Item $items)
+    {
+        $this->items->removeElement($items);
+    }
+
+    /**
+     * Get items
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getItems()
+    {
+        return $this->items;
+    }
 }
