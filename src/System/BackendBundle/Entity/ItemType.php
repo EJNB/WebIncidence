@@ -34,20 +34,26 @@ class ItemType
      **/
     private $items;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Category", mappedBy="itemtype")
-     **/
-    private $categories;
+//    /**
+//     * @ORM\OneToMany(targetEntity="Category", mappedBy="itemtype")
+//     **/
+//    private $categories;
 
     /**
      * @ORM\OneToMany(targetEntity="ServiceType", mappedBy="itemtype")
      **/
     private $services_types;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="SubCategory", inversedBy="items_types")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     **/
+    private $subcategory;
+
     public function __construct() {
         $this->features = new ArrayCollection();
         $this->items = new ArrayCollection();
-        $this->categories = new ArrayCollection();
+//        $this->categories = new ArrayCollection();
         $this->services_types = new ArrayCollection();
     }
 
@@ -117,38 +123,38 @@ class ItemType
         return $this->items;
     }
 
-    /**
-     * Add categories
-     *
-     * @param \System\BackendBundle\Entity\Category $categories
-     * @return ItemType
-     */
-    public function addCategory(\System\BackendBundle\Entity\Category $categories)
-    {
-        $this->categories[] = $categories;
-
-        return $this;
-    }
-
-    /**
-     * Remove categories
-     *
-     * @param \System\BackendBundle\Entity\Category $categories
-     */
-    public function removeCategory(\System\BackendBundle\Entity\Category $categories)
-    {
-        $this->categories->removeElement($categories);
-    }
-
-    /**
-     * Get categories
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getCategories()
-    {
-        return $this->categories;
-    }
+//    /**
+//     * Add categories
+//     *
+//     * @param \System\BackendBundle\Entity\Category $categories
+//     * @return ItemType
+//     */
+//    public function addCategory(\System\BackendBundle\Entity\Category $categories)
+//    {
+//        $this->categories[] = $categories;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Remove categories
+//     *
+//     * @param \System\BackendBundle\Entity\Category $categories
+//     */
+//    public function removeCategory(\System\BackendBundle\Entity\Category $categories)
+//    {
+//        $this->categories->removeElement($categories);
+//    }
+//
+//    /**
+//     * Get categories
+//     *
+//     * @return \Doctrine\Common\Collections\Collection
+//     */
+//    public function getCategories()
+//    {
+//        return $this->categories;
+//    }
 
     /**
      * Add services_types

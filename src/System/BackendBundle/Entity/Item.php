@@ -34,15 +34,34 @@ class Item
     private $itemtype;
 
     /**
-     * @ORM\OneToOne(targetEntity="SolDevPro", mappedBy="item")
-     **/
-    private $soldevpro;
-
-    /**
      * @ORM\ManyToOne(targetEntity="Service", inversedBy="items")
      * @ORM\JoinColumn(name="service_id", referencedColumnName="id")
      **/
     private $service;
+
+    /**
+     * @ORM\Column(name="date_request", type="date")
+     */
+    private $date_request;
+
+    /**
+     * @ORM\Column(name="request_amount", type="decimal")
+     */
+    private $request_amount;
+
+    /**
+     * @ORM\Column(name="request_amount", type="decimal")
+     */
+    private $refound;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Reminder", mappedBy="item")
+     **/
+    private $reminders;
+
+    public function __construct() {
+        $this->reminders = new ArrayCollection();
+    }
 
     /**
      * Get id

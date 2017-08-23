@@ -35,6 +35,11 @@ class SubCategory
     private $category;
 
     /**
+     * @ORM\OneToMany(targetEntity="ItemType", mappedBy="subcategory")
+     **/
+    private $items_types;
+
+    /**
      * Get id
      *
      * @return integer 

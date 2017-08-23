@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="sol_dev_pro")
  * @ORM\Entity(repositoryClass="System\BackendBundle\Repository\SolDevProRepository")
  */
-class SolDevPro
+class RequestToSupplier
 {
     /**
      * @var int

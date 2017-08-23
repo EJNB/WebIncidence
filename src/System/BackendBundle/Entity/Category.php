@@ -28,11 +28,11 @@ class Category
      */
     private $name;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="ItemType", inversedBy="categories")
-     * @ORM\JoinColumn(name="itemtype_id", referencedColumnName="id")
-     **/
-    private $itemtype;
+//    /**
+//     * @ORM\ManyToOne(targetEntity="ItemType", inversedBy="categories")
+//     * @ORM\JoinColumn(name="itemtype_id", referencedColumnName="id")
+//     **/
+//    private $itemtype;
 
     /**
      * @ORM\OneToMany(targetEntity="SubCategory", mappedBy="category")
@@ -40,7 +40,7 @@ class Category
     private $subcategories;
 
     public function __construct() {
-        $this->categories = new ArrayCollection();
+//        $this->categories = new ArrayCollection();
         $this->subcategories = new ArrayCollection();
     }
 
@@ -77,28 +77,28 @@ class Category
         return $this->name;
     }
 
-    /**
-     * Set itemtype
-     *
-     * @param \System\BackendBundle\Entity\ItemType $itemtype
-     * @return Category
-     */
-    public function setItemtype(\System\BackendBundle\Entity\ItemType $itemtype = null)
-    {
-        $this->itemtype = $itemtype;
-
-        return $this;
-    }
-
-    /**
-     * Get itemtype
-     *
-     * @return \System\BackendBundle\Entity\ItemType 
-     */
-    public function getItemtype()
-    {
-        return $this->itemtype;
-    }
+//    /**
+//     * Set itemtype
+//     *
+//     * @param \System\BackendBundle\Entity\ItemType $itemtype
+//     * @return Category
+//     */
+//    public function setItemtype(\System\BackendBundle\Entity\ItemType $itemtype = null)
+//    {
+//        $this->itemtype = $itemtype;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get itemtype
+//     *
+//     * @return \System\BackendBundle\Entity\ItemType
+//     */
+//    public function getItemtype()
+//    {
+//        return $this->itemtype;
+//    }
 
     /**
      * Add subcategories
