@@ -18,3 +18,7 @@ system_backend_itemtype:
 system_backend_incidencetype:
     resource: "@SystemBackendBundle/Resources/config/routing/incidencetype.yml"
     prefix:   /incidencetype
+
+system_backend_servicetype:
+    resource: "@SystemBackendBundle/Resources/config/routing/servicetype.yml"
+    prefix:   /servicetype

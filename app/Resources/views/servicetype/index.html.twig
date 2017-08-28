@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Servicetypes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for serviceType in serviceTypes %}
+            <tr>
+                <td><a href="{{ path('servicetype_show', { 'id': serviceType.id }) }}">{{ serviceType.id }}</a></td>
+                <td>{{ serviceType.code }}</td>
+                <td>{{ serviceType.name }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('servicetype_show', { 'id': serviceType.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('servicetype_edit', { 'id': serviceType.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('servicetype_new') }}">Create a new serviceType</a>
+        </li>
+    </ul>
+{% endblock %}
