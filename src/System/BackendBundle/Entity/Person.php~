@@ -41,6 +41,12 @@ class Person
      **/
     private $incidences_persons;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Department", inversedBy="persons")
+     * @ORM\JoinColumn(name="department_id", referencedColumnName="id")
+     */
+    private $department;
+
     public function __construct()
     {
         $this->persons_incidences = new ArrayCollection();
@@ -100,5 +106,18 @@ class Person
     public function getConsultant()
     {
         return $this->consultant;
+    }
+
+    /**
+     * Add incidences_persons
+     *
+     * @param \System\BackendBundle\Entity\Incidence_Person $incidencesPersons
+     * @return Person
+     */
+    public function addIncidencesPerson(\System\BackendBundle\Entity\Incidence_Person $incidencesPersons)
+    {
+        $this->incidences_persons[] = $incidencesPersons;
+
+        return $this;
     }
 }

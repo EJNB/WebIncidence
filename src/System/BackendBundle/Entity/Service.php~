@@ -172,4 +172,93 @@ class Service
     {
         return $this->location;
     }
+
+    /**
+     * Add incidences
+     *
+     * @param \System\BackendBundle\Entity\Incidence $incidences
+     * @return Service
+     */
+    public function addIncidence(\System\BackendBundle\Entity\Incidence $incidences)
+    {
+        $this->incidences[] = $incidences;
+
+        return $this;
+    }
+
+    /**
+     * Remove incidences
+     *
+     * @param \System\BackendBundle\Entity\Incidence $incidences
+     */
+    public function removeIncidence(\System\BackendBundle\Entity\Incidence $incidences)
+    {
+        $this->incidences->removeElement($incidences);
+    }
+
+    /**
+     * Get incidences
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getIncidences()
+    {
+        return $this->incidences;
+    }
+
+    /**
+     * Set supplier
+     *
+     * @param \System\BackendBundle\Entity\Supplier $supplier
+     * @return Service
+     */
+    public function setSupplier(\System\BackendBundle\Entity\Supplier $supplier = null)
+    {
+        $this->supplier = $supplier;
+
+        return $this;
+    }
+
+    /**
+     * Get supplier
+     *
+     * @return \System\BackendBundle\Entity\Supplier 
+     */
+    public function getSupplier()
+    {
+        return $this->supplier;
+    }
+
+    /**
+     * Add items
+     *
+     * @param \System\BackendBundle\Entity\Item $items
+     * @return Service
+     */
+    public function addItem(\System\BackendBundle\Entity\Item $items)
+    {
+        $this->items[] = $items;
+
+        return $this;
+    }
+
+    /**
+     * Remove items
+     *
+     * @param \System\BackendBundle\Entity\Item $items
+     */
+    public function removeItem(\System\BackendBundle\Entity\Item $items)
+    {
+        $this->items->removeElement($items);
+    }
+
+    /**
+     * Get items
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getItems()
+    {
+        return $this->items;
+    }
 }

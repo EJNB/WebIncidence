@@ -94,4 +94,44 @@ class SubCategory
     {
         return $this->category;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->items_types = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add items_types
+     *
+     * @param \System\BackendBundle\Entity\ItemType $itemsTypes
+     * @return SubCategory
+     */
+    public function addItemsType(\System\BackendBundle\Entity\ItemType $itemsTypes)
+    {
+        $this->items_types[] = $itemsTypes;
+
+        return $this;
+    }
+
+    /**
+     * Remove items_types
+     *
+     * @param \System\BackendBundle\Entity\ItemType $itemsTypes
+     */
+    public function removeItemsType(\System\BackendBundle\Entity\ItemType $itemsTypes)
+    {
+        $this->items_types->removeElement($itemsTypes);
+    }
+
+    /**
+     * Get items_types
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getItemsTypes()
+    {
+        return $this->items_types;
+    }
 }

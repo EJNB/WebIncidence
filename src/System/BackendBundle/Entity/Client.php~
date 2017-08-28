@@ -66,4 +66,27 @@ class Client
     {
         return $this->name;
     }
+
+    /**
+     * Set booking
+     *
+     * @param \System\BackendBundle\Entity\Booking $booking
+     * @return Client
+     */
+    public function setBooking(\System\BackendBundle\Entity\Booking $booking = null)
+    {
+        $this->booking = $booking;
+
+        return $this;
+    }
+
+    /**
+     * Get booking
+     *
+     * @return \System\BackendBundle\Entity\Booking 
+     */
+    public function getBooking()
+    {
+        return $this->booking;
+    }
 }

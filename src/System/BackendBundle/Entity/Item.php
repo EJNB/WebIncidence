@@ -141,4 +141,106 @@ class Item
     {
         return $this->service;
     }
+
+    /**
+     * Set date_request
+     *
+     * @param \DateTime $dateRequest
+     * @return Item
+     */
+    public function setDateRequest($dateRequest)
+    {
+        $this->date_request = $dateRequest;
+
+        return $this;
+    }
+
+    /**
+     * Get date_request
+     *
+     * @return \DateTime 
+     */
+    public function getDateRequest()
+    {
+        return $this->date_request;
+    }
+
+    /**
+     * Set request_amount
+     *
+     * @param integer $requestAmount
+     * @return Item
+     */
+    public function setRequestAmount($requestAmount)
+    {
+        $this->request_amount = $requestAmount;
+
+        return $this;
+    }
+
+    /**
+     * Get request_amount
+     *
+     * @return integer 
+     */
+    public function getRequestAmount()
+    {
+        return $this->request_amount;
+    }
+
+    /**
+     * Set refound
+     *
+     * @param integer $refound
+     * @return Item
+     */
+    public function setRefound($refound)
+    {
+        $this->refound = $refound;
+
+        return $this;
+    }
+
+    /**
+     * Get refound
+     *
+     * @return integer 
+     */
+    public function getRefound()
+    {
+        return $this->refound;
+    }
+
+    /**
+     * Add reminders
+     *
+     * @param \System\BackendBundle\Entity\Reminder $reminders
+     * @return Item
+     */
+    public function addReminder(\System\BackendBundle\Entity\Reminder $reminders)
+    {
+        $this->reminders[] = $reminders;
+
+        return $this;
+    }
+
+    /**
+     * Remove reminders
+     *
+     * @param \System\BackendBundle\Entity\Reminder $reminders
+     */
+    public function removeReminder(\System\BackendBundle\Entity\Reminder $reminders)
+    {
+        $this->reminders->removeElement($reminders);
+    }
+
+    /**
+     * Get reminders
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getReminders()
+    {
+        return $this->reminders;
+    }
 }

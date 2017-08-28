@@ -30,12 +30,12 @@ class Department
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="Incidence", mappedBy="department")
+     * @ORM\OneToMany(targetEntity="Person", mappedBy="department")
      **/
-    private $incidences;
+    private $persons;
 
     public function __construct() {
-        $this->incidences = new ArrayCollection();
+        $this->persons = new ArrayCollection();
     }
 
     /**
@@ -69,38 +69,5 @@ class Department
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Add incidences
-     *
-     * @param \System\BackendBundle\Entity\Incidence $incidences
-     * @return Department
-     */
-    public function addIncidence(\System\BackendBundle\Entity\Incidence $incidences)
-    {
-        $this->incidences[] = $incidences;
-
-        return $this;
-    }
-
-    /**
-     * Remove incidences
-     *
-     * @param \System\BackendBundle\Entity\Incidence $incidences
-     */
-    public function removeIncidence(\System\BackendBundle\Entity\Incidence $incidences)
-    {
-        $this->incidences->removeElement($incidences);
-    }
-
-    /**
-     * Get incidences
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getIncidences()
-    {
-        return $this->incidences;
     }
 }

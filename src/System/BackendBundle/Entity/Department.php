@@ -70,4 +70,37 @@ class Department
     {
         return $this->name;
     }
+
+    /**
+     * Add persons
+     *
+     * @param \System\BackendBundle\Entity\Person $persons
+     * @return Department
+     */
+    public function addPerson(\System\BackendBundle\Entity\Person $persons)
+    {
+        $this->persons[] = $persons;
+
+        return $this;
+    }
+
+    /**
+     * Remove persons
+     *
+     * @param \System\BackendBundle\Entity\Person $persons
+     */
+    public function removePerson(\System\BackendBundle\Entity\Person $persons)
+    {
+        $this->persons->removeElement($persons);
+    }
+
+    /**
+     * Get persons
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPersons()
+    {
+        return $this->persons;
+    }
 }

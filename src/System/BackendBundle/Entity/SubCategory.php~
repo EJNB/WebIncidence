@@ -35,6 +35,11 @@ class SubCategory
     private $category;
 
     /**
+     * @ORM\OneToMany(targetEntity="ItemType", mappedBy="subcategory")
+     **/
+    private $items_types;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -65,5 +70,28 @@ class SubCategory
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set category
+     *
+     * @param \System\BackendBundle\Entity\Category $category
+     * @return SubCategory
+     */
+    public function setCategory(\System\BackendBundle\Entity\Category $category = null)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \System\BackendBundle\Entity\Category 
+     */
+    public function getCategory()
+    {
+        return $this->category;
     }
 }

@@ -100,4 +100,37 @@ class Supplier
     {
         return $this->code;
     }
+
+    /**
+     * Add services
+     *
+     * @param \System\BackendBundle\Entity\Service $services
+     * @return Supplier
+     */
+    public function addService(\System\BackendBundle\Entity\Service $services)
+    {
+        $this->services[] = $services;
+
+        return $this;
+    }
+
+    /**
+     * Remove services
+     *
+     * @param \System\BackendBundle\Entity\Service $services
+     */
+    public function removeService(\System\BackendBundle\Entity\Service $services)
+    {
+        $this->services->removeElement($services);
+    }
+
+    /**
+     * Get services
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getServices()
+    {
+        return $this->services;
+    }
 }

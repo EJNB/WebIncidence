@@ -2,24 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="876417ae-e221-4653-b41b-75d663c21948" name="Default" comment="Add relationship beetwen Incidence and Claim and add use ArrayCollection in Place file too">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/itemtype/edit.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/itemtype/index.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/itemtype/new.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/itemtype/show.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/subcategory/edit.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/subcategory/index.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/subcategory/new.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/subcategory/show.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Controller/ItemTypeController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Controller/SubCategoryController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Form/ItemTypeType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Form/SubCategoryType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/itemtype.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/subcategory.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Tests/Controller/ItemTypeControllerTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Tests/Controller/SubCategoryControllerTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing.yml" />
     </list>
     <ignored path="WebIncidence.iws" />
@@ -77,8 +59,8 @@
       <file leaf-file-name="routing.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5389049">
-              <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.2939481">
+              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -88,10 +70,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="s doctrine:schema:update --force" />
-      <command text="s doctrine:database:create" />
-      <command text="s doctrine:schema:update --force" />
-      <command text="s doctrine:generate:entities SystemBackendBundle" />
       <command text="s doctrine:schema:update --force" />
       <command text="s doctrine:database:create" />
       <command text="s doctrine:schema:update --force " />
@@ -113,6 +91,10 @@
       <command text="s doctrine:generate:crud SystemBackendBundle:SubCategory" />
       <command text="s doctrine:generate:crud SystemBackendBundle:ItemType" />
       <command text="git status" />
+      <command text="git add -A" />
+      <command text="git status" />
+      <command text="git commit -m &quot;Se crearon los crud de category, subcategory y itemtype&quot;" />
+      <command text="git remote add origin https://github.com/EJNB/WebIncidence.git" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -452,7 +434,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
+    <property name="settings.editor.selected.configurable" value="http.proxy" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
@@ -1049,8 +1031,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5389049">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.2939481">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
           <folding />
         </state>
       </provider>

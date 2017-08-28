@@ -29,10 +29,10 @@ class Reminder
     private $reminderDate;
 
     /**
-     * @ORM\ManyToOne(targetEntity="SolDevPro", inversedBy="reminders")
-     * @ORM\JoinColumn(name="soldevpro_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Item", inversedBy="reminders")
+     * @ORM\JoinColumn(name="item_id", referencedColumnName="id")
      **/
-    private $soldevpro;
+    private $item;
 
     /**
      * Get id

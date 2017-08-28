@@ -120,4 +120,47 @@ class Person
 
         return $this;
     }
+
+    /**
+     * Remove incidences_persons
+     *
+     * @param \System\BackendBundle\Entity\Incidence_Person $incidencesPersons
+     */
+    public function removeIncidencesPerson(\System\BackendBundle\Entity\Incidence_Person $incidencesPersons)
+    {
+        $this->incidences_persons->removeElement($incidencesPersons);
+    }
+
+    /**
+     * Get incidences_persons
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getIncidencesPersons()
+    {
+        return $this->incidences_persons;
+    }
+
+    /**
+     * Set department
+     *
+     * @param \System\BackendBundle\Entity\Department $department
+     * @return Person
+     */
+    public function setDepartment(\System\BackendBundle\Entity\Department $department = null)
+    {
+        $this->department = $department;
+
+        return $this;
+    }
+
+    /**
+     * Get department
+     *
+     * @return \System\BackendBundle\Entity\Department 
+     */
+    public function getDepartment()
+    {
+        return $this->department;
+    }
 }

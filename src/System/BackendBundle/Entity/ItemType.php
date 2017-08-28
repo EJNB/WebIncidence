@@ -188,4 +188,27 @@ class ItemType
     {
         return $this->services_types;
     }
+
+    /**
+     * Set subcategory
+     *
+     * @param \System\BackendBundle\Entity\SubCategory $subcategory
+     * @return ItemType
+     */
+    public function setSubcategory(\System\BackendBundle\Entity\SubCategory $subcategory = null)
+    {
+        $this->subcategory = $subcategory;
+
+        return $this;
+    }
+
+    /**
+     * Get subcategory
+     *
+     * @return \System\BackendBundle\Entity\SubCategory 
+     */
+    public function getSubcategory()
+    {
+        return $this->subcategory;
+    }
 }
