@@ -8,7 +8,7 @@ system_reportes:
 
 system_backend:
     resource: "@SystemBackendBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /Backend
 
 system_incidence:
     resource: "@SystemIncidenceBundle/Resources/config/routing.yml"
