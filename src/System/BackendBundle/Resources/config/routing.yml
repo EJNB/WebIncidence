@@ -13,4 +13,8 @@ system_backend_subcategory:
 
 system_backend_itemtype:
     resource: "@SystemBackendBundle/Resources/config/routing/itemtype.yml"
-    prefix:   /itemtyp
+    prefix:   /itemtype
+
+system_backend_incidencetype:
+    resource: "@SystemBackendBundle/Resources/config/routing/incidencetype.yml"
+    prefix:   /incidencetype
