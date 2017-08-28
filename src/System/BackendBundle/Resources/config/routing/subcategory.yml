@@ -1,0 +1,24 @@
+subcategory_index:
+    path:     /
+    defaults: { _controller: "SystemBackendBundle:SubCategory:index" }
+    methods:  GET
+
+subcategory_show:
+    path:     /{id}/show
+    defaults: { _controller: "SystemBackendBundle:SubCategory:show" }
+    methods:  GET
+
+subcategory_new:
+    path:     /new
+    defaults: { _controller: "SystemBackendBundle:SubCategory:new" }
+    methods:  [GET, POST]
+
+subcategory_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SystemBackendBundle:SubCategory:edit" }
+    methods:  [GET, POST]
+
+subcategory_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SystemBackendBundle:SubCategory:delete" }
+    methods:  DELETE

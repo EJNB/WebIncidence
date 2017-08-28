@@ -5,3 +5,12 @@ system_backend_homepage:
 system_backend_category:
     resource: "@SystemBackendBundle/Resources/config/routing/category.yml"
     prefix:   /category
+
+
+system_backend_subcategory:
+    resource: "@SystemBackendBundle/Resources/config/routing/subcategory.yml"
+    prefix:   /subcategory
+
+system_backend_itemtype:
+    resource: "@SystemBackendBundle/Resources/config/routing/itemtype.yml"
+    prefix:   /itemtype

@@ -1,0 +1,24 @@
+itemtype_index:
+    path:     /
+    defaults: { _controller: "SystemBackendBundle:ItemType:index" }
+    methods:  GET
+
+itemtype_show:
+    path:     /{id}/show
+    defaults: { _controller: "SystemBackendBundle:ItemType:show" }
+    methods:  GET
+
+itemtype_new:
+    path:     /new
+    defaults: { _controller: "SystemBackendBundle:ItemType:new" }
+    methods:  [GET, POST]
+
+itemtype_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SystemBackendBundle:ItemType:edit" }
+    methods:  [GET, POST]
+
+itemtype_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SystemBackendBundle:ItemType:delete" }
+    methods:  DELETE
