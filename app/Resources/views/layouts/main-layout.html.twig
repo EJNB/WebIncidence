@@ -1,0 +1,143 @@
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('font-awesome/css/font-awesome.min.css') }}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="{{ asset('ionicons/css/ionicons.min.css') }}">
+    {#select#}
+    <link rel="stylesheet" href="{{ asset('plugins/select2/select2.min.css') }}">
+    {#datepicker#}
+    <link rel="stylesheet" href="{{ asset('plugins/datetimepicker/build/css/bootstrap-datetimepicker.min.css') }}">
+    {#bootstrap-select#}
+    <link rel="stylesheet" href="{{ asset('plugins/bootstrapselect/dist/css/bootstrap-select.min.css') }}">
+    {#pnotify#}
+    <link href="{{ asset('plugins/pnotify/pnotify.custom.min.css') }}" rel="stylesheet"  media="all" type="text/css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('dist/css/AdminLTE.min.css') }}">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="{{ asset('dist/css/skins/_all-skins.min.css') }}">
+    {#tree table#}
+    <link rel="stylesheet" href="{{ asset('plugins/treegrid/css/jquery.treegrid.css') }}">
+    <!-- SeatIN style -->
+    <link rel="stylesheet" href="{{ asset('advising/styles.css') }}">
+{% endblock %}
+
+{% block body %}
+    {#{% set days_of_week_numbers_disabled = {#}
+    {#'domingo' : '1,2,3,4,5,6',#}
+    {#'lunes' : '0,2,3,4,5,6',#}
+    {#'martes' : '1,0,3,4,5,6',#}
+    {#'miercoles' : '1,2,0,4,5,6',#}
+    {#'jueves' : '1,2,3,0,5,6',#}
+    {#'viernes' : '1,2,3,4,0,6',#}
+    {#'sábado' : '1,2,3,4,5,0',#}
+    {#} %}#}
+
+    {#{% set languages = {#}
+    {#'GE' : 'Alemán',#}
+    {#'EN' : 'Inglés',#}
+    {#'FR' : 'Francés'#}
+    {#} %}#}
+
+    {#{% set languagesEN = {#}
+    {#'GE' : 'German',#}
+    {#'EN' : 'English',#}
+    {#'FR' : 'French'#}
+    {#} %}#}
+
+    {#{% set status_description = {#}
+    {#'FS' : 'Free Sale',#}
+    {#'OR' : 'On Request',#}
+    {#'SS' : 'Stop Sale'#}
+    {#} %}#}
+
+    {#{% set status_color = {#}
+    {#'FS' : 'success',#}
+    {#'OR' : 'warning',#}
+    {#'SS' : 'danger'#}
+    {#}%}#}
+    <div class="wrapper">
+
+        <header class="main-header">
+            {% include 'main-layout-header.html.twig' %}
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            {% include 'main-layout-sidebar.html.twig' %}
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    {% block content_title %}
+                    {% endblock %}
+                    <small>
+                        {% block content_subtitle %}
+                        {% endblock %}
+                    </small>
+                </h1>
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="box box-default">
+                    <div class="content-margin">
+                        {% include 'common/flash-message.html.twig' %}
+                        {% include 'common/loading.html.twig' %}
+                        {% block content %}
+                        {% endblock %}
+                        {% include "common/modals.html.twig" %}
+                    </div>
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            {% include 'main-layout-footer.html.twig' %}
+        </footer>
+
+        <!-- Add the sidebar's background. This div must be placed
+             immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <!-- ./wrapper -->
+{% endblock %}
+
+{% block javascripts %}
+    <!-- jQuery 2.2.0 -->
+    <script src="{{ asset('plugins/jQuery/jQuery-2.2.0.min.js') }}"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="{{ asset('plugins/jQueryUI/jquery-ui.min.js') }}"></script>
+    <!-- Select -->
+    <script src="{{ asset('plugins/select2/select2.js') }}"></script>
+    <!-- datepicker -->
+    <script src="{{ asset('plugins/moment/min/moment.min.js') }}"></script>
+    <script src="{{ asset('plugins/moment/min/locales.min.js') }}"></script>
+    <script src="{{ asset('plugins/datetimepicker/build/js/bootstrap-datetimepicker.min.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrapselect/dist/js/bootstrap-select.min.js') }}"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('dist/js/app.min.js') }}"></script>
+
+    {#highchart#}
+    <script src="{{ asset('plugins/highcharts/js/highcharts.js') }}"></script>
+
+    <script src="{{ asset('plugins/pnotify/pnotify.custom.min.js') }}"></script>
+
+    {#treegrid table#}
+    <script type="text/javascript" src="{{ asset('plugins/treegrid/js/jquery.treegrid.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('plugins/treegrid/js/jquery.treegrid.bootstrap3.js') }}"></script>
+    <!-- SeatIN -->
+    <script src="{{ asset('advising/scripts.js') }}"></script>
+{% endblock %}
