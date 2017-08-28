@@ -21,6 +21,28 @@ class Item
      */
     private $id;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Claim", inversedBy="items")
+     * @ORM\JoinColumn(name="claim_id", referencedColumnName="id")
+     **/
+    private $claim;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="ItemType", inversedBy="items")
+     * @ORM\JoinColumn(name="item_id", referencedColumnName="id")
+     **/
+    private $itemtype;
+
+    /**
+     * @ORM\OneToOne(targetEntity="SolDevPro", mappedBy="item")
+     **/
+    private $soldevpro;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Service", inversedBy="items")
+     * @ORM\JoinColumn(name="service_id", referencedColumnName="id")
+     **/
+    private $service;
 
     /**
      * Get id

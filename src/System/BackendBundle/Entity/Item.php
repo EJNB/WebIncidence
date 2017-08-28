@@ -45,12 +45,12 @@ class Item
     private $date_request;
 
     /**
-     * @ORM\Column(name="request_amount", type="decimal")
+     * @ORM\Column(name="request_amount", type="integer")
      */
     private $request_amount;
 
     /**
-     * @ORM\Column(name="request_amount", type="decimal")
+     * @ORM\Column(name="refound", type="integer")
      */
     private $refound;
 
@@ -117,29 +117,6 @@ class Item
     public function getItemtype()
     {
         return $this->itemtype;
-    }
-
-    /**
-     * Set soldevpro
-     *
-     * @param \System\BackendBundle\Entity\SolDevPro $soldevpro
-     * @return Item
-     */
-    public function setSoldevpro(\System\BackendBundle\Entity\SolDevPro $soldevpro = null)
-    {
-        $this->soldevpro = $soldevpro;
-
-        return $this;
-    }
-
-    /**
-     * Get soldevpro
-     *
-     * @return \System\BackendBundle\Entity\SolDevPro 
-     */
-    public function getSoldevpro()
-    {
-        return $this->soldevpro;
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace System\BackendBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -35,6 +36,15 @@ class Person
      */
     private $consultant;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Incidence_Person", mappedBy="person")
+     **/
+    private $incidences_persons;
+
+    public function __construct()
+    {
+        $this->persons_incidences = new ArrayCollection();
+    }
 
     /**
      * Get id

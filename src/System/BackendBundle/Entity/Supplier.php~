@@ -2,6 +2,7 @@
 
 namespace System\BackendBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -35,6 +36,14 @@ class Supplier
      */
     private $code;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Service", mappedBy="supplier")
+     **/
+    private $services;
+
+    public function __construct() {
+        $this->services = new ArrayCollection();
+    }
 
     /**
      * Get id

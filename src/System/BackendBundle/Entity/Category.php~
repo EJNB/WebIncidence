@@ -28,6 +28,21 @@ class Category
      */
     private $name;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="ItemType", inversedBy="categories")
+     * @ORM\JoinColumn(name="itemtype_id", referencedColumnName="id")
+     **/
+    private $itemtype;
+
+    /**
+     * @ORM\OneToMany(targetEntity="SubCategory", mappedBy="category")
+     **/
+    private $subcategories;
+
+    public function __construct() {
+        $this->categories = new ArrayCollection();
+        $this->subcategories = new ArrayCollection();
+    }
 
     /**
      * Get id

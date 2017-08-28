@@ -2,6 +2,7 @@
 
 namespace System\BackendBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -56,6 +57,26 @@ class Booking
      */
     private $pax;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Incidence", mappedBy="booking")
+     **/
+    private $incidences;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Claim", mappedBy="booking")
+     **/
+    private $claims;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Client", mappedBy="booking")
+     **/
+    private $clients;
+
+    public function __construct() {
+        $this->incidences = new ArrayCollection();
+        $this->claims = new ArrayCollection();
+        $this->clients = new ArrayCollection();
+    }
 
     /**
      * Get id

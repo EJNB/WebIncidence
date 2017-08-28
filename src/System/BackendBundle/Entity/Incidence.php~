@@ -56,13 +56,43 @@ class Incidence
     private $incidencetypes;
 
     /**
-     * ORM\ManyToOne(targetEntity="Department", inversedBy="incidences")
-     * ORM\JoinColumn(name="department_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Department", inversedBy="incidences")
+     * @ORM\JoinColumn(name="department_id", referencedColumnName="id")
      **/
     private $department;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Service", inversedBy="incidences")
+     * @ORM\JoinColumn(name="service_id", referencedColumnName="id")
+     **/
+    private $service;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Place", inversedBy="incidences")
+     * @ORM\JoinColumn(name="place_id", referencedColumnName="id")
+     **/
+    private $place;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Claim", inversedBy="incidences")
+     * @ORM\JoinColumn(name="claim_id", referencedColumnName="id")
+     **/
+    private $claim;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Booking", inversedBy="incidences")
+     * @ORM\JoinColumn(name="booking_id", referencedColumnName="id")
+     **/
+    private $booking;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Incidence_Person", mappedBy="incidence")
+     **/
+    private $incidendes_persons;
+
     public function __construct() {
         $this->incidencetypes = new ArrayCollection();
+        $this->incidendes_persons = new ArrayCollection();
     }
 
     /**
@@ -165,5 +195,38 @@ class Incidence
     public function getDocument()
     {
         return $this->document;
+    }
+
+    /**
+     * Add incidencetypes
+     *
+     * @param \System\BackendBundle\Entity\IncidenceType $incidencetypes
+     * @return Incidence
+     */
+    public function addIncidencetype(\System\BackendBundle\Entity\IncidenceType $incidencetypes)
+    {
+        $this->incidencetypes[] = $incidencetypes;
+
+        return $this;
+    }
+
+    /**
+     * Remove incidencetypes
+     *
+     * @param \System\BackendBundle\Entity\IncidenceType $incidencetypes
+     */
+    public function removeIncidencetype(\System\BackendBundle\Entity\IncidenceType $incidencetypes)
+    {
+        $this->incidencetypes->removeElement($incidencetypes);
+    }
+
+    /**
+     * Get incidencetypes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getIncidencetypes()
+    {
+        return $this->incidencetypes;
     }
 }

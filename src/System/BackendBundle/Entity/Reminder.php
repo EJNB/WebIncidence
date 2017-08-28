@@ -66,27 +66,4 @@ class Reminder
     {
         return $this->reminderDate;
     }
-
-    /**
-     * Set soldevpro
-     *
-     * @param \System\BackendBundle\Entity\SolDevPro $soldevpro
-     * @return Reminder
-     */
-    public function setSoldevpro(\System\BackendBundle\Entity\SolDevPro $soldevpro = null)
-    {
-        $this->soldevpro = $soldevpro;
-
-        return $this;
-    }
-
-    /**
-     * Get soldevpro
-     *
-     * @return \System\BackendBundle\Entity\SolDevPro 
-     */
-    public function getSoldevpro()
-    {
-        return $this->soldevpro;
-    }
 }

@@ -2,6 +2,7 @@
 
 namespace System\BackendBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -49,6 +50,26 @@ class Service
      */
     private $location;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Incidence", mappedBy="service")
+     **/
+    private $incidences;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Supplier", inversedBy="services")
+     * @ORM\JoinColumn(name="supplier_id", referencedColumnName="id")
+     **/
+    private $supplier;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Item", mappedBy="service")
+     **/
+    private $items;
+
+    public function __construct() {
+        $this->incidences = new ArrayCollection();
+        $this->items = new ArrayCollection();
+    }
 
     /**
      * Get id

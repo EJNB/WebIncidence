@@ -28,6 +28,11 @@ class SubCategory
      */
     private $name;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="subcategories")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     **/
+    private $category;
 
     /**
      * Get id
