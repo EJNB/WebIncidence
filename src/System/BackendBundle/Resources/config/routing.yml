@@ -1,3 +1,7 @@
 system_backend_homepage:
     resource: "@SystemBackendBundle/Resources/config/routing/department.yml"
     prefix:   /department
+
+system_backend_category:
+    resource: "@SystemBackendBundle/Resources/config/routing/category.yml"
+    prefix:   /category
