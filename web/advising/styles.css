@@ -161,3 +161,7 @@ th,tr{
       }
 }
 /*---------------------------------------------------------------------------------------------------------*/
+/*!*formulario de eliminar a continuacion de el boton edit*!*/
+/*button#delete_category+form{*/
+    /*display: inline-block;*/
+/*}*/

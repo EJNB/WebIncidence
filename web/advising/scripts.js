@@ -153,6 +153,10 @@ $(document).ready( function() {
         $("#text-descripcion-popup-eliminar").html($(this).attr("data-descripcion"));
     });
 
+    $('.link-tooltip').hover(function(){
+        $(this).tooltip('show');
+    })
+
     $(".link-details-item").click(function (event) {
         $("#descripcion-popup").html($(this).attr("data-descripcion"));
     });
@@ -296,9 +300,4 @@ $(document).ready( function() {
     $('#delete_note_select').click(function () {
         $('#notes_index_form').submit();
     });
-
-
-
-
-
 });

@@ -39,10 +39,12 @@
                 </a>
                 <ul class="treeview-menu">
                     {#{% if is_granted(['ROLE_MANAGE']) %}#}
-                    <li><a href="{#{{ path('finder_index') }}#}"><i class="fa fa-circle-o"></i> Buscador de advising</a></li>
+                    <li><a href="{{ path('category_index') }}"><i class="fa fa-circle-o"></i> Categorias</a></li>
                     {#{% if is_granted(['ROLE_ADVISING_SP','ROLE_ADMIN']) %}#}
-                        <li><a href="{#{{ path('reference_show') }}#}"><i class="fa fa-circle-o"></i> Advising por referencia</a></li>
-                        <li><a href="{#{{ path('repair_index') }}#}"><i class="fa fa-circle-o"></i> Repara items {#{% render url('repair_update_notification_sidebar') %}#} </a></li>
+                        <li><a href="{{ path('subcategory_index') }}"><i class="fa fa-circle-o"></i> Subcategorias</a></li>
+                        <li><a href="{{ path('itemtype_index') }}"><i class="fa fa-circle-o"></i> Tipos de Item {#{% render url('repair_update_notification_sidebar') %}#} </a></li>
+                        <li><a href="{{ path('servicetype_index') }}"><i class="fa fa-circle-o"></i> Tipos de servicios {#{% render url('repair_update_notification_sidebar') %}#} </a></li>
+                        <li><a href="{{ path('department_index') }}"><i class="fa fa-circle-o"></i> Departamentos {#{% render url('repair_update_notification_sidebar') %}#} </a></li>
                     {#{% endif %}#}
                         {#<li><a href="{{ path('departure_index') }}"><i class="fa fa-circle-o"></i> Salidas</a></li>#}
                         {#<li><a href="{{ path('booking_index') }}"><i class="fa fa-circle-o"></i> Reservas</a></li>#}

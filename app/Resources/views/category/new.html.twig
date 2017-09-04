@@ -5,17 +5,19 @@
     <div class="row">
         <div class="container">
             <h1 class="page-header">Category creation</h1>
-            {{ form_start(form) }}
-            <div class="col-md-3">
-                {{ form(form) }}
-            </div>
-            {{ form_end(form) }}
 
-            <div class="pull-left">
-                <button class="btn btn-info">Add</button>
-                <a href="{{ path('category_index') }}" class="btn btn-default">Regresar al listado</a>
+            {{ form_start(form) }}
+
+            <div class="col-md-3">
+                {{ form_widget(form) }}
+                {#<input type="submit" value="Create" />#}
+                <div class="pull-left">
+                    <button class="btn btn-info" type="submit">Add</button>
+                    <a href="{{ path('category_index') }}" class="btn btn-default">Regresar al listado</a>
+                </div>
             </div>
+
+            {{ form_end(form) }}
         </div>
     </div>
-
 {% endblock %}

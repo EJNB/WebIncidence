@@ -18,19 +18,21 @@
                 <td>{{ category.name }}</td>
                 <td>
 
-                    <a {#class="link-tooltip"#} href="{{ path('category_show', { 'id': category.id }) }}"
+                    <a href="{{ path('category_show', { 'id': category.id }) }}"
                        data-toggle="tooltip" data-placement="top" title="Detalles">
-                        <span class="glyphicon glyphicon-eye-open"></span></a>
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
 
-                    <a {#class="link-tooltip"#} href="{{ path('category_edit', { 'id': category.id }) }}"
+                    <a href="{{ path('category_edit', { 'id': category.id }) }}"
                        data-toggle="tooltip" data-placement="top" title="Editar">
-                        <span class="glyphicon glyphicon-pencil"></span></a>
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
 
                     <a class="link-eliminar link-tooltip" href="javascript:void(0);"
-                       data-url = "{#{{ path('users_delete', { 'id': entity.id }) }}#}"
-                       data-descripcion="{#{{ entity.username }}#}"
-                       {#data-toggle="modal" data-target="#modal-delete"#}
-                       data-toggle="tooltip" data-placement="top" title="Eliminar">
+                       data-url = "{{ path('category_delete', { 'id': category.id }) }}"
+                       data-descripcion="{{ category.name }}"
+                       data-toggle="modal" data-target="#modal-delete"
+                       data-placement="top" title="Eliminar">
                         <span class="glyphicon glyphicon-trash"></span>
                     </a>
 
