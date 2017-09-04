@@ -11,13 +11,13 @@ body{
     font-family: "Roboto";
 }
 
-th{
+th,tr{
     text-align: center;
 }
 
 .glyphicon, .fa{
     margin-right: 3px;
-    margin-left: 10px;
+    margin-left: 3px;
 }
 
 .hide-elemento{
