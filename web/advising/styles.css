@@ -1,0 +1,163 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("font/Roboto-Light.ttf");
+}
+
+body{
+    background-color:  #F6F6F6;
+}
+
+*, h1, h2, h3, h4, h5, h6{
+    font-family: "Roboto";
+}
+
+th{
+    text-align: center;
+}
+
+.glyphicon, .fa{
+    margin-right: 3px;
+    margin-left: 10px;
+}
+
+.hide-elemento{
+    display: none;
+}
+
+.blocker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width:100%;        /* hacemos que ocupe toda la pantalla a cualquier resolución*/
+    z-index: 100;        /* lo colocamos por encima del resto de componentes*/
+    /*background: url(b.png) repeat;  *//*Color de fondo semitransparente*/
+    background-color: #000000;
+    opacity: 0.5;
+
+}
+
+#img-loading{
+    left : 40%;
+    top : 50%;
+    position : absolute;
+    z-index : 101;
+}
+
+.btn-form{
+    margin-left: 15px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navigation{
+    margin-left: 15px;
+}
+
+.content-margin{
+    padding: 15px;
+}
+
+.ui-pnotify{
+    max-width: 600px;
+    opacity: 0.9;
+    display: block;
+    overflow: visible;
+    right: 25px;
+    top: 5px;
+    cursor: auto;
+    position: fixed;
+    margin-top: 70px;
+    z-index: 150;
+}
+
+#content-scroll{
+    width: auto;
+    /*height:210px;*/
+    /*border: 13px solid #bed5cd;*/
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.agency-highlight{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+#container-finder{
+    padding: 10px;
+}
+
+#row-1{
+    margin-bottom: 5px;
+}
+
+.input-group .input-group-addon {
+    background-color: #EEEEEE;
+    border-radius: 0;
+}
+
+#finder-search > span{
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+.plus-sing{
+    margin-top: 30px;
+    margin-left: -30px;
+}
+
+.small-badge{
+    font-size: .8em;
+    margin-bottom: 2px;
+}
+
+.row-selected{
+    background-color: #cafffc;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+/*loading css*/
+.spinner {
+    /*margin*/
+    width: 70px;
+    text-align: center;
+}
+
+.spinner > div {
+    width: 18px;
+    height: 18px;
+    background-color: #ffffff;
+
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+    0%, 80%, 100% { -webkit-transform: scale(0) }
+    40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    } 40% {
+          -webkit-transform: scale(1.0);
+          transform: scale(1.0);
+      }
+}
+/*---------------------------------------------------------------------------------------------------------*/

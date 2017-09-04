@@ -4,16 +4,16 @@
     <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li>
-            <a href="{{ path('system_report_homepage') }}">
+            <a href="{#{{ path('system_report_homepage') }}#}">
                 <i class="fa fa-home"></i> <span>P&aacute;gina principal</span>
             </a>
         </li>
         <li id="link-sync">
-            <a href="{{ path('system_backend_import') }}">
+            <a href="{#{{ path('system_backend_import') }}#}">
                 <i class="fa fa-refresh"></i> <span>Sincronizar</span>
             </a>
         </li>
-        {% if is_granted(['ROLE_ADVISING_SP','ROLE_ADMIN']) %}
+        {#{% if is_granted(['ROLE_ADVISING_SP','ROLE_ADMIN']) %}#}
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-list"></i>
@@ -21,15 +21,15 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ path('service_index') }}"><i class="fa fa-circle-o"></i> Servicios</a></li>
-                    <li><a href="{{ path('status_index') }}"><i class="fa fa-circle-o"></i> Estados</a></li>
-                    <li><a href="{{ path('comment_index') }}"><i class="fa fa-circle-o"></i> Comentarios</a></li>
+                    <li><a href="{#{{ path('service_index') }}#}"><i class="fa fa-circle-o"></i> Servicios</a></li>
+                    <li><a href="{#{{ path('status_index') }}#}"><i class="fa fa-circle-o"></i> Estados</a></li>
+                    <li><a href="{#{{ path('comment_index') }}#}"><i class="fa fa-circle-o"></i> Comentarios</a></li>
                     {#<li><a href="{{ path('tp_agency_index') }}"><i class="fa fa-circle-o"></i> Agencias</a></li>#}
                     {#<li><a href="{{ path('contact_index') }}"><i class="fa fa-circle-o"></i> Contactos</a></li>#}
                     {#<li><a href="#"><i class="fa fa-circle-o"></i> SeatIN</a></li>#}
                 </ul>
             </li>
-        {% endif %}
+        {#{% endif %}#}
 
             <li class="treeview">
                 <a href="#">
@@ -39,11 +39,11 @@
                 </a>
                 <ul class="treeview-menu">
                     {#{% if is_granted(['ROLE_MANAGE']) %}#}
-                    <li><a href="{{ path('finder_index') }}"><i class="fa fa-circle-o"></i> Buscador de advising</a></li>
-                    {% if is_granted(['ROLE_ADVISING_SP','ROLE_ADMIN']) %}
-                        <li><a href="{{ path('reference_show') }}"><i class="fa fa-circle-o"></i> Advising por referencia</a></li>
-                        <li><a href="{{ path('repair_index') }}"><i class="fa fa-circle-o"></i> Repara items {% render url('repair_update_notification_sidebar') %} </a></li>
-                    {% endif %}
+                    <li><a href="{#{{ path('finder_index') }}#}"><i class="fa fa-circle-o"></i> Buscador de advising</a></li>
+                    {#{% if is_granted(['ROLE_ADVISING_SP','ROLE_ADMIN']) %}#}
+                        <li><a href="{#{{ path('reference_show') }}#}"><i class="fa fa-circle-o"></i> Advising por referencia</a></li>
+                        <li><a href="{#{{ path('repair_index') }}#}"><i class="fa fa-circle-o"></i> Repara items {#{% render url('repair_update_notification_sidebar') %}#} </a></li>
+                    {#{% endif %}#}
                         {#<li><a href="{{ path('departure_index') }}"><i class="fa fa-circle-o"></i> Salidas</a></li>#}
                         {#<li><a href="{{ path('booking_index') }}"><i class="fa fa-circle-o"></i> Reservas</a></li>#}
                     {#{% endif %}#}
@@ -61,7 +61,7 @@
             </a>
             <ul class="treeview-menu">
                 <li>
-                <a href="{{ path('report_count_date_user_index') }}"><i class="fa fa-circle-o"></i> Items por usuario</a>
+                <a href="{#{{ path('report_count_date_user_index') }}#}"><i class="fa fa-circle-o"></i> Items por usuario</a>
                     {#<ul class="treeview-menu">#}
 
                     {#</ul>#}
@@ -74,7 +74,7 @@
                 {#</li>#}
             </ul>
         </li>
-        {% if is_granted(['ROLE_ADMIN']) %}
+        {#{% if is_granted(['ROLE_ADMIN']) %}#}
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-lock"></i> <span>Seguridad</span>
@@ -82,14 +82,14 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="{{ path('user') }}"><i class="fa fa-circle-o"></i> Usuarios</a>
+                        <a href="{#{{ path('user') }}#}"><i class="fa fa-circle-o"></i> Usuarios</a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ path('user') }}"><i class="fa fa-circle-o"></i> Usuarios</a></li>
+                            <li><a href="{#{{ path('user') }}#}"><i class="fa fa-circle-o"></i> Usuarios</a></li>
                         </ul>
                     </li>
                 </ul>
             </li>
-        {% endif %}
+        {#{% endif %}#}
         {#<li class="treeview">#}
             {#<a href="#">#}
                 {#<i class="fa fa-share"></i> <span>Reportes</span>#}

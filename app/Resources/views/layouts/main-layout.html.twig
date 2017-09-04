@@ -1,4 +1,4 @@
-{% extends "::base.html.twig" %}
+{% extends "base.html.twig" %}
 
 {% block stylesheets %}
     <!-- Bootstrap 3.3.6 -->
@@ -63,11 +63,11 @@
     <div class="wrapper">
 
         <header class="main-header">
-            {% include 'main-layout-header.html.twig' %}
+            {{ include(':layouts:main-layout-header.html.twig') }}
         </header>
         <!-- Left side column. contains the logo and sidebar -->
         <aside class="main-sidebar">
-            {% include 'main-layout-sidebar.html.twig' %}
+            {{ include(':layouts:main-layout-sidebar.html.twig') }}
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
@@ -88,11 +88,14 @@
             <section class="content">
                 <div class="box box-default">
                     <div class="content-margin">
-                        {% include 'common/flash-message.html.twig' %}
-                        {% include 'common/loading.html.twig' %}
+                        {{ include(':layouts/common:flash-message.html.twig') }}
+                        {#{% include 'common/flash-message.html.twig' %}#}
+                        {{ include(':layouts/common:loading.html.twig') }}
+                        {#{% include 'common/loading.html.twig' %}#}
                         {% block content %}
                         {% endblock %}
-                        {% include "common/modals.html.twig" %}
+                        {{ include(':layouts/common:modals.html.twig') }}
+                        {#{% include "common/modals.html.twig" %}#}
                     </div>
                 </div>
             </section>
@@ -100,7 +103,7 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            {% include 'main-layout-footer.html.twig' %}
+            {#{% include 'main-layout-footer.html.twig' %}#}
         </footer>
 
         <!-- Add the sidebar's background. This div must be placed

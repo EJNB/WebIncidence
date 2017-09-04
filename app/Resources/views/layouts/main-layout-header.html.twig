@@ -3,7 +3,7 @@
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>w</b>A</span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>web</b>Advising</span>
+    <span class="logo-lg"><b>web</b>Incidence</span>
 </a>
 <!-- Header Navbar: style can be found in header.less -->
 <nav class="navbar navbar-static-top">
@@ -93,7 +93,7 @@
             {#</li>#}
             <!-- Notifications: style can be found in dropdown.less -->
             {#{% render controller("SystemBackendBundle:Note:userNotes" with { 'user': app.user.id }) %}#}
-            {% render url('note_get_user_active_notes') %}
+            {#{% render url('note_get_user_active_notes') %}#}
             {#{{  render 'SystemBackendBundle:Note:userNotes' }}#}
             <!-- Tasks: style can be found in dropdown.less -->
             {#<li class="dropdown tasks-menu">#}
@@ -175,16 +175,16 @@
                     <span class="glyphicon glyphicon-user"></span>
                     {#<img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">#}
                     <span class="hidden-xs">
-                        {{ app.user.username }}
+                        {#{{ app.user.username }}#}
                     </span>
                 </a>
                 <ul class="dropdown-menu">
                     <!-- User image -->
                     <li class="user-header">
                         <p>
-                            {{ app.user.name }}
+                            {#{{ app.user.name }}#}
                             <small>
-                                {{ app.user.email }}
+                                {#{{ app.user.email }}#}
                             </small>
                         </p>
                     </li>
@@ -210,8 +210,9 @@
                         {#</div>#}
                         <div class="pull-right">
                             <a href="
-                            {{ path('system_seguridad_logout') }}
-                            " class="btn btn-default btn-flat">Sign out</a>
+                            {#{{ path('system_seguridad_logout') }}#}
+                            "
+                               class="btn btn-default btn-flat">Sign out</a>
                         </div>
                     </li>
                 </ul>

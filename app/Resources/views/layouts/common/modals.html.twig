@@ -73,7 +73,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <label>Seleccione usuario:</label>
-                            {{ render(controller( 'SystemSeguridadBundle:User:listUsers')) }}
+                            {#{{ render(controller( 'SystemSeguridadBundle:User:listUsers')) }}#}
                         </div>
                     </div>
                     <div class="row">
@@ -123,7 +123,7 @@
                 <h4 class="modal-title" id="myModalLabel">Nota</h4>
             </div>
             <div class="modal-body">
-                <form method="post" action="{{ path('note_new') }}" id="form-create-note">
+                <form method="post" action="{#{{ path('note_new') }}#}" id="form-create-note">
                     <p id="note-description"></p>
                     <input type="hidden" value="" name="itemID" id="modal-item-id">
                     <input type="hidden" value="" name="itemRef" id="modal-item-ref">
