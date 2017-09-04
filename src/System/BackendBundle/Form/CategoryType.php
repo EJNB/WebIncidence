@@ -13,7 +13,12 @@ class CategoryType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name');
+        $builder->add('name','text',array(
+            'attr' => array(
+                'class' => 'form-control',
+                'placeholder' => 'Nombre de la categoria'
+            )
+        ));
     }
     
     /**
@@ -33,6 +38,4 @@ class CategoryType extends AbstractType
     {
         return 'system_backendbundle_category';
     }
-
-
 }
