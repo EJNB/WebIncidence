@@ -1,21 +1,22 @@
-{% extends 'base.html.twig' %}
+{% form_theme edit_form 'form/fields.html.twig' %}
+{% extends ':layouts:main-layout.html.twig' %}
 
-{% block body %}
-    <h1>Subcategory edit</h1>
+{% block content %}
+    <h1 class="page-header">Subcategory edit</h1>
+    <div class="container">
+        {{ form_start(edit_form) }}
+        <div class="col-md-4">
+            {{ form_row(edit_form.name) }}
+            {{ form_row(edit_form.category) }}
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+            <button class="btn btn-info">Editar</button>
+            <a class="btn btn-danger link-eliminar" href="javascript:void(0)" data-url="{{ path('subcategory_delete',{'id':subCategory.id}) }}" data-toggle="modal" data-target="#modal-delete" data-descripcion="{{ subCategory.name }}">Eliminar</a>
+            <a href="{{ path('subcategory_index') }}" class="btn btn-default">Regresar al listado</a>
+
+        </div>
+
+    </div>
+
     {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('subcategory_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
 {% endblock %}

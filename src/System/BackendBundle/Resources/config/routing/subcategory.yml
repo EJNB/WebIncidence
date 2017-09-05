@@ -21,4 +21,4 @@ subcategory_edit:
 subcategory_delete:
     path:     /{id}/delete
     defaults: { _controller: "SystemBackendBundle:SubCategory:delete" }
-    methods:  DELETE
+#    methods:  DELETE
