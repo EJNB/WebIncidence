@@ -133,4 +133,10 @@ class Category
     {
         return $this->subcategories;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+        // TODO: Implement __toString() method.
+    }
 }
