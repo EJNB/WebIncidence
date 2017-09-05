@@ -100,7 +100,7 @@ class DepartmentController extends Controller
 //        if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($department);
-            $em->flush();giot
+            $em->flush();
 //        }
 
         return $this->redirectToRoute('department_index');
