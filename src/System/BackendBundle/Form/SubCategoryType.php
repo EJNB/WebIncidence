@@ -13,7 +13,19 @@ class SubCategoryType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('category');
+        $builder->add('name','text',array(
+            'attr' => array(
+                'class' => 'form-control',
+                'placeholder' => 'Subcategory'
+            )
+        ))
+        ->add('category','entity',array(
+            'class' => 'System\BackendBundle\Entity\Category',
+            'attr' => array(
+                'placeholder' => 'Seleccione la categoria',
+                'class' => 'selectpicker'
+            )
+        ));
     }
     
     /**
