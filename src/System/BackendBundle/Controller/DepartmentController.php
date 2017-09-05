@@ -42,7 +42,7 @@ class DepartmentController extends Controller
             $em->persist($department);
             $em->flush();
 
-            return $this->redirectToRoute('department_show', array('id' => $department->getId()));
+            return $this->redirectToRoute('department_index');
         }
 
         return $this->render('department/new.html.twig', array(
@@ -57,11 +57,11 @@ class DepartmentController extends Controller
      */
     public function showAction(Department $department)
     {
-        $deleteForm = $this->createDeleteForm($department);
+//        $deleteForm = $this->createDeleteForm($department);
 
         return $this->render('department/show.html.twig', array(
             'department' => $department,
-            'delete_form' => $deleteForm->createView(),
+//            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -71,20 +71,20 @@ class DepartmentController extends Controller
      */
     public function editAction(Request $request, Department $department)
     {
-        $deleteForm = $this->createDeleteForm($department);
+//        $deleteForm = $this->createDeleteForm($department);
         $editForm = $this->createForm('System\BackendBundle\Form\DepartmentType', $department);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('department_edit', array('id' => $department->getId()));
+            return $this->redirectToRoute('department_index');
         }
 
         return $this->render('department/edit.html.twig', array(
             'department' => $department,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+//            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -94,31 +94,15 @@ class DepartmentController extends Controller
      */
     public function deleteAction(Request $request, Department $department)
     {
-        $form = $this->createDeleteForm($department);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
+//        $form = $this->createDeleteForm($department);
+//        $form->handleRequest($request);
+//
+//        if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($department);
-            $em->flush();
-        }
+            $em->flush();giot
+//        }
 
         return $this->redirectToRoute('department_index');
-    }
-
-    /**
-     * Creates a form to delete a department entity.
-     *
-     * @param Department $department The department entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(Department $department)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('department_delete', array('id' => $department->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
     }
 }

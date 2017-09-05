@@ -21,4 +21,4 @@ department_edit:
 department_delete:
     path:     /{id}/delete
     defaults: { _controller: "SystemBackendBundle:Department:delete" }
-    methods:  DELETE
+#    methods:  DELETE
