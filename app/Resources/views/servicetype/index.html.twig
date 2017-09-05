@@ -1,9 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends ':layouts:main-layout.html.twig' %}
 
-{% block body %}
+{% block content %}
     <h1>Servicetypes list</h1>
 
-    <table>
+    <table class="table table-responsive table-hover">
         <thead>
             <tr>
                 <th>Id</th>
@@ -15,27 +15,27 @@
         <tbody>
         {% for serviceType in serviceTypes %}
             <tr>
-                <td><a href="{{ path('servicetype_show', { 'id': serviceType.id }) }}">{{ serviceType.id }}</a></td>
+                <td>{{ loop.index }}</a></td>
                 <td>{{ serviceType.code }}</td>
                 <td>{{ serviceType.name }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('servicetype_show', { 'id': serviceType.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('servicetype_edit', { 'id': serviceType.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('servicetype_edit',{ 'id': serviceType.id }) }}" data-toggle="tooltip" data-placement="top" title="Editar">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a class="link-eliminar link-tooltip" href="javascript:void(0);"
+                       data-url = "{{ path('servicetype_delete', { 'id': serviceType.id }) }}"
+                       data-descripcion="{{ serviceType.name }}"
+                       data-toggle="modal" data-target="#modal-delete"
+                       data-placement="top" title="Eliminar">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('servicetype_new') }}">Create a new serviceType</a>
-        </li>
-    </ul>
+
+    <a href="{{ path('servicetype_new') }}" class="btn btn-info">Create a new serviceType</a>
+
 {% endblock %}
