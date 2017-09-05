@@ -21,4 +21,4 @@ servicetype_edit:
 servicetype_delete:
     path:     /{id}/delete
     defaults: { _controller: "SystemBackendBundle:ServiceType:delete" }
-    methods:  DELETE
+#    methods:  DELETE

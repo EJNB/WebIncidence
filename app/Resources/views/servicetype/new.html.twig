@@ -1,16 +1,19 @@
-{% extends 'base.html.twig' %}
+{% form_theme form 'form/fields.html.twig' %}
+{% extends ':layouts:main-layout.html.twig' %}
 
-{% block body %}
-    <h1>Servicetype creation</h1>
+{% block content %}
+    <div class="container">
+        <h1 class="page-header">Servicetype creation</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+        {{ form_start(form) }}
+        <div class="col-md-3">
+            {{ form_row(form.code) }}
+            {{ form_row(form.name) }}
+            {{ form_row(form.itemtype) }}
+            <input type="submit" value="Create" class="btn btn-info"/>
+            <a href="{{ path('servicetype_index') }}" class="btn btn-default">Back to the list</a>
+        </div>
+        {{ form_end(form) }}
+    </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('servicetype_index') }}">Back to the list</a>
-        </li>
-    </ul>
 {% endblock %}

@@ -42,7 +42,7 @@ class ServiceTypeController extends Controller
             $em->persist($serviceType);
             $em->flush();
 
-            return $this->redirectToRoute('servicetype_show', array('id' => $serviceType->getId()));
+            return $this->redirectToRoute('servicetype_index');
         }
 
         return $this->render('servicetype/new.html.twig', array(
@@ -71,20 +71,20 @@ class ServiceTypeController extends Controller
      */
     public function editAction(Request $request, ServiceType $serviceType)
     {
-        $deleteForm = $this->createDeleteForm($serviceType);
+//        $deleteForm = $this->createDeleteForm($serviceType);
         $editForm = $this->createForm('System\BackendBundle\Form\ServiceTypeType', $serviceType);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('servicetype_edit', array('id' => $serviceType->getId()));
+            return $this->redirectToRoute('servicetype_index');
         }
 
         return $this->render('servicetype/edit.html.twig', array(
             'serviceType' => $serviceType,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+//            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -94,31 +94,15 @@ class ServiceTypeController extends Controller
      */
     public function deleteAction(Request $request, ServiceType $serviceType)
     {
-        $form = $this->createDeleteForm($serviceType);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
+//        $form = $this->createDeleteForm($serviceType);
+//        $form->handleRequest($request);
+//
+//        if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($serviceType);
             $em->flush();
-        }
+//        }
 
         return $this->redirectToRoute('servicetype_index');
-    }
-
-    /**
-     * Creates a form to delete a serviceType entity.
-     *
-     * @param ServiceType $serviceType The serviceType entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(ServiceType $serviceType)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('servicetype_delete', array('id' => $serviceType->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
     }
 }
