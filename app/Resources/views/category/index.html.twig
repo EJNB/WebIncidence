@@ -6,9 +6,9 @@
     <table class="table table-responsive table-hover">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Actions</th>
+                <th>No</th>
+                <th>Nombre</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -17,12 +17,6 @@
                 <td>{{ loop.index }}</td>
                 <td>{{ category.name }}</td>
                 <td>
-
-                    <a href="{{ path('category_show', { 'id': category.id }) }}"
-                       data-toggle="tooltip" data-placement="top" title="Detalles">
-                        <span class="glyphicon glyphicon-eye-open"></span>
-                    </a>
-
                     <a href="{{ path('category_edit', { 'id': category.id }) }}"
                        data-toggle="tooltip" data-placement="top" title="Editar">
                         <span class="glyphicon glyphicon-pencil"></span>
@@ -35,13 +29,22 @@
                        data-placement="top" title="Eliminar">
                         <span class="glyphicon glyphicon-trash"></span>
                     </a>
-
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+    {{ form_start(form) }}
+    <div class="row">
+        <div class="col-md-3">
+            {{ form_widget(form) }}
+        </div>
+        <div class="col-md-3">
+            <input type="submit" value="Guardar" class="btn btn-primary">
+        </div>
+    </div>
+    {{ form_end(form) }}
 
-    <a href="{{ path('category_new') }}" class="btn btn-info">Add Category</a>
+    {#<a href="{{ path('category_new') }}" class="btn btn-info">Guardar</a>#}
 
 {% endblock %}

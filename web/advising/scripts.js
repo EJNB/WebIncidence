@@ -300,4 +300,7 @@ $(document).ready( function() {
     $('#delete_note_select').click(function () {
         $('#notes_index_form').submit();
     });
+
+    //quitar el label
+
 });

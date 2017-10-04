@@ -11,9 +11,9 @@ body{
     font-family: "Roboto";
 }
 
-th,tr{
-    text-align: center;
-}
+/*th,tr{*/
+    /*text-align: center;*/
+/*}*/
 
 .glyphicon, .fa{
     margin-right: 3px;
