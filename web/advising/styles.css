@@ -160,6 +160,10 @@ body{
           transform: scale(1.0);
       }
 }
+
+.form-group {
+    margin: 7px 7px;
+}
 /*---------------------------------------------------------------------------------------------------------*/
 /*!*formulario de eliminar a continuacion de el boton edit*!*/
 /*button#delete_category+form{*/

@@ -5,6 +5,7 @@ namespace System\BackendBundle\Controller;
 use System\BackendBundle\Entity\SubCategory;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use System\BackendBundle\Form\SubCategoryType;
 
 /**
  * Subcategory controller.
@@ -16,14 +17,26 @@ class SubCategoryController extends Controller
      * Lists all subCategory entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
+        $subCategory = new Subcategory();
+        $form = $this->createForm(SubCategoryType::class,$subCategory);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($subCategory);
+            $em->flush();
+
+            return $this->redirectToRoute('subcategory_index');
+        }
 
         $subCategories = $em->getRepository('SystemBackendBundle:SubCategory')->findAll();
 
         return $this->render('subcategory/index.html.twig', array(
             'subCategories' => $subCategories,
+            'form' => $form->createView()
         ));
     }
 

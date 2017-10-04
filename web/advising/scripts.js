@@ -138,13 +138,13 @@ function markRow(id){
 $(document).ready( function() {
     PNotify.prototype.options.styling = "bootstrap3";
     
-    $('select:not(.select-standard)').select2();
+    //$('select:not(.select-standard)').select2();
 
-    setTimeout(function() {
-        $( ".ui-pnotify" ).fadeOut(1000, function () {
-            $(".ui-pnotify").remove();
-        });
-    },6000);
+    //setTimeout(function() {
+    //    $( ".ui-pnotify" ).fadeOut(1000, function () {
+    //        $(".ui-pnotify").remove();
+    //    });
+    //},6000);
 
     $('.content').css('min-height', ($(window).innerHeight()-200));
 
@@ -153,153 +153,153 @@ $(document).ready( function() {
         $("#text-descripcion-popup-eliminar").html($(this).attr("data-descripcion"));
     });
 
-    $('.link-tooltip').hover(function(){
-        $(this).tooltip('show');
-    })
-
-    $(".link-details-item").click(function (event) {
-        $("#descripcion-popup").html($(this).attr("data-descripcion"));
-    });
-
-    $('.showHideOptions').click(function (event) {
-        //alert($('input:name=""').val());
-        //$(this).attr('checked','checked');
-        $('#form-reference').submit();
-    });
-
-    $('#finder-date-from').datetimepicker({
-        format: 'YYYY-MM-DD',
-        locale: 'es',
-        showClear: true
-    });
-    $('#finder-date-to').datetimepicker({
-        useCurrent: false, //Important! See issue #1075
-        format: 'YYYY-MM-DD',
-        locale: 'es',
-        showClear: true
-    });
-    $("#finder-date-from").on("dp.change", function (e) {
-        $('#finder-date-to').data("DateTimePicker").minDate(e.date);
-    });
-    $("#finder-date-to").on("dp.change", function (e) {
-        $('#finder-date-from').data("DateTimePicker").maxDate(e.date);
-    });
-
-    $('#finder-search').click(function (event) {
-        $('#finder-form').submit();
-    });
-
-    $('#service-search').click(function (event) {
-        $('#form-service-filter').submit();
-    });
-
-    $('.showNote').click(function (event) {
-        $('#note-id').val($(this).attr('data-id'));
-        $('#note-description').html($(this).attr('data-description'));
-    });
-
-    $('#link-note-hide').click(function(event){
-
-        var id = $('#note-id').val();
-        $('#form-delete-note').attr('action',$('#note-id-'+id).attr('data-url-show-hide'));
-        $('#form-delete-note').submit();
-    });
-
-    $('#link-note-delete').click(function(event){
-        var id = $('#note-id').val();
-        $('#form-delete-note').attr('action',$('#note-id-'+id).attr('data-url-delete'));
-        $('#form-delete-note').submit();
-    });
-
-    $('#link-service-create-from-fix').click(function (event) {
-        if($('#modal-service-code').val()!=''&&$('#modal-service-desc').val()!=''){
-            $('#form-create-service-from-fix').submit();
-        }else{
-            new PNotify({
-                title: 'Error!',
-                text: 'No se pueden dejar campos vacíos.',
-                type: 'error'
-            });
-        }
-
-    });
-    $('#link-status-create-from-fix').click(function (event) {
-        if($('#modal-status-desc').val()!=''){
-            $('#form-create-status-from-fix').submit();
-        }else{
-            new PNotify({
-                title: 'Error!',
-                text: 'No se pueden dejar campos vacíos.',
-                type: 'error'
-            });
-        }
-
-    });
-    $('#link-comment-create-from-fix').click(function (event) {
-        if($('#modal-comment-desc').val()!=''){
-            $('#form-create-comment-from-fix').submit();
-        }else{
-            new PNotify({
-                title: 'Error!',
-                text: 'No se pueden dejar campos vacíos.',
-                type: 'error'
-            });
-        }
-    });
-
-    $('#show-count-out').html($('#list-notifications li').size());
-    $('#show-count-in').html('Tiene '+$('#list-notifications li').size()+' notificacion(es)');
-
-    $('#ref-search').click(function (event) {
-        $('#form-reference').submit();
-    });
+    //$('.link-tooltip').hover(function(){
+    //    $(this).tooltip('show');
+    //})
     //
-    //if($('#login-box').html()){
-    //    $('body').css('background-color','#F6F6F6');
-    //}
-    $('#range-date-from').datetimepicker({
-        format: 'YYYY-MM-DD',
-        locale: 'es',
-        showClear: true
-    });
-    $('#range-date-to').datetimepicker({
-        useCurrent: false, //Important! See issue #1075
-        format: 'YYYY-MM-DD',
-        locale: 'es',
-        showClear: true
-    });
-    $("#range-date-from").on("dp.change", function (e) {
-        $('#range-date-to').data("DateTimePicker").minDate(e.date);
-    });
-    $("#range-date-to").on("dp.change", function (e) {
-        $('#range-date-from').data("DateTimePicker").maxDate(e.date);
-    });
-
-    $('#count-range-search').click(function (event) {
-        if($("#range-date-from").val()!='' && $("#range-date-to").val()!=''){
-            $('#count-in-range').submit();
-        }else{
-            new PNotify({
-                title: 'Error!',
-                text: 'Seleccione ambas fechas.',
-                type: 'error'
-            });
-        }
-
-    });
-
-    $('#select_all_notes').change(function () {
-        if($(this).is(':checked')){
-            $(".check_note").prop('checked',true);
-        }
-        else{
-            $(".check_note").prop('checked',false);
-        }
-    })
-
-    $('#delete_note_select').click(function () {
-        $('#notes_index_form').submit();
-    });
+    //$(".link-details-item").click(function (event) {
+    //    $("#descripcion-popup").html($(this).attr("data-descripcion"));
+    //});
+    //
+    //$('.showHideOptions').click(function (event) {
+    //    //alert($('input:name=""').val());
+    //    //$(this).attr('checked','checked');
+    //    $('#form-reference').submit();
+    //});
+    //
+    //$('#finder-date-from').datetimepicker({
+    //    format: 'YYYY-MM-DD',
+    //    locale: 'es',
+    //    showClear: true
+    //});
+    //$('#finder-date-to').datetimepicker({
+    //    useCurrent: false, //Important! See issue #1075
+    //    format: 'YYYY-MM-DD',
+    //    locale: 'es',
+    //    showClear: true
+    //});
+    //$("#finder-date-from").on("dp.change", function (e) {
+    //    $('#finder-date-to').data("DateTimePicker").minDate(e.date);
+    //});
+    //$("#finder-date-to").on("dp.change", function (e) {
+    //    $('#finder-date-from').data("DateTimePicker").maxDate(e.date);
+    //});
+    //
+    //$('#finder-search').click(function (event) {
+    //    $('#finder-form').submit();
+    //});
+    //
+    //$('#service-search').click(function (event) {
+    //    $('#form-service-filter').submit();
+    //});
+    //
+    //$('.showNote').click(function (event) {
+    //    $('#note-id').val($(this).attr('data-id'));
+    //    $('#note-description').html($(this).attr('data-description'));
+    //});
+    //
+    //$('#link-note-hide').click(function(event){
+    //
+    //    var id = $('#note-id').val();
+    //    $('#form-delete-note').attr('action',$('#note-id-'+id).attr('data-url-show-hide'));
+    //    $('#form-delete-note').submit();
+    //});
+    //
+    //$('#link-note-delete').click(function(event){
+    //    var id = $('#note-id').val();
+    //    $('#form-delete-note').attr('action',$('#note-id-'+id).attr('data-url-delete'));
+    //    $('#form-delete-note').submit();
+    //});
+    //
+    //$('#link-service-create-from-fix').click(function (event) {
+    //    if($('#modal-service-code').val()!=''&&$('#modal-service-desc').val()!=''){
+    //        $('#form-create-service-from-fix').submit();
+    //    }else{
+    //        new PNotify({
+    //            title: 'Error!',
+    //            text: 'No se pueden dejar campos vacíos.',
+    //            type: 'error'
+    //        });
+    //    }
+    //
+    //});
+    //$('#link-status-create-from-fix').click(function (event) {
+    //    if($('#modal-status-desc').val()!=''){
+    //        $('#form-create-status-from-fix').submit();
+    //    }else{
+    //        new PNotify({
+    //            title: 'Error!',
+    //            text: 'No se pueden dejar campos vacíos.',
+    //            type: 'error'
+    //        });
+    //    }
+    //
+    //});
+    //$('#link-comment-create-from-fix').click(function (event) {
+    //    if($('#modal-comment-desc').val()!=''){
+    //        $('#form-create-comment-from-fix').submit();
+    //    }else{
+    //        new PNotify({
+    //            title: 'Error!',
+    //            text: 'No se pueden dejar campos vacíos.',
+    //            type: 'error'
+    //        });
+    //    }
+    //});
+    //
+    //$('#show-count-out').html($('#list-notifications li').size());
+    //$('#show-count-in').html('Tiene '+$('#list-notifications li').size()+' notificacion(es)');
+    //
+    //$('#ref-search').click(function (event) {
+    //    $('#form-reference').submit();
+    //});
+    ////
+    ////if($('#login-box').html()){
+    ////    $('body').css('background-color','#F6F6F6');
+    ////}
+    //$('#range-date-from').datetimepicker({
+    //    format: 'YYYY-MM-DD',
+    //    locale: 'es',
+    //    showClear: true
+    //});
+    //$('#range-date-to').datetimepicker({
+    //    useCurrent: false, //Important! See issue #1075
+    //    format: 'YYYY-MM-DD',
+    //    locale: 'es',
+    //    showClear: true
+    //});
+    //$("#range-date-from").on("dp.change", function (e) {
+    //    $('#range-date-to').data("DateTimePicker").minDate(e.date);
+    //});
+    //$("#range-date-to").on("dp.change", function (e) {
+    //    $('#range-date-from').data("DateTimePicker").maxDate(e.date);
+    //});
+    //
+    //$('#count-range-search').click(function (event) {
+    //    if($("#range-date-from").val()!='' && $("#range-date-to").val()!=''){
+    //        $('#count-in-range').submit();
+    //    }else{
+    //        new PNotify({
+    //            title: 'Error!',
+    //            text: 'Seleccione ambas fechas.',
+    //            type: 'error'
+    //        });
+    //    }
+    //
+    //});
+    //
+    //$('#select_all_notes').change(function () {
+    //    if($(this).is(':checked')){
+    //        $(".check_note").prop('checked',true);
+    //    }
+    //    else{
+    //        $(".check_note").prop('checked',false);
+    //    }
+    //})
+    //
+    //$('#delete_note_select').click(function () {
+    //    $('#notes_index_form').submit();
+    //});
 
     //quitar el label
 

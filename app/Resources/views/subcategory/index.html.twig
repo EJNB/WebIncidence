@@ -1,14 +1,14 @@
 {% extends ':layouts:main-layout.html.twig' %}
 
 {% block content %}
-    <h1 class="page-header">Subcategories list</h1>
+    <h1 class="page-header">Listado de subcategorias</h1>
 
     <table class="table table-responsive table-hover">
         <thead>
             <tr>
                 <th>No</th>
-                <th>Name</th>
-                <th>Actions</th>
+                <th>Nombre</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -21,7 +21,7 @@
                         <span class="glyphicon glyphicon-pencil"></span>
                     </a>
                     <a class="link-eliminar link-tooltip" href="javascript:void(0);"
-                       data-url = "{{ path('subcategory_delete', { 'id': subCategory.id }) }}"
+                       data-url="{{ path('subcategory_delete', { 'id': subCategory.id }) }}"
                        data-descripcion="{{ subCategory.name }}"
                        data-toggle="modal" data-target="#modal-delete"
                        data-placement="top" title="Eliminar">
@@ -33,6 +33,18 @@
         </tbody>
     </table>
 
-    <a href="{{ path('subcategory_new') }}" class="btn btn-info">Create a new subCategory</a>
+    {{ form_start(form, { 'attr': {'class': 'form-inline'} }) }}
+        <div class="form-group">
+            {{ form_widget(form.category) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_widget(form.name) }}
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Guardar" class="btn btn-primary">
+        </div>
+    {{ form_end(form) }}
 
 {% endblock %}

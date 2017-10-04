@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="876417ae-e221-4653-b41b-75d663c21948" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/category/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/category/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/layouts/main-layout-header.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/layouts/main-layout-header.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/layouts/main-layout.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/layouts/main-layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Controller/CategoryController.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Controller/CategoryController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Form/CategoryType.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Form/CategoryType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/category.yml" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/category.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/subcategory/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/subcategory/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Controller/SubCategoryController.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Controller/SubCategoryController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Form/SubCategoryType.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Form/SubCategoryType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/subcategory.yml" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/subcategory.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/advising/scripts.js" afterPath="$PROJECT_DIR$/web/advising/scripts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/advising/styles.css" afterPath="$PROJECT_DIR$/web/advising/styles.css" />
     </list>
@@ -33,22 +31,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/category/index.html.twig">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/subcategory/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.961538">
-              <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/advising/styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.115385">
-              <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-              <folding />
+            <state vertical-scroll-proportion="0.5043732">
+              <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+              <folding>
+                <element signature="e#906#924#0#Twig" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,34 +47,63 @@
         <entry file="file://$PROJECT_DIR$/web/advising/scripts.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="304" column="0" selection-start-line="304" selection-start-column="0" selection-end-line="304" selection-end-column="0" />
+              <caret line="148" column="67" selection-start-line="148" selection-start-column="67" selection-end-line="148" selection-end-column="67" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="category.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/category.yml">
+      <file leaf-file-name="modals.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/layouts/common/modals.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42977527">
-              <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+            <state vertical-scroll-proportion="-7.8461537">
+              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategoryController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Controller/CategoryController.php">
+      <file leaf-file-name="main-layout.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/layouts/main-layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-51.653847">
-              <caret line="79" column="0" selection-start-line="66" selection-start-column="5" selection-end-line="79" selection-end-column="0" />
+            <state vertical-scroll-proportion="-21.807692">
+              <caret line="144" column="62" selection-start-line="144" selection-start-column="62" selection-end-line="144" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SubCategoryType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Form/SubCategoryType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.769231">
+              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
               <folding>
-                <element signature="e#51#92#0#PHP" expanded="true" />
-                <element signature="e#845#861#1#PHP" expanded="true" />
-                <element signature="e#990#1016#0#PHP" expanded="true" />
-                <element signature="e#2799#2815#1#PHP" expanded="true" />
-                <element signature="e#2858#2883#0#PHP" expanded="true" />
-                <element signature="e#3515#3531#1#PHP" expanded="true" />
+                <element signature="e#45#85#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="subcategory.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/subcategory.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SubCategoryController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Controller/SubCategoryController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.538462">
+              <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+              <folding>
+                <element signature="e#51#95#0#PHP" expanded="true" />
+                <element signature="e#875#894#1#PHP" expanded="true" />
+                <element signature="e#952#985#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,8 +113,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="git commit -m &quot;Se copiaron las plantillas y la carpeta de bootstrap y fontawesome&quot;" />
-      <command text="git push origin master https://github.com/EJNB/WebIncidence.git" />
       <command text="git push origin master" />
       <command text="s doctrine:database:create" />
       <command text="git log" />
@@ -119,10 +136,15 @@
       <command text="git log" />
       <command text="git add -A " />
       <command text="git commit -m &quot;Terminado el crud de servicestype&quot;" />
+      <command text="git add -A" />
+      <command text="git commit -m &quot;Quite los enunciados en ingles y tambien quite los estilos de text-aling de los th y tr, y tambien hice el new directo en index&quot;" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -147,7 +169,6 @@
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/layouts/base.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/layouts/common/modals.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/layouts/main-layout-sidebar.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/category/new.html.twig" />
         <option value="$PROJECT_DIR$/src/System/BackendBundle/Form/DepartmentType.php" />
@@ -157,11 +178,7 @@
         <option value="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/department.yml" />
         <option value="$PROJECT_DIR$/src/System/BackendBundle/Controller/DepartmentController.php" />
         <option value="$PROJECT_DIR$/src/System/BackendBundle/Entity/Category.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/subcategory/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Controller/SubCategoryController.php" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Form/SubCategoryType.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/subcategory/new.html.twig" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/subcategory.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/subcategory/edit.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/department/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/servicetype/index.html.twig" />
@@ -170,14 +187,19 @@
         <option value="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/servicetype.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/servicetype/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/System/BackendBundle/Controller/ServiceTypeController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/layouts/main-layout.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/layouts/main-layout-header.html.twig" />
-        <option value="$PROJECT_DIR$/web/advising/scripts.js" />
         <option value="$PROJECT_DIR$/src/System/BackendBundle/Form/CategoryType.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/category/index.html.twig" />
-        <option value="$PROJECT_DIR$/web/advising/styles.css" />
         <option value="$PROJECT_DIR$/src/System/BackendBundle/Controller/CategoryController.php" />
         <option value="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/category.yml" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Controller/SubCategoryController.php" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Form/SubCategoryType.php" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/subcategory.yml" />
+        <option value="$PROJECT_DIR$/web/advising/styles.css" />
+        <option value="$PROJECT_DIR$/app/Resources/views/category/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/layouts/common/modals.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/layouts/main-layout.html.twig" />
+        <option value="$PROJECT_DIR$/web/advising/scripts.js" />
+        <option value="$PROJECT_DIR$/app/Resources/views/subcategory/index.html.twig" />
       </list>
     </option>
   </component>
@@ -531,7 +553,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="form" />
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -792,6 +814,7 @@
       <window_info id="Symfony2" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4256757" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -801,7 +824,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4268018" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -872,7 +894,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -975,13 +997,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/layouts/common/modals.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="40" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/category/edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24029127">
@@ -1024,13 +1039,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Form/SubCategoryType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80097085">
-          <caret line="32" column="7" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Entity/SubCategory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3616505">
@@ -1042,20 +1050,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/subcategory.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6175439">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Controller/SubCategoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83980584">
-          <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1129,14 +1123,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/subcategory/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.8846154">
@@ -1156,14 +1142,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/layouts/main-layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1191,22 +1169,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/advising/scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="304" column="0" selection-start-line="304" selection-start-column="0" selection-end-line="304" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/category/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.961538">
-          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Form/CategoryType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5443959">
@@ -1217,10 +1179,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/category.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5014045">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Controller/CategoryController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-51.653847">
-          <caret line="79" column="0" selection-start-line="66" selection-start-column="5" selection-end-line="79" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6909621">
+          <caret line="31" column="60" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="60" />
           <folding>
             <element signature="e#51#92#0#PHP" expanded="true" />
             <element signature="e#845#861#1#PHP" expanded="true" />
@@ -1232,19 +1202,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/advising/styles.css">
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Controller/SubCategoryController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        <state vertical-scroll-proportion="-17.538462">
+          <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+          <folding>
+            <element signature="e#51#95#0#PHP" expanded="true" />
+            <element signature="e#875#894#1#PHP" expanded="true" />
+            <element signature="e#952#985#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Form/SubCategoryType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.769231">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <folding>
+            <element signature="e#45#85#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/subcategory.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/category.yml">
+    <entry file="file://$PROJECT_DIR$/web/advising/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42977527">
-          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.52915454">
+          <caret line="153" column="27" selection-start-line="153" selection-start-column="27" selection-end-line="153" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/layouts/common/modals.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8461537">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/plugins/select2/select2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.9367979">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/layouts/main-layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.807692">
+          <caret line="144" column="62" selection-start-line="144" selection-start-column="62" selection-end-line="144" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/advising/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="148" column="67" selection-start-line="148" selection-start-column="67" selection-end-line="148" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/category/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4504373">
+          <caret line="27" column="57" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/subcategory/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5043732">
+          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+          <folding>
+            <element signature="e#906#924#0#Twig" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
