@@ -1,21 +1,33 @@
-{% extends 'base.html.twig' %}
+{% extends 'layouts/main-layout.html.twig' %}
 
-{% block body %}
-    <h1>Itemtype edit</h1>
+{% block content %}
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+    <h1 class="page-header">Editar</h1>
+
+    {{ form_start(edit_form, { 'attr': {'class': 'form-inline'} }) }}
+    <div class="form-group">
+        {{ form_widget(edit_form.subcategory) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_widget(edit_form.name) }}
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Guardar" class="btn btn-primary">
+        <a href="{{path('itemtype_index') }}" class="btn btn-default">Regresar al listado</a>
+    </div>
     {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('itemtype_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+
+    {#<ul>#}
+        {#<li>#}
+            {#<a href="{{ path('itemtype_index') }}">Back to the list</a>#}
+        {#</li>#}
+        {#<li>#}
+            {#{{ form_start(delete_form) }}#}
+                {#<input type="submit" value="Delete">#}
+            {#{{ form_end(delete_form) }}#}
+        {#</li>#}
+    {#</ul>#}
 {% endblock %}
