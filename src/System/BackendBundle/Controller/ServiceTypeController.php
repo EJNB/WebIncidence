@@ -5,6 +5,7 @@ namespace System\BackendBundle\Controller;
 use System\BackendBundle\Entity\ServiceType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use System\BackendBundle\Form\ServiceTypeType;
 
 /**
  * Servicetype controller.
@@ -16,25 +17,11 @@ class ServiceTypeController extends Controller
      * Lists all serviceType entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-
-        $serviceTypes = $em->getRepository('SystemBackendBundle:ServiceType')->findAll();
-
-        return $this->render('servicetype/index.html.twig', array(
-            'serviceTypes' => $serviceTypes,
-        ));
-    }
-
-    /**
-     * Creates a new serviceType entity.
-     *
-     */
-    public function newAction(Request $request)
-    {
         $serviceType = new Servicetype();
-        $form = $this->createForm('System\BackendBundle\Form\ServiceTypeType', $serviceType);
+        $form = $this->createForm(ServiceTypeType::class,$serviceType);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -45,25 +32,51 @@ class ServiceTypeController extends Controller
             return $this->redirectToRoute('servicetype_index');
         }
 
-        return $this->render('servicetype/new.html.twig', array(
-            'serviceType' => $serviceType,
+        $serviceTypes = $em->getRepository('SystemBackendBundle:ServiceType')->findAll();
+
+        return $this->render('servicetype/index.html.twig', array(
+            'serviceTypes' => $serviceTypes,
             'form' => $form->createView(),
         ));
     }
 
-    /**
-     * Finds and displays a serviceType entity.
-     *
-     */
-    public function showAction(ServiceType $serviceType)
-    {
-        $deleteForm = $this->createDeleteForm($serviceType);
+//    /**
+//     * Creates a new serviceType entity.
+//     *
+//     */
+//    public function newAction(Request $request)
+//    {
+//        $serviceType = new Servicetype();
+//        $form = $this->createForm('System\BackendBundle\Form\ServiceTypeType', $serviceType);
+//        $form->handleRequest($request);
+//
+//        if ($form->isSubmitted() && $form->isValid()) {
+//            $em = $this->getDoctrine()->getManager();
+//            $em->persist($serviceType);
+//            $em->flush();
+//
+//            return $this->redirectToRoute('servicetype_index');
+//        }
+//
+//        return $this->render('servicetype/new.html.twig', array(
+//            'serviceType' => $serviceType,
+//            'form' => $form->createView(),
+//        ));
+//    }
 
-        return $this->render('servicetype/show.html.twig', array(
-            'serviceType' => $serviceType,
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
+//    /**
+//     * Finds and displays a serviceType entity.
+//     *
+//     */
+//    public function showAction(ServiceType $serviceType)
+//    {
+//        $deleteForm = $this->createDeleteForm($serviceType);
+//
+//        return $this->render('servicetype/show.html.twig', array(
+//            'serviceType' => $serviceType,
+//            'delete_form' => $deleteForm->createView(),
+//        ));
+//    }
 
     /**
      * Displays a form to edit an existing serviceType entity.

@@ -1,17 +1,17 @@
 servicetype_index:
     path:     /
     defaults: { _controller: "SystemBackendBundle:ServiceType:index" }
-    methods:  GET
-
-servicetype_show:
-    path:     /{id}/show
-    defaults: { _controller: "SystemBackendBundle:ServiceType:show" }
-    methods:  GET
-
-servicetype_new:
-    path:     /new
-    defaults: { _controller: "SystemBackendBundle:ServiceType:new" }
     methods:  [GET, POST]
+#
+#servicetype_show:
+#    path:     /{id}/show
+#    defaults: { _controller: "SystemBackendBundle:ServiceType:show" }
+#    methods:  GET
+#
+#servicetype_new:
+#    path:     /new
+#    defaults: { _controller: "SystemBackendBundle:ServiceType:new" }
+#    methods:  [GET, POST]
 
 servicetype_edit:
     path:     /{id}/edit

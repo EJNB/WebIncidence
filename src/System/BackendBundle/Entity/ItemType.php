@@ -211,4 +211,9 @@ class ItemType
     {
         return $this->subcategory;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

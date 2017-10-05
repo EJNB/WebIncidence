@@ -1,15 +1,15 @@
 {% extends ':layouts:main-layout.html.twig' %}
 
 {% block content %}
-    <h1>Servicetypes list</h1>
+    <h1 class="page-header">Tipos de servicios</h1>
 
     <table class="table table-responsive table-hover">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Code</th>
-                <th>Name</th>
-                <th>Actions</th>
+                <th>No</th>
+                <th>C&oacutedigo</th>
+                <th>Nombre</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -35,7 +35,23 @@
         </tbody>
     </table>
 
+    {{ form_start(form, { 'attr': {'class': 'form-inline'} }) }}
+    <div class="form-group">
+        {{ form_widget(form.itemtype) }}
+    </div>
 
-    <a href="{{ path('servicetype_new') }}" class="btn btn-info">Create a new serviceType</a>
+    <div class="form-group">
+        {{ form_widget(form.name) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_widget(form.code) }}
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Guardar" class="btn btn-primary">
+    </div>
+    {{ form_end(form) }}
+    {#<a href="{{ path('servicetype_new') }}" class="btn btn-info">Create a new serviceType</a>#}
 
 {% endblock %}
