@@ -29,6 +29,11 @@ class ServiceTypeController extends Controller
             $em->persist($serviceType);
             $em->flush();
 
+            $this->addFlash(
+                'notice',
+                'Sus cambios han sido guardados satisfactoriamente'
+            );
+
             return $this->redirectToRoute('servicetype_index');
         }
 
@@ -91,6 +96,11 @@ class ServiceTypeController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash(
+                'notice',
+                'Sus cambios han sido guardados satisfactoriamente'
+            );
+
             return $this->redirectToRoute('servicetype_index');
         }
 
@@ -111,9 +121,13 @@ class ServiceTypeController extends Controller
 //        $form->handleRequest($request);
 //
 //        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($serviceType);
-            $em->flush();
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($serviceType);
+        $em->flush();
+        $this->addFlash(
+            'notice',
+            'Su tipo de servicio ha sido eliminado satisfactoriamente'
+        );
 //        }
 
         return $this->redirectToRoute('servicetype_index');

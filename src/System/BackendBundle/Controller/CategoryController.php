@@ -28,6 +28,10 @@ class CategoryController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($category);
             $em->flush();
+            $this->addFlash(
+                'notice',
+                'Sus cambios han sido guardados satisfactoriamente'
+            );
 
             return $this->redirectToRoute('category_index');
         }
@@ -91,6 +95,10 @@ class CategoryController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash(
+                'notice',
+                'Su categoria ha sido editada satisfactoriamente'
+            );
             return $this->redirectToRoute('category_index');
         }
 
@@ -115,6 +123,11 @@ class CategoryController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->remove($category);
             $em->flush();
+
+        $this->addFlash(
+            'notice',
+            'La categoria ha sido eliminada satisfactoriamente'
+        );
 //        }
 
         return $this->redirectToRoute('category_index');

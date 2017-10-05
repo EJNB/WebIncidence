@@ -30,6 +30,11 @@ class ItemTypeController extends Controller
             $em->persist($itemType);
             $em->flush();
 
+            $this->addFlash(
+                'notice',
+                'Sus cambios han sido guardados satisfactoriamente'
+            );
+
             return $this->redirectToRoute('itemtype_index');
         }
         $itemTypes = $em->getRepository('SystemBackendBundle:ItemType')->findAll();
@@ -91,6 +96,11 @@ class ItemTypeController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash(
+                'notice',
+                'Su tipo de item ha sido editado satisfactoriamente'
+            );
+
             return $this->redirectToRoute('itemtype_index');
         }
 
@@ -110,6 +120,10 @@ class ItemTypeController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->remove($itemType);
         $em->flush();
+        $this->addFlash(
+            'notice',
+            'Sutipo de item ha sido eliminado satisfactoriamente'
+        );
 
         return $this->redirectToRoute('itemtype_index');
     }

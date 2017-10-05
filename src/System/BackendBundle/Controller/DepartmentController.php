@@ -29,6 +29,11 @@ class DepartmentController extends Controller
             $em->persist($department);
             $em->flush();
 
+            $this->addFlash(
+                'notice',
+                'Sus cambios han sido guardados satisfactoriamente'
+            );
+
             return $this->redirectToRoute('department_index');
         }
 
@@ -91,6 +96,11 @@ class DepartmentController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash(
+                'notice',
+                'Sus cambios han sido editados satisfactoriamente'
+            );
+
             return $this->redirectToRoute('department_index');
         }
 
@@ -111,9 +121,13 @@ class DepartmentController extends Controller
 //        $form->handleRequest($request);
 //
 //        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($department);
-            $em->flush();
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($department);
+        $em->flush();
+        $this->addFlash(
+            'notice',
+            'Su registro ha sido eliminado satisfactoriamente'
+        );
 //        }
 
         return $this->redirectToRoute('department_index');

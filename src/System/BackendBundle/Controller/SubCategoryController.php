@@ -29,6 +29,11 @@ class SubCategoryController extends Controller
             $em->persist($subCategory);
             $em->flush();
 
+            $this->addFlash(
+                'notice',
+                'Sus cambios han sido guardados satisfactoriamente'
+            );
+
             return $this->redirectToRoute('subcategory_index');
         }
 
@@ -40,43 +45,43 @@ class SubCategoryController extends Controller
         ));
     }
 
-    /**
-     * Creates a new subCategory entity.
-     *
-     */
-    public function newAction(Request $request)
-    {
-        $subCategory = new Subcategory();
-        $form = $this->createForm('System\BackendBundle\Form\SubCategoryType', $subCategory);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($subCategory);
-            $em->flush();
-
-            return $this->redirectToRoute('subcategory_index', array('id' => $subCategory->getId()));
-        }
-
-        return $this->render('subcategory/new.html.twig', array(
-            'subCategory' => $subCategory,
-            'form' => $form->createView(),
-        ));
-    }
-
-    /**
-     * Finds and displays a subCategory entity.
-     *
-     */
-    public function showAction(SubCategory $subCategory)
-    {
-        $deleteForm = $this->createDeleteForm($subCategory);
-
-        return $this->render('subcategory/show.html.twig', array(
-            'subCategory' => $subCategory,
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
+//    /**
+//     * Creates a new subCategory entity.
+//     *
+//     */
+//    public function newAction(Request $request)
+//    {
+//        $subCategory = new Subcategory();
+//        $form = $this->createForm('System\BackendBundle\Form\SubCategoryType', $subCategory);
+//        $form->handleRequest($request);
+//
+//        if ($form->isSubmitted() && $form->isValid()) {
+//            $em = $this->getDoctrine()->getManager();
+//            $em->persist($subCategory);
+//            $em->flush();
+//
+//            return $this->redirectToRoute('subcategory_index', array('id' => $subCategory->getId()));
+//        }
+//
+//        return $this->render('subcategory/new.html.twig', array(
+//            'subCategory' => $subCategory,
+//            'form' => $form->createView(),
+//        ));
+//    }
+//
+//    /**
+//     * Finds and displays a subCategory entity.
+//     *
+//     */
+//    public function showAction(SubCategory $subCategory)
+//    {
+//        $deleteForm = $this->createDeleteForm($subCategory);
+//
+//        return $this->render('subcategory/show.html.twig', array(
+//            'subCategory' => $subCategory,
+//            'delete_form' => $deleteForm->createView(),
+//        ));
+//    }
 
     /**
      * Displays a form to edit an existing subCategory entity.
@@ -89,6 +94,11 @@ class SubCategoryController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+
+            $this->addFlash(
+                'notice',
+                'Sus cambios han sido guardados satisfactoriamente'
+            );
 
             return $this->redirectToRoute('subcategory_index', array('id' => $subCategory->getId()));
         }
@@ -112,6 +122,10 @@ class SubCategoryController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->remove($subCategory);
             $em->flush();
+        $this->addFlash(
+            'notice',
+            'Sus cambios han sido guardados satisfactoriamente'
+        );
 //        }
 
         return $this->redirectToRoute('subcategory_index');
