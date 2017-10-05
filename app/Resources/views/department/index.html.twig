@@ -7,8 +7,8 @@
         <thead>
             <tr>
                 <th>No</th>
-                <th>Name</th>
-                <th>Actions</th>
+                <th>Nombre</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -32,5 +32,16 @@
         {% endfor %}
         </tbody>
     </table>
-        <a href="{{ path('department_new') }}" class="btn btn-info">ADD Department</a>
+
+    {{ form_start(form) }}
+    <div class="row">
+        <div class="col-md-3">
+            {{ form_widget(form) }}
+        </div>
+        <div class="col-md-3">
+            <input type="submit" value="Guardar" class="btn btn-primary">
+        </div>
+    </div>
+    {{ form_end(form) }}
+        {#<a href="{{ path('department_new') }}" class="btn btn-info">ADD Department</a>#}
 {% endblock %}

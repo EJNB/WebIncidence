@@ -1,17 +1,17 @@
 department_index:
     path:     /
     defaults: { _controller: "SystemBackendBundle:Department:index" }
-    methods:  GET
-
-department_show:
-    path:     /{id}/show
-    defaults: { _controller: "SystemBackendBundle:Department:show" }
-    methods:  GET
-
-department_new:
-    path:     /new
-    defaults: { _controller: "SystemBackendBundle:Department:new" }
     methods:  [GET, POST]
+
+#department_show:
+#    path:     /{id}/show
+#    defaults: { _controller: "SystemBackendBundle:Department:show" }
+#    methods:  GET
+#
+#department_new:
+#    path:     /new
+#    defaults: { _controller: "SystemBackendBundle:Department:new" }
+#    methods:  [GET, POST]
 
 department_edit:
     path:     /{id}/edit

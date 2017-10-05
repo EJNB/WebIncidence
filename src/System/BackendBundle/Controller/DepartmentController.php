@@ -5,6 +5,7 @@ namespace System\BackendBundle\Controller;
 use System\BackendBundle\Entity\Department;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use System\BackendBundle\Form\DepartmentType;
 
 /**
  * Department controller.
@@ -16,25 +17,11 @@ class DepartmentController extends Controller
      * Lists all department entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-
-        $departments = $em->getRepository('SystemBackendBundle:Department')->findAll();
-
-        return $this->render('department/index.html.twig', array(
-            'departments' => $departments,
-        ));
-    }
-
-    /**
-     * Creates a new department entity.
-     *
-     */
-    public function newAction(Request $request)
-    {
         $department = new Department();
-        $form = $this->createForm('System\BackendBundle\Form\DepartmentType', $department);
+        $form = $this->createForm(DepartmentType::class,$department);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -45,25 +32,51 @@ class DepartmentController extends Controller
             return $this->redirectToRoute('department_index');
         }
 
-        return $this->render('department/new.html.twig', array(
-            'department' => $department,
-            'form' => $form->createView(),
+        $departments = $em->getRepository('SystemBackendBundle:Department')->findAll();
+
+        return $this->render('department/index.html.twig', array(
+            'departments' => $departments,
+            'form' => $form->createView()
         ));
     }
 
-    /**
-     * Finds and displays a department entity.
-     *
-     */
-    public function showAction(Department $department)
-    {
-//        $deleteForm = $this->createDeleteForm($department);
-
-        return $this->render('department/show.html.twig', array(
-            'department' => $department,
-//            'delete_form' => $deleteForm->createView(),
-        ));
-    }
+//    /**
+//     * Creates a new department entity.
+//     *
+//     */
+//    public function newAction(Request $request)
+//    {
+//        $department = new Department();
+//        $form = $this->createForm('System\BackendBundle\Form\DepartmentType', $department);
+//        $form->handleRequest($request);
+//
+//        if ($form->isSubmitted() && $form->isValid()) {
+//            $em = $this->getDoctrine()->getManager();
+//            $em->persist($department);
+//            $em->flush();
+//
+//            return $this->redirectToRoute('department_index');
+//        }
+//
+//        return $this->render('department/new.html.twig', array(
+//            'department' => $department,
+//            'form' => $form->createView(),
+//        ));
+//    }
+//
+//    /**
+//     * Finds and displays a department entity.
+//     *
+//     */
+//    public function showAction(Department $department)
+//    {
+////        $deleteForm = $this->createDeleteForm($department);
+//
+//        return $this->render('department/show.html.twig', array(
+//            'department' => $department,
+////            'delete_form' => $deleteForm->createView(),
+//        ));
+//    }
 
     /**
      * Displays a form to edit an existing department entity.
