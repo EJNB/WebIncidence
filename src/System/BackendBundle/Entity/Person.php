@@ -39,7 +39,7 @@ class Person
     /**
      * @ORM\OneToMany(targetEntity="Incidence_Person", mappedBy="person")
      **/
-    private $incidences_persons;
+    private $persons_incidences;
 
     /**
      * @ORM\ManyToOne(targetEntity="Department", inversedBy="persons")

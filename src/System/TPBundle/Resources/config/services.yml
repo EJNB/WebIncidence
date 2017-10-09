@@ -1,0 +1,4 @@
+services:
+    tp_service:
+        class:      System\TPBundle\Service\TPService
+        arguments: [@doctrine.orm.entity_manager]

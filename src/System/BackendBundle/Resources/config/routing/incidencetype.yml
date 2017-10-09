@@ -1,17 +1,17 @@
 incidencetype_index:
     path:     /
     defaults: { _controller: "SystemBackendBundle:IncidenceType:index" }
-    methods:  GET
-
-incidencetype_show:
-    path:     /{id}/show
-    defaults: { _controller: "SystemBackendBundle:IncidenceType:show" }
-    methods:  GET
-
-incidencetype_new:
-    path:     /new
-    defaults: { _controller: "SystemBackendBundle:IncidenceType:new" }
     methods:  [GET, POST]
+
+#incidencetype_show:
+#    path:     /{id}/show
+#    defaults: { _controller: "SystemBackendBundle:IncidenceType:show" }
+#    methods:  GET
+#
+#incidencetype_new:
+#    path:     /new
+#    defaults: { _controller: "SystemBackendBundle:IncidenceType:new" }
+#    methods:  [GET, POST]
 
 incidencetype_edit:
     path:     /{id}/edit
@@ -21,4 +21,4 @@ incidencetype_edit:
 incidencetype_delete:
     path:     /{id}/delete
     defaults: { _controller: "SystemBackendBundle:IncidenceType:delete" }
-    methods:  DELETE
+#    methods:  DELETE

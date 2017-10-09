@@ -55,11 +55,11 @@ class Incidence
      **/
     private $incidencetypes;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Department", inversedBy="incidences")
-     * @ORM\JoinColumn(name="department_id", referencedColumnName="id")
-     **/
-    private $department;
+//    /**
+//     * @ORM\ManyToOne(targetEntity="Department", inversedBy="incidences")
+//     * @ORM\JoinColumn(name="department_id", referencedColumnName="id")
+//     **/
+//    private $department;
 
     /**
      * @ORM\ManyToOne(targetEntity="Service", inversedBy="incidences")
@@ -88,11 +88,11 @@ class Incidence
     /**
      * @ORM\OneToMany(targetEntity="Incidence_Person", mappedBy="incidence")
      **/
-    private $incidendes_persons;
+    private $incidences_persons;
 
     public function __construct() {
         $this->incidencetypes = new ArrayCollection();
-        $this->incidendes_persons = new ArrayCollection();
+        $this->incidences_persons = new ArrayCollection();
     }
 
     /**
@@ -230,28 +230,28 @@ class Incidence
         return $this->incidencetypes;
     }
 
-    /**
-     * Set department
-     *
-     * @param \System\BackendBundle\Entity\Department $department
-     * @return Incidence
-     */
-    public function setDepartment(\System\BackendBundle\Entity\Department $department = null)
-    {
-        $this->department = $department;
-
-        return $this;
-    }
-
-    /**
-     * Get department
-     *
-     * @return \System\BackendBundle\Entity\Department 
-     */
-    public function getDepartment()
-    {
-        return $this->department;
-    }
+//    /**
+//     * Set department
+//     *
+//     * @param \System\BackendBundle\Entity\Department $department
+//     * @return Incidence
+//     */
+//    public function setDepartment(\System\BackendBundle\Entity\Department $department = null)
+//    {
+//        $this->department = $department;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get department
+//     *
+//     * @return \System\BackendBundle\Entity\Department
+//     */
+//    public function getDepartment()
+//    {
+//        return $this->department;
+//    }
 
     /**
      * Set service

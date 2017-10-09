@@ -1,0 +1,24 @@
+incidence_index:
+    path:     /
+    defaults: { _controller: "SystemBackendBundle:Incidence:index" }
+    methods:  GET
+
+incidence_show:
+    path:     /{id}/show
+    defaults: { _controller: "SystemBackendBundle:Incidence:show" }
+    methods:  GET
+
+incidence_new:
+    path:     /new
+    defaults: { _controller: "SystemBackendBundle:Incidence:new" }
+    methods:  [GET, POST]
+
+incidence_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SystemBackendBundle:Incidence:edit" }
+    methods:  [GET, POST]
+
+incidence_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SystemBackendBundle:Incidence:delete" }
+    methods:  DELETE

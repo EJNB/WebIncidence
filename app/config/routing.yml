@@ -1,3 +1,7 @@
+system_tp:
+    resource: "@SystemTPBundle/Resources/config/routing.yml"
+    prefix:   /
+
 system_claim:
     resource: "@SystemClaimBundle/Resources/config/routing.yml"
     prefix:   /
@@ -8,7 +12,7 @@ system_reportes:
 
 system_backend:
     resource: "@SystemBackendBundle/Resources/config/routing.yml"
-    prefix:   /Backend
+    prefix:   /backend
 
 system_incidence:
     resource: "@SystemIncidenceBundle/Resources/config/routing.yml"

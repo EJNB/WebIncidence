@@ -1,0 +1,45 @@
+{% extends 'layouts/main-layout.html.twig' %}
+
+{% block content %}
+    <h1 class="page-header">Incidences list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Incidencedate</th>
+                <th>Description</th>
+                <th>Document</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for incidence in incidences %}
+            <tr>
+                <td><a href="{{ path('incidence_show', { 'id': incidence.id }) }}">{{ incidence.id }}</a></td>
+                <td>{{ incidence.code }}</td>
+                <td>{% if incidence.incidenceDate %}{{ incidence.incidenceDate|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ incidence.description }}</td>
+                <td>{{ incidence.document }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('incidence_show', { 'id': incidence.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('incidence_edit', { 'id': incidence.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('incidence_new') }}">Create a new incidence</a>
+        </li>
+    </ul>
+{% endblock %}

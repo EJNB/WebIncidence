@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new System\BackendBundle\SystemBackendBundle(),
             new System\ReportesBundle\SystemReportesBundle(),
             new System\ClaimBundle\SystemClaimBundle(),
+			new System\TPBundle\SystemTPBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
