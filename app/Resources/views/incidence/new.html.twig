@@ -1,16 +1,56 @@
-{% extends 'base.html.twig' %}
+{% form_theme form 'form/fields.html.twig' %}
+{% extends 'layouts/main-layout.html.twig' %}
 
-{% block body %}
-    <h1>Incidence creation</h1>
+{% block content %}
+    <h1 class="page-header">Crear Incidencia</h1>
 
+    <div>
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Datos Generales</a></li>
+            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Acciones</a></li>
+            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Costos</a></li>
+            {#<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>#}
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+            <!--Datos generales-->
+            <div role="tabpanel" class="tab-pane active" id="home">
+                {{ form_row(form.incidenceDate) }}
+                {{ form_row(form.place) }}
+                {{ form_row(form.service) }}
+                {{ form_row(form.description) }}
+                {{ form_row(form.causes) }}
+                {{ form_row(form.document) }}
+            </div>
+
+            <!--Acciones-->
+            <div role="tabpanel" class="tab-pane" id="profile">
+                {{ form_row(form.claim) }}
+                {{ form_row(form.booking) }}
+            </div>
+
+            <!--Costos-->
+            <div role="tabpanel" class="tab-pane" id="messages">
+
+                    {#<div class="checkbox">#}
+                        {#<label><input type="checkbox" class="icheck"> Checkbox 1</label>#}
+                    {#</div>#}
+            </div>
+            {#<div role="tabpanel" class="tab-pane" id="settings">Settings</div>#}
+        </div>
+
+    </div>
+
+
+        {#{{ form_row(form) }}#}
+        <input type="submit" value="Crear" class="btn btn-primary"/>
+        <a href="{{ path('incidence_index') }}" class="btn btn-default">Volver al listado</a>
     {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('incidence_index') }}">Back to the list</a>
-        </li>
-    </ul>
+
 {% endblock %}

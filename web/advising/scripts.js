@@ -1,139 +1,139 @@
-/**
- * Created by jorge.fernandez on 2/15/2017.
- */
-function markAsRead(idItem){
-    var url =$('#link-details-item-'+idItem).attr('data-url-mark');
-    var showOption = $('.showHideOptions:checked').val();
-    var filter = $('#find_reference').val();
-    $.post(url, {idItem: idItem, showOption:showOption, filter:filter}, function (response) {
-        $('#table-ajax').html(response);
-        markRow(idItem);
-    });
-}
-
-function showHideItem(idItem){
-    var url =$('#link-show-hide-'+idItem).attr('data-url');
-    var id = $('#link-show-hide-'+idItem).attr('data-value');
-    var showOption = $('.showHideOptions:checked').val();
-    var filter = $('#find_reference').val();
-    var holdyDiv = $('<div></div>').attr('id', 'blocker');
-    holdyDiv.appendTo('body');
-    $('#blocker').addClass('blocker');
-    $('#img-loading').removeClass('hide-elemento');
-    $.post(url, {idItem: id, showOption:showOption, filter:filter}, function (response) {
-        $('#table-ajax').html(response);
-        $('#blocker').remove();
-        $('#img-loading').addClass('hide-elemento');
-    });
-}
-
-function readUnreadItem(idItem){
-    var url =$('#link-read-unread-'+idItem).attr('data-url');
-    var id = $('#link-read-unread-'+idItem).attr('data-value');
-    var showOption = $('.showHideOptions:checked').val();
-    var filter = $('#find_reference').val();
-    var holdyDiv = $('<div></div>').attr('id', 'blocker');
-    holdyDiv.appendTo('body');
-    $('#blocker').addClass('blocker');
-    $('#img-loading').removeClass('hide-elemento');
-    $.post(url, {idItem: id, showOption:showOption, filter:filter}, function (response) {
-        $('#table-ajax').html(response);
-        $('#blocker').remove();
-        $('#img-loading').addClass('hide-elemento');
-    });
-    markRow(idItem);
-}
-
-function detailsByRef(reference){
-    var url =$('#details-ref-'+reference).attr('data-url');
-    $.post(url, {ref: reference}, function (response) {
-        $('#modal-body-details-ref').html(response);
-        $('#modal-details-ref').modal();
-    });
-}
-
-function hideAllItemsByRef(reference){
-    var url =$('#hide-all-ref-'+reference).attr('data-url');
-    var showOption = $('.showHideOptions:checked').val();
-    var holdyDiv = $('<div></div>').attr('id', 'blocker');
-    holdyDiv.appendTo('body');
-    $('#blocker').addClass('blocker');
-    $('#img-loading').removeClass('hide-elemento');
-    $.post(url, {ref: reference, showOption:showOption}, function (response) {
-        $('#table-ajax').html(response);
-        $('#blocker').remove();
-        $('#img-loading').addClass('hide-elemento');
-    });
-}
-
-function showAllItemsByRef(reference){
-    var url =$('#show-all-ref-'+reference).attr('data-url');
-    var showOption = $('.showHideOptions:checked').val();
-    //alert(showOption);
-    var holdyDiv = $('<div></div>').attr('id', 'blocker');
-    holdyDiv.appendTo('body');
-    $('#blocker').addClass('blocker');
-    $('#img-loading').removeClass('hide-elemento');
-    $.post(url, {ref: reference, showOption:showOption}, function (response) {
-        $('#table-ajax').html(response);
-        $('#blocker').remove();
-        $('#img-loading').addClass('hide-elemento');
-    });
-}
-
-function detailsByItem(id,where){
-    var url =$('#link-details-item-'+id).attr('data-url');
-    $.post(url, {id: id}, function (response) {
-        $('#modal-body-details-ref').html(response);
-        $('#modal-details-ref').modal();
-
-    });
-    if(where!='finder'){
-        markAsRead(id);
-    }
-    markRow(id);
-
-}
-
-function passReasignReferenceToModal(reference){
-    $('#link-popup-reasignar').attr('data-value',reference);
-
-    var url =$('#reasign-ref-'+reference).attr('data-url');
-    $('#link-popup-reasignar').attr('data-url',url);
-    $('#modal-reasign-ref').modal();
-}
-
-function reasignRef(){
-    var url = $('#link-popup-reasignar').attr('data-url');
-    var reference = $('#link-popup-reasignar').attr('data-value');
-    var showOption = $('.showHideOptions:checked').val();
-    var user = $('#select-user').val();
-    var comment = $('#note_comment').val();
-    //alert(comment);
-    $.post(url, {ref: reference, showOption:showOption, user:user, comment:comment}, function (response) {
-        $('#table-ajax').html(response);
-        $('#modal-reasign-ref').modal('toggle');
-    });
-}
-
-function createNote(item){
-    $("#modal-item-id").val(item);
-    $("#modal-item-ref").val($('#create-note-'+item).attr('data-ref'));
-    $('#modal-create-notification').modal('toggle');
-}
-
-function saveNote(){
-    $('#form-create-note').submit();
-}
-
-function markRow(id){
-
-    $(".table-selected tbody tr.to-mark").each(function () {
-        $(this).removeClass('row-selected');
-    });
-    $('#tr-'+id).addClass('row-selected');
-
-}
+///**
+// * Created by jorge.fernandez on 2/15/2017.
+// */
+//function markAsRead(idItem){
+//    var url =$('#link-details-item-'+idItem).attr('data-url-mark');
+//    var showOption = $('.showHideOptions:checked').val();
+//    var filter = $('#find_reference').val();
+//    $.post(url, {idItem: idItem, showOption:showOption, filter:filter}, function (response) {
+//        $('#table-ajax').html(response);
+//        markRow(idItem);
+//    });
+//}
+//
+//function showHideItem(idItem){
+//    var url =$('#link-show-hide-'+idItem).attr('data-url');
+//    var id = $('#link-show-hide-'+idItem).attr('data-value');
+//    var showOption = $('.showHideOptions:checked').val();
+//    var filter = $('#find_reference').val();
+//    var holdyDiv = $('<div></div>').attr('id', 'blocker');
+//    holdyDiv.appendTo('body');
+//    $('#blocker').addClass('blocker');
+//    $('#img-loading').removeClass('hide-elemento');
+//    $.post(url, {idItem: id, showOption:showOption, filter:filter}, function (response) {
+//        $('#table-ajax').html(response);
+//        $('#blocker').remove();
+//        $('#img-loading').addClass('hide-elemento');
+//    });
+//}
+//
+//function readUnreadItem(idItem){
+//    var url =$('#link-read-unread-'+idItem).attr('data-url');
+//    var id = $('#link-read-unread-'+idItem).attr('data-value');
+//    var showOption = $('.showHideOptions:checked').val();
+//    var filter = $('#find_reference').val();
+//    var holdyDiv = $('<div></div>').attr('id', 'blocker');
+//    holdyDiv.appendTo('body');
+//    $('#blocker').addClass('blocker');
+//    $('#img-loading').removeClass('hide-elemento');
+//    $.post(url, {idItem: id, showOption:showOption, filter:filter}, function (response) {
+//        $('#table-ajax').html(response);
+//        $('#blocker').remove();
+//        $('#img-loading').addClass('hide-elemento');
+//    });
+//    markRow(idItem);
+//}
+//
+//function detailsByRef(reference){
+//    var url =$('#details-ref-'+reference).attr('data-url');
+//    $.post(url, {ref: reference}, function (response) {
+//        $('#modal-body-details-ref').html(response);
+//        $('#modal-details-ref').modal();
+//    });
+//}
+//
+//function hideAllItemsByRef(reference){
+//    var url =$('#hide-all-ref-'+reference).attr('data-url');
+//    var showOption = $('.showHideOptions:checked').val();
+//    var holdyDiv = $('<div></div>').attr('id', 'blocker');
+//    holdyDiv.appendTo('body');
+//    $('#blocker').addClass('blocker');
+//    $('#img-loading').removeClass('hide-elemento');
+//    $.post(url, {ref: reference, showOption:showOption}, function (response) {
+//        $('#table-ajax').html(response);
+//        $('#blocker').remove();
+//        $('#img-loading').addClass('hide-elemento');
+//    });
+//}
+//
+//function showAllItemsByRef(reference){
+//    var url =$('#show-all-ref-'+reference).attr('data-url');
+//    var showOption = $('.showHideOptions:checked').val();
+//    //alert(showOption);
+//    var holdyDiv = $('<div></div>').attr('id', 'blocker');
+//    holdyDiv.appendTo('body');
+//    $('#blocker').addClass('blocker');
+//    $('#img-loading').removeClass('hide-elemento');
+//    $.post(url, {ref: reference, showOption:showOption}, function (response) {
+//        $('#table-ajax').html(response);
+//        $('#blocker').remove();
+//        $('#img-loading').addClass('hide-elemento');
+//    });
+//}
+//
+//function detailsByItem(id,where){
+//    var url =$('#link-details-item-'+id).attr('data-url');
+//    $.post(url, {id: id}, function (response) {
+//        $('#modal-body-details-ref').html(response);
+//        $('#modal-details-ref').modal();
+//
+//    });
+//    if(where!='finder'){
+//        markAsRead(id);
+//    }
+//    markRow(id);
+//
+//}
+//
+//function passReasignReferenceToModal(reference){
+//    $('#link-popup-reasignar').attr('data-value',reference);
+//
+//    var url =$('#reasign-ref-'+reference).attr('data-url');
+//    $('#link-popup-reasignar').attr('data-url',url);
+//    $('#modal-reasign-ref').modal();
+//}
+//
+//function reasignRef(){
+//    var url = $('#link-popup-reasignar').attr('data-url');
+//    var reference = $('#link-popup-reasignar').attr('data-value');
+//    var showOption = $('.showHideOptions:checked').val();
+//    var user = $('#select-user').val();
+//    var comment = $('#note_comment').val();
+//    //alert(comment);
+//    $.post(url, {ref: reference, showOption:showOption, user:user, comment:comment}, function (response) {
+//        $('#table-ajax').html(response);
+//        $('#modal-reasign-ref').modal('toggle');
+//    });
+//}
+//
+//function createNote(item){
+//    $("#modal-item-id").val(item);
+//    $("#modal-item-ref").val($('#create-note-'+item).attr('data-ref'));
+//    $('#modal-create-notification').modal('toggle');
+//}
+//
+//function saveNote(){
+//    $('#form-create-note').submit();
+//}
+//
+//function markRow(id){
+//
+//    $(".table-selected tbody tr.to-mark").each(function () {
+//        $(this).removeClass('row-selected');
+//    });
+//    $('#tr-'+id).addClass('row-selected');
+//
+//}
 
 $(document).ready( function() {
     PNotify.prototype.options.styling = "bootstrap3";
@@ -152,6 +152,7 @@ $(document).ready( function() {
         $("#link-popup-eliminar").attr("href", $(this).attr("data-url"));
         $("#text-descripcion-popup-eliminar").html($(this).attr("data-descripcion"));
     });
+
 
     //$('.link-tooltip').hover(function(){
     //    $(this).tooltip('show');

@@ -66,4 +66,27 @@ class Reminder
     {
         return $this->reminderDate;
     }
+
+    /**
+     * Set item
+     *
+     * @param \System\BackendBundle\Entity\Item $item
+     * @return Reminder
+     */
+    public function setItem(\System\BackendBundle\Entity\Item $item = null)
+    {
+        $this->item = $item;
+
+        return $this;
+    }
+
+    /**
+     * Get item
+     *
+     * @return \System\BackendBundle\Entity\Item 
+     */
+    public function getItem()
+    {
+        return $this->item;
+    }
 }

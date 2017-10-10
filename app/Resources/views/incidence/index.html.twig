@@ -1,45 +1,68 @@
 {% extends 'layouts/main-layout.html.twig' %}
 
 {% block content %}
-    <h1 class="page-header">Incidences list</h1>
+    <h1 class="page-header">Incidencias</h1>
 
-    <table>
+    <table class="table table-responsive table-hover">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Code</th>
-                <th>Incidencedate</th>
-                <th>Description</th>
+                <th>No</th>
+                <th>Codigo</th>
+                <th>Fecha de la incidencia</th>
+                <th>Descipci&oacuten</th>
                 <th>Document</th>
-                <th>Actions</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
         {% for incidence in incidences %}
             <tr>
-                <td><a href="{{ path('incidence_show', { 'id': incidence.id }) }}">{{ incidence.id }}</a></td>
+                <td>{{ loop.index }}</td>
                 <td>{{ incidence.code }}</td>
                 <td>{% if incidence.incidenceDate %}{{ incidence.incidenceDate|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ incidence.description }}</td>
                 <td>{{ incidence.document }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('incidence_show', { 'id': incidence.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('incidence_edit', { 'id': incidence.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
+                <td>
+                    <a href="{{ path('incidence_edit', { 'id': incidence.id }) }}"
+                       data-toggle="tooltip" data-placement="top" title="Editar">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+
+                    <a href="{{ path('incidence_edit', { 'id': incidence.id }) }}"
+                       data-toggle="tooltip" data-placement="top" title="Editar">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+
+                    <a class="link-eliminar link-tooltip" href="javascript:void(0);"
+                       data-url = "{{ path('incidence_delete', { 'id': incidence.id }) }}"
+                       data-descripcion="{{ itemType.name }}"
+                       data-toggle="modal" data-target="#modal-delete"
+                       data-placement="top" title="Eliminar">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                {#</td>#}
+                    {#<ul>#}
+                        {#<li>#}
+                            {#<a href="{{ path('incidence_show', { 'id': incidence.id }) }}">show</a>#}
+                        {#</li>#}
+                        {#<li>#}
+                            {#<a href="{{ path('incidence_edit', { 'id': incidence.id }) }}">edit</a>#}
+                        {#</li>#}
+                    {#</ul>#}
+                {#</td>#}
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('incidence_new') }}">Create a new incidence</a>
-        </li>
-    </ul>
+    <a href="{{ path('incidence_new') }}" class="btn btn-primary">Agregar</a>
+
+
+
+    {#<ul>#}
+        {#<li>#}
+            {#<a href="{{ path('incidence_new') }}">Create a new incidence</a>#}
+        {#</li>#}
+    {#</ul>#}
 {% endblock %}

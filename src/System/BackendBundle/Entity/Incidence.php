@@ -39,9 +39,16 @@ class Incidence
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=255)
+     * @ORM\Column(name="description", type="text")
      */
     private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="causes", type="text")
+     */
+    private $causes;
 
     /**
      * @var string
@@ -55,11 +62,6 @@ class Incidence
      **/
     private $incidencetypes;
 
-//    /**
-//     * @ORM\ManyToOne(targetEntity="Department", inversedBy="incidences")
-//     * @ORM\JoinColumn(name="department_id", referencedColumnName="id")
-//     **/
-//    private $department;
 
     /**
      * @ORM\ManyToOne(targetEntity="Service", inversedBy="incidences")
@@ -376,5 +378,61 @@ class Incidence
     public function getIncidendesPersons()
     {
         return $this->incidendes_persons;
+    }
+
+    /**
+     * Set causes
+     *
+     * @param string $causes
+     * @return Incidence
+     */
+    public function setCauses($causes)
+    {
+        $this->causes = $causes;
+
+        return $this;
+    }
+
+    /**
+     * Get causes
+     *
+     * @return string 
+     */
+    public function getCauses()
+    {
+        return $this->causes;
+    }
+
+    /**
+     * Add incidences_persons
+     *
+     * @param \System\BackendBundle\Entity\Incidence_Person $incidencesPersons
+     * @return Incidence
+     */
+    public function addIncidencesPerson(\System\BackendBundle\Entity\Incidence_Person $incidencesPersons)
+    {
+        $this->incidences_persons[] = $incidencesPersons;
+
+        return $this;
+    }
+
+    /**
+     * Remove incidences_persons
+     *
+     * @param \System\BackendBundle\Entity\Incidence_Person $incidencesPersons
+     */
+    public function removeIncidencesPerson(\System\BackendBundle\Entity\Incidence_Person $incidencesPersons)
+    {
+        $this->incidences_persons->removeElement($incidencesPersons);
+    }
+
+    /**
+     * Get incidences_persons
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getIncidencesPersons()
+    {
+        return $this->incidences_persons;
     }
 }

@@ -163,4 +163,37 @@ class Person
     {
         return $this->department;
     }
+
+    /**
+     * Add persons_incidences
+     *
+     * @param \System\BackendBundle\Entity\Incidence_Person $personsIncidences
+     * @return Person
+     */
+    public function addPersonsIncidence(\System\BackendBundle\Entity\Incidence_Person $personsIncidences)
+    {
+        $this->persons_incidences[] = $personsIncidences;
+
+        return $this;
+    }
+
+    /**
+     * Remove persons_incidences
+     *
+     * @param \System\BackendBundle\Entity\Incidence_Person $personsIncidences
+     */
+    public function removePersonsIncidence(\System\BackendBundle\Entity\Incidence_Person $personsIncidences)
+    {
+        $this->persons_incidences->removeElement($personsIncidences);
+    }
+
+    /**
+     * Get persons_incidences
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPersonsIncidences()
+    {
+        return $this->persons_incidences;
+    }
 }
