@@ -21,19 +21,21 @@ class IncidenceTypeType extends AbstractType
                     'class' => 'form-control',
                     'placeholder' => 'Inserte el tipo de Incidencia'
                 ),
-                'label' => false
-            ))
-            ->add('incidence',EntityType::class,array(
-                'class' => 'System\BackendBundle\Entity\Incidence',
-                'attr' => array(
-                    'Title' => 'Seleccione la incidencia',
-                    'class' => 'selectpicker',
-                    'data-live-search' => true,
-                    'required' => 'required'
-                ),
                 'label' => false,
-//                'required' => true
-            ));
+                'required' => true
+            ))
+//            ->add('incidence',EntityType::class,array(
+//                'class' => 'System\BackendBundle\Entity\Incidence',
+//                'attr' => array(
+//                    'Title' => 'Seleccione la incidencia',
+//                    'class' => 'selectpicker',
+//                    'data-live-search' => true,
+//                    'required' => 'required'
+//                ),
+//                'label' => false,
+////                'required' => true
+//            ))
+;
     }
     
     /**

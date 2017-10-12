@@ -134,8 +134,88 @@
 //    $('#tr-'+id).addClass('row-selected');
 //
 //}
+function initiCheck() {
+    $('.icheck').iCheck({
+        checkboxClass: 'icheckbox_square-blue',
+        radioClass: 'iradio_square-blue',
+        increaseArea: '20%' // optional
+    });
+}
+
+function findBooking(data) {
+    var reference = $('#find_booking').val();
+
+    var url_booking_detail = Routing.generate('incidence_ajax_get_booking_detail');
+    var url_services_description = Routing.generate('incidence_ajax_get_services_description');
+    $.post(url_booking_detail, {reference:reference}, function(response) {
+        $('#container_booking_detail').html(response);
+    });
+
+    $.post(url_services_description, {reference:reference}, function(response) {
+        $('#container_select_service').html(response);
+    });
+
+    $('#select_reference').val(reference);
+}
+
+function showByTypes(id) {
+
+    var reference = $('#select_reference').val();
+    switch(id) {
+
+        case 1:
+            $('#container_booking_services').html('');
+            $('#container_booking_clients').html('');
+            //hacer select con personas
+            // var url_booking_suppliers = Routing.generate('incidence_ajax_get_booking_suppliers');
+            // $.post(url_booking_suppliers, {reference:reference}, function(response) {
+            //     $('#container_booking_services').html(response);
+            // });
+            break;
+        case 2:
+            $('#container_booking_clients').html('');
+            var url_booking_suppliers = Routing.generate('incidence_ajax_get_booking_suppliers');
+            $.post(url_booking_suppliers, {reference:reference}, function(response) {
+                $('#container_booking_suppliers').html(response);
+            });
+            break;
+        case 3:
+            $('#container_booking_suppliers').html('');
+            var url_booking_clients = Routing.generate('incidence_ajax_get_booking_client_names');
+            $.post(url_booking_clients, {reference:reference}, function(response) {
+                $('#container_booking_clients').html(response);
+            });
+            break;
+        default:
+            $('#container_booking_services').html('');
+            $('#container_booking_clients').html('');
+    }
+
+   //
+   //  if(id==2){
+   //     var reference = $('#select_reference').val();
+   //     var url_booking_suppliers = Routing.generate('incidence_ajax_get_booking_suppliers');
+   //     $.post(url_booking_suppliers, {reference:reference}, function(response) {
+   //         $('#container_booking_services').html(response);
+   //     });
+   // }else if(id==1){
+   //     $('#container_booking_services').html('');
+   // }
+}
+
+//esta funcion recibe un proveedor y me devuelve los servicios asociados a ese proveedor\
+function showServicesBySupplier(data) {
+    var url_booking_services_suppliers = Routing.generate('incidence_ajax_get_booking_services_supplier');
+    var reference = $('#select_reference').val();
+    $.post(url_booking_services_suppliers, {supplier:data, reference:reference}, function(response) {
+        $('#container_select_service').html(response);
+    });
+}
 
 $(document).ready( function() {
+
+    initiCheck();
+
     PNotify.prototype.options.styling = "bootstrap3";
     
     //$('select:not(.select-standard)').select2();
@@ -152,6 +232,7 @@ $(document).ready( function() {
         $("#link-popup-eliminar").attr("href", $(this).attr("data-url"));
         $("#text-descripcion-popup-eliminar").html($(this).attr("data-descripcion"));
     });
+
 
 
     //$('.link-tooltip').hover(function(){

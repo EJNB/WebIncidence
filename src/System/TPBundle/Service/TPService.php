@@ -28,6 +28,22 @@ class TPService
         return $services;
     }
 
+    public function getBookingServiceDescriptionBySupplier($supplier, $reference){
+        $em = $this->em;
+
+        $services = $em->getRepository('SystemBackendBundle:Booking')->findTPBookingServicesDescriptionBySupplier($supplier, $reference);
+
+        return $services;
+    }
+
+    public function getServiceDescriptionByOPT($opt){
+        $em = $this->em;
+
+        $service = $em->getRepository('SystemBackendBundle:Booking')->findTPServiceDescriptionByOPT($opt);
+
+        return $service;
+    }
+
     public function getBookingServicesWithCost($reference){
         $em = $this->em;
 
@@ -42,5 +58,13 @@ class TPService
         $clients = $em->getRepository('SystemBackendBundle:Booking')->findTPBookingClientsName($reference);
 
         return $clients;
+    }
+
+    public function getBookingSupplier($reference){
+        $em = $this->em;
+
+        $suppliers = $em->getRepository('SystemBackendBundle:Booking')->findTPBookingSuppliers($reference);
+
+        return $suppliers;
     }
 }

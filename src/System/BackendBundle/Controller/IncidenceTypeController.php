@@ -21,7 +21,7 @@ class IncidenceTypeController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $incidenceType = new Incidencetype();
-        $form = $this->createForm(IncidenceTypeType::class);
+        $form = $this->createForm(IncidenceTypeType::class,$incidenceType);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

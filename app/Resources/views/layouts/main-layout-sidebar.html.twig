@@ -3,32 +3,32 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
-        <li>
-            <a href="{#{{ path('system_report_homepage') }}#}">
-                <i class="fa fa-home"></i> <span>P&aacute;gina principal</span>
-            </a>
-        </li>
-        <li id="link-sync">
-            <a href="{#{{ path('system_backend_import') }}#}">
-                <i class="fa fa-refresh"></i> <span>Sincronizar</span>
-            </a>
-        </li>
+        {#<li>#}
+            {#<a href="&#123;&#35;{{ path('system_report_homepage') }}&#35;&#125;">#}
+                {#<i class="fa fa-home"></i> <span>P&aacute;gina principal</span>#}
+            {#</a>#}
+        {#</li>#}
+        {#<li id="link-sync">#}
+            {#<a href="&#123;&#35;{{ path('system_backend_import') }}&#35;&#125;">#}
+                {#<i class="fa fa-refresh"></i> <span>Sincronizar</span>#}
+            {#</a>#}
+        {#</li>#}
         {#{% if is_granted(['ROLE_ADVISING_SP','ROLE_ADMIN']) %}#}
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-list"></i>
-                    <span>Nomencladores</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="{#{{ path('service_index') }}#}"><i class="fa fa-circle-o"></i> Servicios</a></li>
-                    <li><a href="{#{{ path('status_index') }}#}"><i class="fa fa-circle-o"></i> Estados</a></li>
-                    <li><a href="{#{{ path('comment_index') }}#}"><i class="fa fa-circle-o"></i> Comentarios</a></li>
-                    {#<li><a href="{{ path('tp_agency_index') }}"><i class="fa fa-circle-o"></i> Agencias</a></li>#}
-                    {#<li><a href="{{ path('contact_index') }}"><i class="fa fa-circle-o"></i> Contactos</a></li>#}
-                    {#<li><a href="#"><i class="fa fa-circle-o"></i> SeatIN</a></li>#}
-                </ul>
-            </li>
+            {#<li class="treeview">#}
+                {#<a href="#">#}
+                    {#<i class="fa fa-list"></i>#}
+                    {#<span>Nomencladores</span>#}
+                    {#<i class="fa fa-angle-left pull-right"></i>#}
+                {#</a>#}
+                {#<ul class="treeview-menu">#}
+                    {#<li><a href="&#123;&#35;{{ path('service_index') }}&#35;&#125;"><i class="fa fa-circle-o"></i> Servicios</a></li>#}
+                    {#<li><a href="&#123;&#35;{{ path('status_index') }}&#35;&#125;"><i class="fa fa-circle-o"></i> Estados</a></li>#}
+                    {#<li><a href="&#123;&#35;{{ path('comment_index') }}&#35;&#125;"><i class="fa fa-circle-o"></i> Comentarios</a></li>#}
+                    {#&#123;&#35;<li><a href="{{ path('tp_agency_index') }}"><i class="fa fa-circle-o"></i> Agencias</a></li>&#35;&#125;#}
+                    {#&#123;&#35;<li><a href="{{ path('contact_index') }}"><i class="fa fa-circle-o"></i> Contactos</a></li>&#35;&#125;#}
+                    {#&#123;&#35;<li><a href="#"><i class="fa fa-circle-o"></i> SeatIN</a></li>&#35;&#125;#}
+                {#</ul>#}
+            {#</li>#}
         {#{% endif %}#}
 
             <li class="treeview">
@@ -58,41 +58,41 @@
                 </ul>
             </li>
 
-        <li class="treeview">
-            <a href="#">
-                <i class="fa fa-bar-chart"></i> <span>Reportes</span>
-                <i class="fa fa-angle-left pull-right"></i>
-            </a>
-            <ul class="treeview-menu">
-                <li>
-                <a href="{#{{ path('report_count_date_user_index') }}#}"><i class="fa fa-circle-o"></i> Items por usuario</a>
-                    {#<ul class="treeview-menu">#}
-
-                    {#</ul>#}
-                </li>
+        {#<li class="treeview">#}
+            {#<a href="#">#}
+                {#<i class="fa fa-bar-chart"></i> <span>Reportes</span>#}
+                {#<i class="fa fa-angle-left pull-right"></i>#}
+            {#</a>#}
+            {#<ul class="treeview-menu">#}
                 {#<li>#}
-                    {#<a href="#"><i class="fa fa-circle-o"></i> Reportes tipo 2 <i class="fa fa-angle-left pull-right"></i></a>#}
-                    {#<ul class="treeview-menu">#}
-                        {#&#123;&#35;<li><a href="{{ path('stop_sales_standard_view') }}"><i class="fa fa-circle-o"></i> Vista Standard</a></li>&#35;&#125;#}
-                    {#</ul>#}
+                {#<a href="&#123;&#35;{{ path('report_count_date_user_index') }}&#35;&#125;"><i class="fa fa-circle-o"></i> Items por usuario</a>#}
+                    {#&#123;&#35;<ul class="treeview-menu">&#35;&#125;#}
+
+                    {#&#123;&#35;</ul>&#35;&#125;#}
                 {#</li>#}
-            </ul>
-        </li>
-        {#{% if is_granted(['ROLE_ADMIN']) %}#}
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-lock"></i> <span>Seguridad</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li>
-                        <a href="{#{{ path('user') }}#}"><i class="fa fa-circle-o"></i> Usuarios</a>
-                        <ul class="treeview-menu">
-                            <li><a href="{#{{ path('user') }}#}"><i class="fa fa-circle-o"></i> Usuarios</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
+                {#&#123;&#35;<li>&#35;&#125;#}
+                    {#&#123;&#35;<a href="#"><i class="fa fa-circle-o"></i> Reportes tipo 2 <i class="fa fa-angle-left pull-right"></i></a>&#35;&#125;#}
+                    {#&#123;&#35;<ul class="treeview-menu">&#35;&#125;#}
+                        {#&#123;&#35;&#123;&#35;<li><a href="{{ path('stop_sales_standard_view') }}"><i class="fa fa-circle-o"></i> Vista Standard</a></li>&#35;&#125;&#35;&#125;#}
+                    {#&#123;&#35;</ul>&#35;&#125;#}
+                {#&#123;&#35;</li>&#35;&#125;#}
+            {#</ul>#}
+        {#</li>#}
+        {#&#123;&#35;{% if is_granted(['ROLE_ADMIN']) %}&#35;&#125;#}
+            {#<li class="treeview">#}
+                {#<a href="#">#}
+                    {#<i class="fa fa-lock"></i> <span>Seguridad</span>#}
+                    {#<i class="fa fa-angle-left pull-right"></i>#}
+                {#</a>#}
+                {#<ul class="treeview-menu">#}
+                    {#<li>#}
+                        {#<a href="&#123;&#35;{{ path('user') }}&#35;&#125;"><i class="fa fa-circle-o"></i> Usuarios</a>#}
+                        {#<ul class="treeview-menu">#}
+                            {#<li><a href="&#123;&#35;{{ path('user') }}&#35;&#125;"><i class="fa fa-circle-o"></i> Usuarios</a></li>#}
+                        {#</ul>#}
+                    {#</li>#}
+                {#</ul>#}
+            {#</li>#}
         {#{% endif %}#}
         {#<li class="treeview">#}
             {#<a href="#">#}

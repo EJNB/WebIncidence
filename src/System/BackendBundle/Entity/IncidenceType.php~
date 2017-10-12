@@ -29,64 +29,9 @@ class IncidenceType
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Incidence", inversedBy="incidencetypes")
-     * @ORM\JoinColumn(name="incidence_id", referencedColumnName="id")
+     * @ORM\OneToMany(targetEntity="System\BackendBundle\Entity\Incidence", mappedBy="incidenceType")
      **/
-    private $incidence;
+    private $incidences;
 
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return IncidenceType
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string 
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set incidence
-     *
-     * @param \System\BackendBundle\Entity\Incidence $incidence
-     * @return IncidenceType
-     */
-    public function setIncidence(\System\BackendBundle\Entity\Incidence $incidence = null)
-    {
-        $this->incidence = $incidence;
-
-        return $this;
-    }
-
-    /**
-     * Get incidence
-     *
-     * @return \System\BackendBundle\Entity\Incidence 
-     */
-    public function getIncidence()
-    {
-        return $this->incidence;
-    }
 }

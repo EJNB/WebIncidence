@@ -29,10 +29,18 @@ class IncidenceType
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Incidence", inversedBy="incidencetypes")
-     * @ORM\JoinColumn(name="incidence_id", referencedColumnName="id")
+     * @ORM\OneToMany(targetEntity="System\BackendBundle\Entity\Incidence", mappedBy="incidenceType")
      **/
-    private $incidence;
+    private $incidences;
+
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->incidences = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -68,25 +76,41 @@ class IncidenceType
     }
 
     /**
-     * Set incidence
+     * Add incidences
      *
-     * @param \System\BackendBundle\Entity\Incidence $incidence
+     * @param \System\BackendBundle\Entity\Incidence $incidences
      * @return IncidenceType
      */
-    public function setIncidence(\System\BackendBundle\Entity\Incidence $incidence = null)
+    public function addIncidence(\System\BackendBundle\Entity\Incidence $incidences)
     {
-        $this->incidence = $incidence;
+        $this->incidences[] = $incidences;
 
         return $this;
     }
 
     /**
-     * Get incidence
+     * Remove incidences
      *
-     * @return \System\BackendBundle\Entity\Incidence 
+     * @param \System\BackendBundle\Entity\Incidence $incidences
      */
-    public function getIncidence()
+    public function removeIncidence(\System\BackendBundle\Entity\Incidence $incidences)
     {
-        return $this->incidence;
+        $this->incidences->removeElement($incidences);
+    }
+
+    /**
+     * Get incidences
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getIncidences()
+    {
+        return $this->incidences;
+    }
+
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->getName();
     }
 }

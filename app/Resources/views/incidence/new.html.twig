@@ -6,50 +6,99 @@
 
     <div>
     {{ form_start(form) }}
+        <input type="hidden" id="select_reference" name="select_reference" value="">
 
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Datos Generales</a></li>
-            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Acciones</a></li>
-            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Costos</a></li>
-            {#<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>#}
-        </ul>
-
-        <!-- Tab panes -->
-        <div class="tab-content">
-
-            <!--Datos generales-->
-            <div role="tabpanel" class="tab-pane active" id="home">
-                {{ form_row(form.incidenceDate) }}
-                {{ form_row(form.place) }}
-                {{ form_row(form.service) }}
-                {{ form_row(form.description) }}
-                {{ form_row(form.causes) }}
-                {{ form_row(form.document) }}
+        <div class="row">
+            <div class="col-md-3">
+                <div class="input-group">
+                    <input type="search" class="form-control " id="find_booking" name="booking" aria-describedby="btn_find_booking">
+                    <a class="input-group-addon" id="btn_find_booking" href="javascript:void(0);" onclick="findBooking()"><span class="glyphicon glyphicon-search"></span></a>
+                </div>
             </div>
-
-            <!--Acciones-->
-            <div role="tabpanel" class="tab-pane" id="profile">
-                {{ form_row(form.claim) }}
-                {{ form_row(form.booking) }}
+        </div>
+        <div class="row" >
+            <div class="col-md-12" id="container_booking_detail">
+                {#{{ render(controller(#}
+                    {#'SystemBackendBundle:Incidence:getAjaxBookingDetail'#}
+                {#)) }}#}
+                {{ include(':incidence:booking_detail.html.twig') }}
             </div>
-
-            <!--Costos-->
-            <div role="tabpanel" class="tab-pane" id="messages">
-
-                    {#<div class="checkbox">#}
-                        {#<label><input type="checkbox" class="icheck"> Checkbox 1</label>#}
-                    {#</div>#}
-            </div>
-            {#<div role="tabpanel" class="tab-pane" id="settings">Settings</div>#}
         </div>
 
-    </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Datos Generales</a></li>
+                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Acciones</a></li>
+                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Costos</a></li>
+                    {#<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>#}
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+
+                    <!--Datos generales-->
+                    <div role="tabpanel" class="tab-pane active" id="home">
+                        {{ form_row(form.incidenceDate) }}
+                        {{ form_row(form.place) }}
+                        {% for type in types %}
+                            <input type="radio" name="incidence_types" value="{{ type.id }}" class="radio_incidence_types" onclick="showByTypes({{ type.id }})">{{ type.name }}
+                        {% endfor %}
+
+                        {#{{ form_row(form.incidenceType) }}#}
+
+                        <div id="container_booking_clients" style="margin: 7px 7px;">
+
+                        </div>
+
+                        <div id="container_booking_suppliers" style="margin: 7px 7px;">
+
+                        </div>
+
+                        <div id="container_select_service" style="margin: 7px 7px;">
+
+                        </div>
+                        {{ form_row(form.description) }}
+                        {{ form_row(form.causes) }}
+
+                        {{ form_label(form.document) }}
+                        {{ form_errors(form.document) }}
+                        {{ form_widget(form.document) }}
+
+                    </div>
+
+                    <!--Acciones-->
+                    <div role="tabpanel" class="tab-pane" id="profile">
+                        {#{{ form_row(form.claim) }}#}
+                        {#{{ form_row(form.booking) }}#}
+                    </div>
+
+                    <!--Costos-->
+                    <div role="tabpanel" class="tab-pane" id="messages">
+                        <label>
+                            <input type="checkbox" name="quux[1]">
+                            Foo
+                        </label>
+                    </div>
+                    {#<div role="tabpanel" class="tab-pane" id="settings">Settings</div>#}
+                </div>
+            </div>
 
 
+
+        </div>
+
+{#{{ form_widget(form.incidenceType) }}#}
         {#{{ form_row(form) }}#}
         <input type="submit" value="Crear" class="btn btn-primary"/>
         <a href="{{ path('incidence_index') }}" class="btn btn-default">Volver al listado</a>
+    </div>
+
+
+
+    <!-- Nav tabs -->
+
+
     {{ form_end(form) }}
 
 

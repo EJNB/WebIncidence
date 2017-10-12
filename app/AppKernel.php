@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new System\ReportesBundle\SystemReportesBundle(),
             new System\ClaimBundle\SystemClaimBundle(),
 			new System\TPBundle\SystemTPBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

@@ -22,8 +22,10 @@ class IncidenceController extends Controller
 
         $incidences = $em->getRepository('SystemBackendBundle:Incidence')->findAll();
 
+
         return $this->render('incidence/index.html.twig', array(
             'incidences' => $incidences,
+
         ));
     }
 
@@ -34,11 +36,13 @@ class IncidenceController extends Controller
     public function newAction(Request $request)
     {
         $incidence = new Incidence();
+        $em = $this->getDoctrine()->getManager();
+        $types = $em->getRepository('SystemBackendBundle:IncidenceType')->findAll();
         $form = $this->createForm('System\BackendBundle\Form\IncidenceType', $incidence);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
+
             $em->persist($incidence);
             $em->flush();
 
@@ -48,6 +52,7 @@ class IncidenceController extends Controller
         return $this->render('incidence/new.html.twig', array(
             'incidence' => $incidence,
             'form' => $form->createView(),
+            'types' => $types,
         ));
     }
 
@@ -120,5 +125,98 @@ class IncidenceController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+
+    public function getAjaxBookingDetailAction(Request $request){
+
+        if($request->isXmlHttpRequest()){
+            $reference = $request->request->get('reference');
+            $tp_service = $this->get('TPService');
+            $detail_booking = $tp_service->getBookingGeneralData($reference);
+            return $this->render(':incidence:booking_detail.html.twig',array(
+                'booking_detail' => $detail_booking,
+            ));
+        }else{
+            return false;
+        }
+    }
+
+    public function getAjaxServicesDescriptionAction(Request $request){
+
+
+        if($request->isXmlHttpRequest()){
+            $reference = $request->request->get('reference');
+            $tp_service = $this->get('TPService');
+            $services_description = $tp_service->getBookingServiceDescription($reference);
+
+            return $this->render(':incidence:services_description.html.twig',array(
+                'services_description' => $services_description,
+            ));
+        }else{
+            return false;
+        }
+    }
+
+    public function getAjaxServicesDescriptionActionBySupplierAction(Request $request){
+
+
+        if($request->isXmlHttpRequest()){
+            $supplier = $request->request->get('supplier');
+            $tp_service = $this->get('TPService');
+            $services_description = $tp_service->findTPBookingServicesDescriptionBySupplier($supplier);
+
+            return $this->render(':incidence:services_description.html.twig',array(
+                'services_description' => $services_description,
+            ));
+        }else{
+            return false;
+        }
+    }
+
+    public function getAjaxBookingSuppliersAction(Request $request){
+
+
+        if($request->isXmlHttpRequest()){
+            $reference = $request->request->get('reference');
+            $tp_service = $this->get('TPService');
+            $suppliers = $tp_service->getBookingSupplier($reference);
+
+            return $this->render(':incidence:booking_suppliers.html.twig',array(
+                'suppliers' => $suppliers,
+            ));
+        }else{
+            return false;
+        }
+    }
+
+    public function getAjaxServicesBySuppliersAction(Request $request){
+
+        if($request->isXmlHttpRequest()){
+            $supplier = $request->request->get('supplier');
+            $reference = $request->request->get('reference');
+            $tp_service = $this->get('TPService');
+            $services = $tp_service->getBookingServiceDescriptionBySupplier($supplier, $reference);
+
+            return $this->render('incidence/services_description.html.twig',array(
+                'services_description' => $services,
+            ));
+        }else{
+
+            return false;
+        }
+    }
+
+    public function getAjaxBookingClientNamesAction(Request $request){
+        if($request->isXmlHttpRequest()){
+            $reference = $request->request->get('reference');
+            $tp_service = $this->get('TPService');
+            $clients = $tp_service->getBookingClientsName($reference);
+
+            return $this->render(':incidence:booking_clients.html.twig',array(
+                'clients' => $clients,
+            ));
+        }else{
+            return false;
+        }
     }
 }

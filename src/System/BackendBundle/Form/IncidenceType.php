@@ -8,7 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 
 class IncidenceType extends AbstractType
@@ -25,19 +25,27 @@ class IncidenceType extends AbstractType
             ->add('incidenceDate')
             ->add('causes')
             ->add('description')
-//            ->add('incidencetypes',EntityType::class,array(
+//            ->add('incidenceType', EntityType::class, array(
 //                'class' => 'System\BackendBundle\Entity\IncidenceType',
+////                'choice_label' => 'Tipo de incidencia',
+//                'attr' => array(
+//                    'class' => 'icheck',
+//                    'onchange' => 'changeRadio(this.value)'
+//                ),
 //                'expanded' => true,
-//                'multiple' => true
+//                'multiple' => false,
+//
+//
 //            ))
-            ->add('incidencetypes')
-            ->add('document')
-            ->add('service')
+            ->add('document',FileType::class,array(
+                'label' => 'Documento (PDF file)'
+            ))
+//            ->add('service')
             ->add('place',TextType::class,array(
                 'label' => 'Lugar',
-            ))
-            ->add('claim')
-            ->add('booking');
+            ));
+//            ->add('claim');
+//            ->add('booking');
     }
     
     /**

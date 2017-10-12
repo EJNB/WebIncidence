@@ -4,6 +4,7 @@
             {{ form_label(form) }}
             {{ form_errors(form) }}
             {{ form_widget(form,{ 'attr':{ 'class':'form-control' } } ) }}
+            {#{{ form_widget(form) }}#}
         </div>
     {% endspaceless %}
 {% endblock form_row %}

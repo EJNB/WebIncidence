@@ -22,3 +22,33 @@ incidence_delete:
     path:     /{id}/delete
     defaults: { _controller: "SystemBackendBundle:Incidence:delete" }
     methods:  DELETE
+
+incidence_ajax_get_booking_detail:
+    path:   /get_booking_detail
+    defaults: { _controller: "SystemBackendBundle:Incidence:getAjaxBookingDetail" }
+    options:  {expose: true}
+
+incidence_ajax_get_services_description:
+    path:   /get_services_description
+    defaults: { _controller: "SystemBackendBundle:Incidence:getAjaxServicesDescription" }
+    options:  {expose: true}
+
+incidence_ajax_get_services_description_by_supplier:
+    path:   /get_services_description_by_supplier
+    defaults: { _controller: "SystemBackendBundle:Incidence:getAjaxServicesDescriptionActionBySupplier" }
+    options:  {expose: true}
+
+incidence_ajax_get_booking_suppliers:
+    path:   /get_booking_suppliers
+    defaults: { _controller: "SystemBackendBundle:Incidence:getAjaxBookingSuppliers" }
+    options:  {expose: true}
+
+incidence_ajax_get_booking_services_supplier:
+    path:   /get_booking_services_supplier
+    defaults: { _controller: "SystemBackendBundle:Incidence:getAjaxServicesBySuppliers" }
+    options:  {expose: true}
+
+incidence_ajax_get_booking_client_names:
+    path:   /get_booking_client_names
+    defaults: { _controller: "SystemBackendBundle:Incidence:getAjaxBookingClientNames" }
+    options:  {expose: true}

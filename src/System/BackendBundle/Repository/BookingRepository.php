@@ -17,7 +17,7 @@ class BookingRepository extends EntityRepository
 
         $em = $this->getEntityManager();
 
-        $sql = 'SELECT BHD.NAME AS BOOKING_NAME, DRM.NAME AS AGENT_NAME, CSL.NAME AS CONSULTANT_NAME
+        $sql = 'SELECT BHD.FULL_REFERENCE AS FULL_REFERENCE, BHD.NAME AS BOOKING_NAME, BHD.TRAVELDATE AS TRAVELDATE, DRM.NAME AS AGENT_NAME, CSL.NAME AS CONSULTANT_NAME
                 FROM Tourplanis.dbo.BHD
                 INNER JOIN Tourplanis.dbo.DRM ON BHD.AGENT = DRM.CODE
                 INNER JOIN Tourplanis.dbo.CSL ON BHD.CONSULTANT = CSL.INITIALS
@@ -25,14 +25,14 @@ class BookingRepository extends EntityRepository
         $var = $em->getConnection()->prepare($sql);
         $var->bindValue(1,$reference);
         $var->execute();
-        return $value = $var->fetch();
+        return $var->fetch();
     }
 
     public function findTPBookingServicesDescription($reference){
 
         $em = $this->getEntityManager();
 
-        $sql = 'SELECT OPT.OPT_ID, CRM.CODE, CRM.NAME, OPT.CODE, OPT.DESCRIPTION
+        $sql = 'SELECT OPT.OPT_ID as OPTID, CRM.CODE as SUPCODE, CRM.NAME AS SUPNAME, OPT.CODE AS OPTCODE, OPT.DESCRIPTION AS OPTNAME
                 FROM Tourplanis.dbo.BHD
                 INNER JOIN Tourplanis.dbo.BSL ON BHD.BHD_ID = BSL.BHD_ID
                 INNER JOIN Tourplanis.dbo.OPT ON BSL.OPT_ID= OPT.OPT_ID
@@ -41,7 +41,40 @@ class BookingRepository extends EntityRepository
         $var = $em->getConnection()->prepare($sql);
         $var->bindValue(1,$reference);
         $var->execute();
-        return $value = $var->fetch();
+        return $var->fetchAll();
+
+    }
+
+    public function findTPBookingServicesDescriptionBySupplier($supplier, $reference){
+
+        $em = $this->getEntityManager();
+
+        $sql = 'SELECT OPT.OPT_ID as OPTID, CRM.CODE as SUPCODE, CRM.NAME AS SUPNAME, OPT.CODE AS OPTCODE, OPT.DESCRIPTION AS OPTNAME
+                FROM Tourplanis.dbo.BHD
+                INNER JOIN Tourplanis.dbo.BSL ON BHD.BHD_ID = BSL.BHD_ID
+                INNER JOIN Tourplanis.dbo.OPT ON BSL.OPT_ID= OPT.OPT_ID
+                INNER JOIN Tourplanis.dbo.CRM ON OPT.SUPPLIER = CRM.CODE
+                WHERE CRM.CODE = ? AND BHD.FULL_REFERENCE = ?';
+        $var = $em->getConnection()->prepare($sql);
+        $var->bindValue(1,$supplier);
+        $var->bindValue(2,$reference);
+        $var->execute();
+        return $var->fetchAll();
+
+    }
+
+    public function findTPServiceDescriptionByOPT($opt_id){
+
+        $em = $this->getEntityManager();
+
+        $sql = 'SELECT OPT.OPT_ID, CRM.CODE, CRM.NAME, OPT.CODE, OPT.DESCRIPTION
+                FROM Tourplanis.dbo.OPT
+                INNER JOIN Tourplanis.dbo.CRM ON OPT.SUPPLIER = CRM.CODE
+                WHERE OPT.OPT_ID = ?';
+        $var = $em->getConnection()->prepare($sql);
+        $var->bindValue(1,$opt_id);
+        $var->execute();
+        return $var->fetch();
     }
 
     public function findTPBookingServicesWithCost($reference){
@@ -58,21 +91,38 @@ class BookingRepository extends EntityRepository
         $var = $em->getConnection()->prepare($sql);
         $var->bindValue(1,$reference);
         $var->execute();
-        return $value = $var->fetch();
+        return $var->fetchAll();
     }
 
     public function findTPBookingClientsName($reference){
 
         $em = $this->getEntityManager();
 
-        $sql = 'SELECT BHD.FULL_REFERENCE AS REFERENCE, PXN.PAX_TITLE, PXN.PAX_FORENAME, PXN.PAX_SURNAME
+        $sql = "SELECT BHD.FULL_REFERENCE AS REFERENCE, BHD.FULL_REFERENCE AS REFERENCE, (PXN.PAX_FORENAME + ' ' + PXN.PAX_SURNAME) AS FULL_NAME
                 FROM Tourplanis.dbo.BHD
                 INNER JOIN Tourplanis.dbo.PNB on BHD.BHD_ID = PNB.BHD_ID
                 INNER JOIN Tourplanis.dbo.PXN ON PXN.PXN_ID = PNB.PXN_ID
+                WHERE BHD.FULL_REFERENCE = ?";
+        $var = $em->getConnection()->prepare($sql);
+        $var->bindValue(1,$reference);
+        $var->execute();
+        return $var->fetchAll();
+    }
+
+    public function findTPBookingSuppliers($reference){
+
+        $em = $this->getEntityManager();
+
+        $sql = 'SELECT DISTINCT CRM.CODE as SUPCODE, CRM.NAME AS SUPNAME
+                FROM Tourplanis.dbo.BHD
+                INNER JOIN Tourplanis.dbo.BSL ON BHD.BHD_ID = BSL.BHD_ID
+                INNER JOIN Tourplanis.dbo.OPT ON BSL.OPT_ID= OPT.OPT_ID
+                INNER JOIN Tourplanis.dbo.CRM ON OPT.SUPPLIER = CRM.CODE
                 WHERE BHD.FULL_REFERENCE = ?';
         $var = $em->getConnection()->prepare($sql);
         $var->bindValue(1,$reference);
         $var->execute();
-        return $value = $var->fetch();
+        return $var->fetchAll();
+
     }
 }

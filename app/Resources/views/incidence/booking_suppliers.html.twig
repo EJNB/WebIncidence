@@ -1,0 +1,8 @@
+{% if suppliers is defined %}
+    <label for="supplier_selection">Proveedor</label>
+    <select id="supplier_selection" class="form-control" onchange="showServicesBySupplier(this.value)">
+        {% for supplier in suppliers%}
+            <option value="{{ supplier['SUPCODE'] }}">{{ supplier['SUPNAME'] }}</option>
+        {% endfor %}
+    </select>
+{% endif %}

@@ -1,0 +1,17 @@
+{% if booking_detail['FULL_REFERENCE'] is defined %}
+
+        <h4 style="display: inline; margin-right: 5px;">
+        <span class="label label-info">
+            {{ booking_detail['FULL_REFERENCE'] }}:
+            {{ booking_detail['BOOKING_NAME'] }}
+        </span>
+        </h4>
+
+
+        <span class="label label-success">
+            {{ booking_detail['AGENT_NAME'] }} |
+            {{ booking_detail['TRAVELDATE']|date('d-M-Y') }} |
+            Consultant: {{ booking_detail['CONSULTANT_NAME'] }}
+        </span>
+
+{% endif %}

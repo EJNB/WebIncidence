@@ -1,0 +1,10 @@
+{% if services_description is defined %}
+    <label for="service_selection">Servicio</label>
+    <select id="service_selection" class="form-control">
+        <option value="">Ninguno</option>
+        {% for service in services_description %}
+            <option value="{{ service['OPTID'] }}">{{ service['SUPNAME'] }} - {{ service['OPTNAME'] }}</option>
+        {% endfor %}
+    </select>
+
+{% endif %}

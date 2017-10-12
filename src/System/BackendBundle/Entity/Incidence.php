@@ -58,10 +58,16 @@ class Incidence
     private $document;
 
     /**
-     * @ORM\OneToMany(targetEntity="IncidenceType", mappedBy="incidence")
+     * @ORM\ManyToOne(targetEntity="IncidenceType", inversedBy="incidences")
+     * @ORM\JoinColumn(name="incidencetype_id", referencedColumnName="id")
      **/
-    private $incidencetypes;
+    private $incidenceType;
 
+//    /**
+//     * @ORM\ManyToOne(targetEntity="Department", inversedBy="incidences")
+//     * @ORM\JoinColumn(name="department_id", referencedColumnName="id")
+//     **/
+//    private $department;
 
     /**
      * @ORM\ManyToOne(targetEntity="Service", inversedBy="incidences")
@@ -92,9 +98,12 @@ class Incidence
      **/
     private $incidences_persons;
 
-    public function __construct() {
-        $this->incidencetypes = new ArrayCollection();
-        $this->incidences_persons = new ArrayCollection();
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->incidences_persons = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -177,6 +186,29 @@ class Incidence
     }
 
     /**
+     * Set causes
+     *
+     * @param string $causes
+     * @return Incidence
+     */
+    public function setCauses($causes)
+    {
+        $this->causes = $causes;
+
+        return $this;
+    }
+
+    /**
+     * Get causes
+     *
+     * @return string 
+     */
+    public function getCauses()
+    {
+        return $this->causes;
+    }
+
+    /**
      * Set document
      *
      * @param string $document
@@ -200,60 +232,27 @@ class Incidence
     }
 
     /**
-     * Add incidencetypes
+     * Set incidenceType
      *
-     * @param \System\BackendBundle\Entity\IncidenceType $incidencetypes
+     * @param \System\BackendBundle\Entity\IncidenceType $incidenceType
      * @return Incidence
      */
-    public function addIncidencetype(\System\BackendBundle\Entity\IncidenceType $incidencetypes)
+    public function setIncidenceType(\System\BackendBundle\Entity\IncidenceType $incidenceType = null)
     {
-        $this->incidencetypes[] = $incidencetypes;
+        $this->incidenceType = $incidenceType;
 
         return $this;
     }
 
     /**
-     * Remove incidencetypes
+     * Get incidenceType
      *
-     * @param \System\BackendBundle\Entity\IncidenceType $incidencetypes
+     * @return \System\BackendBundle\Entity\IncidenceType 
      */
-    public function removeIncidencetype(\System\BackendBundle\Entity\IncidenceType $incidencetypes)
+    public function getIncidenceType()
     {
-        $this->incidencetypes->removeElement($incidencetypes);
+        return $this->incidenceType;
     }
-
-    /**
-     * Get incidencetypes
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getIncidencetypes()
-    {
-        return $this->incidencetypes;
-    }
-
-//    /**
-//     * Set department
-//     *
-//     * @param \System\BackendBundle\Entity\Department $department
-//     * @return Incidence
-//     */
-//    public function setDepartment(\System\BackendBundle\Entity\Department $department = null)
-//    {
-//        $this->department = $department;
-//
-//        return $this;
-//    }
-//
-//    /**
-//     * Get department
-//     *
-//     * @return \System\BackendBundle\Entity\Department
-//     */
-//    public function getDepartment()
-//    {
-//        return $this->department;
-//    }
 
     /**
      * Set service
@@ -345,62 +344,6 @@ class Incidence
     public function getBooking()
     {
         return $this->booking;
-    }
-
-    /**
-     * Add incidendes_persons
-     *
-     * @param \System\BackendBundle\Entity\Incidence_Person $incidendesPersons
-     * @return Incidence
-     */
-    public function addIncidendesPerson(\System\BackendBundle\Entity\Incidence_Person $incidendesPersons)
-    {
-        $this->incidendes_persons[] = $incidendesPersons;
-
-        return $this;
-    }
-
-    /**
-     * Remove incidendes_persons
-     *
-     * @param \System\BackendBundle\Entity\Incidence_Person $incidendesPersons
-     */
-    public function removeIncidendesPerson(\System\BackendBundle\Entity\Incidence_Person $incidendesPersons)
-    {
-        $this->incidendes_persons->removeElement($incidendesPersons);
-    }
-
-    /**
-     * Get incidendes_persons
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getIncidendesPersons()
-    {
-        return $this->incidendes_persons;
-    }
-
-    /**
-     * Set causes
-     *
-     * @param string $causes
-     * @return Incidence
-     */
-    public function setCauses($causes)
-    {
-        $this->causes = $causes;
-
-        return $this;
-    }
-
-    /**
-     * Get causes
-     *
-     * @return string 
-     */
-    public function getCauses()
-    {
-        return $this->causes;
     }
 
     /**
