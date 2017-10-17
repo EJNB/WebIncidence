@@ -30,3 +30,7 @@ system_backend_incidence:
 system_backend_place:
     resource: "@SystemBackendBundle/Resources/config/routing/place.yml"
     prefix:   /place
+
+system_backend_person:
+    resource: "@SystemBackendBundle/Resources/config/routing/person.yml"
+    prefix:   /person

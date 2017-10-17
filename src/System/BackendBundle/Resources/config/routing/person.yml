@@ -1,0 +1,24 @@
+person_index:
+    path:     /
+    defaults: { _controller: "SystemBackendBundle:Person:index" }
+    methods:  GET
+
+person_show:
+    path:     /{id}/show
+    defaults: { _controller: "SystemBackendBundle:Person:show" }
+    methods:  GET
+
+person_new:
+    path:     /new
+    defaults: { _controller: "SystemBackendBundle:Person:new" }
+    methods:  [GET, POST]
+
+person_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SystemBackendBundle:Person:edit" }
+    methods:  [GET, POST]
+
+person_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SystemBackendBundle:Person:delete" }
+    methods:  DELETE

@@ -142,6 +142,7 @@ function initiCheck() {
     });
 }
 
+//find booking in turplan db
 function findBooking(data) {
     var reference = $('#find_booking').val();
 
@@ -158,21 +159,24 @@ function findBooking(data) {
     $('#select_reference').val(reference);
 }
 
+//select fields for incidences types
 function showByTypes(id) {
 
     var reference = $('#select_reference').val();
     switch(id) {
-
-        case 1:
+        //intern incidence case
+        case '1':
             $('#container_booking_suppliers').html('');
             $('#container_booking_clients').html('');
             //hacer select con personas
             var url_booking_persons = Routing.generate('incidence_ajax_get_booking_person_names');
             $.post(url_booking_persons, {reference:reference}, function(response) {
                 $('#container_booking_persons').html(response);
+                $('#select-responsable').selectpicker('refresh');
             });
             break;
-        case 2:
+        //supplier incidence case
+        case '2':
             $('#container_booking_clients').html('');
             $('#container_booking_persons').html('');
             var url_booking_suppliers = Routing.generate('incidence_ajax_get_booking_suppliers');
@@ -180,7 +184,8 @@ function showByTypes(id) {
                 $('#container_booking_suppliers').html(response);
             });
             break;
-        case 3:
+        //clients incidence case
+        case '3':
             $('#container_booking_suppliers').html('');
             $('#container_booking_persons').html('');
             var url_booking_clients = Routing.generate('incidence_ajax_get_booking_client_names');
@@ -247,18 +252,26 @@ $(document).ready( function() {
 
     PNotify.prototype.options.styling = "bootstrap3";
 
-    // $('select').attr({
-    //     'class' : 'selectpicker',
-    //     'data-live-search':'true'
-    // })
+    //cuando seleccione el tipo de la incidencia ejecuto la fnc q me muestra los tipos
+    $('.radio_incidence_types').on('ifClicked',function(){
+        showByTypes($(this).val());
+    });
 
-    //$('select:not(.select-standard)').select2();
+    //cuando sel el tipo de costo de compensacion
+    $('#compensation_cost').on('ifClicked',function(){
+        showCompensationCost();
+    });
 
-    //setTimeout(function() {
-    //    $( ".ui-pnotify" ).fadeOut(1000, function () {
-    //        $(".ui-pnotify").remove();
-    //    });
-    //},6000);
+    //cuando seleciono el tipo de costo de no calidad por sustitucion
+    $('#sustitution_cost').on('ifClicked',function(){
+        showSustitutionOriginalCost();
+    });
+
+    setTimeout(function() {
+        $( ".ui-pnotify" ).fadeOut(1000, function () {
+            $(".ui-pnotify").remove();
+        });
+    },6000);
 
     $('.content').css('min-height', ($(window).innerHeight()-200));
 

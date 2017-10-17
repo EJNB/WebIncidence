@@ -1,6 +1,6 @@
 {% if persons is defined %}
     <label for="client_selection">Reponsable</label>
-    <select id="" class="form-control">
+    <select id="select-responsable" class="form-control">
         {% for person in persons %}
             <option value="{#{{ client['FULL_NAME'] }}#}">{{ person.name }}</option>
         {% endfor %}

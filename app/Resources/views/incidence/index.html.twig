@@ -6,7 +6,6 @@
     <table class="table table-responsive table-hover">
         <thead>
             <tr>
-                <th>No</th>
                 <th>Codigo</th>
                 <th>Fecha de la incidencia</th>
                 <th>Descipci&oacuten</th>
@@ -17,7 +16,6 @@
         <tbody>
         {% for incidence in incidences %}
             <tr>
-                <td>{{ loop.index }}</td>
                 <td>{{ incidence.code }}</td>
                 <td>{% if incidence.incidenceDate %}{{ incidence.incidenceDate|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ incidence.description }}</td>
@@ -41,28 +39,11 @@
                        data-placement="top" title="Eliminar">
                         <span class="glyphicon glyphicon-trash"></span>
                     </a>
-                {#</td>#}
-                    {#<ul>#}
-                        {#<li>#}
-                            {#<a href="{{ path('incidence_show', { 'id': incidence.id }) }}">show</a>#}
-                        {#</li>#}
-                        {#<li>#}
-                            {#<a href="{{ path('incidence_edit', { 'id': incidence.id }) }}">edit</a>#}
-                        {#</li>#}
-                    {#</ul>#}
-                {#</td>#}
+                </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
     <a href="{{ path('incidence_new') }}" class="btn btn-primary">Agregar</a>
-
-
-
-    {#<ul>#}
-        {#<li>#}
-            {#<a href="{{ path('incidence_new') }}">Create a new incidence</a>#}
-        {#</li>#}
-    {#</ul>#}
 {% endblock %}

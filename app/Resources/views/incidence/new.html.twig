@@ -6,7 +6,7 @@
     <h1 class="page-header">Crear Incidencia <small class="text" style="display: inline"></small></h1>
 
     {{ form_start(form) }}
-        <input type="hidden" id="select_reference" name="select_reference" value="">
+        <input type="hidden" id="select_reference" name="select_reference" value=""><!--Aqui pone el id del booking con js-->
 
         <div class="row">
         <div class="col-md-3">
@@ -43,7 +43,11 @@
                         {{ form_row(form.incidenceDate) }}
                     </div>
                     <div class="col-md-3">
-                        {{ form_row(form.place) }}
+                        <div class="form-group">
+                            {{ form_label(form.place) }}
+                            {{ form_errors(form.place) }}
+                            {{ form_widget(form.place) }}
+                        </div>
                     </div>
                 </div>
 
@@ -53,7 +57,12 @@
                         <div class="form-group">
                             <label> Tipos de incidencia</label><br>
                             {% for type in types %}
-                                <input type="radio" name="incidence_types" value="{{ type.id }}" class="radio_incidence_types" onclick="showByTypes({{ type.id }})">{{ type.name }}
+                                <input type="radio"
+                                       name="incidence_types"
+                                       value="{{ type.id }}"
+                                       class="radio_incidence_types icheck"
+                                >&nbsp;
+                                {{ type.name }}&nbsp;&nbsp;
                             {% endfor %}
                         </div>
                     </div>
@@ -79,14 +88,14 @@
 
                             </div>
                         </div>
-                    </div>
-
+                    </div><!--end .col-md-3-->
                     <div class="col-md-6"></div>
                     <div class="col-md-3">
                         <div class="form-group" style="margin-bottom: 0">
+                            <label>Quien detecta</label>
                             <select id="" class="form-control selectpicker" data-live-search="true" title="Quien detecta">
                                 {% for person in persons %}
-                                    <option value="{#{{ client['FULL_NAME'] }}#}">{{ person.name }}</option>
+                                    <option value="{{ person.id }}">{{ person.name }}</option>
                                 {% endfor %}
                             </select>
                         </div>
@@ -115,8 +124,8 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Cierre: &nbsp;&nbsp;</label>
-                            <label><input type="radio" name="clousure" class="icheck">Efectivo </label>&nbsp;&nbsp;
-                            <label><input type="radio" name="clousure" class="icheck">insatisfactorio </label>
+                            <label><input type="radio" name="clousure" class="icheck"> &nbsp;Efectivo </label>&nbsp;&nbsp;
+                            <label><input type="radio" name="clousure" class="icheck">&nbsp;Insatisfactorio </label>
                         </div>
                     </div>
                 </div>
@@ -134,9 +143,9 @@
                         {#</div>#}
                         {% if persons is defined %}
                             <label for="client_selection">Reponsable de las acciones</label>
-                            <select id="" class="form-control">
+                            <select id="" class="form-control selectpicker" data-live-search="true" title="Seleccione el responsable" name="" required>
                                 {% for person in persons %}
-                                    <option value="{#{{ client['FULL_NAME'] }}#}">{{ person.name }}</option>
+                                    <option value="{{ person.id }}">{{ person.name }}</option>
                                 {% endfor %}
                             </select>
                         {% endif %}
@@ -158,9 +167,9 @@
                         {#</div>#}
                         {% if persons is defined %}
                             <label for="client_selection">Reponsable de las acciones</label>
-                            <select id="" class="form-control">
+                            <select id="" class="form-control selectpicker" data-live-search="true" title="Seleccione el responsable">
                                 {% for person in persons %}
-                                    <option value="{#{{ client['FULL_NAME'] }}#}">{{ person.name }}</option>
+                                    <option value="{{ person.id }}">{{ person.name }}</option>
                                 {% endfor %}
                             </select>
                         {% endif %}
@@ -172,22 +181,20 @@
                         {{ form_row(form.corrective_actions, {'attr':{'rows':'5'}}) }}
                     </div>
                 </div>
-
-
             </div>
 
             <!--Costos-->
             <div role="tabpanel" class="tab-pane" id="costs">
                 <div class="row">
                     <div class="col-md-12">
-                        <input type="radio" name="type_of_cost" id="no_cost" class="" checked>Sin costo
+                        <input type="radio" name="type_of_cost" id="no_cost" class="icheck" checked>&nbsp;Sin costo
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-6">
-                                <input type="radio" name="type_of_cost" id="compensation_cost" onclick="showCompensationCost()">
+                                <input type="radio" name="type_of_cost" id="compensation_cost" {#onclick="showCompensationCost()"#} class="icheck">&nbsp;
                                 Costo por compensaci&oacute;n
                             </div>
                         </div>
@@ -202,8 +209,8 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-6">
-                                <input type="radio" name="type_of_cost" id="sustitution_cost" onclick="showSustitutionOriginalCost()"
-                                       class="">Costo por sustituci&oacute;n
+                                <input type="radio" name="type_of_cost" id="sustitution_cost" {#onclick="showSustitutionOriginalCost()"#}
+                                       class="icheck">&nbsp;Costo por sustituci&oacute;n
                             </div>
                         </div>
                         <div class="row">
@@ -224,7 +231,7 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-6">
-                                <input type="radio" name="type_of_cost" id="other_cost" class="">Otros costos
+                                <input type="radio" name="type_of_cost" id="other_cost" class="icheck">&nbsp;Otros costos
                             </div>
                         </div>
                         <div class="row">

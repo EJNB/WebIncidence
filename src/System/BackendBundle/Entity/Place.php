@@ -103,4 +103,10 @@ class Place
     {
         return $this->incidences;
     }
+
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

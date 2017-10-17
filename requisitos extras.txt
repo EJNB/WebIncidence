@@ -1,7 +1,0 @@
-incidencia: tipo cliente - sin servicio
-acciones correctivas: varios usuarios
-otros costos: no es parte del radio es un check
-capturar autorespuesta
-1 recla varias incidencias
-devoluciones 2 opciones juntas auto tp y manual x prove
-texto en para pedir devoucion TP

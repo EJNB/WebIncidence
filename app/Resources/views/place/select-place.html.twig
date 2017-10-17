@@ -1,0 +1,5 @@
+<select class="selectpicker" data-live-search="true" required title="Seleccione el lugar">
+    {% for place in places %}
+        <option value="{{ place.id }}">{{ place.name }}</option>
+    {% endfor %}
+</select>

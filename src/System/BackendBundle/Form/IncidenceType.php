@@ -76,8 +76,14 @@ class IncidenceType extends AbstractType
                 'label' => 'Documento (PDF file)'
             ))
 //            ->add('service')
-            ->add('place',TextType::class,array(
-                'label' => 'Lugar',
+            ->add('place',EntityType::class,array(
+                'class' => 'System\BackendBundle\Entity\Place',
+                'attr' => array(
+                    'class' => 'selectpicker form-control',
+                    'data-live-search' => 'true',
+                    'title' => 'Seleccione el lugar'
+                ),
+                'label' => 'Lugar'
             ));
 //            ->add('claim');
 //            ->add('booking');

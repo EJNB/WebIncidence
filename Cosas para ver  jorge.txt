@@ -1,1 +1,0 @@
-ver con jorge el tema de la relacion d incidence<<-->> person si es many to many
