@@ -164,16 +164,17 @@ function showByTypes(id) {
     switch(id) {
 
         case 1:
-            $('#container_booking_services').html('');
+            $('#container_booking_suppliers').html('');
             $('#container_booking_clients').html('');
             //hacer select con personas
-            // var url_booking_suppliers = Routing.generate('incidence_ajax_get_booking_suppliers');
-            // $.post(url_booking_suppliers, {reference:reference}, function(response) {
-            //     $('#container_booking_services').html(response);
-            // });
+            var url_booking_persons = Routing.generate('incidence_ajax_get_booking_person_names');
+            $.post(url_booking_persons, {reference:reference}, function(response) {
+                $('#container_booking_persons').html(response);
+            });
             break;
         case 2:
             $('#container_booking_clients').html('');
+            $('#container_booking_persons').html('');
             var url_booking_suppliers = Routing.generate('incidence_ajax_get_booking_suppliers');
             $.post(url_booking_suppliers, {reference:reference}, function(response) {
                 $('#container_booking_suppliers').html(response);
@@ -181,14 +182,16 @@ function showByTypes(id) {
             break;
         case 3:
             $('#container_booking_suppliers').html('');
+            $('#container_booking_persons').html('');
             var url_booking_clients = Routing.generate('incidence_ajax_get_booking_client_names');
             $.post(url_booking_clients, {reference:reference}, function(response) {
                 $('#container_booking_clients').html(response);
             });
             break;
         default:
-            $('#container_booking_services').html('');
+            $('#container_booking_suppliers').html('');
             $('#container_booking_clients').html('');
+            $('#container_booking_persons').html('');
     }
 
    //
@@ -212,12 +215,43 @@ function showServicesBySupplier(data) {
     });
 }
 
+function showCompensationCost() {
+    var url_booking_compensation_services = Routing.generate('incidence_ajax_get_compensation_service');
+    var reference = $('#select_reference').val();
+    $.post(url_booking_compensation_services, {reference:reference}, function(response) {
+        $('#container_compensation_cost').html(response);
+    });
+}
+
+function showSustitutionOriginalCost() {
+    var url_booking_sustitution_services = Routing.generate('incidence_ajax_get_sustitution_services');
+    var reference = $('#select_reference').val();
+    $.post(url_booking_sustitution_services, {reference:reference}, function(response) {
+        $('#container_sustitution_cost_original').html(response);
+    });
+}
+
+function showSustitutionSustituteCost(type) {
+
+    var url_booking_sustitution_services = Routing.generate('incidence_ajax_get_sustitution_services');
+    var reference = $('#select_reference').val();
+    // var service = $('#select_reference').val();
+    $.post(url_booking_sustitution_services, {reference:reference, serviceType:type}, function(response) {
+        $('#container_sustitution_cost_sustitute').html(response);
+    });
+}
+
 $(document).ready( function() {
 
     initiCheck();
 
     PNotify.prototype.options.styling = "bootstrap3";
-    
+
+    // $('select').attr({
+    //     'class' : 'selectpicker',
+    //     'data-live-search':'true'
+    // })
+
     //$('select:not(.select-standard)').select2();
 
     //setTimeout(function() {
@@ -233,6 +267,14 @@ $(document).ready( function() {
         $("#text-descripcion-popup-eliminar").html($(this).attr("data-descripcion"));
     });
 
+    //configuracion del campo date
+    $('#system_backendbundle_incidence_incidenceDate').datetimepicker({
+       format: 'YYYY-MM-DD',
+       locale: 'es',
+       showClear: true
+    });
+
+    //alert($('#home').height()) //esto lo hice para saber la altura
 
 
     //$('.link-tooltip').hover(function(){
@@ -249,11 +291,6 @@ $(document).ready( function() {
     //    $('#form-reference').submit();
     //});
     //
-    //$('#finder-date-from').datetimepicker({
-    //    format: 'YYYY-MM-DD',
-    //    locale: 'es',
-    //    showClear: true
-    //});
     //$('#finder-date-to').datetimepicker({
     //    useCurrent: false, //Important! See issue #1075
     //    format: 'YYYY-MM-DD',

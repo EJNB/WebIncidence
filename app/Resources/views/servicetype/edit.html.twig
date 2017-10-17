@@ -3,13 +3,13 @@
 
 {% block content %}
     <div class="container">
-        <h1 class="page-header">Servicetype edit</h1>
+        <h1 class="page-header">Editar <small style="display: inline"> {{ serviceType.name }}</small></h1>
 
         {{ form_start(edit_form) }}
         <div class="col-md-4">
-            {{ form_row(edit_form.code) }}
-            {{ form_row(edit_form.name) }}
             {{ form_row(edit_form.itemtype) }}
+            {{ form_row(edit_form.name) }}
+            {{ form_row(edit_form.code) }}
 
             <button class="btn btn-info">Editar</button>
             <a class="btn btn-danger link-eliminar" href="javascript:void(0)" data-url="{{ path('servicetype_delete',{'id':serviceType.id}) }}" data-toggle="modal" data-target="#modal-delete" data-descripcion="{{ serviceType.name }}">Eliminar</a>
@@ -20,27 +20,3 @@
     </div>
 
 {% endblock %}
-
-
-
-{#{% extends 'base.html.twig' %}#}
-
-{#{% block body %}#}
-    {#<h1>Servicetype edit</h1>#}
-
-    {#{{ form_start(edit_form) }}#}
-        {#{{ form_widget(edit_form) }}#}
-        {#<input type="submit" value="Edit" />#}
-    {#{{ form_end(edit_form) }}#}
-
-    {#<ul>#}
-        {#<li>#}
-            {#<a href="{{ path('servicetype_index') }}">Back to the list</a>#}
-        {#</li>#}
-        {#<li>#}
-            {#&#123;&#35;{{ form_start(delete_form) }}&#35;&#125;#}
-                {#&#123;&#35;<input type="submit" value="Delete">&#35;&#125;#}
-            {#&#123;&#35;{{ form_end(delete_form) }}&#35;&#125;#}
-        {#</li>#}
-    {#</ul>#}
-{#{% endblock %}#}

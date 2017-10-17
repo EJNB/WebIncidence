@@ -39,6 +39,7 @@
                 </a>
                 <ul class="treeview-menu">
                     {#{% if is_granted(['ROLE_MANAGE']) %}#}
+                    <li><a href="{{ path('place_index') }}"><i class="fa fa-circle-o"></i> Lugares</a></li>
                     <li><a href="{{ path('category_index') }}"><i class="fa fa-circle-o"></i> Categorias</a></li>
                     {#{% if is_granted(['ROLE_ADVISING_SP','ROLE_ADMIN']) %}#}
                         <li><a href="{{ path('subcategory_index') }}"><i class="fa fa-circle-o"></i> Subcategorias</a></li>

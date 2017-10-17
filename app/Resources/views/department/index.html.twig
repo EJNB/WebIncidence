@@ -1,3 +1,4 @@
+{% form_theme form 'form/fields.html.twig' %}
 {% extends ':layouts:main-layout.html.twig' %}
 
 {% block content %}
@@ -6,15 +7,13 @@
     <table class="table table-responsive table-hover">
         <thead>
             <tr>
-                <th>No</th>
-                <th>Nombre</th>
+                <th style="width: 26%">Nombre</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
         {% for department in departments %}
             <tr>
-                <td>{{ loop.index }}</td>
                 <td>{{ department.name }}</td>
                 <td>
                     <a href="{{ path('department_edit',{ 'id': department.id }) }}" data-toggle="tooltip" data-placement="top" title="Editar">
@@ -30,18 +29,19 @@
                 </td>
             </tr>
         {% endfor %}
+        {{ form_start(form) }}
+        <tr>
+            <td>
+                {{ form_row(form.name) }}
+            </td>
+            <td>
+                <div class="form-group">
+                    <input class="btn btn-primary" type="submit" value="Guardar">
+                </div>
+            </td>
+        </tr>
+        {{ form_end(form) }}
         </tbody>
     </table>
 
-    {{ form_start(form) }}
-    <div class="row">
-        <div class="col-md-3">
-            {{ form_widget(form) }}
-        </div>
-        <div class="col-md-3">
-            <input type="submit" value="Guardar" class="btn btn-primary">
-        </div>
-    </div>
-    {{ form_end(form) }}
-        {#<a href="{{ path('department_new') }}" class="btn btn-info">ADD Department</a>#}
 {% endblock %}

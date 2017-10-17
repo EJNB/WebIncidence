@@ -52,3 +52,18 @@ incidence_ajax_get_booking_client_names:
     path:   /get_booking_client_names
     defaults: { _controller: "SystemBackendBundle:Incidence:getAjaxBookingClientNames" }
     options:  {expose: true}
+
+incidence_ajax_get_booking_person_names:
+    path:   /get_booking_person_names
+    defaults: { _controller: "SystemBackendBundle:Incidence:getAjaxBookingPersonNames" }
+    options:  {expose: true}
+
+incidence_ajax_get_compensation_service:
+    path:   /get_compensation_service
+    defaults: { _controller: "SystemBackendBundle:Incidence:getAjaxCompensationServices" }
+    options:  {expose: true}
+
+incidence_ajax_get_sustitution_services:
+    path:   /get_sustitution_services
+    defaults: { _controller: "SystemBackendBundle:Incidence:getAjaxSustitutionServices" }
+    options:  {expose: true}

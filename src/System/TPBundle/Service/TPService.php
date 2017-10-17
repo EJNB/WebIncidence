@@ -67,4 +67,21 @@ class TPService
 
         return $suppliers;
     }
+
+    public function getBookingServicesWithCostByStatusAndStatus($reference, $status=null, $serviceType=null){
+        $em = $this->em;
+
+        $services = $em->getRepository('SystemBackendBundle:Booking')->findTPBookingServicesWithCostByStatusAndServiceType($reference, $status, $serviceType);
+
+        return $services;
+    }
+
+    public function getSimilarServiceTypes($type){
+        $em = $this->em;
+
+        $serviceTypes = $em->getRepository('SystemBackendBundle:Booking')->findTPSimilarServiceTypes($type);
+
+        return $serviceTypes;
+    }
+
 }

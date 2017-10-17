@@ -63,11 +63,25 @@ class Incidence
      **/
     private $incidenceType;
 
-//    /**
-//     * @ORM\ManyToOne(targetEntity="Department", inversedBy="incidences")
-//     * @ORM\JoinColumn(name="department_id", referencedColumnName="id")
-//     **/
-//    private $department;
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     **/
+    private $clousure;
+
+    /**
+     * @ORM\Column(type="text", length=255, nullable=true)
+     **/
+    private $immediate_actions;
+
+    /**
+     * @ORM\Column(type="text", length=255, nullable=true)
+     **/
+    private $corrective_actions;
+
+    /**
+     * @ORM\Column(type="float")
+     **/
+    private $cost;
 
     /**
      * @ORM\ManyToOne(targetEntity="Service", inversedBy="incidences")
@@ -377,5 +391,97 @@ class Incidence
     public function getIncidencesPersons()
     {
         return $this->incidences_persons;
+    }
+
+    /**
+     * Set clousure
+     *
+     * @param string $clousure
+     * @return Incidence
+     */
+    public function setClousure($clousure)
+    {
+        $this->clousure = $clousure;
+
+        return $this;
+    }
+
+    /**
+     * Get clousure
+     *
+     * @return string 
+     */
+    public function getClousure()
+    {
+        return $this->clousure;
+    }
+
+    /**
+     * Set immediate_actions
+     *
+     * @param string $immediateActions
+     * @return Incidence
+     */
+    public function setImmediateActions($immediateActions)
+    {
+        $this->immediate_actions = $immediateActions;
+
+        return $this;
+    }
+
+    /**
+     * Get immediate_actions
+     *
+     * @return string 
+     */
+    public function getImmediateActions()
+    {
+        return $this->immediate_actions;
+    }
+
+    /**
+     * Set corrective_actions
+     *
+     * @param string $correctiveActions
+     * @return Incidence
+     */
+    public function setCorrectiveActions($correctiveActions)
+    {
+        $this->corrective_actions = $correctiveActions;
+
+        return $this;
+    }
+
+    /**
+     * Get corrective_actions
+     *
+     * @return string 
+     */
+    public function getCorrectiveActions()
+    {
+        return $this->corrective_actions;
+    }
+
+    /**
+     * Set cost
+     *
+     * @param float $cost
+     * @return Incidence
+     */
+    public function setCost($cost)
+    {
+        $this->cost = $cost;
+
+        return $this;
+    }
+
+    /**
+     * Get cost
+     *
+     * @return float 
+     */
+    public function getCost()
+    {
+        return $this->cost;
     }
 }

@@ -1,176 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/System/BackendBundle/Repository/BookingRepository.php" description="        $var-&gt;bindValue(++$i,$status);" line="206" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="876417ae-e221-4653-b41b-75d663c21948" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_10_9_17_10_03_a_m__s.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/css/banner.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/css/custom.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/css/icheck.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/css/ie/arrow-bottom.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/css/ie/arrow-top.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/css/ie/header-line.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/css/ie/icon-fork.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/css/ie/icon-github.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/css/ie/icon-lab.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/css/ie/icon-options.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/css/ie/icon-star.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/css/montserrat-bold.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/css/montserrat-bold.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/css/montserrat-bold.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/css/montserrat-bold.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/css/montserrat-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/css/montserrat-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/css/montserrat-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/css/montserrat-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/css/normalize.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/js/custom.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/js/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/demo/js/zepto.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/icheck.jquery.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/icheck.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/icheck.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/all.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/_all.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/aero.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/aero.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/aero@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/blue.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/blue@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/flat.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/flat.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/flat@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/green.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/green@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/grey.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/grey.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/grey@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/orange.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/orange.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/orange@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/pink.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/pink.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/pink@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/purple.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/purple.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/purple@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/red.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/red.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/red@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/yellow.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/yellow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/flat/yellow@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/futurico/futurico.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/futurico/futurico.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/futurico/futurico@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/line/_all.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/line/aero.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/line/blue.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/line/green.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/line/grey.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/line/line.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/line/line.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/line/line@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/line/orange.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/line/pink.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/line/purple.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/line/red.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/line/yellow.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/_all.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/aero.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/aero.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/aero@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/blue.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/blue@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/green.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/green@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/grey.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/grey.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/grey@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/minimal.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/minimal.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/minimal@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/orange.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/orange.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/orange@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/pink.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/pink.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/pink@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/purple.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/purple.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/purple@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/red.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/red.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/red@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/yellow.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/yellow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/minimal/yellow@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/polaris/polaris.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/polaris/polaris.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/polaris/polaris@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/_all.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/aero.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/aero.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/aero@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/blue.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/blue@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/green.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/green@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/grey.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/grey.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/grey@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/orange.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/orange.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/orange@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/pink.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/pink.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/pink@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/purple.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/purple.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/purple@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/red.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/red.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/red@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/square.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/square.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/square@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/yellow.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/yellow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/plugins/icheck-1.x/skins/square/yellow@2x.png" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_11_10_17_20_11_s.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/incidence/booking_persons.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/place/edit.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/place/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Controller/PlaceController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Form/PlaceType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/place.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Tests/Controller/PlaceControllerTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_10_10_17_2_57_PM_s.xml" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_10_10_17_2_57_PM_s.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/form/fields.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/form/fields.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/category/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/category/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/category/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/category/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/department/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/department/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/department/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/department/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/incidence/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/incidence/new.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/incidencetype/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/incidencetype/edit.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/incidencetype/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/incidencetype/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/itemtype/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/itemtype/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/itemtype/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/itemtype/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/layouts/main-layout-sidebar.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/layouts/main-layout-sidebar.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/layouts/main-layout.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/layouts/main-layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/servicetype/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/servicetype/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/servicetype/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/servicetype/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/subcategory/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/subcategory/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/subcategory/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/subcategory/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceController.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceTypeController.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceTypeController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Entity/Incidence.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Entity/Incidence.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Entity/IncidenceType.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Entity/IncidenceType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Entity/ItemType.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Entity/ItemType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Entity/ServiceType.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Entity/ServiceType.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Form/IncidenceType.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Form/IncidenceType.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Form/IncidenceTypeType.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Form/IncidenceTypeType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Form/ItemTypeType.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Form/ItemTypeType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Form/ServiceTypeType.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Form/ServiceTypeType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Form/SubCategoryType.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Form/SubCategoryType.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Repository/BookingRepository.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Repository/BookingRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/incidence.yml" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/incidence.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/TPBundle/Service/TPService.php" afterPath="$PROJECT_DIR$/src/System/TPBundle/Service/TPService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/advising/scripts.js" afterPath="$PROJECT_DIR$/web/advising/scripts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/advising/styles.css" afterPath="$PROJECT_DIR$/web/advising/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/config.php" afterPath="$PROJECT_DIR$/web/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/fos_js_routes.js" afterPath="$PROJECT_DIR$/web/js/fos_js_routes.js" />
     </list>
     <ignored path="WebIncidence.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -192,119 +69,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="new.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/incidence/new.html.twig">
+      <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/category/edit.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.461538">
-              <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SubCategory.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Entity/SubCategory.php">
+      <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/incidencetype/edit.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.767148">
-              <caret line="48" column="6" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="incidence.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/incidence.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="53" column="28" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IncidenceController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="222" column="0" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="booking_clients.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/incidence/booking_clients.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IncidenceType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Form/IncidenceType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+            <state vertical-scroll-proportion="-17.032259">
+              <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
               <folding>
-                <element signature="e#45#94#0#PHP" expanded="true" />
-                <marker date="1507752133968" expanded="true" signature="1241:1253" placeholder="..." />
-                <marker date="1507752133968" expanded="true" signature="1241:1254" placeholder="..." />
-                <marker date="1507752133968" expanded="true" signature="1274:1371" placeholder="..." />
-                <marker date="1507752133968" expanded="true" signature="1307:1370" placeholder="..." />
+                <element signature="e#63#92#0#Twig" expanded="true" />
+                <element signature="n#style#0;n#small#0;n#h1#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#676#696#0#Twig" expanded="true" />
+                <element signature="e#939#958#0#Twig" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TPService.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/System/TPBundle/Service/TPService.php">
+      <file leaf-file-name="IncidenceTypeController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceTypeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookingRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Repository/BookingRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.384615">
-              <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.18689321">
+              <caret line="100" column="25" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
               <folding>
-                <marker date="1507755138395" expanded="true" signature="386:772" placeholder="SELECT BHD.F..BHD..." />
-                <marker date="1507755138395" expanded="true" signature="1053:1473" placeholder="SELECT OPT.O..BHD..." />
-                <marker date="1507755138395" expanded="true" signature="1779:2216" placeholder="SELECT OPT.O..BHD..." />
-                <marker date="1507755138395" expanded="true" signature="2533:2747" placeholder="SELECT OPT.O..OPT..." />
-                <marker date="1507755138395" expanded="true" signature="3022:3472" placeholder="SELECT OPT.O..BHD..." />
-                <marker date="1507755138395" expanded="true" signature="3748:4107" placeholder="SELECT BHD.F..BHD..." />
-                <marker date="1507755138395" expanded="true" signature="4381:4740" placeholder="SELECT DISTI..BHD..." />
+                <element signature="e#3280#3301#1#PHP" expanded="true" />
+                <element signature="e#3344#3374#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="booking_detail.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/incidence/booking_detail.html.twig">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/category/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state vertical-scroll-proportion="-31.225807">
+              <caret line="44" column="28" selection-start-line="33" selection-start-column="8" selection-end-line="44" selection-end-column="28" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scripts.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/advising/scripts.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="241" column="43" selection-start-line="241" selection-start-column="43" selection-end-line="241" selection-end-column="43" />
-              <folding>
-                <marker date="1507755077040" expanded="true" signature="8641:13609" placeholder="{...}" />
-                <marker date="1507755077040" expanded="true" signature="8648:13583" placeholder="//..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -316,94 +124,104 @@
       <find>findTPBookingServicesDescription</find>
       <find>container</find>
       <find>getBookingServiceDescriptionBySupplier</find>
+      <find>form_row</find>
+      <find>container_booking_suppliers</find>
+      <find>immediate_actions</find>
+      <find>corrective_actions</find>
+      <find>newA</find>
+      <find>_name</find>
+      <find>form-control</find>
     </findStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="s doctrine:generate:crud SystemBackendBundle:Incidence" />
-      <command text="s doctrine:schema:update --force3" />
-      <command text="s doctrine:schema:update --force" />
-      <command text="git add -A" />
-      <command text="git commit -m &quot;Arregle la relacion entre incidence -- person&quot;" />
-      <command text="s doctrine:schema:update --force " />
-      <command text="s doctrine:generate:entities SystemBackendBundle" />
-      <command text="s doctrine:schema:update --force" />
-      <command text="git add -A" />
-      <command text="git commit -m &quot;commit antes de arreglar el tipo de incidencias&quot;" />
-      <command text="s doctrine:schema:update --force" />
-      <command text="s doctrine:database:create" />
-      <command text="s doctrine:schema:update --force" />
-      <command text="s doctrine:database:create" />
-      <command text="s doctrine:schema:update --force" />
-      <command text="s doctrine:generate:entities System\BackendBundle\Entity\Incidence" />
-      <command text="s doctrine:generate:entities System\BackendBundle\Entity\IncidenceType" />
-      <command text="s doctrine:schema:update --force " />
-      <command text="s doctrine:generate:entities System\BackendBundle\Entity\IncidenceType" />
-      <command text="s doctrine:generate:entities System\BackendBundle\Entity\Incidence" />
-      <command text="composer require friendsofsymfony/jsrouting-bundle" />
-      <command text="composer -v" />
-      <command text="composer require friendsofsymfony/jsrouting-bundle" />
-      <command text="php app/console assets:install --symlink web" />
       <command text="php app/console fos:js-routing:dump" />
+      <command text="git add -A" />
+      <command text="git commit -m &quot;Hasta aqui lo q hizo jorge&quot;" />
+      <command text="s doctrine:generate:entities SystemBackendBundle:Subcategory" />
+      <command text="s doctrine:generate:entities SystemBackendBundle:SubCategory" />
+      <command text="s doctrine:schema:update --force" />
+      <command text="s doctrine:generate:entities SystemBackendBundle:ItemType" />
+      <command text="s doctrine:schema:update --force" />
+      <command text="php app/console fos:js-routing:dump" />
+      <command text="s doctrine:schema:update --force" />
+      <command text="s doctrine:generate:entities SystemBackendBundle:Incidence" />
+      <command text="s doctrine:schema:update --force " />
+      <command text="s doctrine:database:create" />
+      <command text="s doctrine:schema:update --force " />
+      <command text="s doctrine:database:create" />
+      <command text="s doctrine:schema:update --force " />
+      <command text="s doctrine:database:create" />
+      <command text="s doctrine:schema:update --force" />
+      <command text="s doctrine:generate:entities SystemBackendBundle:Incidence" />
+      <command text="s doctrine:generate:crud " />
+      <command text="SystemBackendBandle:Place" />
+      <command text="s doctrine:generate:crud " />
+      <command text="s doctrine:schema:update --force" />
+      <command text="s doctrine:database:create" />
+      <command text="s doctrine:schema:update --force" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Resources/views/itemtype/index.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/itemtype/edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/itemtype.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/servicetype/index.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/servicetype/new.html.twig" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/servicetype.yml" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Form/ServiceTypeType.php" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Form/DepartmentType.php" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/department.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/department/index.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/subcategory/index.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/category/index.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/layouts/common/flash-message.html.twig" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Controller/DepartmentController.php" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Controller/CategoryController.php" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Controller/ItemTypeController.php" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Controller/ServiceTypeController.php" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Controller/SubCategoryController.php" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/incidencetype.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/incidencetype/edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Entity/Person.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/incidence/index.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/itemtype/new.html.twig" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Entity/SubCategory.php" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Entity/Category.php" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Entity/ItemType.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/incidencetype/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Form/IncidenceTypeType.php" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceTypeController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/layouts/main-layout-sidebar.html.twig" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Entity/Incidence.php" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Entity/IncidenceType.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/form/fields.html.twig" />
-        <option value="$PROJECT_DIR$/web/advising/styles.css" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/app/config/routing.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/incidence/services_description.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/incidence/booking_suppliers.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/layouts/main-layout.html.twig" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Form/IncidenceType.php" />
         <option value="$PROJECT_DIR$/src/System/TPBundle/Service/TPService.php" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/incidence.yml" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/incidence/booking_detail.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/incidence/new.html.twig" />
-        <option value="$PROJECT_DIR$/web/advising/scripts.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/incidence/booking_clients.html.twig" />
         <option value="$PROJECT_DIR$/src/System/BackendBundle/Repository/BookingRepository.php" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Entity/ItemType.php" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Entity/ServiceType.php" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Form/ServiceTypeType.php" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/incidence.yml" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Form/IncidenceType.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/incidence/booking_persons.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/incidence/new.html.twig" />
+        <option value="$PROJECT_DIR$/web/advising/scripts.js" />
+        <option value="$PROJECT_DIR$/app/Resources/views/incidence/sustitution_service.html.twig" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/incidence.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/views/incidence/compensation_services.html.twig" />
+        <option value="$PROJECT_DIR$/web/advising/scripts.js" />
+        <option value="$PROJECT_DIR$/src/System/TPBundle/Service/TPService.php" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Repository/BookingRepository.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/incidence/new.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/incidence/cost_service.html.twig" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceController.php" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceController.php" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Entity/Incidence.php" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/views/layouts/main-layout-sidebar.html.twig" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Form/PlaceType.php" />
+        <option value="$PROJECT_DIR$/web/advising/styles.css" />
+        <option value="$PROJECT_DIR$/web/advising/styles.css" />
+        <option value="$PROJECT_DIR$/app/Resources/views/place/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/place.yml" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Controller/PlaceController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/place/edit.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/category/edit.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/category/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/subcategory/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Form/SubCategoryType.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/subcategory/edit.html.twig" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Form/ItemTypeType.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/itemtype/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/itemtype/edit.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/servicetype/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/servicetype/edit.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/department/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/department/edit.html.twig" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Form/IncidenceTypeType.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/incidencetype/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/incidencetype/edit.html.twig" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceTypeController.php" />
       </list>
     </option>
   </component>
@@ -415,12 +233,17 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true">
+    <include_path>
+      <path value="." />
+      <path value="C:\php\pear" />
+    </include_path>
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -448,7 +271,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -464,6 +286,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="webIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="advising" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -518,6 +372,122 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="BackendBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BackendBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BackendBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BackendBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BackendBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Form" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -557,7 +527,81 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BackendBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="incidencetype" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -581,13 +625,15 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
-    <property name="last_opened_file_path" value="C:/php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../bin/php/php5.5.12" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -653,6 +699,11 @@
       <workItem from="1507668949072" duration="1390000" />
       <workItem from="1507671574110" duration="2683000" />
       <workItem from="1507727408535" duration="18170000" />
+      <workItem from="1507812652370" duration="726000" />
+      <workItem from="1507814639697" duration="8301000" />
+      <workItem from="1507823274871" duration="4123000" />
+      <workItem from="1507831010168" duration="6962000" />
+      <workItem from="1508101991380" duration="20004000" />
     </task>
     <task id="LOCAL-00001" summary="se agregaron las relaciones entre Incidencias y Servicios">
       <created>1502321651235</created>
@@ -820,17 +871,18 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34589000" />
+    <option name="totallyTimeSpent" value="74705000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23279649" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21510416" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Symfony2" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.365991" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -840,10 +892,9 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36997885" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -892,258 +943,18 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/System/BackendBundle/Controller/PlaceController.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Form/DepartmentType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/layouts/common/flash-message.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="62" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Controller/DepartmentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="121" column="2" selection-start-line="121" selection-start-column="2" selection-end-line="121" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/department/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Controller/ItemTypeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="100" column="27" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="27" />
-          <caret line="98" column="27" selection-start-line="98" selection-start-column="25" selection-end-line="98" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Controller/CategoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="14" selection-start-line="30" selection-start-column="11" selection-end-line="33" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Controller/SubCategoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="117" column="53" selection-start-line="117" selection-start-column="53" selection-end-line="117" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Controller/ServiceTypeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="128" column="50" selection-start-line="128" selection-start-column="50" selection-end-line="128" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/category/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="24" selection-start-line="5" selection-start-column="4" selection-end-line="45" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Form/ItemTypeType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Form/SubCategoryType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="9" selection-start-line="17" selection-start-column="28" selection-end-line="22" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/subcategory/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="24" selection-start-line="35" selection-start-column="4" selection-end-line="47" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/incidencetype/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/incidencetype.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Entity/Claim.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="52" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Entity/Department.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Entity/Person.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="71" selection-start-line="39" selection-start-column="65" selection-end-line="39" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Entity/Incidence_Person.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="78" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/incidence/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/itemtype/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/itemtype/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/incidencetype/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/incidencetype/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="4" selection-start-line="38" selection-start-column="6" selection-end-line="40" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Entity/ItemType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="122" column="28" selection-start-line="122" selection-start-column="28" selection-end-line="122" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/layouts/main-layout-sidebar.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="94" column="19" selection-start-line="60" selection-start-column="10" selection-end-line="94" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Entity/Category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceTypeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="75" selection-start-line="23" selection-start-column="75" selection-end-line="23" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Form/IncidenceTypeType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/JoinColumn.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Entity/Incidence.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/advising/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="120" column="20" selection-start-line="120" selection-start-column="20" selection-end-line="120" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/form/fields.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Entity/IncidenceType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="113" column="32" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1151,13 +962,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/incidence/services_description.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="26" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/incidence/services_description.html.twig" />
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1165,77 +970,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/layouts/main-layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="142" column="71" selection-start-line="142" selection-start-column="71" selection-end-line="142" selection-end-column="71" />
-          <folding>
-            <element signature="e#1436#4255#0#Twig" expanded="false" />
-            <element signature="e#5810#5827#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Form/IncidenceType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
-          <folding>
-            <element signature="e#45#94#0#PHP" expanded="true" />
-            <marker date="1507752133968" expanded="true" signature="1241:1253" placeholder="..." />
-            <marker date="1507752133968" expanded="true" signature="1241:1254" placeholder="..." />
-            <marker date="1507752133968" expanded="true" signature="1274:1371" placeholder="..." />
-            <marker date="1507752133968" expanded="true" signature="1307:1370" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/incidence/booking_suppliers.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/TPBundle/Service/TPService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/incidence/booking_suppliers.html.twig" />
     <entry file="file://$PROJECT_DIR$/app/Resources/views/incidence/booking_detail.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/incidence.yml">
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Entity/SubCategory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="28" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
-          <folding />
+          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/advising/scripts.js">
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Entity/ItemType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="241" column="43" selection-start-line="241" selection-start-column="43" selection-end-line="241" selection-end-column="43" />
-          <folding>
-            <marker date="1507755077040" expanded="true" signature="8641:13609" placeholder="{...}" />
-            <marker date="1507755077040" expanded="true" signature="8648:13583" placeholder="//..." />
-          </folding>
+          <caret line="185" column="23" selection-start-line="185" selection-start-column="23" selection-end-line="185" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceController.php">
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Entity/ServiceType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="222" column="0" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Form/ServiceTypeType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/layouts/main-layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="142" column="71" selection-start-line="142" selection-start-column="71" selection-end-line="142" selection-end-column="71" />
           <folding />
         </state>
       </provider>
@@ -1243,48 +1017,354 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/views/incidence/booking_clients.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Entity/Person.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/fos_js_routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="44" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/incidence/sustitution_service.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/advising/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="266" column="0" selection-start-line="266" selection-start-column="0" selection-end-line="266" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/incidence/cost_service.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="34" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/System/TPBundle/Service/TPService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="86" column="1" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Repository/BookingRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.384615">
-          <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="206" column="0" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
           <folding>
-            <marker date="1507755138395" expanded="true" signature="386:772" placeholder="SELECT BHD.F..BHD..." />
-            <marker date="1507755138395" expanded="true" signature="1053:1473" placeholder="SELECT OPT.O..BHD..." />
-            <marker date="1507755138395" expanded="true" signature="1779:2216" placeholder="SELECT OPT.O..BHD..." />
-            <marker date="1507755138395" expanded="true" signature="2533:2747" placeholder="SELECT OPT.O..OPT..." />
-            <marker date="1507755138395" expanded="true" signature="3022:3472" placeholder="SELECT OPT.O..BHD..." />
-            <marker date="1507755138395" expanded="true" signature="3748:4107" placeholder="SELECT BHD.F..BHD..." />
-            <marker date="1507755138395" expanded="true" signature="4381:4740" placeholder="SELECT DISTI..BHD..." />
+            <marker date="1508186351877" expanded="true" signature="7338:7340" placeholder="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.884615">
+          <caret line="262" column="45" selection-start-line="262" selection-start-column="45" selection-end-line="262" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17586207">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.45660377">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Entity/Incidence.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5216606">
+          <caret line="109" column="7" selection-start-line="109" selection-start-column="7" selection-end-line="109" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.87931037">
+          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/layouts/main-layout-sidebar.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40252706">
+          <caret line="41" column="98" selection-start-line="41" selection-start-column="98" selection-end-line="41" selection-end-column="98" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/incidence/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="90" column="37" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Entity/SubCategory.php">
+    <entry file="file://$PROJECT_DIR$/web/advising/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.767148">
-          <caret line="48" column="6" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.20216607">
+          <caret line="168" column="18" selection-start-line="168" selection-start-column="18" selection-end-line="168" selection-end-column="18" />
+          <folding>
+            <marker date="1508210236955" expanded="true" signature="1810:1831" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/place.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55689657">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Form/PlaceType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5830325">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Controller/PlaceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36823106">
+          <caret line="61" column="14" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
+          <folding>
+            <element signature="e#51#89#0#PHP" expanded="false" />
+            <element signature="e#642#669#1#PHP" expanded="false" />
+            <element signature="e#1035#1048#1#PHP" expanded="false" />
+            <element signature="e#1091#1114#0#PHP" expanded="false" />
+            <element signature="e#1799#1812#1#PHP" expanded="false" />
+            <element signature="e#1855#1877#0#PHP" expanded="false" />
+            <element signature="e#2356#2369#1#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/incidence.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.8226416">
+          <caret line="68" column="28" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/incidence/booking_persons.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/place/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31588447">
+          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Form/SubCategoryType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6137184">
+          <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/subcategory/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49097472">
+          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/subcategory/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12274368">
+          <caret line="4" column="98" selection-start-line="4" selection-start-column="98" selection-end-line="4" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/place/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="106" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/itemtype/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="45" />
+          <folding>
+            <element signature="e#20#41#0#Twig" expanded="false" />
+            <element signature="e#532#545#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Form/ItemTypeType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.612904">
+          <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/itemtype/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2669903">
+          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+          <folding>
+            <element signature="e#25#46#0#Twig" expanded="false" />
+            <element signature="e#659#674#0#Twig" expanded="false" />
+            <element signature="e#884#898#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/servicetype/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-27.67742">
+          <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/servicetype/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2936893">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+          <folding>
+            <element signature="e#25#46#0#Twig" expanded="false" />
+            <element signature="e#193#216#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/department/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30582523">
+          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+          <folding>
+            <element signature="e#20#41#0#Twig" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/department/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.69417477">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="e#25#46#0#Twig" expanded="true" />
+            <element signature="e#668#685#0#Twig" expanded="true" />
+            <element signature="e#899#915#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Form/IncidenceType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.2390776">
+          <caret line="96" column="14" selection-start-line="96" selection-start-column="14" selection-end-line="96" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Form/IncidenceTypeType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48058254">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/incidencetype/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6407767">
+          <caret line="24" column="65" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
+          <folding>
+            <element signature="e#58#87#0#Twig" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/category/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-31.225807">
+          <caret line="44" column="28" selection-start-line="33" selection-start-column="8" selection-end-line="44" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/category/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/incidencetype/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.032259">
+          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+          <folding>
+            <element signature="e#63#92#0#Twig" expanded="true" />
+            <element signature="n#style#0;n#small#0;n#h1#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#676#696#0#Twig" expanded="true" />
+            <element signature="e#939#958#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Controller/CategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50728154">
+          <caret line="34" column="0" selection-start-line="30" selection-start-column="11" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceTypeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18689321">
+          <caret line="100" column="25" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+          <folding>
+            <element signature="e#3280#3301#1#PHP" expanded="true" />
+            <element signature="e#3344#3374#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

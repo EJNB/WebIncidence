@@ -1,3 +1,4 @@
+{% form_theme form 'form/fields.html.twig' %}
 {% extends ':layouts:main-layout.html.twig' %}
 
 {% block content %}
@@ -6,15 +7,13 @@
     <table class="table table-responsive table-hover">
         <thead>
         <tr>
-            <th>No</th>
-            <th>Nombre</th>
+            <th style="width: 30%">Nombre</th>
             <th>Acciones</th>
         </tr>
         </thead>
         <tbody>
         {% for itemType in itemTypes %}
             <tr>
-                <td>{{ loop.index }}</td>
                 <td>{{ itemType.name }}</td>
                 <td>
                     <a href="{{ path('itemtype_edit', { 'id': itemType.id }) }}"
@@ -32,57 +31,18 @@
                 </td>
             </tr>
         {% endfor %}
+        {{ form_start(form) }}
+        <tr>
+            <td>
+                {{ form_row(form.name) }}
+            </td>
+            <td>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Guardar">
+                </div>
+            </td>
+        </tr>
+        {{ form_end(form) }}
         </tbody>
     </table>
-    {{ form_start(form, { 'attr': {'class': 'form-inline'} }) }}
-    <div class="form-group">
-        {{ form_widget(form.subcategory) }}
-    </div>
-
-    <div class="form-group">
-        {{ form_widget(form.name) }}
-    </div>
-
-    <div class="form-group">
-        <input type="submit" value="Guardar" class="btn btn-primary">
-    </div>
-    {{ form_end(form) }}
-
-
-    {##}
-    {#<h1>Itemtypes list</h1>#}
-
-    {#<table>#}
-        {#<thead>#}
-            {#<tr>#}
-                {#<th>Id</th>#}
-                {#<th>Name</th>#}
-                {#<th>Actions</th>#}
-            {#</tr>#}
-        {#</thead>#}
-        {#<tbody>#}
-        {#{% for itemType in itemTypes %}#}
-            {#<tr>#}
-                {#<td><a href="{{ path('itemtype_show', { 'id': itemType.id }) }}">{{ itemType.id }}</a></td>#}
-                {#<td>{{ itemType.name }}</td>#}
-                {#<td>#}
-                    {#<ul>#}
-                        {#<li>#}
-                            {#<a href="{{ path('itemtype_show', { 'id': itemType.id }) }}">show</a>#}
-                        {#</li>#}
-                        {#<li>#}
-                            {#<a href="{{ path('itemtype_edit', { 'id': itemType.id }) }}">edit</a>#}
-                        {#</li>#}
-                    {#</ul>#}
-                {#</td>#}
-            {#</tr>#}
-        {#{% endfor %}#}
-        {#</tbody>#}
-    {#</table>#}
-
-    {#<ul>#}
-        {#<li>#}
-            {#<a href="{{ path('itemtype_new') }}">Create a new itemType</a>#}
-        {#</li>#}
-    {#</ul>#}
 {% endblock %}

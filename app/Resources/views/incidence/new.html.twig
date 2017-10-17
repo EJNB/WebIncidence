@@ -2,104 +2,246 @@
 {% extends 'layouts/main-layout.html.twig' %}
 
 {% block content %}
-    <h1 class="page-header">Crear Incidencia</h1>
+<div class="form-container">
+    <h1 class="page-header">Crear Incidencia <small class="text" style="display: inline"></small></h1>
 
-    <div>
     {{ form_start(form) }}
         <input type="hidden" id="select_reference" name="select_reference" value="">
 
         <div class="row">
-            <div class="col-md-3">
-                <div class="input-group">
-                    <input type="search" class="form-control " id="find_booking" name="booking" aria-describedby="btn_find_booking">
-                    <a class="input-group-addon" id="btn_find_booking" href="javascript:void(0);" onclick="findBooking()"><span class="glyphicon glyphicon-search"></span></a>
-                </div>
+        <div class="col-md-3">
+            <div class="input-group">
+                <input type="search" class="form-control " id="find_booking" name="booking" aria-describedby="btn_find_booking">
+                <a class="input-group-addon" id="btn_find_booking" href="javascript:void(0);" onclick="findBooking()"><span class="glyphicon glyphicon-search"></span></a>
             </div>
         </div>
-        <div class="row" >
-            <div class="col-md-12" id="container_booking_detail">
-                {#{{ render(controller(#}
-                    {#'SystemBackendBundle:Incidence:getAjaxBookingDetail'#}
-                {#)) }}#}
-                {{ include(':incidence:booking_detail.html.twig') }}
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Datos Generales</a></li>
-                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Acciones</a></li>
-                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Costos</a></li>
-                    {#<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>#}
-                </ul>
-
-                <!-- Tab panes -->
-                <div class="tab-content">
-
-                    <!--Datos generales-->
-                    <div role="tabpanel" class="tab-pane active" id="home">
-                        {{ form_row(form.incidenceDate) }}
-                        {{ form_row(form.place) }}
-                        {% for type in types %}
-                            <input type="radio" name="incidence_types" value="{{ type.id }}" class="radio_incidence_types" onclick="showByTypes({{ type.id }})">{{ type.name }}
-                        {% endfor %}
-
-                        {#{{ form_row(form.incidenceType) }}#}
-
-                        <div id="container_booking_clients" style="margin: 7px 7px;">
-
-                        </div>
-
-                        <div id="container_booking_suppliers" style="margin: 7px 7px;">
-
-                        </div>
-
-                        <div id="container_select_service" style="margin: 7px 7px;">
-
-                        </div>
-                        {{ form_row(form.description) }}
-                        {{ form_row(form.causes) }}
-
-                        {{ form_label(form.document) }}
-                        {{ form_errors(form.document) }}
-                        {{ form_widget(form.document) }}
-
-                    </div>
-
-                    <!--Acciones-->
-                    <div role="tabpanel" class="tab-pane" id="profile">
-                        {#{{ form_row(form.claim) }}#}
-                        {#{{ form_row(form.booking) }}#}
-                    </div>
-
-                    <!--Costos-->
-                    <div role="tabpanel" class="tab-pane" id="messages">
-                        <label>
-                            <input type="checkbox" name="quux[1]">
-                            Foo
-                        </label>
-                    </div>
-                    {#<div role="tabpanel" class="tab-pane" id="settings">Settings</div>#}
-                </div>
-            </div>
-
-
-
-        </div>
-
-{#{{ form_widget(form.incidenceType) }}#}
-        {#{{ form_row(form) }}#}
-        <input type="submit" value="Crear" class="btn btn-primary"/>
-        <a href="{{ path('incidence_index') }}" class="btn btn-default">Volver al listado</a>
     </div>
 
+    <div class="row">
+        <div class="col-md-12" id="container_booking_detail">
+            {{ include(':incidence:booking_detail.html.twig') }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation"  class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Datos Generales</a></li>
+                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Acciones</a></li>
+                <li role="presentation"><a href="#costs" aria-controls="costs" role="tab" data-toggle="tab">Costos</a></li>
+            </ul>
+        </div>
+    </div>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <!--Datos generales-->
+            <div role="tabpanel" class="tab-pane active" id="home">
+                <!-- en esta primera fila van las 2 columnas con ls input la fecha y el lugar-->
+                <div class="row">
+                    <div class="col-md-3">
+                        {{ form_row(form.incidenceDate) }}
+                    </div>
+                    <div class="col-md-3">
+                        {{ form_row(form.place) }}
+                    </div>
+                </div>
+
+                <!-- en esta otra fila van los  tipos de incidencia-->
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label> Tipos de incidencia</label><br>
+                            {% for type in types %}
+                                <input type="radio" name="incidence_types" value="{{ type.id }}" class="radio_incidence_types" onclick="showByTypes({{ type.id }})">{{ type.name }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <!--Este div es para mostrar los selects q vienen desde ajax-->
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <div id="container_booking_clients" {#style="margin: 7px 24px;"#}>
+
+                            </div>
+
+                            <div id="container_booking_suppliers"{# style="margin: 7px 7px;"#}>
+
+                            </div>
+
+                            <div id="container_booking_persons" {#style="margin: 7px 24px;"#}>
+
+                            </div>
+
+                            <div id="container_select_service" {#style="margin: 7px 24px;"#}>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6"></div>
+                    <div class="col-md-3">
+                        <div class="form-group" style="margin-bottom: 0">
+                            <select id="" class="form-control selectpicker" data-live-search="true" title="Quien detecta">
+                                {% for person in persons %}
+                                    <option value="{#{{ client['FULL_NAME'] }}#}">{{ person.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Esta fila es para mostrar los textarea de la descipcion y las causas-->
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form_row(form.description, {'attr':{'rows':'5'}}) }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form_row(form.causes, {'attr':{'rows':'5'}}) }}
+                    </div>
+                </div><!--end .row-->
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            {{ form_label(form.document) }}
+                            {{ form_errors(form.document) }}
+                            {{ form_widget(form.document) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Cierre: &nbsp;&nbsp;</label>
+                            <label><input type="radio" name="clousure" class="icheck">Efectivo </label>&nbsp;&nbsp;
+                            <label><input type="radio" name="clousure" class="icheck">insatisfactorio </label>
+                        </div>
+                    </div>
+                </div>
+            </div><!--end #home-->
+
+            <!--Acciones-->
+            <div role="tabpanel" class="tab-pane" id="profile">
+                <div class="row">
+                    <!--ver esto con jorge de donde sale el responsable de las acciones-->
+                    <div class="col-md-9"></div>
+
+                    <div class="col-md-3">
+                        {#<div class="pull-right">#}
+                            {#{{ include(':incidence:booking_persons.html.twig') }}#}
+                        {#</div>#}
+                        {% if persons is defined %}
+                            <label for="client_selection">Reponsable de las acciones</label>
+                            <select id="" class="form-control">
+                                {% for person in persons %}
+                                    <option value="{#{{ client['FULL_NAME'] }}#}">{{ person.name }}</option>
+                                {% endfor %}
+                            </select>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="12">
+                        {{ form_row(form.immediate_actions, {'attr':{'rows':'5'}}) }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!--ver esto con jorge de donde sale el responsable de las acciones-->
+                    <div class="col-md-9"></div>
+                    <div class="col-md-3">
+                        {#<div class="pull-right">#}
+                        {#{{ include(':incidence:booking_persons.html.twig') }}#}
+                        {#</div>#}
+                        {% if persons is defined %}
+                            <label for="client_selection">Reponsable de las acciones</label>
+                            <select id="" class="form-control">
+                                {% for person in persons %}
+                                    <option value="{#{{ client['FULL_NAME'] }}#}">{{ person.name }}</option>
+                                {% endfor %}
+                            </select>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="12">
+                        {{ form_row(form.corrective_actions, {'attr':{'rows':'5'}}) }}
+                    </div>
+                </div>
 
 
-    <!-- Nav tabs -->
+            </div>
 
+            <!--Costos-->
+            <div role="tabpanel" class="tab-pane" id="costs">
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="radio" name="type_of_cost" id="no_cost" class="" checked>Sin costo
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="radio" name="type_of_cost" id="compensation_cost" onclick="showCompensationCost()">
+                                Costo por compensaci&oacute;n
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4" id="container_compensation_cost">
 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="radio" name="type_of_cost" id="sustitution_cost" onclick="showSustitutionOriginalCost()"
+                                       class="">Costo por sustituci&oacute;n
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4" id="container_sustitution_cost_original">
+
+                            </div>
+                            <div class="col-md-1">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </div>
+                            <div class="col-md-4" id="container_sustitution_cost_sustitute">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="radio" name="type_of_cost" id="other_cost" class="">Otros costos
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <input type="number" name="other_cost" id="other_cost" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary"/>
+                <a href="{{ path('incidence_index') }}" class="btn btn-default">Volver al listado</a>
+            </div>
+        </div><!--role="tabpanel"-->
     {{ form_end(form) }}
-
+</div>
 
 {% endblock %}

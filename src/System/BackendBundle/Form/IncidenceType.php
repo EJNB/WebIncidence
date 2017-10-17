@@ -4,11 +4,13 @@ namespace System\BackendBundle\Form;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 
 class IncidenceType extends AbstractType
@@ -22,9 +24,42 @@ class IncidenceType extends AbstractType
 //            ->add('code',NumberType::class,array(
 //                'label' => 'Codigo'
 //            ))
-            ->add('incidenceDate')
-            ->add('causes')
-            ->add('description')
+            ->add('incidenceDate',DateType::class,array(
+                'label' => 'Fecha',
+                'widget' => 'single_text',
+                'attr' => array('class' => 'format_date_time'),
+                'required' => true,
+                'input' => 'datetime',
+            ))
+            ->add('causes',TextareaType::class,array(
+                'label' => 'Causas: ',
+                'attr' => array(
+                    'placeholder' => 'Causas que ocacionaron el incidente'
+                ),
+                'required' => true
+            ))
+            ->add('description',TextareaType::class,array(
+                'label' => 'Descripción: ',
+                'attr' => array(
+                    'placeholder' => 'Descripción de la incidencia'
+                ),
+                'required' => true
+            ))
+            ->add('corrective_actions',TextareaType::class,array(
+                'label' => 'Acciones correctivas: ',
+                'attr' => array(
+                    'placeholder' => 'Introdusca las acciones correctivas'
+                ),
+//                'required' => true
+            ))
+
+            ->add('immediate_actions',TextareaType::class,array(
+                'label' => 'Acciones inmediatas: ',
+                'attr' => array(
+                    'placeholder' => 'Introdusca las acciones inmediatas'
+                ),
+//                'required' => true
+            ))
 //            ->add('incidenceType', EntityType::class, array(
 //                'class' => 'System\BackendBundle\Entity\IncidenceType',
 ////                'choice_label' => 'Tipo de incidencia',

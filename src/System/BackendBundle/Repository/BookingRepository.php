@@ -3,6 +3,7 @@
 namespace System\BackendBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Doctrine\DBAL\Types\StringType;
 
 /**
  * BookingRepository
@@ -125,4 +126,81 @@ class BookingRepository extends EntityRepository
         return $var->fetchAll();
 
     }
+
+    public function findTPBookingServicesWithCostByStatusAndServiceType($reference, $status=null, $serviceType=null){
+
+        $em = $this->getEntityManager();
+
+        $sql = 'SELECT OPT.OPT_ID, BSD.BSL_ID AS COSTID, CRM.CODE as SUPCODE, OPT.SERVICE AS SERVICETYPE, CRM.NAME as SUPNAME, OPT.CODE as SERVICECODE, 
+                  OPT.DESCRIPTION AS SERVICEDESCRIPTION, BSD.COST AS COST
+                FROM Tourplanis.dbo.BHD
+                INNER JOIN Tourplanis.dbo.BSL ON BHD.BHD_ID = BSL.BHD_ID
+                INNER JOIN Tourplanis.dbo.BSD ON BSL.BSL_ID = BSD.BSL_ID
+                INNER JOIN Tourplanis.dbo.OPT ON BSL.OPT_ID= OPT.OPT_ID
+                INNER JOIN Tourplanis.dbo.CRM ON OPT.SUPPLIER = CRM.CODE
+                WHERE BHD.FULL_REFERENCE = ?';
+        $i = 1;
+
+        if($status){
+            $sql = $sql.'  AND BSL.SL_STATUS = ?';
+        }
+        if($serviceType){
+            $sql = $sql.'  AND OPT.SERVICE IN (?)';
+        }
+        $array_param = array();
+        $array_type = array();
+        $array_param[] = $reference;
+        $array_type[] = StringType::STRING;
+
+
+        if($status){
+            $array_param[] = $status;
+            $array_type[] = StringType::STRING;
+        }
+        if($serviceType){
+            $array_param[] = $serviceType;
+            $array_type[] = \Doctrine\DBAL\Connection::PARAM_STR_ARRAY;
+        }
+
+        $stmt = $em->getConnection()->executeQuery($sql,
+            $array_param,
+            $array_type
+        );
+
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+    public function findTPSimilarServiceTypes($type){
+
+        $em = $this->getEntityManager();
+
+        $sql_name = 'SELECT SRV.NAME
+                FROM Tourplanis.dbo.SRV
+                WHERE SRV.CODE = ?';
+        $var_name = $em->getConnection()->prepare($sql_name);
+        $var_name->bindValue(1,$type);
+        $var_name->execute();
+        $name = $var_name->fetchColumn(0);
+
+        $sub_name = substr($name,0,8);
+
+        $sql = 'SELECT SRV.CODE
+                FROM Tourplanis.dbo.SRV
+                WHERE SRV.NAME LIKE ?';
+        $var = $em->getConnection()->prepare($sql);
+        $var->bindValue(1,'%'.$sub_name.'%');
+        $var->execute();
+        $result = $var->fetchAll();
+
+        $types = array();
+        foreach ($result as $item){
+            $types[] = $item['CODE'];
+        }
+        
+        return $types;
+
+    }
+
+
 }

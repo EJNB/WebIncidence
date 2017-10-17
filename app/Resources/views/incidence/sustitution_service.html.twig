@@ -1,0 +1,5 @@
+{% if services[0] is defined %}
+    {% for service in services %}
+        {{ service['SERVICEDESCRIPTION'] }}
+    {% endif %}
+{% endif %}

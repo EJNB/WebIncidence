@@ -29,6 +29,12 @@ class IncidenceTypeController extends Controller
             $em->persist($incidenceType);
             $em->flush();
 
+            $this->addFlash(
+                'notice',
+                'Sus cambios han sido guardados satisfactoriamente'
+            );
+
+
             return $this->redirectToRoute('incidencetype_index');
         }
 
@@ -91,7 +97,12 @@ class IncidenceTypeController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('incidencetype_edit', array('id' => $incidenceType->getId()));
+            $this->addFlash(
+                'notice',
+                'Sus cambios han sido guardados satisfactoriamente'
+            );
+
+            return $this->redirectToRoute('incidencetype_index');
         }
 
         return $this->render('incidencetype/edit.html.twig', array(

@@ -44,17 +44,18 @@ class ItemType
      **/
     private $services_types;
 
+    public function __toString()
+    {
+        return $this->getName();
+    }
     /**
-     * @ORM\ManyToOne(targetEntity="SubCategory", inversedBy="items_types")
-     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
-     **/
-    private $subcategory;
-
-    public function __construct() {
-        $this->features = new ArrayCollection();
-        $this->items = new ArrayCollection();
-        $this->categories = new ArrayCollection();
-        $this->services_types = new ArrayCollection();
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->items = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->categories = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->services_types = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -149,7 +150,7 @@ class ItemType
     /**
      * Get categories
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getCategories()
     {
@@ -187,33 +188,5 @@ class ItemType
     public function getServicesTypes()
     {
         return $this->services_types;
-    }
-
-    /**
-     * Set subcategory
-     *
-     * @param \System\BackendBundle\Entity\SubCategory $subcategory
-     * @return ItemType
-     */
-    public function setSubcategory(\System\BackendBundle\Entity\SubCategory $subcategory = null)
-    {
-        $this->subcategory = $subcategory;
-
-        return $this;
-    }
-
-    /**
-     * Get subcategory
-     *
-     * @return \System\BackendBundle\Entity\SubCategory 
-     */
-    public function getSubcategory()
-    {
-        return $this->subcategory;
-    }
-
-    public function __toString()
-    {
-        return $this->getName();
     }
 }

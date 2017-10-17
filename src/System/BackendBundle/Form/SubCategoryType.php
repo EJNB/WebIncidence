@@ -17,17 +17,13 @@ class SubCategoryType extends AbstractType
     {
         $builder->add('name',TextType::class,array(
             'attr' => array(
-                'class' => 'form-control',
-                'placeholder' => 'Inserte la subcategoria'
-            )
+                'placeholder' => 'Inserte la subcategoria',
+            ),
+            'label' => false,
         ))
         ->add('category',EntityType::class,array(
             'class' => 'System\BackendBundle\Entity\Category',
-            'attr' => array(
-                'Title' => 'Seleccione la categoria',
-                'class' => 'selectpicker',
-                'data-live-search' => true
-            )
+            'label' => false,
         ));
     }
     

@@ -2,28 +2,29 @@
 {% extends ':layouts:main-layout.html.twig' %}
 
 {% block content %}
-    <h1 class="page-header">Categorias</h1>
+    <h1 class="page-header">Lugares</h1>
 
     <table class="table table-responsive table-hover">
         <thead>
-            <th style="width: 30%">Nombre</th>
-            <th>Acciones</th>
-        </tr>
+            <tr>
+                <th style="width: 30%">Nombre</th>
+                <th>Acciones</th>
+            </tr>
         </thead>
         <tbody>
-        {% for category in categories %}
+        {% for place in places %}
             <tr>
-                <td>{{ category.name }}</td>
+                <td>{{ place.name }}</td>
                 <td>
-                    <a href="{{ path('category_edit', { 'id': category.id }) }}"
+                    <a href="{{ path('place_edit', { 'id': place.id }) }}"
                        data-toggle="tooltip" data-placement="top" title="Editar">
                         <span class="glyphicon glyphicon-pencil"></span>
                     </a>
 
                     <a class="link-eliminar link-tooltip"
                        href="javascript:void(0)"
-                       data-url = "{{ path('category_delete', { 'id': category.id }) }}"
-                       data-descripcion="{{ category.name }}"
+                       data-url = "{{ path('place_delete', { 'id': place.id }) }}"
+                       data-descripcion="{{ place.name }}"
                        data-toggle="modal" data-target="#modal-delete"
                        data-placement="top" title="Eliminar">
                         <span class="glyphicon glyphicon-trash"></span>
@@ -32,16 +33,16 @@
             </tr>
         {% endfor %}
         {{ form_start(form) }}
-        <tr>
-            <td>
-                {{ form_row(form.name) }}
-            </td>
-            <td>
-                <div class="form-group">
-                    <button class="btn btn-primary" type="submit">Guardar</button>
-                </div>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    {{ form_row(form.name) }}
+                </td>
+                <td>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Guardar</button>
+                    </div>
+                </td>
+            </tr>
         {{ form_end(form) }}
         </tbody>
     </table>

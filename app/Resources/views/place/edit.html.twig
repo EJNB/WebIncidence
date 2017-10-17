@@ -4,23 +4,24 @@
 {% block content %}
     <div class="row">
         <div class="container">
-            <h1 class="page-header">Editar Departamento: <small style="display: inline">{{ department.name }}</small> </h1>
+            <h1 class="page-header">Editar Lugar: <small style="display: inline">{{ place.name }}</small> </h1>
             {{ form_start(edit_form) }}
 
             <div class="col-md-4">
-                {{ form(edit_form) }}
+                {{ form_row(edit_form.name) }}
 
                 <div class="pull-left">
                     <button class="btn btn-info">Editar</button>
                     <a class="btn btn-danger link-eliminar"
                        href="javascript:void(0)"
-                       data-url="{{ path('department_delete',{'id':department.id}) }}"
+                       data-url="{{ path('place_delete',{'id':place.id}) }}"
                        data-toggle="modal" data-target="#modal-delete"
-                       data-descripcion="{{ department.name }}">Eliminar</a>
-                    <a href="{{ path('department_index') }}" class="btn btn-default">Regresar al listado</a>
+                       data-descripcion="{{ place.name }}">Eliminar</a>
+                    <a href="{{ path('place_index') }}" class="btn btn-default">Regresar al listado</a>
                 </div>
             </div>
             {{ form_end(edit_form) }}
         </div>
     </div>
+
 {% endblock %}

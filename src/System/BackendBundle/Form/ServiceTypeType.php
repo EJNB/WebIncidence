@@ -17,18 +17,18 @@ class ServiceTypeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('code',IntegerType::class,array(
+            ->add('code',TextType::class,array(
                 'attr' => array(
-                    'class' => 'form-control',
-                    'placeholder' => 'Codigo'
+                    'placeholder' => 'Codigo',
                 ),
+                'label' => false,
                 'required' => true
             ))
             ->add('name',TextType::class,array(
                 'attr' => array(
-                    'class' => 'form-control',
                     'placeholder' => 'Nombre'
                 ),
+                'label' => false,
                 'required' => true
 
             ))
@@ -40,6 +40,7 @@ class ServiceTypeType extends AbstractType
                     'data-live-search' => 'true',
                     'required' => 'required'
                 ),
+                'label'=> false
 //                'required' => true
             ));
     }

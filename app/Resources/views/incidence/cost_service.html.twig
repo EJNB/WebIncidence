@@ -1,0 +1,35 @@
+{% if services[0] is defined %}
+<table class="table table-condensed table-bordered table-stripped ">
+    <thead>
+    <tr class="{{ color }}">
+        <th></th>
+        <th>Proveedor</th>
+        <th>Servicio</th>
+        <th>Costo</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for service in services %}
+        <tr class="{{ color }}">
+            {% if color == 'danger' %}
+                <td><input type="radio" name="cost_selected_original" onclick="showSustitutionSustituteCost('{{ service['SERVICETYPE'] }}')" value="{{ service['COSTID'] }}"></td>
+            {% else %}
+                <td><input type="radio" name="cost_selected_final" onclick="" value="{{ service['COSTID'] }}"></td>
+            {% endif %}
+            <td>{{ service['SUPNAME'] }}</td>
+            <td>{{ service['SERVICEDESCRIPTION'] }}</td>
+            <td>$ {{ service['COST']|number_format(2) }}</td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+{% endif %}
+
+{#{% if services[0] is defined %}#}
+    {#<div class="list-group">#}
+    {#{% for service in services %}#}
+            {#<button type="button" class="list-group-item list-group-item-info" >{{ service['SUPNAME'] }}  {{ service['SERVICEDESCRIPTION'] }} - $ {{ service['COST']|number_format(2) }}</button>#}
+    {#{% endfor %}#}
+    {#</div>#}
+{#{% endif %}#}

@@ -5,7 +5,7 @@
       <paths name="localhost">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="WebIncidence" />
+            <mapping local="$PROJECT_DIR$" web="webIncidence" />
           </mappings>
         </serverdata>
       </paths>

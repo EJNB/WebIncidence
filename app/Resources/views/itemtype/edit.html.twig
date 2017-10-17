@@ -1,33 +1,26 @@
+{% form_theme edit_form 'form/fields.html.twig' %}
 {% extends 'layouts/main-layout.html.twig' %}
 
 {% block content %}
+    <div class="row">
+        <div class="container">
+            <h1 class="page-header">Editar <small style="display: inline">{{ itemType.name }}</small></h1>
+            {{ form_start(edit_form) }}
 
-    <h1 class="page-header">Editar</h1>
+            <div class="col-md-4">
+                {{ form_row(edit_form.name) }}
 
-    {{ form_start(edit_form, { 'attr': {'class': 'form-inline'} }) }}
-    <div class="form-group">
-        {{ form_widget(edit_form.subcategory) }}
+                <div class="pull-left">
+                    <button class="btn btn-info">Editar</button>
+                    <a class="btn btn-danger link-eliminar"
+                       href="javascript:void(0)"
+                       data-url="{{ path('itemtype_delete',{'id':itemType.id}) }}"
+                       data-toggle="modal" data-target="#modal-delete"
+                       data-descripcion="{{ itemType.name }}">Eliminar</a>
+                    <a href="{{ path('itemtype_index') }}" class="btn btn-default">Regresar al listado</a>
+                </div>
+            </div>
+            {{ form_end(edit_form) }}
+        </div>
     </div>
-
-    <div class="form-group">
-        {{ form_widget(edit_form.name) }}
-    </div>
-
-    <div class="form-group">
-        <input type="submit" value="Guardar" class="btn btn-primary">
-        <a href="{{path('itemtype_index') }}" class="btn btn-default">Regresar al listado</a>
-    </div>
-    {{ form_end(edit_form) }}
-
-
-    {#<ul>#}
-        {#<li>#}
-            {#<a href="{{ path('itemtype_index') }}">Back to the list</a>#}
-        {#</li>#}
-        {#<li>#}
-            {#{{ form_start(delete_form) }}#}
-                {#<input type="submit" value="Delete">#}
-            {#{{ form_end(delete_form) }}#}
-        {#</li>#}
-    {#</ul>#}
 {% endblock %}

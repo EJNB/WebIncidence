@@ -22,7 +22,6 @@ class IncidenceController extends Controller
 
         $incidences = $em->getRepository('SystemBackendBundle:Incidence')->findAll();
 
-
         return $this->render('incidence/index.html.twig', array(
             'incidences' => $incidences,
 
@@ -40,6 +39,7 @@ class IncidenceController extends Controller
         $types = $em->getRepository('SystemBackendBundle:IncidenceType')->findAll();
         $form = $this->createForm('System\BackendBundle\Form\IncidenceType', $incidence);
         $form->handleRequest($request);
+        $persons = $em->getRepository('SystemBackendBundle:Person')->findAll();
 
         if ($form->isSubmitted() && $form->isValid()) {
 
@@ -53,6 +53,7 @@ class IncidenceController extends Controller
             'incidence' => $incidence,
             'form' => $form->createView(),
             'types' => $types,
+            'persons' => $persons
         ));
     }
 
@@ -219,4 +220,57 @@ class IncidenceController extends Controller
             return false;
         }
     }
+
+    public function getAjaxBookingPersonNamesAction(Request $request){
+        if($request->isXmlHttpRequest()){
+            $reference = $request->request->get('reference');
+            $em = $this->getDoctrine()->getManager();
+            $persons = $em->getRepository('SystemBackendBundle:Person')->findAll();
+
+            return $this->render(':incidence:booking_persons.html.twig',array(
+                'persons' => $persons,
+            ));
+        }else{
+            return false;
+        }
+    }
+
+    public function getAjaxCompensationServicesAction(Request $request){
+        if($request->isXmlHttpRequest()){
+            $reference = $request->request->get('reference');
+            $tp_service = $this->get('TPService');
+            $services = $tp_service->getBookingServicesWithCostByStatusAndStatus($reference, 'CO');
+
+            return $this->render(':incidence:cost_service.html.twig',array(
+                'services' => $services,
+                'color' => 'info'
+            ));
+        }else{
+            return false;
+        }
+    }
+
+    public function getAjaxSustitutionServicesAction(Request $request){
+        if($request->isXmlHttpRequest()){
+            $reference = $request->request->get('reference');
+            $serviceType = $request->request->get('serviceType');
+            $tp_service = $this->get('TPService');
+            if($serviceType){
+                $types = $tp_service->getSimilarServiceTypes($serviceType);
+                $services = $tp_service->getBookingServicesWithCostByStatusAndStatus($reference, 'OK', $types );
+                $color = 'success';
+            }else{
+                $services = $tp_service->get|BookingServicesWithCostByStatusAndStatus($reference, 'CZ');
+                $color = 'danger';
+            }
+
+            return $this->render(':incidence:cost_service.html.twig',array(
+                'services' => $services,
+                'color' => $color
+            ));
+        }else{
+            return false;
+        }
+    }
+
 }

@@ -26,3 +26,7 @@ system_backend_servicetype:
 system_backend_incidence:
     resource: "@SystemBackendBundle/Resources/config/routing/incidence.yml"
     prefix:   /incidence
+
+system_backend_place:
+    resource: "@SystemBackendBundle/Resources/config/routing/place.yml"
+    prefix:   /place

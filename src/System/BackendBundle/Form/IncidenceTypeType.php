@@ -18,7 +18,6 @@ class IncidenceTypeType extends AbstractType
         $builder
             ->add('name',TextType::class,array(
                 'attr' => array(
-                    'class' => 'form-control',
                     'placeholder' => 'Inserte el tipo de Incidencia'
                 ),
                 'label' => false,

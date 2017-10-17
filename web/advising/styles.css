@@ -118,7 +118,7 @@ body{
 }
 
 .row{
-    margin-bottom: 8px;
+    margin-bottom: 15px;
 }
 
 /*------------------------------------------------------------------------------------------------*/
@@ -166,10 +166,24 @@ body{
 }
 
 .form-group {
-    margin: 7px 7px;
+    margin: 10px 0px;
 }
+
+textarea#system_backendbundle_incidence_causes,#system_backendbundle_incidence_description{
+    margin-bottom: 10px;
+}
+
+.form-container{
+    margin: 10px 20px;
+}
+
+#profile,#costs{
+    height: 523px
+}
+
 /*---------------------------------------------------------------------------------------------------------*/
-/*!*formulario de eliminar a continuacion de el boton edit*!*/
+
+/*/*formulario de eliminar a continuacion de el boton edit*/
 /*button#delete_category+form{*/
     /*display: inline-block;*/
 /*}*/
