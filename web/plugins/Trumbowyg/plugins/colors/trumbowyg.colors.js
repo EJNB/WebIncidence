@@ -33,14 +33,6 @@
             zh_cn: {
                 foreColor: '文字颜色',
                 backColor: '背景颜色'
-            },
-            ru: {
-                foreColor: 'Цвет текста',
-                backColor: 'Цвет выделения текста'
-            },
-            ja: {
-                foreColor: '文字色',
-                backColor: '背景色'
             }
         }
     });

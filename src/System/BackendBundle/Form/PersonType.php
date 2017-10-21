@@ -5,6 +5,7 @@ namespace System\BackendBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
 class PersonType extends AbstractType
 {
@@ -16,7 +17,7 @@ class PersonType extends AbstractType
         $builder
             ->add('email')
             ->add('username')
-            ->add('password')
+            ->add('password',PasswordType::class)
             ->add('name')
             ->add('occupation')
             ->add('isActive')

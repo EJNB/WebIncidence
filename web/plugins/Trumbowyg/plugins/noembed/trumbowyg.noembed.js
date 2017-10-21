@@ -20,23 +20,18 @@
     $.extend(true, $.trumbowyg, {
         langs: {
             en: {
-                noembed: 'Noembed',
+                noembed: 'noEmbed',
                 noembedError: 'Error'
             },
             sk: {
                 noembedError: 'Chyba'
             },
             fr: {
+                noembed: 'noEmbed',
                 noembedError: 'Erreur'
             },
             cs: {
                 noembedError: 'Chyba'
-            },
-            ru: {
-                noembedError: 'Ошибка'
-            },
-            ja: {
-                noembedError: 'エラー'
             }
         },
 

@@ -73,7 +73,8 @@ class IncidenceType extends AbstractType
 //
 //            ))
             ->add('document',FileType::class,array(
-                'label' => 'Documento (PDF file)'
+                'label' => 'Documento (PDF, Docx, Jpeg)',
+                'required' => false
             ))
 //            ->add('service')
             ->add('place',EntityType::class,array(

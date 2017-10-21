@@ -21,10 +21,9 @@
                 <td>{{ incidence.description }}</td>
                 <td>{{ incidence.document }}</td>
                 <td>
-                <td>
-                    <a href="{{ path('incidence_edit', { 'id': incidence.id }) }}"
+                    <a href="{{ path('incidence_show', { 'id': incidence.id }) }}"
                        data-toggle="tooltip" data-placement="top" title="Editar">
-                        <span class="glyphicon glyphicon-pencil"></span>
+                        <span class="glyphicon glyphicon-eye-open"></span>
                     </a>
 
                     <a href="{{ path('incidence_edit', { 'id': incidence.id }) }}"
@@ -34,7 +33,7 @@
 
                     <a class="link-eliminar link-tooltip" href="javascript:void(0);"
                        data-url = "{{ path('incidence_delete', { 'id': incidence.id }) }}"
-                       data-descripcion="{{ itemType.name }}"
+                       data-descripcion="{{ incidence.code }}"
                        data-toggle="modal" data-target="#modal-delete"
                        data-placement="top" title="Eliminar">
                         <span class="glyphicon glyphicon-trash"></span>

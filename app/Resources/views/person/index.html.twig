@@ -1,51 +1,52 @@
-{% extends 'base.html.twig' %}
+{% extends ':layouts:main-layout.html.twig' %}
 
-{% block body %}
-    <h1>People list</h1>
+{% block content %}
+    <h1 class="page-header">Personas</h1>
 
-    <table>
+    <table class="table table-responsive table-hover">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Email</th>
-                <th>Username</th>
-                <th>Password</th>
-                <th>Name</th>
-                <th>Occupation</th>
-                <th>Isactive</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Usuario</th>
+                {#<th>Password</th>#}
+                <th>Cargo</th>
+                <th>Activo</th>
                 <th>Consultant</th>
-                <th>Actions</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
         {% for person in people %}
             <tr>
-                <td><a href="{{ path('person_show', { 'id': person.id }) }}">{{ person.id }}</a></td>
+                <td>{{ person.name }}</td>
                 <td>{{ person.email }}</td>
                 <td>{{ person.username }}</td>
-                <td>{{ person.password }}</td>
-                <td>{{ person.name }}</td>
+                {#<td>{{ person.password }}</td>#}
                 <td>{{ person.occupation }}</td>
                 <td>{% if person.isActive %}Yes{% else %}No{% endif %}</td>
                 <td>{{ person.consultant }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('person_show', { 'id': person.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('person_edit', { 'id': person.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('person_edit', { 'id': person.id }) }}"
+                       data-toggle="tooltip" data-placement="top" title="Editar">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+
+                    <a class="link-eliminar link-tooltip"
+                       href="javascript:void(0)"
+                       data-url = "{{ path('person_delete', { 'id': person.id }) }}"
+                       data-descripcion="{{ person.name }}"
+                       data-toggle="modal"
+                       data-target="#modal-delete"
+                       data-placement="top"
+                       title="Eliminar"
+                    >
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('person_new') }}">Create a new person</a>
-        </li>
-    </ul>
+    <a href="{{ path('person_new') }}" class="btn btn-primary">Crear</a>
 {% endblock %}

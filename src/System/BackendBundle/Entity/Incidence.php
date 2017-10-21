@@ -23,9 +23,9 @@ class Incidence
     private $id;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="code", type="integer")
+     * @ORM\Column(name="code", type="string", length=255)
      */
     private $code;
 
@@ -53,7 +53,7 @@ class Incidence
     /**
      * @var string
      *
-     * @ORM\Column(name="document", type="string", length=255)
+     * @ORM\Column(name="document", type="string", length=255, nullable=true)
      */
     private $document;
 

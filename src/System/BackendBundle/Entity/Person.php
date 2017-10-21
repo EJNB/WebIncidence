@@ -67,7 +67,7 @@ class Person implements AdvancedUserInterface, \Serializable
 
     /**
      * Many Users have Many Roles.
-     * @Assert\NotNull()
+//     * @Assert\NotNull()
      * @ORM\ManyToMany(targetEntity="Role", inversedBy="persons")
      * @ORM\JoinTable(name="persons_roles")
      */

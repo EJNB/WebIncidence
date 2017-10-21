@@ -10,8 +10,8 @@
 jQuery.trumbowyg.langs.es = {
     viewHTML: 'Ver HTML',
 
-    undo: 'Deshacer',
-    redo: 'Rehacer',
+    undo: 'Desfazer',
+    redo: 'Refazer',
 
     formatting: 'Formato',
     p: 'Párrafo',

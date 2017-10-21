@@ -68,7 +68,7 @@ class BookingRepository extends EntityRepository
 
         $em = $this->getEntityManager();
 
-        $sql = 'SELECT OPT.OPT_ID, CRM.CODE, CRM.NAME, OPT.CODE, OPT.DESCRIPTION
+        $sql = 'SELECT OPT.OPT_ID, CRM.CODE AS SUPCODE, CRM.NAME AS SUPNAME, OPT.CODE AS SERVICECODE, OPT.DESCRIPTION AS SERVICEDESCRIPTION, OPT.SERVICE AS SERVICETYPE, OPT.LOCATION AS LOCATION
                 FROM Tourplanis.dbo.OPT
                 INNER JOIN Tourplanis.dbo.CRM ON OPT.SUPPLIER = CRM.CODE
                 WHERE OPT.OPT_ID = ?';

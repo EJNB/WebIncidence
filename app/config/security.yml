@@ -23,6 +23,6 @@ security:
             # https://symfony.com/doc/current/security/form_login_setup.html
             #form_login: ~
     encoders:
-        System\SecurityBundle\Entity\User:
+        System\BackendBundle\Entity\Person:
             algorithm: bcrypt
             cost: 12

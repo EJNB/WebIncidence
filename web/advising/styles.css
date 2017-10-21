@@ -178,7 +178,7 @@ textarea#system_backendbundle_incidence_causes,#system_backendbundle_incidence_d
 }
 
 #profile,#costs{
-    height: 523px
+    height: auto;
 }
 
 /*---------------------------------------------------------------------------------------------------------*/

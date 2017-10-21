@@ -50,10 +50,5 @@ jQuery.trumbowyg.langs.it = {
     required: 'Obbligatorio',
     description: 'Descrizione',
     title: 'Titolo',
-    text: 'Testo',
-
-    removeformat: 'Rimuovi Formattazione',
-
-    superscript: 'Apice',
-    subscript: 'Pedice',
+    text: 'Testo'
 };

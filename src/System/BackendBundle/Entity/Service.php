@@ -39,9 +39,16 @@ class Service
     /**
      * @var string
      *
-     * @ORM\Column(name="tuxplan_code", type="string", length=255)
+     * @ORM\Column(name="tourplan_code", type="string", length=255)
      */
-    private $tuxplanCode;
+    private $tourplanCode;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="tourplan_id", type="integer")
+     */
+    private $tourplanId;
 
     /**
      * @var string
@@ -65,10 +72,13 @@ class Service
      * @ORM\OneToMany(targetEntity="Item", mappedBy="service")
      **/
     private $items;
-
-    public function __construct() {
-        $this->incidences = new ArrayCollection();
-        $this->items = new ArrayCollection();
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->incidences = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->items = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -128,26 +138,49 @@ class Service
     }
 
     /**
-     * Set tuxplanCode
+     * Set tourplanCode
      *
-     * @param string $tuxplanCode
+     * @param string $tourplanCode
      * @return Service
      */
-    public function setTuxplanCode($tuxplanCode)
+    public function setTourplanCode($tourplanCode)
     {
-        $this->tuxplanCode = $tuxplanCode;
+        $this->tourplanCode = $tourplanCode;
 
         return $this;
     }
 
     /**
-     * Get tuxplanCode
+     * Get tourplanCode
      *
      * @return string 
      */
-    public function getTuxplanCode()
+    public function getTourplanCode()
     {
-        return $this->tuxplanCode;
+        return $this->tourplanCode;
+    }
+
+    /**
+     * Set tourplanId
+     *
+     * @param integer $tourplanId
+     * @return Service
+     */
+    public function setTourplanId($tourplanId)
+    {
+        $this->tourplanId = $tourplanId;
+
+        return $this;
+    }
+
+    /**
+     * Get tourplanId
+     *
+     * @return integer 
+     */
+    public function getTourplanId()
+    {
+        return $this->tourplanId;
     }
 
     /**

@@ -1,6 +1,6 @@
 {% if services_description is defined %}
     <label for="service_selection">Servicio</label>
-    <select id="service_selection" class="form-control">
+    <select id="service_selection" class="form-control selectpicker" data-live-search="true" title="Seleccione el servicio" name="service">
         <option value="">Ninguno</option>
         {% for service in services_description %}
             <option value="{{ service['OPTID'] }}">{{ service['SUPNAME'] }} - {{ service['OPTNAME'] }}</option>

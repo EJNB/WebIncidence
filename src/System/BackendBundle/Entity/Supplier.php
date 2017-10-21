@@ -30,9 +30,9 @@ class Supplier
     private $name;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="code", type="integer")
+     * @ORM\Column(name="code", type="string", length=255)
      */
     private $code;
 
@@ -41,8 +41,12 @@ class Supplier
      **/
     private $services;
 
-    public function __construct() {
-        $this->services = new ArrayCollection();
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->services = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -81,7 +85,7 @@ class Supplier
     /**
      * Set code
      *
-     * @param integer $code
+     * @param string $code
      * @return Supplier
      */
     public function setCode($code)
@@ -94,7 +98,7 @@ class Supplier
     /**
      * Get code
      *
-     * @return integer 
+     * @return string 
      */
     public function getCode()
     {

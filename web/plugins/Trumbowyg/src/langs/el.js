@@ -10,7 +10,7 @@
  *          Behance: https://www.behance.net/web_design_blog
  */
 
-jQuery.trumbowyg.langs.el = {
+jQuery.trumbowyg.langs.es = {
     viewHTML: 'Προβολή κώδικα HTML',
 
     formatting: 'Μορφοποίηση',
@@ -43,7 +43,6 @@ jQuery.trumbowyg.langs.el = {
     justifyFull: 'Πλήρης στοίχιση',
 
     horizontalRule: 'Οριζόντια γραμμή',
-    removeformat: 'Καθαρισμός μορφοποίησης',
 
     fullscreen: 'Πλήρης οθόνη',
 

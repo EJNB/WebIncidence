@@ -142,6 +142,15 @@ function initiCheck() {
     });
 }
 
+//busco los servicios asociados a un booking
+function findServicesByBooking(url,reference){
+    $.post(url, {reference:reference}, function(response) {
+        $('#container_select_service').html(response);
+        $('#service_selection').selectpicker('refresh');
+    });
+}
+
+
 //find booking in turplan db
 function findBooking(data) {
     var reference = $('#find_booking').val();
@@ -152,8 +161,18 @@ function findBooking(data) {
         $('#container_booking_detail').html(response);
     });
 
-    $.post(url_services_description, {reference:reference}, function(response) {
-        $('#container_select_service').html(response);
+    //busqueda de los servicios del booking
+    findServicesByBooking(url_services_description,reference);
+    //$.post(url_services_description, {reference:reference}, function(response) {
+    //    $('#container_select_service').html(response);
+    //    $('#service_selection').selectpicker('refresh');
+    //});
+
+    //busqueda de los clientes de ese booking
+    var url_booking_clients = Routing.generate('incidence_ajax_get_booking_client_names');
+    $.post(url_booking_clients, {reference:reference}, function(response) {
+        $('#container_booking_clients').html(response);
+        $('#client_selection').selectpicker('refresh');
     });
 
     $('#select_reference').val(reference);
@@ -163,52 +182,63 @@ function findBooking(data) {
 function showByTypes(id) {
 
     var reference = $('#select_reference').val();
+    var div = $('.altern-result');
     switch(id) {
         //intern incidence case
         case '1':
-            $('#container_booking_suppliers').html('');
-            $('#container_booking_clients').html('');
+            //$('#container_booking_suppliers').html('');
+            div.html('');
+            //$('#container_booking_clients').html('');
             //hacer select con personas
             var url_booking_persons = Routing.generate('incidence_ajax_get_booking_person_names');
             $.post(url_booking_persons, {reference:reference}, function(response) {
-                $('#container_booking_persons').html(response);
+                //console.log($(response).wrap("<div class='new'></div>"));
+                div.html(response);
+                if (! div.parent().is( "div.col-md-3" ) ) {
+                    //div.unwrap();
+                    div.wrap( "<div class='col-md-3'></div>" );
+                }// else {
+                //    div.wrap( "<div class='col-md-3'></div>" );
+                //}
+                //div.wrap("<div class='col-md-3'></div>");
                 $('#select-responsable').selectpicker('refresh');
             });
             break;
         //supplier incidence case
         case '2':
-            $('#container_booking_clients').html('');
-            $('#container_booking_persons').html('');
+            //$('#container_booking_clients').html('');
+            div.html('');
             var url_booking_suppliers = Routing.generate('incidence_ajax_get_booking_suppliers');
             $.post(url_booking_suppliers, {reference:reference}, function(response) {
-                $('#container_booking_suppliers').html(response);
+                div.html(response);
+                //div.html(response);
+                if (!div.parent().is( "div.col-md-3" ) ) {
+                    //div.unwrap();
+                    div.wrap( "<div class='col-md-3'></div>" );
+                }// else {
+                //    div.wrap( "<div class='col-md-3'></div>" );
+                //}
+                //div.wrap("<div class='col-md-3'></div>");
+                //$('.altern-result').wrap("<div class='col-md-3'></div>");
+                $('#supplier_selection').selectpicker('refresh');
             });
             break;
         //clients incidence case
         case '3':
-            $('#container_booking_suppliers').html('');
-            $('#container_booking_persons').html('');
-            var url_booking_clients = Routing.generate('incidence_ajax_get_booking_client_names');
-            $.post(url_booking_clients, {reference:reference}, function(response) {
-                $('#container_booking_clients').html(response);
-            });
+            $('.altern-result').html('');
+            //$('#container_booking_suppliers').html('');
+            //$('#container_booking_persons').html('');
+            //var url_booking_clients = Routing.generate('incidence_ajax_get_booking_client_names');
+            //$.post(url_booking_clients, {reference:reference}, function(response) {
+            //    $('#container_booking_clients').html(response);
+            //    $('#client_selection').selectpicker('refresh');
+            //});
             break;
         default:
-            $('#container_booking_suppliers').html('');
-            $('#container_booking_clients').html('');
-            $('#container_booking_persons').html('');
+            //$('#container_booking_suppliers').html('');
+            //$('#container_booking_clients').html('');
+            //$('#container_booking_persons').html('');
     }
-
-   //
-   //  if(id==2){
-   //     var reference = $('#select_reference').val();
-   //     var url_booking_suppliers = Routing.generate('incidence_ajax_get_booking_suppliers');
-   //     $.post(url_booking_suppliers, {reference:reference}, function(response) {
-   //         $('#container_booking_services').html(response);
-   //     });
-   // }else if(id==1){
-   //     $('#container_booking_services').html('');
-   // }
 }
 
 //esta funcion recibe un proveedor y me devuelve los servicios asociados a ese proveedor\
@@ -217,15 +247,20 @@ function showServicesBySupplier(data) {
     var reference = $('#select_reference').val();
     $.post(url_booking_services_suppliers, {supplier:data, reference:reference}, function(response) {
         $('#container_select_service').html(response);
+        $('#service_selection').selectpicker('refresh');
     });
 }
 
 function showCompensationCost() {
+
     var url_booking_compensation_services = Routing.generate('incidence_ajax_get_compensation_service');
     var reference = $('#select_reference').val();
     $.post(url_booking_compensation_services, {reference:reference}, function(response) {
         $('#container_compensation_cost').html(response);
+        $('#container_sustitution_cost_original').html('');
+        $('#container_sustitution_cost_sustitute').html('');
     });
+
 }
 
 function showSustitutionOriginalCost() {
@@ -233,6 +268,7 @@ function showSustitutionOriginalCost() {
     var reference = $('#select_reference').val();
     $.post(url_booking_sustitution_services, {reference:reference}, function(response) {
         $('#container_sustitution_cost_original').html(response);
+        $('#container_compensation_cost').html('');
     });
 }
 
@@ -243,7 +279,37 @@ function showSustitutionSustituteCost(type) {
     // var service = $('#select_reference').val();
     $.post(url_booking_sustitution_services, {reference:reference, serviceType:type}, function(response) {
         $('#container_sustitution_cost_sustitute').html(response);
+        // $('#container_compensation_cost').html('');
     });
+}
+
+function hideCost() {
+    $('#container_sustitution_cost_sustitute').html('');
+    $('#container_sustitution_cost_original').html('');
+    $('#container_compensation_cost').html('');
+}
+
+function test(data) {
+    console.log($(data).attr('data-type'));
+}
+
+function calculateNoCost() {
+    $('#final_cost').val(0);
+}
+
+function calculateCompensationCost(data) {
+    $('#final_cost').val($(data).parent().parent().find('.service_cost').html());
+}
+
+function calculateSustitutionCost(data) {
+    var minuend  = $(data).parent().parent().find('.service_cost').html();
+    var subtracting = $('input[name=cost_selected_original]:checked').parent().parent().find('.service_cost').html();
+    var final = minuend - subtracting;
+    $('#final_cost').val(final);
+}
+
+function calculateOtherCost(data) {
+    $('#final_cost').val($(data).val());
 }
 
 $(document).ready( function() {
@@ -260,6 +326,16 @@ $(document).ready( function() {
     //cuando sel el tipo de costo de compensacion
     $('#compensation_cost').on('ifClicked',function(){
         showCompensationCost();
+    });
+
+    $('#no_cost').on('ifClicked',function(){
+        hideCost();
+        calculateNoCost();
+
+    });
+    
+    $('#other_cost').on('ifClicked',function(){
+        hideCost();
     });
 
     //cuando seleciono el tipo de costo de no calidad por sustitucion
@@ -287,12 +363,11 @@ $(document).ready( function() {
        showClear: true
     });
 
-    //alert($('#home').height()) //esto lo hice para saber la altura
+    $('.link-tooltip').tooltip();
 
-
-    //$('.link-tooltip').hover(function(){
-    //    $(this).tooltip('show');
-    //})
+    $('textarea').trumbowyg({
+        lang: 'es'
+    });
     //
     //$(".link-details-item").click(function (event) {
     //    $("#descripcion-popup").html($(this).attr("data-descripcion"));
