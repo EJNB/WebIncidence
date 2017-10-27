@@ -93,7 +93,6 @@ class Person implements AdvancedUserInterface, \Serializable
 
     public function __construct()
     {
-        $this->movements = new ArrayCollection();
         $this->isActive = true;
         $this->persons_incidences = new ArrayCollection();
     }

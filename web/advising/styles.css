@@ -181,6 +181,14 @@ textarea#system_backendbundle_incidence_causes,#system_backendbundle_incidence_d
     height: auto;
 }
 
+tbody.incidence_show tr th {
+    width: 30%;
+}
+
+/*esto es para q el input apareca en blanco*/
+.elem-hidden {
+    display : none;
+}
 /*---------------------------------------------------------------------------------------------------------*/
 
 /*/*formulario de eliminar a continuacion de el boton edit*/

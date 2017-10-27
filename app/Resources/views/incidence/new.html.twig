@@ -54,9 +54,10 @@
                 <!-- en esta otra fila van los  tipos de incidencia-->
                 <div class="row">
                     <!--Select de tipos de incidencia-->
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <div class="form-group">
-                            <label> Tipos de incidencia</label><br>
+                            <label>Tipos de incidencia</label>
+                            <br>
                             {% for type in types %}
                                 <input type="radio"
                                        name="incidence_types"
@@ -67,29 +68,7 @@
                             {% endfor %}
                         </div>
                     </div>
-
-                    {#<!-- en este div es donde alternare las personas para el caso 1: interna, 2: Provedor-->#}
-                    {#<div class="altern-result form-group">#}
-
-                    {#</div>#}
-                    {#<!--services booking-->#}
-                    {#<div class="col-md-3">#}
-                        {#<div class="form-group">#}
-                            {#<div id="container_select_service" &#123;&#35;style="margin: 7px 24px;"&#35;&#125;>#}
-
-                            {#</div>#}
-                        {#</div>#}
-                    {#</div>#}
-                    {#<!--Clients div-->#}
-                    {#<div class="col-md-2">#}
-                        {#<div class="form-group">#}
-                            {#<div id="container_booking_clients" &#123;&#35;style="margin: 7px 24px;"&#35;&#125;>#}
-
-                            {#</div>#}
-                        {#</div>#}
-                    {#</div><!--end .col-md-3-->#}
                 </div><!--end class row-->
-
 
                 <!--Este div es para mostrar los selects q vienen desde ajax-->
                 <div class="row">
@@ -115,27 +94,7 @@
                         </div>
                     </div><!--end .col-md-3-->
 
-                    {#<div class="col-md-3">#}
-                        {#<div class="form-group">#}
-                            {#<div id="container_booking_clients" &#123;&#35;style="margin: 7px 24px;"&#35;&#125;>#}
 
-                            {#</div>#}
-
-                            {#<div id="container_booking_suppliers"&#123;&#35; style="margin: 7px 7px;"&#35;&#125;>#}
-
-                            {#</div>#}
-
-                            {#<div id="container_booking_persons" &#123;&#35;style="margin: 7px 24px;"&#35;&#125;>#}
-
-                            {#</div>#}
-
-                            {#<div id="container_select_service" &#123;&#35;style="margin: 7px 24px;"&#35;&#125;>#}
-
-                            {#</div>#}
-                        {#</div>#}
-                    {#</div><!--end .col-md-3-->#}
-
-                    {#<div class="col-md-9"></div>#}
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Quien detecta</label>
@@ -231,11 +190,17 @@
 
             <!--Costos-->
             <div role="tabpanel" class="tab-pane" id="costs">
+                <!--Sin Costo-->
                 <div class="row">
                     <div class="col-md-12">
-                        <input type="radio" value="1" data-type="no_cost" name="type_of_cost" id="no_cost" class="icheck" checked>&nbsp;Sin costo
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="radio" value="1" data-type="no_cost" name="type_of_cost" id="no_cost" class="icheck" checked>&nbsp;Sin costo
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <!--costo de compensacion-->
                 <div class="row">
                     <div class="col-md-12">
                         <div class="row">
@@ -251,6 +216,7 @@
                         </div>
                     </div>
                 </div>
+                <!--costo sustitucion-->
                 <div class="row">
                     <div class="col-md-12">
                         <div class="row">
@@ -264,8 +230,9 @@
 
                             </div>
                             <div class="col-md-1">
-                                <span class="glyphicon glyphicon-chevron-right"></span>
-                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                <br>
+                                <i class="fa fa-arrow-circle-right fa-2x elem-hidden" style="margin-left: 35%; margin-top: 20%"></i>
+                                {#<span class="glyphicon glyphicon-chevron-right" style="margin: 0"></span>#}
                             </div>
                             <div class="col-md-4" id="container_sustitution_cost_sustitute">
 
@@ -273,6 +240,7 @@
                         </div>
                     </div>
                 </div>
+                <!--Otros Costos-->
                 <div class="row">
                     <div class="col-md-12">
                         <div class="row">
@@ -281,23 +249,34 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-3">
-                                <input type="number" name="other_cost" id="other_cost" class="form-control" onkeyup="calculateOtherCost(this)">
+                            <div class="col-md-3 elem-hidden" id="elem-hidden">
+                                <input type="number" name="other_cost" id="other_cost" class="form-control other-cost" onkeyup="calculateOtherCost(this)">
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <input type="hidden" value="" name="final_cost" id="final_cost">
+                <!--Costo final de la incidencia-->
+                <div class="row">
+                    <div class="col-md-3">
+                        <h3> Costo final:
+                            <span class="label label-warning" id="show-final-cost">
+                                0
+                            </span>
+                        </h3>
+                    </div>
+                </div>
 
+                <input type="hidden" value="" name="final_cost" id="final_cost">
             </div>
 
+            {#<input type="hidden" name="cost_type" value="">#}
             <div class="form-group">
                 <input type="submit" value="Crear" class="btn btn-primary"/>
                 <a href="{{ path('incidence_index') }}" class="btn btn-default">Volver al listado</a>
             </div>
         </div><!--role="tabpanel"-->
     {{ form_end(form) }}
-</div>
+    </div>
 
 {% endblock %}

@@ -9,7 +9,7 @@
                 <th>Codigo</th>
                 <th>Fecha de la incidencia</th>
                 <th>Descipci&oacuten</th>
-                <th>Document</th>
+                <th>Documento Adjunto</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -18,8 +18,12 @@
             <tr>
                 <td>{{ incidence.code }}</td>
                 <td>{% if incidence.incidenceDate %}{{ incidence.incidenceDate|date('Y-m-d') }}{% endif %}</td>
-                <td>{{ incidence.description }}</td>
-                <td>{{ incidence.document }}</td>
+                <td>{{ incidence.description | raw }}</td>
+                <td>
+                    <a href="{{ asset('uploads/documents/' ~ incidence.document) }}" data-toggle="tootip" data-placement="top" title="ver Documento adjunto">
+                        <span class="glyphicon glyphicon-book"></span>
+                    </a>
+                </td>
                 <td>
                     <a href="{{ path('incidence_show', { 'id': incidence.id }) }}"
                        data-toggle="tooltip" data-placement="top" title="Editar">

@@ -1,44 +1,197 @@
-{% extends 'base.html.twig' %}
+{% extends 'layouts/main-layout.html.twig' %}
 
-{% block body %}
-    <h1>Incidence</h1>
+{% block content %}
 
-    <table>
-        <tbody>
+<!--Datos importantes a mostrar en el show de la incidencia
+
+Datos del booking
+    - el numero de booking
+    - el name del booking
+    - servicio afectado
+    - clientes del booking
+
+Datos de la incidencia
+    - tipo de la incidencia
+    - codigo
+    - fecha
+    - descripcion
+    - causas
+    - lugar de la incidencia
+    - quien detecto la incidencia
+    - acciones correctivas
+    - acciones imediatas
+    - costos
+    - responsables
+    - cierre
+-->
+    <h1 class="page-header">Incidencia <small style="display: inline">{{ incidence.code }}</small> </h1>
+
+    <table class="table table-responsive table-hover table-striped">
+        <tbody class="incidence_show">
             <tr>
-                <th>Id</th>
-                <td>{{ incidence.id }}</td>
+                {#<th>Tipo de incidencia</th>#}
+                <td colspan="1"></td>
+                <td colspan="1"><h2>Datos de la incidencia</h2></td>
+            </tr>
+
+            <tr>
+                <th>Tipo de incidencia</th>
+                <td>{{ incidence.incidenceType }}</td>
+            </tr>
+            <!-- si la incidencia es de tipo interna-->
+            {% if incidence.incidenceType.id==1 %}{#Tipo interna#}
+                <tr>
+                    <th>Responsable</th>
+                    <td>
+                        {% for person in incidence.incidencesPersons if person.rol == 'R'%}
+                            <em>{{ person.person.name }}</em>
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% elseif incidence.incidenceType.id==2 %}{#Tipo proveedor#}
+                <tr>
+                    <th>Proveedor</th>
+                    <td>{{ incidence.service.supplier.name }}</td>
+                </tr>
+            {% elseif incidence.incidenceType.id==3 %}{#Tipo Clientes#}
+                <tr>
+                    <th>Clientes</th>
+                    <td>
+                        {% for client in incidence.clients %}
+                            {{ client.name }}<br>
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% else %}{#Tipo Agencia#}
+                <tr>
+                    <th>Agencia</th>
+                    <td>{{ incidence.booking.agent }}</td>
+                </tr>
+            {% endif %}
+
+            <tr>
+                <th>C&oacutedigo de la incidencia</th>
+                <td><span class="label label-success">{{ incidence.code }}</span></td>
             </tr>
             <tr>
-                <th>Code</th>
-                <td>{{ incidence.code }}</td>
+                <th>Fecha de la incidencia</th>
+                <td>{% if incidence.incidenceDate %}{{ incidence.incidenceDate|date('d-m-Y') }}{% endif %}</td>
             </tr>
             <tr>
-                <th>Incidencedate</th>
-                <td>{% if incidence.incidenceDate %}{{ incidence.incidenceDate|date('Y-m-d') }}{% endif %}</td>
+                <th>Descripci&oacuten</th>
+                <td>{{ incidence.description | striptags  }}</td>
             </tr>
             <tr>
-                <th>Description</th>
-                <td>{{ incidence.description }}</td>
+                <th>Causas</th>
+                <td>{{ incidence.causes | striptags }}</td>
             </tr>
             <tr>
-                <th>Document</th>
-                <td>{{ incidence.document }}</td>
+                <th>Lugar</th>
+                <td>{{ incidence.place }}</td>
+            </tr>
+            <tr>
+                <th>Quien dectecto</th>
+                <td>
+                    {% for person in incidence.incidencesPersons if person.rol == 'W'%}
+                        <em>{{ person.person.name }}</em>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>Acciones Inmediatas</th>
+                <td>{{ incidence.immediateActions | striptags }}</td>
+            </tr>
+
+            <tr>
+                <th>Acciones Correctivas</th>
+                <td>{{ incidence.correctiveActions | striptags }}</td>
+            </tr>
+            <tr>
+                <th>Responsables de las acciones correctivas</th>
+                <td>
+                    {% for person in incidence.incidencesPersons if person.rol == 'C'%}
+                        <em>{{ person.person.name }}</em>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>Responsable de las acciones inmediatas</th>
+                <td>
+                    {% for person in incidence.incidencesPersons if person.rol == 'I'%}
+                        <em>{{ person.person.name }}</em>
+                    {% endfor %}
+                </td>
+            </tr>
+
+            <tr>
+                <th>Documento adjunto</th>
+                <td>
+                    <a href="{{ asset('uploads/documents/' ~ incidence.document) }}" data-toggle="tooltip" data-placement="top" title="ver Documento adjunto">
+                        <span class="glyphicon glyphicon-book"></span>
+                    </a>
+                </td>
+            </tr>
+            <!--Cierre-->
+            <tr>
+                <th>Cierre</th>
+                <td>
+                    {% if incidence.clousure=='E' %}
+                        <span class="label label-info">
+                            Efectivo
+                        </span>
+                    {% else %}
+                        <span class="label label-danger">
+                            Insatisfactorio
+                        </span>
+                    {% endif %}
+                </td>
+            </tr>
+            <!--costo-->
+            <tr>
+                <th>Costo de la incidencia</th>
+                <td><span class="badge">{{ incidence.cost }}</span></td>
+            </tr>
+
+            <!--Datos del booking-->
+            <tr>
+                {#<th>Tipo de incidencia</th>#}
+                <td colspan="1"></td>
+                <td colspan="1"><h2>Datos del booking</h2></td>
+            </tr>
+            <!--Booking code-->
+            <tr>
+                <th>Booking </th>
+                <td>
+                    <span class="label label-success">{{ incidence.booking.code }}</span>
+                </td>
+            </tr>
+            <!--booking name-->
+            <tr>
+                <th>Nombre del booking </th>
+                <td>
+                    {{ incidence.booking.name }}
+                </td>
+            </tr>
+            <!--Booking Clients-->
+            <tr>
+                <th>Clientes </th>
+                <td>
+                    {% for client in incidence.clients  %}
+                        {{ client.name }}<br>
+                    {% endfor %}
+                </td>
             </tr>
         </tbody>
+        <tfoot>
+            <tr>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('incidence_edit',{ 'id' : incidence.id }) }}">Editar</a>
+                    <a class="btn btn-danger" href="javascript:void(0);">Eliminar</a>
+                    <a class="btn btn-default" href="{{ path('incidence_index') }}">Volver al listado</a>
+                </td>
+            </tr>
+        </tfoot>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('incidence_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('incidence_edit', { 'id': incidence.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+
 {% endblock %}

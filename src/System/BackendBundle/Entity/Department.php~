@@ -103,4 +103,9 @@ class Department
     {
         return $this->persons;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

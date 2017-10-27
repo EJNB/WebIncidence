@@ -74,7 +74,8 @@ class IncidenceType extends AbstractType
 //            ))
             ->add('document',FileType::class,array(
                 'label' => 'Documento (PDF, Docx, Jpeg)',
-                'required' => false
+                'required' => false,
+//                'data_class' => null//ver esto mañana
             ))
 //            ->add('service')
             ->add('place',EntityType::class,array(
@@ -84,8 +85,10 @@ class IncidenceType extends AbstractType
                     'data-live-search' => 'true',
                     'title' => 'Seleccione el lugar'
                 ),
-                'label' => 'Lugar'
+                'label' => 'Lugar',
+                'required' => true
             ));
+
 //            ->add('claim');
 //            ->add('booking');
     }

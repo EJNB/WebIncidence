@@ -67,7 +67,7 @@ class Person implements AdvancedUserInterface, \Serializable
 
     /**
      * Many Users have Many Roles.
-     * @Assert\NotNull()
+//     * @Assert\NotNull()
      * @ORM\ManyToMany(targetEntity="Role", inversedBy="persons")
      * @ORM\JoinTable(name="persons_roles")
      */
@@ -172,7 +172,7 @@ class Person implements AdvancedUserInterface, \Serializable
 
     public function getRoles()
     {
-        return $this->roles->toArray();
+        return $this->roles;
     }
 
     public function eraseCredentials()
@@ -404,5 +404,51 @@ class Person implements AdvancedUserInterface, \Serializable
     public function getIsActive()
     {
         return $this->isActive;
+    }
+
+    /**
+     * Set occupation
+     *
+     * @param string $occupation
+     * @return Person
+     */
+    public function setOccupation($occupation)
+    {
+        $this->occupation = $occupation;
+
+        return $this;
+    }
+
+    /**
+     * Get occupation
+     *
+     * @return string 
+     */
+    public function getOccupation()
+    {
+        return $this->occupation;
+    }
+
+    /**
+     * Add roles
+     *
+     * @param \System\BackendBundle\Entity\Role $roles
+     * @return Person
+     */
+    public function addRole(\System\BackendBundle\Entity\Role $roles)
+    {
+        $this->roles[] = $roles;
+
+        return $this;
+    }
+
+    /**
+     * Remove roles
+     *
+     * @param \System\BackendBundle\Entity\Role $roles
+     */
+    public function removeRole(\System\BackendBundle\Entity\Role $roles)
+    {
+        $this->roles->removeElement($roles);
     }
 }

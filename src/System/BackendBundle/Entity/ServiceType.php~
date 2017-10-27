@@ -24,7 +24,7 @@ class ServiceType
     /**
      * @var int
      *
-     * @ORM\Column(name="code", type="integer")
+     * @ORM\Column(name="code", type="string", length=20)
      */
     private $code;
 

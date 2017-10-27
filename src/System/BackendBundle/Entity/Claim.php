@@ -70,11 +70,11 @@ class Claim
      * @ORM\Column(name="state", type="string", length=255)
      */
     private $state;
-
-    /**
-     * @ORM\OneToMany(targetEntity="Incidence", mappedBy="claim")
-     **/
-    private $incidences;
+//
+//    /**
+//     * @ORM\OneToMany(targetEntity="Incidence", mappedBy="claim")
+//     **/
+//    private $incidences;
 
     /**
      * @ORM\ManyToOne(targetEntity="Booking", inversedBy="claims")
@@ -88,7 +88,7 @@ class Claim
     private $items;
 
     public function __construct() {
-        $this->incidences = new ArrayCollection();
+//        $this->incidences = new ArrayCollection();
         $this->items = new ArrayCollection();
     }
 
@@ -264,38 +264,38 @@ class Claim
         return $this->state;
     }
 
-    /**
-     * Add incidences
-     *
-     * @param \System\BackendBundle\Entity\Incidence $incidences
-     * @return Claim
-     */
-    public function addIncidence(\System\BackendBundle\Entity\Incidence $incidences)
-    {
-        $this->incidences[] = $incidences;
-
-        return $this;
-    }
-
-    /**
-     * Remove incidences
-     *
-     * @param \System\BackendBundle\Entity\Incidence $incidences
-     */
-    public function removeIncidence(\System\BackendBundle\Entity\Incidence $incidences)
-    {
-        $this->incidences->removeElement($incidences);
-    }
-
-    /**
-     * Get incidences
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getIncidences()
-    {
-        return $this->incidences;
-    }
+//    /**
+//     * Add incidences
+//     *
+//     * @param \System\BackendBundle\Entity\Incidence $incidences
+//     * @return Claim
+//     */
+//    public function addIncidence(\System\BackendBundle\Entity\Incidence $incidences)
+//    {
+//        $this->incidences[] = $incidences;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Remove incidences
+//     *
+//     * @param \System\BackendBundle\Entity\Incidence $incidences
+//     */
+//    public function removeIncidence(\System\BackendBundle\Entity\Incidence $incidences)
+//    {
+//        $this->incidences->removeElement($incidences);
+//    }
+//
+//    /**
+//     * Get incidences
+//     *
+//     * @return \Doctrine\Common\Collections\Collection
+//     */
+//    public function getIncidences()
+//    {
+//        return $this->incidences;
+//    }
 
     /**
      * Set booking

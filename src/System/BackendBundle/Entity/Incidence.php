@@ -49,6 +49,16 @@ class Incidence
      * @ORM\Column(name="causes", type="text")
      */
     private $causes;
+//
+//    /**
+//     * @var integer
+//     * 1 - sin costo
+//     * 2 - costo por compensacion
+//     * 3 - costo de no calidad por sustitucion
+//     * 4 - otros costos
+//     * @ORM\Column(name="cost_type", type="integer")
+//     */
+//    private $cost_type;
 
     /**
      * @var string
@@ -96,12 +106,6 @@ class Incidence
     private $place;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Claim", inversedBy="incidences")
-     * @ORM\JoinColumn(name="claim_id", referencedColumnName="id")
-     **/
-    private $claim;
-
-    /**
      * @ORM\ManyToOne(targetEntity="Booking", inversedBy="incidences")
      * @ORM\JoinColumn(name="booking_id", referencedColumnName="id")
      **/
@@ -113,10 +117,16 @@ class Incidence
     private $incidences_persons;
 
     /**
+     * @ORM\OneToMany(targetEntity="Client", mappedBy="incidence")
+     **/
+    private $clients;
+
+     /**
      * Constructor
      */
     public function __construct()
     {
+        $this->clients = new ArrayCollection();
         $this->incidences_persons = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -314,28 +324,28 @@ class Incidence
         return $this->place;
     }
 
-    /**
-     * Set claim
-     *
-     * @param \System\BackendBundle\Entity\Claim $claim
-     * @return Incidence
-     */
-    public function setClaim(\System\BackendBundle\Entity\Claim $claim = null)
-    {
-        $this->claim = $claim;
-
-        return $this;
-    }
-
-    /**
-     * Get claim
-     *
-     * @return \System\BackendBundle\Entity\Claim 
-     */
-    public function getClaim()
-    {
-        return $this->claim;
-    }
+//    /**
+//     * Set claim
+//     *
+//     * @param \System\BackendBundle\Entity\Claim $claim
+//     * @return Incidence
+//     */
+//    public function setClaim(\System\BackendBundle\Entity\Claim $claim = null)
+//    {
+//        $this->claim = $claim;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get claim
+//     *
+//     * @return \System\BackendBundle\Entity\Claim
+//     */
+//    public function getClaim()
+//    {
+//        return $this->claim;
+//    }
 
     /**
      * Set booking
@@ -484,4 +494,65 @@ class Incidence
     {
         return $this->cost;
     }
+
+    public function __toString()
+    {
+        return $this->getDescription();
+    }
+
+    /**
+     * Add clients
+     *
+     * @param \System\BackendBundle\Entity\Client $clients
+     * @return Incidence
+     */
+    public function addClient(\System\BackendBundle\Entity\Client $clients)
+    {
+        $this->clients[] = $clients;
+
+        return $this;
+    }
+
+    /**
+     * Remove clients
+     *
+     * @param \System\BackendBundle\Entity\Client $clients
+     */
+    public function removeClient(\System\BackendBundle\Entity\Client $clients)
+    {
+        $this->clients->removeElement($clients);
+    }
+
+    /**
+     * Get clients
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getClients()
+    {
+        return $this->clients;
+    }
+//
+//    /**
+//     * Set cost_type
+//     *
+//     * @param integer $costType
+//     * @return Incidence
+//     */
+//    public function setCostType($costType)
+//    {
+//        $this->cost_type = $costType;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get cost_type
+//     *
+//     * @return integer
+//     */
+//    public function getCostType()
+//    {
+//        return $this->cost_type;
+//    }
 }

@@ -251,6 +251,7 @@ function showServicesBySupplier(data) {
     });
 }
 
+//muestra un listado de servicios afectados
 function showCompensationCost() {
 
     var url_booking_compensation_services = Routing.generate('incidence_ajax_get_compensation_service');
@@ -263,6 +264,7 @@ function showCompensationCost() {
 
 }
 
+//muestra todos los servicios cancelados de costo por sustitucion
 function showSustitutionOriginalCost() {
     var url_booking_sustitution_services = Routing.generate('incidence_ajax_get_sustitution_services');
     var reference = $('#select_reference').val();
@@ -272,6 +274,7 @@ function showSustitutionOriginalCost() {
     });
 }
 
+//calculo de costo por sustitucion luego de seleccionar el servicio cancelado
 function showSustitutionSustituteCost(type) {
 
     var url_booking_sustitution_services = Routing.generate('incidence_ajax_get_sustitution_services');
@@ -287,6 +290,8 @@ function hideCost() {
     $('#container_sustitution_cost_sustitute').html('');
     $('#container_sustitution_cost_original').html('');
     $('#container_compensation_cost').html('');
+    $('#elem-hidden').addClass('elem-hidden');
+    $('.fa-arrow-circle-right').addClass('elem-hidden');
 }
 
 function test(data) {
@@ -295,21 +300,31 @@ function test(data) {
 
 function calculateNoCost() {
     $('#final_cost').val(0);
+    //$('input[name=cost_type]').val(1)
 }
 
+//calculo de costo por compensacion
 function calculateCompensationCost(data) {
+    var final_cost = $(data).parent().parent().find('.service_cost').html();
     $('#final_cost').val($(data).parent().parent().find('.service_cost').html());
+    $('span#show-final-cost').html(final_cost);
+    //$('input[name=cost_type]').val(2)
 }
 
+//calculo de costo por sustitucion
 function calculateSustitutionCost(data) {
     var minuend  = $(data).parent().parent().find('.service_cost').html();
     var subtracting = $('input[name=cost_selected_original]:checked').parent().parent().find('.service_cost').html();
     var final = minuend - subtracting;
     $('#final_cost').val(final);
+    $('span#show-final-cost').html(final);
+    //$('input[name=cost_type]').val(3)
 }
 
 function calculateOtherCost(data) {
     $('#final_cost').val($(data).val());
+    $('span#show-final-cost').html($(data).val());
+    //$('input[name=cost_type]').val(4)
 }
 
 $(document).ready( function() {
@@ -326,21 +341,33 @@ $(document).ready( function() {
     //cuando sel el tipo de costo de compensacion
     $('#compensation_cost').on('ifClicked',function(){
         showCompensationCost();
+        $('#elem-hidden').addClass('elem-hidden');
+        $('.fa-arrow-circle-right').addClass('elem-hidden');
+        $('span#show-final-cost').html(0);
     });
 
     $('#no_cost').on('ifClicked',function(){
         hideCost();
         calculateNoCost();
-
+        $('span#show-final-cost').html(0);
     });
     
     $('#other_cost').on('ifClicked',function(){
-        hideCost();
+        $('.other-cost').val('');
+        $('.elem-hidden').removeClass('elem-hidden');
+        $('#container_sustitution_cost_sustitute').html('');
+        $('#container_sustitution_cost_original').html('');
+        $('#container_compensation_cost').html('');
+        $('.fa-arrow-circle-right').addClass('elem-hidden');
+        $('span#show-final-cost').html(0);
     });
 
     //cuando seleciono el tipo de costo de no calidad por sustitucion
     $('#sustitution_cost').on('ifClicked',function(){
         showSustitutionOriginalCost();
+        $('#elem-hidden').addClass('elem-hidden');
+        $('.fa-arrow-circle-right').removeClass('elem-hidden');
+        $('span#show-final-cost').html(0);
     });
 
     setTimeout(function() {

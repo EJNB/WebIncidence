@@ -29,10 +29,10 @@ class Client
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Booking", inversedBy="clients")
+     * @ORM\ManyToOne(targetEntity="System\BackendBundle\Entity\Incidence", inversedBy="clients")
      * @ORM\JoinColumn(name="booking_id", referencedColumnName="id")
      **/
-    private $booking;
+    private $incidence;
 
     /**
      * Get id
@@ -65,28 +65,5 @@ class Client
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Set booking
-     *
-     * @param \System\BackendBundle\Entity\Booking $booking
-     * @return Client
-     */
-    public function setBooking(\System\BackendBundle\Entity\Booking $booking = null)
-    {
-        $this->booking = $booking;
-
-        return $this;
-    }
-
-    /**
-     * Get booking
-     *
-     * @return \System\BackendBundle\Entity\Booking 
-     */
-    public function getBooking()
-    {
-        return $this->booking;
     }
 }

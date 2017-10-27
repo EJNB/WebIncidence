@@ -3,8 +3,15 @@
     <select id="service_selection" class="form-control selectpicker" data-live-search="true" title="Seleccione el servicio" name="service">
         <option value="">Ninguno</option>
         {% for service in services_description %}
-            <option value="{{ service['OPTID'] }}">{{ service['SUPNAME'] }} - {{ service['OPTNAME'] }}</option>
+            <option value="{{ service['OPTID'] }}"
+                    {% if incidence is defined %}
+                        {% if  service['OPTID']==incidence.service.tourplanId %}
+                            selected
+                        {% endif %}
+                    {% endif %}
+                    >
+                {{ service['SUPNAME'] }} - {{ service['OPTNAME'] }}
+            </option>
         {% endfor %}
     </select>
-
 {% endif %}

@@ -49,17 +49,16 @@ class IncidenceController extends Controller
         $form->handleRequest($request);
         $persons = $em->getRepository('SystemBackendBundle:Person')->findAll();
 
-
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $reference = $request->request->get('select_reference');
-            $optid = $request->request->get('service');
+            $reference = $request->request->get('select_reference');//busco el booking
+            $optid = $request->request->get('service');//dame el servicio de la incidencia
             $service = $em->getRepository('SystemBackendBundle:Service')->findOneByTourplanId($optid);
-            if(!$service){
+            if(!$service){//si exite el servicio en mi fb
                 $supplier = new Supplier();
                 $service = new Service();
 
-                $data_service = $tp_service->getServiceDescriptionByOPT($optid);
+                $data_service = $tp_service->getServiceDescriptionByOPT($optid);//busco el servicio en turplan
                 if($data_service){
                     $supplier->setCode($data_service['SUPCODE']);
                     $supplier->setName($data_service['SUPNAME']);
@@ -77,12 +76,12 @@ class IncidenceController extends Controller
                 }
             }
 
-            $client_name = $request->request->get('clients');
+//            $client_name = $request->request->get('clients');
             $booking = $em->getRepository('SystemBackendBundle:Booking')->findOneByCode($reference);
             $count_booking = 1;
-            if(!$booking){
+            if(!$booking){ // si el booking no existe, es decir q no tiene incidencia asociada
                 $data_booking = $tp_service->getBookingGeneralData($reference);
-                var_dump($reference);
+//                var_dump($reference);
                 $booking = new Booking();
                 $booking->setName($data_booking['BOOKING_NAME']);
                 $booking->setCode($data_booking['FULL_REFERENCE']);
@@ -94,20 +93,14 @@ class IncidenceController extends Controller
                 $em->persist($booking);
                 $em->flush();
 
-                $client = new Client();
-                $client->setBooking($booking);
-                $client->setName('jorgito el loco');
-                $em->persist($client);
-                $em->flush();
-
-            }else{
-                $count_booking = sizeof($booking->getIncidences());
-                $client = $em->getRepository('SystemBackendBundle:Client')->findBy(array('name' => $client_name, 'booking' => $booking));
-                if (!$client){
-                    $client = new Client();
-                    $client->setBooking($booking);
-                    $client->setName('jorgito el loco');
-                }
+            }else{//significa q el booking existe en mi bd y tiene alguna incidencia asociada
+                $count_booking = count($booking->getIncidences())+1;
+//                $client = $em->getRepository('SystemBackendBundle:Client')->findBy(array('name' => $client_name, 'booking' => $booking));
+//                if (!$client){
+//                    $client = new Client();
+//                    $client->setBooking($booking);
+////                    $client->setName('jorgito el loco');
+//                }
             }
 
             $incidence_type = $em->getRepository('SystemBackendBundle:IncidenceType')->findOneById($request->request->get('incidence_types'));
@@ -115,6 +108,7 @@ class IncidenceController extends Controller
             $incidence->setBooking($booking);
             $incidence->setService($service);
             $incidence->setIncidenceType($incidence_type);
+//            $incidence->setCostType($request->request->get('cost_type'));//aqui seteo el tipo de costo
             $incidence->setCost($request->request->get('final_cost'));
             $incidence->setClousure($request->request->get('clousure'));
             $final_code = $reference.'-'.strval($count_booking);
@@ -122,6 +116,15 @@ class IncidenceController extends Controller
 
             $em->persist($incidence);
             $em->flush();
+
+            //aqui entonces recorreria todo mi arr de clientes y los pondria en el booking
+            foreach($request->request->get('clients') as $clave => $valor){
+                $client = new Client();
+                $client->setName($valor);
+                $client->setIncidence($incidence);
+                $em->persist($client);
+                $em->flush();
+            }
 
             $who_detected = $em->getRepository('SystemBackendBundle:Person')->findOneById($request->request->get('who_detected'));
             $responsable_corrective_actions = $em->getRepository('SystemBackendBundle:Person')->findOneById($request->request->get('responsable_corrective_actions'));
@@ -145,9 +148,6 @@ class IncidenceController extends Controller
             $incidence_person_i->setRol('I');
             $em->persist($incidence_person_i);
 
-
-
-//
             if($request->request->get('responsable')){
                 $incidence_person_responsable = $em->getRepository('SystemBackendBundle:Person')->findOneById($request->request->get('responsable'));
                 $incidence_person_r = new Incidence_Person();
@@ -157,11 +157,28 @@ class IncidenceController extends Controller
                 $em->persist($incidence_person_r);
             }
 
+            //guardo el documento adjunto
+            $file = $incidence->getDocument();
+            if($file){//si viene algun documento (pdf,doc o jpg o png)
+                // Generate a unique name for the file before saving it
+                $fileName = md5(uniqid()).'.'.$file->guessExtension();
+                // Move the file to the directory where brochures are stored
+                $file->move(
+                    $this->getParameter('file_directory'),
+                    $fileName
+                );
+                // Update the 'brochure' property to store the PDF file name
+                // instead of its contents
+                $incidence->setDocument($fileName);
+            }
             $em->flush();
 
+            $this->addFlash(
+                'notice',
+                'Sus datos han sido guardados satisfactoriamente'
+            );
 
-
-            return $this->redirectToRoute('incidence_show', array('id' => $incidence->getId()));
+            return $this->redirectToRoute('incidence_index');
         }
 
         return $this->render('incidence/new.html.twig', array(
@@ -178,11 +195,8 @@ class IncidenceController extends Controller
      */
     public function showAction(Incidence $incidence)
     {
-        $deleteForm = $this->createDeleteForm($incidence);
-
         return $this->render('incidence/show.html.twig', array(
             'incidence' => $incidence,
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -192,20 +206,157 @@ class IncidenceController extends Controller
      */
     public function editAction(Request $request, Incidence $incidence)
     {
-        $deleteForm = $this->createDeleteForm($incidence);
+        $em = $this->getDoctrine()->getManager();
         $editForm = $this->createForm('System\BackendBundle\Form\IncidenceType', $incidence);
         $editForm->handleRequest($request);
+        $types = $em->getRepository('SystemBackendBundle:IncidenceType')->findAll();
+        $dql = 'SELECT ip,p,i
+                FROM SystemBackendBundle:Incidence_Person ip
+                JOIN ip.person p
+                JOIN ip.incidence i
+                WHERE ip.incidence =:incidence
+                ';
+        $query = $em->createQuery($dql)->setParameter('incidence',$incidence->getId());
+        $incidence_persons = $query->getResult();
+        $persons = $em->getRepository('SystemBackendBundle:Person')->findAll();
+
+        //buscar los datos del booking
+        $tp_service = $this->get('TPService');
+        $detail_booking = $tp_service->getBookingGeneralData($incidence->getBooking()->getCode());
+        $services_description = $tp_service->getBookingServiceDescription($incidence->getBooking()->getCode());
+        $clients = $tp_service->getBookingClientsName($incidence->getBooking()->getCode());
+        $suppliers = $tp_service->getBookingSupplier($incidence->getBooking()->getCode());
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+
+            $reference = $request->request->get('select_reference');//busco el booking
+            $optid = $request->request->get('service');//obtengo el id de turplan del servicio
+            $service = $em->getRepository('SystemBackendBundle:Service')->findOneByTourplanId($optid);//lo busco en mi base de
+
+            //quitar el servicio q estaba asociado al booking con proveedores y clientes
+
+            //necesito el id del booking
+            if(!$service){//si no exite el servicio en mi bd lo creo
+                $supplier = new Supplier();
+                $service = new Service();
+
+                $data_service = $tp_service->getServiceDescriptionByOPT($optid);
+                if($data_service){
+                    $supplier->setCode($data_service['SUPCODE']);
+                    $supplier->setName($data_service['SUPNAME']);
+                    $em->persist($supplier);
+                    $em->flush();
+
+                    $service->setName($data_service['SERVICEDESCRIPTION']);
+                    $service->setLocation($data_service['LOCATION']);
+                    $service->setTourplanCode($data_service['SERVICECODE']);
+                    $service->setServiceType($data_service['SERVICETYPE']);
+                    $service->setSupplier($supplier);
+                    $service->setTourplanId($optid);
+                    $em->persist($service);
+                    $em->flush();
+                }
+            }
+
+            $incidence_type = $em->getRepository('SystemBackendBundle:IncidenceType')->findOneById($request->request->get('incidence_types'));
+
+            $incidence->setService($service);
+            $incidence->setIncidenceType($incidence_type);
+            $incidence->setCost($request->request->get('final_cost'));
+            $incidence->setClousure($request->request->get('clousure'));
+
+            $em->persist($incidence);
+            $em->flush();
+
+            //elimino todos los clientes asociados a esta incidencia
+            foreach ($incidence->getClients() as $c){
+                $em->remove($c);
+                $em->flush();
+            }
+
+            //introdusco todos clientes q se seleccionaron
+            foreach($request->request->get('clients') as $clave => $valor){
+                $client = new Client();
+                $client->setName($valor);
+                $client->setIncidence($incidence);
+                $em->persist($client);
+                $em->flush();
+            }
+
+            //elimino todos los registros de incidence_person asociados a esta incidencia
+            foreach ($incidence->getIncidencesPersons() as $i){
+                $em->remove($i);
+                $em->flush();
+            }
+
+            $who_detected = $em->getRepository('SystemBackendBundle:Person')->findOneById($request->request->get('who_detected'));
+            $responsable_corrective_actions = $em->getRepository('SystemBackendBundle:Person')->findOneById($request->request->get('responsable_corrective_actions'));
+            $responsable_immediate_actions = $em->getRepository('SystemBackendBundle:Person')->findOneById($request->request->get('responsable_immediate_actions'));
+
+            $incidence_person_w = new Incidence_Person();
+            $incidence_person_w->setIncidence($incidence);
+            $incidence_person_w->setPerson($who_detected);
+            $incidence_person_w->setRol('W');
+            $em->persist($incidence_person_w);
+
+            $incidence_person_c = new Incidence_Person();
+            $incidence_person_c->setIncidence($incidence);
+            $incidence_person_c->setPerson($responsable_corrective_actions);
+            $incidence_person_c->setRol('C');
+            $em->persist($incidence_person_c);
+
+            $incidence_person_i = new Incidence_Person();
+            $incidence_person_i->setIncidence($incidence);
+            $incidence_person_i->setPerson($responsable_immediate_actions);
+            $incidence_person_i->setRol('I');
+            $em->persist($incidence_person_i);
+
+            //si incidencia fue de tipo de interna
+            if($request->request->get('responsable')){
+                $incidence_person_responsable = $em->getRepository('SystemBackendBundle:Person')->findOneById($request->request->get('responsable'));
+                $incidence_person_r = new Incidence_Person();
+                $incidence_person_r->setIncidence($incidence);
+                $incidence_person_r->setPerson($incidence_person_responsable);
+                $incidence_person_r->setRol('R');
+                $em->persist($incidence_person_r);
+            }
+
+            //guardo el documento adjunto
+            $file = $incidence->getDocument();
+            if($file){//si viene algun documento (pdf,doc o jpg o png)
+                // Generate a unique name for the file before saving it
+                $fileName = md5(uniqid()).'.'.$file->guessExtension();
+                // Move the file to the directory where brochures are stored
+                $file->move(
+                    $this->getParameter('file_directory'),
+                    $fileName
+                );
+                // Update the 'brochure' property to store the PDF file name
+                // instead of its contents
+                $incidence->setDocument($fileName);
+            }
+            $em->flush();
+
+            $this->addFlash(
+                'notice',
+                'Sus datos han sido guardados satisfactoriamente'
+            );
+
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('incidence_edit', array('id' => $incidence->getId()));
+            return $this->redirectToRoute('incidence_index');
         }
 
         return $this->render('incidence/edit.html.twig', array(
             'incidence' => $incidence,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'types' => $types,
+            'persons' => $persons,
+            'incidence_persons' => $incidence_persons,
+            'booking_detail' => $detail_booking,
+            'services_description' => $services_description,
+            'clients' => $clients,
+            'suppliers' => $suppliers
         ));
     }
 
