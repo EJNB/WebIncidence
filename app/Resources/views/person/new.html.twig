@@ -1,10 +1,24 @@
-{% extends 'base.html.twig' %}
+{% form_theme form 'form/fields.html.twig' %}
+{% extends ':layouts:main-layout.html.twig' %}
 
-{% block body %}
-    <h1>Person creation</h1>
+{% block content %}
+    <h1 class="page-header">Crear persona</h1>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
+
+        {{ form_row(form.name) }}
+        {{ form_row(form.occupation) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.username) }}
+        {{ form_row(form.password.first) }}
+        {{ form_row(form.password.second) }}
+    <div class="form-group">
+        {{ form_label(form.password) }}
+        {{ form_errors(form.password) }}
+        {{ form_widget(form.password) }}
+    </div>
+
+
         <input type="submit" value="Create" />
     {{ form_end(form) }}
 
