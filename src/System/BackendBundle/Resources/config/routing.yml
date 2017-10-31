@@ -6,7 +6,6 @@ system_backend_category:
     resource: "@SystemBackendBundle/Resources/config/routing/category.yml"
     prefix:   /category
 
-
 system_backend_subcategory:
     resource: "@SystemBackendBundle/Resources/config/routing/subcategory.yml"
     prefix:   /subcategory
@@ -34,3 +33,7 @@ system_backend_place:
 system_backend_person:
     resource: "@SystemBackendBundle/Resources/config/routing/person.yml"
     prefix:   /person
+
+system_backend_claim:
+    resource: "@SystemBackendBundle/Resources/config/routing/claim.yml"
+    prefix:   /claim

@@ -121,6 +121,12 @@ class Incidence
      **/
     private $clients;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="System\BackendBundle\Entity\Claim", inversedBy="incidences")
+     * @ORM\JoinTable(name="incidences_claims")
+     **/
+    private $claims;
+
      /**
      * Constructor
      */
@@ -128,6 +134,7 @@ class Incidence
     {
         $this->clients = new ArrayCollection();
         $this->incidences_persons = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->claims = new ArrayCollection();
     }
 
     /**
@@ -323,29 +330,6 @@ class Incidence
     {
         return $this->place;
     }
-
-//    /**
-//     * Set claim
-//     *
-//     * @param \System\BackendBundle\Entity\Claim $claim
-//     * @return Incidence
-//     */
-//    public function setClaim(\System\BackendBundle\Entity\Claim $claim = null)
-//    {
-//        $this->claim = $claim;
-//
-//        return $this;
-//    }
-//
-//    /**
-//     * Get claim
-//     *
-//     * @return \System\BackendBundle\Entity\Claim
-//     */
-//    public function getClaim()
-//    {
-//        return $this->claim;
-//    }
 
     /**
      * Set booking
@@ -555,4 +539,37 @@ class Incidence
 //    {
 //        return $this->cost_type;
 //    }
+
+    /**
+     * Add claims
+     *
+     * @param \System\BackendBundle\Entity\Claim $claims
+     * @return Incidence
+     */
+    public function addClaim(\System\BackendBundle\Entity\Claim $claims)
+    {
+        $this->claims[] = $claims;
+
+        return $this;
+    }
+
+    /**
+     * Remove claims
+     *
+     * @param \System\BackendBundle\Entity\Claim $claims
+     */
+    public function removeClaim(\System\BackendBundle\Entity\Claim $claims)
+    {
+        $this->claims->removeElement($claims);
+    }
+
+    /**
+     * Get claims
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getClaims()
+    {
+        return $this->claims;
+    }
 }

@@ -2,38 +2,38 @@
 {% extends 'layouts/main-layout.html.twig' %}
 
 {% block content %}
-<div class="form-container">
-    <h1 class="page-header">Crear Incidencia <small class="text" style="display: inline">Datos Generales</small></h1>
+    <div class="form-container">
+        <h1 class="page-header">Crear Reclamaci&oacuten <small class="text" style="display: inline">Datos Generales</small></h1>
 
-    {{ form_start(form) }}
-    <input type="hidden" id="select_reference" name="select_reference" value=""><!--Aqui pone el id del booking con js-->
+        {{ form_start(form) }}
+        <input type="hidden" id="select_reference" name="select_reference" value=""><!--Aqui pone el id del booking con js-->
 
-    <div class="row">
-        <div class="col-md-3">
-            <div class="input-group">
-                <input type="search" class="form-control " id="find_booking" name="booking" aria-describedby="btn_find_booking">
-                <a class="input-group-addon" id="btn_find_booking" href="javascript:void(0);" onclick="findBooking()">
-                    <span class="glyphicon glyphicon-search"></span>
-                </a>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="input-group">
+                    <input type="search" class="form-control " id="find_booking" name="booking" aria-describedby="btn_find_booking">
+                    <a class="input-group-addon" id="btn_find_booking" href="javascript:void(0);" onclick="findBooking()">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-12" id="container_booking_detail">
-            {{ include(':incidence:booking_detail.html.twig') }}
+        <div class="row">
+            <div class="col-md-12" id="container_booking_detail">
+                {{ include(':incidence:booking_detail.html.twig') }}
+            </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <ul class="nav nav-tabs" role="tablist" id="myTab">
-                <li role="presentation"  class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Datos Generales</a></li>
-                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Acciones</a></li>
-                <li role="presentation"><a href="#costs" aria-controls="costs" role="tab" data-toggle="tab">Costos</a></li>
-            </ul>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs" role="tablist" id="myTab">
+                    <li role="presentation"  class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Datos Generales</a></li>
+                    {#<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Acciones</a></li>#}
+                    {#<li role="presentation"><a href="#costs" aria-controls="costs" role="tab" data-toggle="tab">Costos</a></li>#}
+                </ul>
+            </div>
         </div>
-    </div>
 
         <!-- Tab panes -->
         <div class="tab-content">
@@ -42,13 +42,13 @@
                 <!-- en esta primera fila van las 2 columnas con ls input la fecha y el lugar-->
                 <div class="row">
                     <div class="col-md-3">
-                        {{ form_row(form.incidenceDate) }}
+                        {#{{ form_row(form.incidenceDate) }}#}
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            {{ form_label(form.place) }}
-                            {{ form_errors(form.place) }}
-                            {{ form_widget(form.place) }}
+                            {#{{ form_label(form.place) }}#}
+                            {#{{ form_errors(form.place) }}#}
+                            {#{{ form_widget(form.place) }}#}
                         </div>
                     </div>
                 </div>
@@ -60,14 +60,14 @@
                         <div class="form-group">
                             <label>Tipos de incidencia</label>
                             <br>
-                            {% for type in types %}
-                                <input type="radio"
-                                       name="incidence_types"
-                                       value="{{ type.id }}"
-                                       class="radio_incidence_types icheck"
-                                >&nbsp;
-                                {{ type.name }}&nbsp;&nbsp;
-                            {% endfor %}
+                            {#{% for type in types %}#}
+                                {#<input type="radio"#}
+                                       {#name="incidence_types"#}
+                                       {#value="{{ type.id }}"#}
+                                       {#class="radio_incidence_types icheck"#}
+                                {#>&nbsp;#}
+                                {#{{ type.name }}&nbsp;&nbsp;#}
+                            {#{% endfor %}#}
                         </div>
                     </div>
                 </div><!--end class row-->
@@ -101,9 +101,9 @@
                         <div class="form-group">
                             <label>Quien detecta</label>
                             <select id="" class="form-control selectpicker" data-live-search="true" title="Quien detecta" name="who_detected">
-                                {% for person in persons %}
-                                    <option value="{{ person.id }}">{{ person.name }}</option>
-                                {% endfor %}
+                                {#{% for person in persons %}#}
+                                    {#<option value="{{ person.id }}">{{ person.name }}</option>#}
+                                {#{% endfor %}#}
                             </select>
                         </div>
                     </div>
@@ -112,20 +112,20 @@
                 <!--Esta fila es para mostrar los textarea de la descipcion y las causas-->
                 <div class="row">
                     <div class="col-md-12">
-                        {{ form_row(form.description, {'attr':{'rows':'4'}}) }}
+                        {#{{ form_row(form.description, {'attr':{'rows':'4'}}) }}#}
                     </div>
                 </div><!--end .row-->
                 <div class="row">
                     <div class="col-md-12">
-                        {{ form_row(form.causes, {'attr':{'rows':'4'}}) }}
+                        {#{{ form_row(form.causes, {'attr':{'rows':'4'}}) }}#}
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
-                            {{ form_label(form.document) }}
-                            {{ form_errors(form.document) }}
-                            {{ form_widget(form.document) }}
+                            {#{{ form_label(form.document) }}#}
+                            {#{{ form_errors(form.document) }}#}
+                            {#{{ form_widget(form.document) }}#}
                         </div>
                     </div>
                 </div>
@@ -148,14 +148,14 @@
 
                     <div class="col-md-3">
                         {#<div class="pull-right">#}
-                            {#{{ include(':incidence:booking_persons.html.twig') }}#}
+                        {#{{ include(':incidence:booking_persons.html.twig') }}#}
                         {#</div>#}
                         {% if persons is defined %}
                             <label for="client_selection">Reponsable de las acciones</label>
                             <select id="" class="form-control selectpicker" data-live-search="true" title="Seleccione el responsable" name="responsable_immediate_actions" required>
-                                {% for person in persons %}
-                                    <option value="{{ person.id }}">{{ person.name }}</option>
-                                {% endfor %}
+                                {#{% for person in persons %}#}
+                                    {#<option value="{{ person.id }}">{{ person.name }}</option>#}
+                                {#{% endfor %}#}
                             </select>
                         {% endif %}
                     </div>
@@ -163,7 +163,7 @@
 
                 <div class="row">
                     <div class="12">
-                        {{ form_row(form.immediate_actions, {'attr':{'rows':'4'}}) }}
+                        {#{{ form_row(form.immediate_actions, {'attr':{'rows':'4'}}) }}#}
                     </div>
                 </div>
 
@@ -174,20 +174,20 @@
                         {#<div class="pull-right">#}
                         {#{{ include(':incidence:booking_persons.html.twig') }}#}
                         {#</div>#}
-                        {% if persons is defined %}
-                            <label for="client_selection">Reponsable de las acciones</label>
-                            <select id="" class="form-control selectpicker" data-live-search="true" title="Seleccione el responsable" name="responsable_corrective_actions">
-                                {% for person in persons %}
-                                    <option value="{{ person.id }}">{{ person.name }}</option>
-                                {% endfor %}
-                            </select>
-                        {% endif %}
+                        {#{% if persons is defined %}#}
+                            {#<label for="client_selection">Reponsable de las acciones</label>#}
+                            {#<select id="" class="form-control selectpicker" data-live-search="true" title="Seleccione el responsable" name="responsable_corrective_actions">#}
+                                {#{% for person in persons %}#}
+                                    {#<option value="{{ person.id }}">{{ person.name }}</option>#}
+                                {#{% endfor %}#}
+                            {#</select>#}
+                        {#{% endif %}#}
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="12">
-                        {{ form_row(form.corrective_actions, {'attr':{'rows':'4'}}) }}
+                        {#{{ form_row(form.corrective_actions, {'attr':{'rows':'4'}}) }}#}
                     </div>
                 </div>
             </div>
@@ -280,7 +280,7 @@
                 <a href="{{ path('incidence_index') }}" class="btn btn-default">Volver al listado</a>
             </div>
         </div><!--role="tabpanel"-->
-    {{ form_end(form) }}
+        {{ form_end(form) }}
     </div>
 
 {% endblock %}

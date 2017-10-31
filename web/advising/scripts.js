@@ -327,6 +327,10 @@ function calculateOtherCost(data) {
     //$('input[name=cost_type]').val(4)
 }
 
+function changeTab(){
+    alert()
+}
+
 $(document).ready( function() {
 
     initiCheck();
@@ -337,6 +341,22 @@ $(document).ready( function() {
     $('.radio_incidence_types').on('ifClicked',function(){
         showByTypes($(this).val());
     });
+
+    //cuando de click en los tab
+    $('a[data-toggle="tab"]').on('show.bs.tab',function(){
+        switch ($(this).text()){
+            case 'Acciones':
+                $('small.text').html($(this).text());
+            case 'Costos':
+                $('small.text').html($(this).text());
+            case 'Datos Generales':
+                $('small.text').html($(this).text());
+            //default:
+            //    $('small.text').html('Datos Generales');
+        }
+    })
+    //$('#myTab a:last').tab('show');asi es q se selecciona un tab y se visualiza
+
 
     //cuando sel el tipo de costo de compensacion
     $('#compensation_cost').on('ifClicked',function(){
@@ -392,9 +412,9 @@ $(document).ready( function() {
 
     $('.link-tooltip').tooltip();
 
-    $('textarea').trumbowyg({
-        lang: 'es'
-    });
+    // $('textarea').trumbowyg({
+    //     lang: 'es'
+    // });
     //
     //$(".link-details-item").click(function (event) {
     //    $("#descripcion-popup").html($(this).attr("data-descripcion"));

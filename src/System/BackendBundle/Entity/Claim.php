@@ -39,13 +39,6 @@ class Claim
     /**
      * @var string
      *
-     * @ORM\Column(name="estado", type="string", length=255)
-     */
-    private $estado;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="request_amount", type="string", length=255)
      */
     private $requestAmount;
@@ -70,11 +63,6 @@ class Claim
      * @ORM\Column(name="state", type="string", length=255)
      */
     private $state;
-//
-//    /**
-//     * @ORM\OneToMany(targetEntity="Incidence", mappedBy="claim")
-//     **/
-//    private $incidences;
 
     /**
      * @ORM\ManyToOne(targetEntity="Booking", inversedBy="claims")
@@ -87,8 +75,14 @@ class Claim
      **/
     private $items;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="System\BackendBundle\Entity\Incidence", mappedBy="claims")
+     **/
+    private $incidences;
+
+
     public function __construct() {
-//        $this->incidences = new ArrayCollection();
+        $this->incidences = new ArrayCollection();
         $this->items = new ArrayCollection();
     }
 
@@ -147,29 +141,6 @@ class Claim
     public function getClosingDate()
     {
         return $this->closingDate;
-    }
-
-    /**
-     * Set estado
-     *
-     * @param string $estado
-     * @return Claim
-     */
-    public function setEstado($estado)
-    {
-        $this->estado = $estado;
-
-        return $this;
-    }
-
-    /**
-     * Get estado
-     *
-     * @return string 
-     */
-    public function getEstado()
-    {
-        return $this->estado;
     }
 
     /**
@@ -264,39 +235,6 @@ class Claim
         return $this->state;
     }
 
-//    /**
-//     * Add incidences
-//     *
-//     * @param \System\BackendBundle\Entity\Incidence $incidences
-//     * @return Claim
-//     */
-//    public function addIncidence(\System\BackendBundle\Entity\Incidence $incidences)
-//    {
-//        $this->incidences[] = $incidences;
-//
-//        return $this;
-//    }
-//
-//    /**
-//     * Remove incidences
-//     *
-//     * @param \System\BackendBundle\Entity\Incidence $incidences
-//     */
-//    public function removeIncidence(\System\BackendBundle\Entity\Incidence $incidences)
-//    {
-//        $this->incidences->removeElement($incidences);
-//    }
-//
-//    /**
-//     * Get incidences
-//     *
-//     * @return \Doctrine\Common\Collections\Collection
-//     */
-//    public function getIncidences()
-//    {
-//        return $this->incidences;
-//    }
-
     /**
      * Set booking
      *
@@ -351,5 +289,38 @@ class Claim
     public function getItems()
     {
         return $this->items;
+    }
+
+    /**
+     * Add incidences
+     *
+     * @param \System\BackendBundle\Entity\Incidence $incidences
+     * @return Claim
+     */
+    public function addIncidence(\System\BackendBundle\Entity\Incidence $incidences)
+    {
+        $this->incidences[] = $incidences;
+
+        return $this;
+    }
+
+    /**
+     * Remove incidences
+     *
+     * @param \System\BackendBundle\Entity\Incidence $incidences
+     */
+    public function removeIncidence(\System\BackendBundle\Entity\Incidence $incidences)
+    {
+        $this->incidences->removeElement($incidences);
+    }
+
+    /**
+     * Get incidences
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getIncidences()
+    {
+        return $this->incidences;
     }
 }

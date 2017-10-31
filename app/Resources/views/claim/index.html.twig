@@ -1,0 +1,53 @@
+{% extends ':layouts:main-layout.html.twig' %}
+
+{% block content %}
+    <h1 class="page-header">Reclamaciones</h1>
+
+    <table class="table table-responsive ">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Fecha del cierre</th>
+                <th>Requestamount</th>
+                <th>Requestreturned</th>
+                <th>Personsamount</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for claim in claims %}
+            <tr>
+                <td>{% if claim.claimDate %}{{ claim.claimDate|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if claim.closingDate %}{{ claim.closingDate|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ claim.requestAmount }}</td>
+                <td>{{ claim.requestReturned }}</td>
+                <td>{{ claim.personsAmount }}</td>
+                <td>{{ claim.state }}</td>
+                <td>
+                    <a href="{{ path('claim_show', { 'id': claim.id }) }}"
+                       data-toggle="tooltip" data-placement="top" title="Editar">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+
+                    <a href="{{ path('claim_edit', { 'id': claim.id }) }}"
+                       data-toggle="tooltip" data-placement="top" title="Editar">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+
+                    <a class="link-eliminar link-tooltip" href="javascript:void(0);"
+                       data-url = "{{ path('claim_delete', { 'id': claim.id }) }}"
+                       data-descripcion="{{ claim.code }}"
+                       data-toggle="modal" data-target="#modal-delete"
+                       data-placement="top" title="Eliminar">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('claim_new') }}" class="btn btn-primary">Crear</a>
+
+{% endblock %}

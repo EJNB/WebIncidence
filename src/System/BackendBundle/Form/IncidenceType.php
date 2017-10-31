@@ -6,6 +6,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -31,21 +32,29 @@ class IncidenceType extends AbstractType
                 'required' => true,
                 'input' => 'datetime',
             ))
-            ->add('causes',TextareaType::class,array(
-                'label' => 'Causas: ',
-                'attr' => array(
-                    'placeholder' => 'Causas que ocacionaron el incidente'
+            ->add('causes', CKEditorType::class, array(
+                'config' => array(
+                    'uiColor' => '#ffffff',
+                    //...
                 ),
-                'required' => true
+                'attr' => array('placeholder' => 'Causas de la incidencia'),
+                'required' => true,
             ))
-            ->add('description',TextareaType::class,array(
-                'label' => 'Descripción: ',
+            ->add('description', CKEditorType::class, array(
+                'config' => array(
+                    'uiColor' => '#ffffff',
+                    //...
+                ),
                 'attr' => array(
                     'placeholder' => 'Descripción de la incidencia'
                 ),
                 'required' => true
             ))
-            ->add('corrective_actions',TextareaType::class,array(
+            ->add('corrective_actions',CKEditorType::class,array(
+                'config' => array(
+                    'uiColor' => '#ffffff',
+                    //...
+                ),
                 'label' => 'Acciones correctivas: ',
                 'attr' => array(
                     'placeholder' => 'Introdusca las acciones correctivas'
@@ -53,7 +62,12 @@ class IncidenceType extends AbstractType
 //                'required' => true
             ))
 
-            ->add('immediate_actions',TextareaType::class,array(
+            ->add('immediate_actions',CKEditorType::class,array(
+                'config' => array(
+                    'uiColor' => '#ffffff',
+                    'lang' => 'es'
+                    //...
+                ),
                 'label' => 'Acciones inmediatas: ',
                 'attr' => array(
                     'placeholder' => 'Introdusca las acciones inmediatas'

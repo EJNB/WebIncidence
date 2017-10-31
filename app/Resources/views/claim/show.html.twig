@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Claim</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ claim.id }}</td>
+            </tr>
+            <tr>
+                <th>Claimdate</th>
+                <td>{% if claim.claimDate %}{{ claim.claimDate|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Closingdate</th>
+                <td>{% if claim.closingDate %}{{ claim.closingDate|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Estado</th>
+                <td>{{ claim.estado }}</td>
+            </tr>
+            <tr>
+                <th>Requestamount</th>
+                <td>{{ claim.requestAmount }}</td>
+            </tr>
+            <tr>
+                <th>Requestreturned</th>
+                <td>{{ claim.requestReturned }}</td>
+            </tr>
+            <tr>
+                <th>Personsamount</th>
+                <td>{{ claim.personsAmount }}</td>
+            </tr>
+            <tr>
+                <th>State</th>
+                <td>{{ claim.state }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('claim_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('claim_edit', { 'id': claim.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

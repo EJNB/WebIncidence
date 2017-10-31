@@ -1,0 +1,2 @@
+cuales son los estados de la incidencia.
+preguntarle a jorge si esto es con los tab de bootstrap o solo es una sola pestaña
