@@ -12,6 +12,7 @@ incidence_new:
     path:     /new
     defaults: { _controller: "SystemBackendBundle:Incidence:new" }
     methods:  [GET, POST]
+    options:  {expose: true}
 
 incidence_edit:
     path:     /{id}/edit
@@ -67,6 +68,12 @@ incidence_ajax_get_sustitution_services:
     path:   /get_sustitution_services
     defaults: { _controller: "SystemBackendBundle:Incidence:getAjaxSustitutionServices" }
     options:  {expose: true}
+
+#verifica si el booking tiene incidencias asociadas
+#incidence_ajax_check_booking:
+#    path:   /check_incidences_by_booking
+#    defaults: { _controller: "SystemBackendBundle:Incidence:getAjaxCheckIncidencesByBooking" }
+#    options:  {expose: true}
 
 #esta ruta es para llamar al metodo q busca las incidencias asociadas al un booking determinado
 incidence_ajax_get_incidences_by_booking:

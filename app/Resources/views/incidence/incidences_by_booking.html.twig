@@ -1,3 +1,26 @@
-{% for incidence in incidences %}
-    {{ incidence.description }}<br>
-{% endfor %}
+<table class="table table-responsive table-condense">
+    <thead>
+        <th>No</th>
+        <th>Codigo</th>
+        <th>Descripcion</th>
+        <th>Causas</th>
+        <th>Acci&oacuten</th>
+    </thead>
+    <tbody>
+    {% for incidence in incidences %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ incidence.code }}</td>
+            <td>{{ incidence.description }}</td>
+            <td>{{ incidence.causes }}</td>
+            <td>
+                <a href="{{ path('incidence_show', { 'id': incidence.id }) }}"
+                   data-toggle="tooltip" data-placement="top" title="Ver" target="_blank">
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+

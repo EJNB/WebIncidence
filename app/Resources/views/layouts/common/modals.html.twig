@@ -133,7 +133,24 @@
             <div class="modal-footer">
                 <a id="link-note-create" class="btn btn-primary" href="javascript:saveNote()">Guardar</a>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                {#<input type="hidden" value="" name="note-id">#}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="viewIncidencesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Incidencias asociadas al booking </h4>
+            </div>
+            <div class="modal-body incidences-content">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>

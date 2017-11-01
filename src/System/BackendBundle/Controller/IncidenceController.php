@@ -541,32 +541,32 @@ class IncidenceController extends Controller
         }
     }
 
-    //funcion encargada de buscar las incidencias asociadas a un booking
+    //check si el booking tiene incidencias
     public function getAjaxIncidencesByBookingAction(Request $request){
         if($request->isXmlHttpRequest()) {
             $em = $this->getDoctrine()->getManager();
             $reference = $request->request->get('reference');
             $dql = 'SELECT i,b FROM SystemBackendBundle:Incidence i JOIN i.booking b WHERE b.code=:code';
-            $query = $em->createQuery($dql)->setParameter('code','CRFI156924');
+            $query = $em->createQuery($dql)->setParameter('code',$reference);
             $incidences = $query->getResult();
 
             return $this->render(':incidence:incidences_by_booking.html.twig', array(
                 'incidences' => $incidences
             ));
-
-        }else{
-            $em = $this->getDoctrine()->getManager();
-//            $reference = $request->request->get('reference');
-            $dql = 'SELECT i,b FROM SystemBackendBundle:Incidence i JOIN i.booking b WHERE b.code=:code';
-            $query = $em->createQuery($dql)->setParameter('code','CRFI156924');
-            $incidences = $query->getResult();
-
-            return $this->render(':incidence:incidences_by_booking.html.twig', array(
-                'incidences' => $incidences
-            ));
-
         }
-
     }
 
+//    //funcion encargada de buscar las incidencias asociadas a un booking
+//    public function getAjaxIncidencesByBookingAction($code){
+//
+//        $em = $this->getDoctrine()->getManager();
+//        $dql = 'SELECT i,b FROM SystemBackendBundle:Incidence i JOIN i.booking b WHERE b.code=:code';
+//        $query = $em->createQuery($dql)->setParameter('code',$code);
+//        $incidences = $query->getResult();
+//
+//        return $this->render(':incidence:incidences_by_booking.html.twig', array(
+//            'incidences' => $incidences
+//        ));
+//
+//    }
 }

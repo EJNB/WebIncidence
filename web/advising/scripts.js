@@ -154,11 +154,37 @@ function findServicesByBooking(url,reference){
 function findIncidencesByBooking(booking){
     var url_booking_incidences = Routing.generate('incidence_ajax_get_incidences_by_booking');
     $.post(url_booking_incidences, {reference:booking}, function(response) {
-        //alert(response);
-        //console.log(response);
-        $('div#container_incidences_by_booking').html(response);
+        // pongo todas las incidencias en el modal
+        $('div.incidences-content').html(response)
+        // $('#container_incidences_by_booking').html(response)
+        new PNotify({
+            title: '!!Aviso',
+            text: 'Este booking contiene incidencias asociadas, si necesita verlas haga click aqui <div class="pull-rigth" style="display:inline-block"><a href="javascript:void(0)" data-toggle="modal" data-target="#viewIncidencesModal"><span class="glyphicon glyphicon-eye-open"></span></a></div>',
+            type: 'warning',
+            delay : 10000,
+            reference: {
+                put_thing: true
+            }
+        });
+
     });
 }
+
+//find incidences asociadas a un booking
+// function findIncidencesByBooking(booking){
+//     var url_booking_incidences = Routing.generate('incidence_ajax_get_incidences_by_booking');
+//     $.post(url_booking_incidences, {reference:booking}, function(response) {
+//         $('div#container_incidences_by_booking').html(response);
+//         // new PNotify({
+//         //     title: 'Reference Module',
+//         //     text: 'The reference module is a basic module that demonstrates how to write a PNotify module by implementing many of its features. You can find it in pnotify.reference.js.',
+//         //     type: 'info',
+//         //     reference: {
+//         //         put_thing: true
+//         //     }
+//         // });
+//     });
+// }
 
 //find booking in turplan db
 function findBooking(data) {
@@ -336,10 +362,6 @@ function calculateOtherCost(data) {
     //$('input[name=cost_type]').val(4)
 }
 
-function changeTab(){
-    alert()
-}
-
 $(document).ready( function() {
 
     initiCheck();
@@ -398,12 +420,13 @@ $(document).ready( function() {
         $('.fa-arrow-circle-right').removeClass('elem-hidden');
         $('span#show-final-cost').html(0);
     });
-
-    setTimeout(function() {
-        $( ".ui-pnotify" ).fadeOut(1000, function () {
-            $(".ui-pnotify").remove();
-        });
-    },6000);
+    //
+    // alert(window)
+    // setTimeout(function() {
+    //     $( ".ui-pnotify" ).fadeOut(1000, function () {
+    //         $(".ui-pnotify").remove();
+    //     });
+    // },6000);
 
     $('.content').css('min-height', ($(window).innerHeight()-200));
 
