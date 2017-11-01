@@ -150,23 +150,28 @@ function findServicesByBooking(url,reference){
     });
 }
 
+//find incidences asociadas a un booking
+function findIncidencesByBooking(booking){
+    var url_booking_incidences = Routing.generate('incidence_ajax_get_incidences_by_booking');
+    $.post(url_booking_incidences, {reference:booking}, function(response) {
+        //alert(response);
+        //console.log(response);
+        $('div#container_incidences_by_booking').html(response);
+    });
+}
 
 //find booking in turplan db
 function findBooking(data) {
     var reference = $('#find_booking').val();
 
     var url_booking_detail = Routing.generate('incidence_ajax_get_booking_detail');
-    var url_services_description = Routing.generate('incidence_ajax_get_services_description');
     $.post(url_booking_detail, {reference:reference}, function(response) {
         $('#container_booking_detail').html(response);
     });
 
     //busqueda de los servicios del booking
+    var url_services_description = Routing.generate('incidence_ajax_get_services_description');
     findServicesByBooking(url_services_description,reference);
-    //$.post(url_services_description, {reference:reference}, function(response) {
-    //    $('#container_select_service').html(response);
-    //    $('#service_selection').selectpicker('refresh');
-    //});
 
     //busqueda de los clientes de ese booking
     var url_booking_clients = Routing.generate('incidence_ajax_get_booking_client_names');
@@ -175,6 +180,10 @@ function findBooking(data) {
         $('#client_selection').selectpicker('refresh');
     });
 
+    //ejecuto la funcion q busca las incidencias asociadas a ese booking
+    findIncidencesByBooking(reference);
+
+    //aqui pongo el codigo del booking en el input hidden
     $('#select_reference').val(reference);
 }
 

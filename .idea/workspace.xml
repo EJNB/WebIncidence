@@ -5,28 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="876417ae-e221-4653-b41b-75d663c21948" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/claim/edit.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/claim/index.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/claim/new.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/claim/show.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Controller/ClaimController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Form/ClaimType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/claim.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Tests/Controller/ClaimControllerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/incidence/incidences_by_booking.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/incidence/booking_detail.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/incidence/booking_detail.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/incidence/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/incidence/new.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/layouts/main-layout-sidebar.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/layouts/main-layout-sidebar.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceController.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Entity/Booking.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Entity/Booking.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Entity/Claim.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Entity/Claim.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Entity/Incidence.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Entity/Incidence.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Form/IncidenceType.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Form/IncidenceType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/incidence.yml" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/incidence.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/advising/scripts.js" afterPath="$PROJECT_DIR$/web/advising/scripts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/config.php" afterPath="$PROJECT_DIR$/web/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/fos_js_routes.js" afterPath="$PROJECT_DIR$/web/js/fos_js_routes.js" />
     </list>
     <ignored path="WebIncidence.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,56 +43,72 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ClaimType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Form/ClaimType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.730769">
-              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-              <folding>
-                <element signature="e#45#85#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Claim.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Entity/Claim.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.884615">
-              <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/claim/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.0384616">
-              <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/claim/new.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7447619">
-              <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
-              <folding>
-                <element signature="n#style#0;n#small#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#13322#13337#0#Twig" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="scripts.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/advising/scripts.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="352" column="53" selection-start-line="352" selection-start-column="53" selection-end-line="352" selection-end-column="53" />
+              <caret line="158" column="62" selection-start-line="158" selection-start-column="54" selection-end-line="158" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="incidence.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/incidence.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="72" column="13" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IncidenceController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.8181819">
+              <caret line="549" column="76" selection-start-line="549" selection-start-column="66" selection-end-line="549" selection-end-column="76" />
+              <folding>
+                <element signature="e#51#101#0#PHP" expanded="true" />
+                <element signature="e#10053#15677#0#PHP" expanded="false" />
+                <element signature="e#22893#22937#0#PHP" expanded="true" />
+                <element signature="e#23407#23451#0#PHP" expanded="true" />
+                <marker date="1509503107022" expanded="true" signature="9135:9325" placeholder="SELECT ip,p,..SystemBackendBundle..." />
+                <marker date="1509503107022" expanded="true" signature="22646:22653" placeholder="SELECT b FRO..SystemBackendBundle..." />
+                <marker date="1509503107022" expanded="true" signature="22646:22729" placeholder="SELECT i,b F..SystemBackendBundle..." />
+                <marker date="1509503107022" expanded="true" signature="23160:23243" placeholder="SELECT i,b F..SystemBackendBundle..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Booking.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Entity/Booking.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.8461537">
+              <caret line="100" column="28" selection-start-line="100" selection-start-column="28" selection-end-line="100" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/incidence/new.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.5384617">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding>
+                <element signature="e#13127#13142#0#Twig" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="incidences_by_booking.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/incidence/incidences_by_booking.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.03068592">
+              <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -154,9 +156,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="s doctrine:database:create" />
-      <command text="s doctrine:schema:update --force" />
-      <command text="s doctrine:generate:entities SystemBackendBundle" />
       <command text="s doctrine:schema:update --force" />
       <command text="s doctrine:database:create" />
       <command text="s doctrine:schema:update --force" />
@@ -179,6 +178,9 @@
       <command text="s doctrine:generate:entities SystemMovementBundle:Incidence" />
       <command text="s doctrine:generate:entities SystemBackendBundle" />
       <command text="s doctrine:schema:update --force" />
+      <command text="git add -A" />
+      <command text="git commit -m &quot;adelantada la gestion de las reclamaciones&quot;" />
+      <command text="s fos:js-routing:dump" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -190,13 +192,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Entity/ServiceType.php" />
         <option value="$PROJECT_DIR$/src/System/BackendBundle/Form/ServiceTypeType.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/department/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/servicetype/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/incidence.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/incidence/sustitution_service.html.twig" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/incidence.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/incidence/compensation_services.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/incidence/cost_service.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/incidence/booking_suppliers.html.twig" />
@@ -219,14 +218,11 @@
         <option value="$PROJECT_DIR$/app/Resources/views/incidence/services_description.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/incidence/booking_clients.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/incidence/booking_clients.html.twig" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceController.php" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/incidence/edit.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/person/new.html.twig" />
         <option value="$PROJECT_DIR$/src/System/BackendBundle/Form/PersonType.php" />
         <option value="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/layouts/main-layout-sidebar.html.twig" />
-        <option value="$PROJECT_DIR$/src/System/BackendBundle/Entity/Booking.php" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/src/System/BackendBundle/Form/IncidenceType.php" />
         <option value="$PROJECT_DIR$/src/System/BackendBundle/Form/IncidenceType.php" />
@@ -235,12 +231,18 @@
         <option value="$PROJECT_DIR$/src/System/BackendBundle/Entity/Claim.php" />
         <option value="$PROJECT_DIR$/src/System/BackendBundle/Form/ClaimType.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/claim/index.html.twig" />
-        <option value="$PROJECT_DIR$/web/advising/scripts.js" />
-        <option value="$PROJECT_DIR$/web/advising/scripts.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/incidence/booking_detail.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/incidence/new.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/incidence/new.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/claim/new.html.twig" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/incidence.yml" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/incidence.yml" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Entity/Booking.php" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/incidence/new.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/incidence/new.html.twig" />
+        <option value="$PROJECT_DIR$/web/advising/scripts.js" />
+        <option value="$PROJECT_DIR$/web/advising/scripts.js" />
+        <option value="$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/incidence/incidences_by_booking.html.twig" />
       </list>
     </option>
   </component>
@@ -288,8 +290,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -416,6 +418,96 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BackendBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BackendBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BackendBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Form" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -443,6 +535,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webIncidence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BackendBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -885,32 +1003,25 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/web/advising/scripts.js</url>
-          <line>505</line>
+          <line>514</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/web/advising/scripts.js</url>
+          <line>153</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceController.php</url>
-          <line>246</line>
+          <line>248</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceController.php</url>
-          <line>348</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="23" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/fos_js_routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -937,13 +1048,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="770" column="20" selection-start-line="770" selection-start-column="20" selection-end-line="770" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/incidence.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="63" selection-start-line="42" selection-start-column="63" selection-end-line="42" selection-end-column="63" />
         </state>
       </provider>
     </entry>
@@ -1103,16 +1207,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="227" column="88" selection-start-line="227" selection-start-column="88" selection-end-line="227" selection-end-column="88" />
-          <folding>
-            <element signature="e#9955#15579#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/person/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1207,25 +1301,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Entity/Booking.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6931408">
-          <caret line="265" column="32" selection-start-line="265" selection-start-column="32" selection-end-line="265" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/incidence/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7545126">
           <caret line="50" column="61" selection-start-line="50" selection-start-column="61" selection-end-line="50" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Entity/Claim.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.884615">
+        <state vertical-scroll-proportion="0.0">
           <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
           <folding />
         </state>
@@ -1241,19 +1326,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Form/ClaimType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.730769">
+        <state vertical-scroll-proportion="0.0">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
-            <element signature="e#45#85#0#PHP" expanded="true" />
+            <element signature="e#45#85#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/advising/scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="352" column="53" selection-start-line="352" selection-start-column="53" selection-end-line="352" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1261,39 +1338,81 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="52" selection-start-line="0" selection-start-column="52" selection-end-line="0" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/claim/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0384616">
+        <state vertical-scroll-proportion="0.0">
           <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/claim/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50180507">
+          <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Entity/Booking.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8461537">
+          <caret line="100" column="28" selection-start-line="100" selection-start-column="28" selection-end-line="100" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/incidence.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="13" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/advising/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="158" column="62" selection-start-line="158" selection-start-column="54" selection-end-line="158" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/incidence/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18411553">
-          <caret line="6" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="286" selection-end-column="0" />
+        <state vertical-scroll-proportion="-6.5384617">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#small#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#3;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#3;n#div#0;n#!!top" expanded="false" />
-            <element signature="e#13067#13082#0#Twig" expanded="true" />
+            <element signature="e#13127#13142#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/claim/new.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7447619">
-          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+        <state vertical-scroll-proportion="-1.8181819">
+          <caret line="549" column="76" selection-start-line="549" selection-start-column="66" selection-end-line="549" selection-end-column="76" />
           <folding>
-            <element signature="n#style#0;n#small#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#13322#13337#0#Twig" expanded="true" />
+            <element signature="e#51#101#0#PHP" expanded="true" />
+            <element signature="e#10053#15677#0#PHP" expanded="false" />
+            <element signature="e#22893#22937#0#PHP" expanded="true" />
+            <element signature="e#23407#23451#0#PHP" expanded="true" />
+            <marker date="1509503107022" expanded="true" signature="9135:9325" placeholder="SELECT ip,p,..SystemBackendBundle..." />
+            <marker date="1509503107022" expanded="true" signature="22646:22653" placeholder="SELECT b FRO..SystemBackendBundle..." />
+            <marker date="1509503107022" expanded="true" signature="22646:22729" placeholder="SELECT i,b F..SystemBackendBundle..." />
+            <marker date="1509503107022" expanded="true" signature="23160:23243" placeholder="SELECT i,b F..SystemBackendBundle..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/incidence/incidences_by_booking.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.03068592">
+          <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>

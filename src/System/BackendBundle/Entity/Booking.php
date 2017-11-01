@@ -98,7 +98,7 @@ class Booking
      *
      * @return integer 
      */
-    public function getCode()
+    public function getCode ()
     {
         return $this->code;
     }

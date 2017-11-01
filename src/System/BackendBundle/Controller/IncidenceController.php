@@ -2,6 +2,8 @@
 
 namespace System\BackendBundle\Controller;
 
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 use System\BackendBundle\Entity\Booking;
 use System\BackendBundle\Entity\Client;
 use System\BackendBundle\Entity\Incidence;
@@ -537,6 +539,34 @@ class IncidenceController extends Controller
         }else{
             return false;
         }
+    }
+
+    //funcion encargada de buscar las incidencias asociadas a un booking
+    public function getAjaxIncidencesByBookingAction(Request $request){
+        if($request->isXmlHttpRequest()) {
+            $em = $this->getDoctrine()->getManager();
+            $reference = $request->request->get('reference');
+            $dql = 'SELECT i,b FROM SystemBackendBundle:Incidence i JOIN i.booking b WHERE b.code=:code';
+            $query = $em->createQuery($dql)->setParameter('code','CRFI156924');
+            $incidences = $query->getResult();
+
+            return $this->render(':incidence:incidences_by_booking.html.twig', array(
+                'incidences' => $incidences
+            ));
+
+        }else{
+            $em = $this->getDoctrine()->getManager();
+//            $reference = $request->request->get('reference');
+            $dql = 'SELECT i,b FROM SystemBackendBundle:Incidence i JOIN i.booking b WHERE b.code=:code';
+            $query = $em->createQuery($dql)->setParameter('code','CRFI156924');
+            $incidences = $query->getResult();
+
+            return $this->render(':incidence:incidences_by_booking.html.twig', array(
+                'incidences' => $incidences
+            ));
+
+        }
+
     }
 
 }
