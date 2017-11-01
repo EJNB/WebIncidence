@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="876417ae-e221-4653-b41b-75d663c21948" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/incidence/incidences_by_booking.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/incidence/incidences_by_booking.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/layouts/common/modals.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/layouts/common/modals.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceController.php" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Controller/IncidenceController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/incidence.yml" afterPath="$PROJECT_DIR$/src/System/BackendBundle/Resources/config/routing/incidence.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/advising/scripts.js" afterPath="$PROJECT_DIR$/web/advising/scripts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/fos_js_routes.js" afterPath="$PROJECT_DIR$/web/js/fos_js_routes.js" />
     </list>
     <ignored path="WebIncidence.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,8 +39,8 @@
       <file leaf-file-name="scripts.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/advising/scripts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="166" column="13" lean-forward="true" selection-start-line="166" selection-start-column="13" selection-end-line="166" selection-end-column="13" />
+            <state relative-caret-position="406">
+              <caret line="214" column="21" lean-forward="false" selection-start-line="214" selection-start-column="21" selection-end-line="214" selection-end-column="21" />
               <folding>
                 <element signature="n#!!block;n#showByTypes#0" expanded="false" />
                 <element signature="n#!!block;n#showServicesBySupplier#0" expanded="false" />
@@ -57,7 +52,7 @@
                 <element signature="n#!!block;n#calculateCompensationCost#0" expanded="false" />
                 <element signature="n#!!block;n#calculateSustitutionCost#0" expanded="false" />
                 <element signature="n#!!block;n#calculateOtherCost#0" expanded="false" />
-                <marker date="1509561771834" expanded="true" signature="6049:6069" ph="..." />
+                <marker date="1509566650984" expanded="true" signature="6049:6069" ph="..." />
               </folding>
             </state>
           </provider>
@@ -168,8 +163,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="s doctrine:database:create" />
-      <command text="s doctrine:schema:update --force" />
       <command text="s doctrine:generate:entities SystemBackendBundle:Incidence" />
       <command text="s doctrine:schema:update --force" />
       <command text="git add -A" />
@@ -193,6 +186,8 @@
       <command text="git add -A" />
       <command text="git commit -m &quot;hasta ahora he adelantado lo de mostar incidencias asociadas al booking en el new&quot;" />
       <command text="s fos:js-routing:dump" />
+      <command text="git add -A" />
+      <command text="git commit -m &quot;terminado lo de las incidencias asociadas al booking &quot;" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -742,7 +737,7 @@
       <workItem from="1509017363156" duration="12820000" />
       <workItem from="1509376811175" duration="2088000" />
       <workItem from="1509536685625" duration="3000" />
-      <workItem from="1509536703879" duration="17181000" />
+      <workItem from="1509536703879" duration="19707000" />
     </task>
     <task id="LOCAL-00001" summary="se agregaron las relaciones entre Incidencias y Servicios">
       <created>1502321651235</created>
@@ -937,7 +932,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157712000" />
+    <option name="totallyTimeSpent" value="160238000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -1034,12 +1029,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/web/advising/scripts.js</url>
-          <line>566</line>
+          <line>577</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/web/advising/scripts.js</url>
-          <line>188</line>
+          <line>187</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -1438,8 +1433,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/advising/scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="166" column="13" lean-forward="true" selection-start-line="166" selection-start-column="13" selection-end-line="166" selection-end-column="13" />
+        <state relative-caret-position="406">
+          <caret line="214" column="21" lean-forward="false" selection-start-line="214" selection-start-column="21" selection-end-line="214" selection-end-column="21" />
           <folding>
             <element signature="n#!!block;n#showByTypes#0" expanded="false" />
             <element signature="n#!!block;n#showServicesBySupplier#0" expanded="false" />
@@ -1451,7 +1446,7 @@
             <element signature="n#!!block;n#calculateCompensationCost#0" expanded="false" />
             <element signature="n#!!block;n#calculateSustitutionCost#0" expanded="false" />
             <element signature="n#!!block;n#calculateOtherCost#0" expanded="false" />
-            <marker date="1509561771834" expanded="true" signature="6049:6069" ph="..." />
+            <marker date="1509566650984" expanded="true" signature="6049:6069" ph="..." />
           </folding>
         </state>
       </provider>

@@ -166,7 +166,6 @@ function findIncidencesByBooking(booking){
                 put_thing: true
             }
         });
-
     });
 }
 
@@ -189,25 +188,37 @@ function findIncidencesByBooking(booking){
 //find booking in turplan db
 function findBooking(data) {
     var reference = $('#find_booking').val();
+    if(reference){
+        var url_booking_detail = Routing.generate('incidence_ajax_get_booking_detail');
+        $.post(url_booking_detail, {reference:reference}, function(response) {
+            $('#container_booking_detail').html(response);
+        });
 
-    var url_booking_detail = Routing.generate('incidence_ajax_get_booking_detail');
-    $.post(url_booking_detail, {reference:reference}, function(response) {
-        $('#container_booking_detail').html(response);
-    });
+        //busqueda de los servicios del booking
+        var url_services_description = Routing.generate('incidence_ajax_get_services_description');
+        findServicesByBooking(url_services_description,reference);
 
-    //busqueda de los servicios del booking
-    var url_services_description = Routing.generate('incidence_ajax_get_services_description');
-    findServicesByBooking(url_services_description,reference);
+        //busqueda de los clientes de ese booking
+        var url_booking_clients = Routing.generate('incidence_ajax_get_booking_client_names');
+        $.post(url_booking_clients, {reference:reference}, function(response) {
+            $('#container_booking_clients').html(response);
+            $('#client_selection').selectpicker('refresh');
+        });
 
-    //busqueda de los clientes de ese booking
-    var url_booking_clients = Routing.generate('incidence_ajax_get_booking_client_names');
-    $.post(url_booking_clients, {reference:reference}, function(response) {
-        $('#container_booking_clients').html(response);
-        $('#client_selection').selectpicker('refresh');
-    });
+        //ejecuto la funcion q busca las incidencias asociadas a ese booking
+        findIncidencesByBooking(reference);
+    }else {
+        new PNotify({
+            title: '!!Error',
+            text: 'Por favor introdusca el codigo del booking',
+            type: 'error',
+            delay : 6000,
+            reference: {
+                put_thing: true
+            }
+        });
+    }
 
-    //ejecuto la funcion q busca las incidencias asociadas a ese booking
-    findIncidencesByBooking(reference);
 
     //aqui pongo el codigo del booking en el input hidden
     $('#select_reference').val(reference);
