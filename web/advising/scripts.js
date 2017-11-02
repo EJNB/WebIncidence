@@ -219,9 +219,12 @@ function findBooking(data) {
         });
     }
 
-
     //aqui pongo el codigo del booking en el input hidden
     $('#select_reference').val(reference);
+}
+
+function findBookingClaim(data) {
+    console.log(data)
 }
 
 //select fields for incidences types

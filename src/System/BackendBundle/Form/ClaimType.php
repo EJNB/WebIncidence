@@ -3,6 +3,8 @@
 namespace System\BackendBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -17,11 +19,20 @@ class ClaimType extends AbstractType
     {
         $builder
             ->add('claimDate',DateType::class,array(
-                'label' => 'Fecha de la incidencia',
+                'label' => 'Fecha de la reclamación',
                 'widget' => 'single_text',
                 'attr' => array('class' => 'format_date_time'),
                 'required' => true,
                 'input' => 'datetime',
+            ))
+            ->add('incidences',EntityType::class,array(
+                'class'=>'System\BackendBundle\Entity\Incidence',
+                'choices_as_values' => true,
+                'expanded' => true,
+                'multiple' => true,
+                'attr' => array(
+                    'class' => 'icheck'
+                )
             ))
             ->add('closingDate',DateType::class,array(
                 'label' => 'Fecha del cierre',
@@ -32,8 +43,23 @@ class ClaimType extends AbstractType
             ))
             ->add('requestAmount')
             ->add('requestReturned')
-            ->add('personsAmount')
-            ->add('state')
+            ->add('personsAmount',IntegerType::class,array(
+                'label' => 'Cantidad de personas'
+            ))
+            ->add('state',ChoiceType::class,array(
+                'choices_as_values' => true,
+                'choices'=>array(
+                    'Hecho' => 'Hecho',
+                    'En proceso' => 'En proceso',
+                    'Abierto' => 'Abierto',
+                ),
+                'expanded' => true,
+                'multiple' => false,
+                'attr' => array(
+                    'class' => 'icheck'
+                ),
+                'label' => 'Estado'
+            ))
 
 //            ->add('booking',EntityType::class,array(
 //                'class' => 'System\BackendBundle\Entity\Booking',
@@ -44,10 +70,9 @@ class ClaimType extends AbstractType
 //                    'title' => 'Seleccione el booking'
 //                )
 //            ))
-            ->add('incidences')
         ;
     }
-    
+
     /**
      * {@inheritdoc}
      */

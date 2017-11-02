@@ -8,23 +8,26 @@
         {{ form_start(form) }}
         <input type="hidden" id="select_reference" name="select_reference" value=""><!--Aqui pone el id del booking con js-->
 
+        <!--busqueda del booking-->
         <div class="row">
             <div class="col-md-3">
                 <div class="input-group">
-                    <input type="search" class="form-control " id="find_booking" name="booking" aria-describedby="btn_find_booking">
-                    <a class="input-group-addon" id="btn_find_booking" href="javascript:void(0);" onclick="findBooking()">
+                    <input type="search" class="form-control" id="find_booking" name="booking" aria-describedby="btn_find_booking">
+                    <a class="input-group-addon" id="btn_find_booking" href="javascript:void(0);" onclick="findBookingClaim(this.previousSibling.id)">
                         <span class="glyphicon glyphicon-search"></span>
                     </a>
                 </div>
             </div>
         </div>
 
+        <!--detalles del booking-->
         <div class="row">
             <div class="col-md-12" id="container_booking_detail">
                 {{ include(':incidence:booking_detail.html.twig') }}
             </div>
         </div>
 
+        <!--Encabezado del tab-->
         <div class="row">
             <div class="col-md-12">
                 <ul class="nav nav-tabs" role="tablist" id="myTab">
@@ -41,36 +44,25 @@
             <div role="tabpanel" class="tab-pane fade in active" id="home">
                 <!-- en esta primera fila van las 2 columnas con ls input la fecha y el lugar-->
                 <div class="row">
-                    <div class="col-md-3">
-                        {#{{ form_row(form.incidenceDate) }}#}
+                    <div class="col-md-4">
+                        {{ form_row(form.claimDate) }}
+
+                        <div class="form-group">
+                            {{ form_label(form.incidences) }}
+                            {{ form_errors(form.incidences) }}
+                            {{ form_widget(form.incidences) }}
+                        </div>
+
+                        {{ form_row(form.personsAmount) }}
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            {#{{ form_label(form.place) }}#}
-                            {#{{ form_errors(form.place) }}#}
-                            {#{{ form_widget(form.place) }}#}
+                            {{ form_label(form.state) }}
+                            {{ form_errors(form.state) }}
+                            {{ form_widget(form.state) }}
                         </div>
                     </div>
                 </div>
-
-                <!-- en esta otra fila van los  tipos de incidencia-->
-                <div class="row">
-                    <!--Select de tipos de incidencia-->
-                    <div class="col-md-5">
-                        <div class="form-group">
-                            <label>Tipos de incidencia</label>
-                            <br>
-                            {#{% for type in types %}#}
-                                {#<input type="radio"#}
-                                       {#name="incidence_types"#}
-                                       {#value="{{ type.id }}"#}
-                                       {#class="radio_incidence_types icheck"#}
-                                {#>&nbsp;#}
-                                {#{{ type.name }}&nbsp;&nbsp;#}
-                            {#{% endfor %}#}
-                        </div>
-                    </div>
-                </div><!--end class row-->
 
                 <!--Este div es para mostrar los selects q vienen desde ajax-->
                 <div class="row">
@@ -96,17 +88,6 @@
                         </div>
                     </div><!--end .col-md-3-->
 
-
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>Quien detecta</label>
-                            <select id="" class="form-control selectpicker" data-live-search="true" title="Quien detecta" name="who_detected">
-                                {#{% for person in persons %}#}
-                                    {#<option value="{{ person.id }}">{{ person.name }}</option>#}
-                                {#{% endfor %}#}
-                            </select>
-                        </div>
-                    </div>
                 </div>
 
                 <!--Esta fila es para mostrar los textarea de la descipcion y las causas-->
@@ -123,158 +104,13 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
-                            {#{{ form_label(form.document) }}#}
-                            {#{{ form_errors(form.document) }}#}
-                            {#{{ form_widget(form.document) }}#}
+                            {{ form_row(form.closingDate) }}
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Cierre: &nbsp;&nbsp;</label>
-                            <label><input type="radio" name="clousure" value="E" class="icheck"> &nbsp;Efectivo </label>&nbsp;&nbsp;
-                            <label><input type="radio" name="clousure" value="I" class="icheck">&nbsp;Insatisfactorio </label>
-                        </div>
-                    </div>
-                </div>
+
             </div><!--end #home-->
 
-            <!--Acciones-->
-            <div role="tabpanel" class="tab-pane fade" id="profile">
-                <div class="row">
-                    <!--ver esto con jorge de donde sale el responsable de las acciones-->
-                    <div class="col-md-9"></div>
-
-                    <div class="col-md-3">
-                        {#<div class="pull-right">#}
-                        {#{{ include(':incidence:booking_persons.html.twig') }}#}
-                        {#</div>#}
-                        {% if persons is defined %}
-                            <label for="client_selection">Reponsable de las acciones</label>
-                            <select id="" class="form-control selectpicker" data-live-search="true" title="Seleccione el responsable" name="responsable_immediate_actions" required>
-                                {#{% for person in persons %}#}
-                                    {#<option value="{{ person.id }}">{{ person.name }}</option>#}
-                                {#{% endfor %}#}
-                            </select>
-                        {% endif %}
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="12">
-                        {#{{ form_row(form.immediate_actions, {'attr':{'rows':'4'}}) }}#}
-                    </div>
-                </div>
-
-                <div class="row">
-                    <!--ver esto con jorge de donde sale el responsable de las acciones-->
-                    <div class="col-md-9"></div>
-                    <div class="col-md-3">
-                        {#<div class="pull-right">#}
-                        {#{{ include(':incidence:booking_persons.html.twig') }}#}
-                        {#</div>#}
-                        {#{% if persons is defined %}#}
-                            {#<label for="client_selection">Reponsable de las acciones</label>#}
-                            {#<select id="" class="form-control selectpicker" data-live-search="true" title="Seleccione el responsable" name="responsable_corrective_actions">#}
-                                {#{% for person in persons %}#}
-                                    {#<option value="{{ person.id }}">{{ person.name }}</option>#}
-                                {#{% endfor %}#}
-                            {#</select>#}
-                        {#{% endif %}#}
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="12">
-                        {#{{ form_row(form.corrective_actions, {'attr':{'rows':'4'}}) }}#}
-                    </div>
-                </div>
-            </div>
-
-            <!--Costos-->
-            <div role="tabpanel" class="tab-pane fade" id="costs">
-                <!--Sin Costo-->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="radio" value="1" data-type="no_cost" name="type_of_cost" id="no_cost" class="icheck" checked>&nbsp;Sin costo
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--costo de compensacion-->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="radio" value="2" name="type_of_cost" id="compensation_cost" {#onclick="showCompensationCost()"#} class="icheck">&nbsp;
-                                Costo por compensaci&oacute;n
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4" id="container_compensation_cost">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--costo sustitucion-->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="radio" value="3" name="type_of_cost" id="sustitution_cost" {#onclick="showSustitutionOriginalCost()"#}
-                                       class="icheck">&nbsp;Costo por sustituci&oacute;n
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4" id="container_sustitution_cost_original">
-
-                            </div>
-                            <div class="col-md-1">
-                                <br>
-                                <i class="fa fa-arrow-circle-right fa-2x elem-hidden" style="margin-left: 35%; margin-top: 20%"></i>
-                                {#<span class="glyphicon glyphicon-chevron-right" style="margin: 0"></span>#}
-                            </div>
-                            <div class="col-md-4" id="container_sustitution_cost_sustitute">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Otros Costos-->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="radio" value="4" name="type_of_cost" id="other_cost" class="icheck">&nbsp;Otros costos
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3 elem-hidden" id="elem-hidden">
-                                <input type="number" name="other_cost" id="other_cost" class="form-control other-cost" onkeyup="calculateOtherCost(this)">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Costo final de la incidencia-->
-                <div class="row">
-                    <div class="col-md-3">
-                        <h3> Costo final:
-                            <span class="label label-warning" id="show-final-cost">
-                                0
-                            </span>
-                        </h3>
-                    </div>
-                </div>
-
-                <input type="hidden" value="" name="final_cost" id="final_cost">
-            </div>
-
-            {#<input type="hidden" name="cost_type" value="">#}
             <div class="form-group">
                 <input type="submit" value="Crear" class="btn btn-primary"/>
                 <a href="{{ path('incidence_index') }}" class="btn btn-default">Volver al listado</a>
