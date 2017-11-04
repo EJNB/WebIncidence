@@ -30,7 +30,7 @@ class Client
 
     /**
      * @ORM\ManyToOne(targetEntity="System\BackendBundle\Entity\Incidence", inversedBy="clients")
-     * @ORM\JoinColumn(name="booking_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="incidence_id", referencedColumnName="id")
      **/
     private $incidence;
 

@@ -90,7 +90,7 @@ class Booking
      */
     public function setCode($code)
     {
-        $this->code = $code;his;
+        $this->code = $code;
     }
 
     /**

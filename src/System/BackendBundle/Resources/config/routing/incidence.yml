@@ -22,7 +22,6 @@ incidence_edit:
 incidence_delete:
     path:     /{id}/delete
     defaults: { _controller: "SystemBackendBundle:Incidence:delete" }
-    methods:  DELETE
 
 incidence_ajax_get_booking_detail:
     path:   /get_booking_detail

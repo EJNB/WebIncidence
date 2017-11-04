@@ -223,8 +223,25 @@ function findBooking(data) {
     $('#select_reference').val(reference);
 }
 
-function findBookingClaim(data) {
-    console.log(data)
+//
+function findBookingClaim() {
+    var reference = $('#find_booking').val();
+    if(reference){
+        var url_booking_detail = Routing.generate('incidence_ajax_get_booking_detail');
+        $.post(url_booking_detail, {reference:reference}, function(response) {
+            $('#container_booking_detail').html(response);
+        });
+    }else {
+        new PNotify({
+            title: '!!Error',
+            text: 'Por favor introdusca el codigo del booking',
+            type: 'error',
+            delay : 6000,
+            reference: {
+                put_thing: true
+            }
+        });
+    }
 }
 
 //select fields for incidences types
@@ -378,6 +395,23 @@ function calculateOtherCost(data) {
 
 $(document).ready( function() {
 
+    $('html[dir="html"]').click(function () {
+        alert();
+    });
+
+    // $( "iframe.cke_wysiwyg_frame.cke_reset" ).mouseout(function () {
+    //     alert($(this).attr('aria-describedby'))
+    //     // $(this).attr('aria-describedby','');
+    // });
+
+    $( "iframe.cke_wysiwyg_frame.cke_reset" ).mouseover(function () {
+        $(this).attr('title',null)
+        // alert($(this).attr('title'))
+        // $(this).attr('aria-describedby','');
+    });
+
+
+
     initiCheck();
 
     PNotify.prototype.options.styling = "bootstrap3";
@@ -456,7 +490,20 @@ $(document).ready( function() {
        showClear: true
     });
 
+    $('#system_backendbundle_claim_claimDate').datetimepicker({
+       format: 'YYYY-MM-DD',
+       locale: 'es',
+       showClear: true
+    });
+
+    $('#system_backendbundle_claim_closingDate').datetimepicker({
+       format: 'YYYY-MM-DD',
+       locale: 'es',
+       showClear: true
+    });
+
     $('.link-tooltip').tooltip();
+
 
     // $('textarea').trumbowyg({
     //     lang: 'es'

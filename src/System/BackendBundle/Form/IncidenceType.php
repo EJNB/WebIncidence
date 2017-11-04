@@ -32,40 +32,46 @@ class IncidenceType extends AbstractType
                 'required' => true,
                 'input' => 'datetime',
             ))
+            //causas
             ->add('causes', CKEditorType::class, array(
                 'config' => array(
                     'uiColor' => '#ffffff',
+                    'language' => 'es',
+                    'jquery' => true,
+                    'input_sync' => true
                     //...
                 ),
-                'attr' => array('placeholder' => 'Causas de la incidencia'),
                 'required' => true,
+                'label' => 'Causas',
             ))
+            //description
             ->add('description', CKEditorType::class, array(
                 'config' => array(
                     'uiColor' => '#ffffff',
+                    'language' => 'es'
                     //...
                 ),
                 'attr' => array(
                     'placeholder' => 'Descripción de la incidencia'
                 ),
-                'required' => true
+                'required' => true,
+                'label' => 'Descripción'
             ))
+            //acciones correctivas
             ->add('corrective_actions',CKEditorType::class,array(
                 'config' => array(
                     'uiColor' => '#ffffff',
+                    'language' => 'es'
                     //...
                 ),
                 'label' => 'Acciones correctivas: ',
-                'attr' => array(
-                    'placeholder' => 'Introdusca las acciones correctivas'
-                ),
 //                'required' => true
             ))
-
+            //acciones inmediatas
             ->add('immediate_actions',CKEditorType::class,array(
                 'config' => array(
                     'uiColor' => '#ffffff',
-                    'lang' => 'es'
+                    'language' => 'es'
                     //...
                 ),
                 'label' => 'Acciones inmediatas: ',
@@ -89,7 +95,7 @@ class IncidenceType extends AbstractType
             ->add('document',FileType::class,array(
                 'label' => 'Documento (PDF, Docx, Jpeg)',
                 'required' => false,
-//                'data_class' => null//ver esto mañana
+                'data_class' => null//ver esto mañana
             ))
 //            ->add('service')
             ->add('place',EntityType::class,array(

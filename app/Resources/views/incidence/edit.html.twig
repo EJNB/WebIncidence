@@ -266,64 +266,64 @@
 
             <!--Costos-->
             <div role="tabpanel" class="tab-pane" id="costs">
-                {#<!--Sin Costo-->#}
-                {#<div class="row">#}
-                    {#<div class="col-md-12">#}
-                        {#<div class="row">#}
-                            {#<div class="col-md-6">#}
-                                {#<input type="radio" value="1" data-type="no_cost" name="type_of_cost" id="no_cost" class="icheck" checked>&nbsp;Sin costo#}
-                            {#</div>#}
-                        {#</div>#}
-                    {#</div>#}
-                {#</div>#}
-                {#<!--costo de compensacion-->#}
-                {#<div class="row">#}
-                    {#<div class="col-md-12">#}
-                        {#<div class="row">#}
-                            {#<div class="col-md-6">#}
-                                {#<input type="radio" value="2" name="type_of_cost" id="compensation_cost" #}{#onclick="showCompensationCost()"#}{# class="icheck">&nbsp;#}
-                                {#Costo por compensaci&oacute;n#}
-                            {#</div>#}
-                        {#</div>#}
-                        {#<div class="row">#}
-                            {#<div class="col-md-4" id="container_compensation_cost">#}
+                <!--Sin Costo-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="radio" value="1" data-type="no_cost" name="type_of_cost" id="no_cost" class="icheck">&nbsp;Sin costo
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--costo de compensacion-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="radio" value="2" name="type_of_cost" id="compensation_cost" onclick="showCompensationCost()" class="icheck">&nbsp;
+                                Costo por compensaci&oacute;n
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4" id="container_compensation_cost">
 
-                            {#</div>#}
-                        {#</div>#}
-                    {#</div>#}
-                {#</div>#}
-                {#<!--costo sustitucion-->#}
-                {#<div class="row">#}
-                    {#<div class="col-md-12">#}
-                        {#<div class="row">#}
-                            {#<div class="col-md-6">#}
-                                {#<input type="radio" value="3" name="type_of_cost" id="sustitution_cost" #}{#onclick="showSustitutionOriginalCost()"#}
-                                       {#class="icheck">&nbsp;Costo por sustituci&oacute;n#}
-                            {#</div>#}
-                        {#</div>#}
-                        {#<div class="row">#}
-                            {#<div class="col-md-4" id="container_sustitution_cost_original">#}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--costo sustitucion-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="radio" value="3" name="type_of_cost" id="sustitution_cost" onclick="showSustitutionOriginalCost()"
+                                       class="icheck">&nbsp;Costo por sustituci&oacute;n
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4" id="container_sustitution_cost_original">
 
-                            {#</div>#}
-                            {#<div class="col-md-1">#}
-                                {#<br>#}
-                                {#<i class="fa fa-arrow-circle-right fa-2x elem-hidden" style="margin-left: 35%; margin-top: 20%"></i>#}
-                                {#<span class="glyphicon glyphicon-chevron-right" style="margin: 0"></span>#}
-                            {#</div>#}
-                            {#<div class="col-md-4" id="container_sustitution_cost_sustitute">#}
+                            </div>
+                            <div class="col-md-1">
+                                <br>
+                                <i class="fa fa-arrow-circle-right fa-2x elem-hidden" style="margin-left: 35%; margin-top: 20%"></i>
+                                <span class="glyphicon glyphicon-chevron-right" style="margin: 0"></span>
+                            </div>
+                            <div class="col-md-4" id="container_sustitution_cost_sustitute">
 
-                            {#</div>#}
-                        {#</div>#}
-                    {#</div>#}
-                {#</div>#}
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!--Otros Costos-->
                 <div class="row">
                     <div class="col-md-12">
-                        {#<div class="row">#}
-                            {#<div class="col-md-6">#}
-                                {#<input type="radio" value="4" name="type_of_cost" id="other_cost" class="icheck">&nbsp;Otros costos#}
-                            {#</div>#}
-                        {#</div>#}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="radio" value="4" name="type_of_cost" id="other_cost" class="icheck" checked>&nbsp;Otros costos
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-3" id="elem-hidden">
                                 <input type="number"

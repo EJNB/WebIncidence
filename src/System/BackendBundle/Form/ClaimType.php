@@ -19,21 +19,26 @@ class ClaimType extends AbstractType
     {
         $builder
             ->add('claimDate',DateType::class,array(
-                'label' => 'Fecha de la reclamación',
+                'label' => 'Fecha',
                 'widget' => 'single_text',
                 'attr' => array('class' => 'format_date_time'),
                 'required' => true,
                 'input' => 'datetime',
             ))
-            ->add('incidences',EntityType::class,array(
-                'class'=>'System\BackendBundle\Entity\Incidence',
-                'choices_as_values' => true,
-                'expanded' => true,
-                'multiple' => true,
-                'attr' => array(
-                    'class' => 'icheck'
-                )
-            ))
+//            ->add('incidences',EntityType::class,array(
+//                'class'=>'System\BackendBundle\Entity\Incidence',
+//                'choices_as_values' => true,
+//                'expanded' => true,
+//                'multiple' => true,
+//                'attr' => array(
+//                    'class' => 'icheck'
+//                ),
+//                'choice_attr' => function($val, $key, $index) {
+//                    // adds a class like attending_yes, attending_no, etc
+//                    return ['class' => 'attending_'.strtolower($key)];
+//                },
+////                'label_format' => 'form.address.%name%'
+//            ))
             ->add('closingDate',DateType::class,array(
                 'label' => 'Fecha del cierre',
                 'widget' => 'single_text',
@@ -41,8 +46,8 @@ class ClaimType extends AbstractType
                 'required' => true,
                 'input' => 'datetime',
             ))
-            ->add('requestAmount')
-            ->add('requestReturned')
+//            ->add('requestAmount')
+//            ->add('requestReturned')
             ->add('personsAmount',IntegerType::class,array(
                 'label' => 'Cantidad de personas'
             ))
@@ -58,18 +63,11 @@ class ClaimType extends AbstractType
                 'attr' => array(
                     'class' => 'icheck'
                 ),
-                'label' => 'Estado'
+                'label' => 'Estado',
+                'label_attr' => array(
+                    'class' => 'label-incidence'
+                )
             ))
-
-//            ->add('booking',EntityType::class,array(
-//                'class' => 'System\BackendBundle\Entity\Booking',
-//                'choices_as_values' => true,
-//                'attr' => array(
-//                    'class' => 'form-control selectpicker',
-//                    'data-live-search' => true,
-//                    'title' => 'Seleccione el booking'
-//                )
-//            ))
         ;
     }
 

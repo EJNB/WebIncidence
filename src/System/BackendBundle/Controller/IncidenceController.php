@@ -56,7 +56,7 @@ class IncidenceController extends Controller
             $reference = $request->request->get('select_reference');//busco el booking
             $optid = $request->request->get('service');//dame el servicio de la incidencia
             $service = $em->getRepository('SystemBackendBundle:Service')->findOneByTourplanId($optid);
-            if(!$service){//si exite el servicio en mi fb
+            if(!$service){//si exite el servicio no esta en mi db
                 $supplier = new Supplier();
                 $service = new Service();
 
@@ -78,12 +78,11 @@ class IncidenceController extends Controller
                 }
             }
 
-//            $client_name = $request->request->get('clients');
+            //para el caso de q el booking no sea nuevo
             $booking = $em->getRepository('SystemBackendBundle:Booking')->findOneByCode($reference);
             $count_booking = 1;
             if(!$booking){ // si el booking no existe, es decir q no tiene incidencia asociada
                 $data_booking = $tp_service->getBookingGeneralData($reference);
-//                var_dump($reference);
                 $booking = new Booking();
                 $booking->setName($data_booking['BOOKING_NAME']);
                 $booking->setCode($data_booking['FULL_REFERENCE']);
@@ -91,7 +90,6 @@ class IncidenceController extends Controller
                 $booking->setConsultant($data_booking['CONSULTANT_NAME']);
 //                traveldate
 //                $booking->set($data_booking['TRAVELDATE']);
-
                 $em->persist($booking);
                 $em->flush();
 
@@ -364,37 +362,51 @@ class IncidenceController extends Controller
 
     /**
      * Deletes a incidence entity.
-     *
+     * Si el booking asociado a la incidencia tiene otras incidencias asociadas no puedo eliminarlo
      */
-    public function deleteAction(Request $request, Incidence $incidence)
+    public function deleteAction(Incidence $incidence)
     {
-        $form = $this->createDeleteForm($incidence);
-        $form->handleRequest($request);
+        $em = $this->getDoctrine()->getManager();
+        //buscar el booking al q esta incidencia esta asociada
+        $booking = $incidence->getBooking();
+        //si el booking no tiene mas incidencias y no tiene reclamaciones asociadas
+//        if ($booking->getIncidences()->count()<=1 && $booking->getClaims()->count()==0){
+            //elimino los clientes
+            foreach ($incidence->getClients() as $client){
+                $em->remove($client);
+                $em->flush();
+            }
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($incidence);
+            //elimino las personas
+            foreach ($incidence->getIncidencesPersons() as $person){
+                $em->remove($person);
+                $em->flush();
+            }
+
+            //elimino la relacion q tenga esta incidencia con alguna reclamacion
+            foreach($incidence->getClaims() as $claim){
+                $em->remove($claim);
+                $em->flush();
+            }
+
+            $em->remove($incidence);//elimino la incidencia
+//            $em->remove($booking);// y elimino el booking
             $em->flush();
-        }
-
+//        } else{//si el booking tiene otras incidencias asociadas o algunas reclamaciones
+            //elimino los clientes
+            //elimino las personas, como quien detecto responsables de las acciones etc
+            //y luego elimino la incidencia
+//        }
+        $this->addFlash(
+            'notice',
+            'La incidencia ha sido elimnada satisfactoriamente'
+        );
+//        dump($booking);
+//        $em->remove($incidence);
+//        $em->flush();
         return $this->redirectToRoute('incidence_index');
     }
 
-    /**
-     * Creates a form to delete a incidence entity.
-     *
-     * @param Incidence $incidence The incidence entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(Incidence $incidence)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('incidence_delete', array('id' => $incidence->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
-    }
 
     public function getAjaxBookingDetailAction(Request $request){
 
@@ -402,9 +414,11 @@ class IncidenceController extends Controller
             $reference = $request->request->get('reference');
             $tp_service = $this->get('TPService');
             $detail_booking = $tp_service->getBookingGeneralData($reference);
+
             return $this->render(':incidence:booking_detail.html.twig',array(
                 'booking_detail' => $detail_booking,
             ));
+
         }else{
             return false;
         }
@@ -549,10 +563,13 @@ class IncidenceController extends Controller
             $dql = 'SELECT i,b FROM SystemBackendBundle:Incidence i JOIN i.booking b WHERE b.code=:code';
             $query = $em->createQuery($dql)->setParameter('code',$reference);
             $incidences = $query->getResult();
-
-            return $this->render(':incidence:incidences_by_booking.html.twig', array(
-                'incidences' => $incidences
-            ));
+            if($incidences){
+                return $this->render(':incidence:incidences_by_booking.html.twig', array(
+                    'incidences' => $incidences
+                ));
+            }else{
+                return false;
+            }
         }
     }
 
