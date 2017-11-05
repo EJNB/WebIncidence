@@ -13,7 +13,13 @@ class ItemType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('date_request')->add('request_amount')->add('refound')->add('claim')->add('itemtype')->add('service');
+        $builder
+            ->add('date_request')
+            ->add('request_amount')
+            ->add('refound')
+            ->add('claim')
+            ->add('itemtype')
+            ->add('service');
     }
     
     /**

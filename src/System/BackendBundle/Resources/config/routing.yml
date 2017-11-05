@@ -37,3 +37,7 @@ system_backend_person:
 system_backend_claim:
     resource: "@SystemBackendBundle/Resources/config/routing/claim.yml"
     prefix:   /claim
+
+system_backend_item:
+    resource: "@SystemBackendBundle/Resources/config/routing/item.yml"
+    prefix:   /item

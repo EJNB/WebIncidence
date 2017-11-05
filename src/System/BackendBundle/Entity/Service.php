@@ -294,4 +294,9 @@ class Service
     {
         return $this->items;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }
