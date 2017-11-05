@@ -1,0 +1,16 @@
+
+{% if incidences is defined %}
+    {% for incidence in incidences %}
+        <div class="col-md-1" style="width:auto; padding:0;margin-left: 25px">
+            <div class="form-group">
+
+            <input type="checkbox" name="quux[1]" class="icheck">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label>
+                {{ incidence.description }} djfkjasdkfjka dkaskfjk akdsfjksa djfkaskdfjajdkfadfjk
+            </label>
+        </div>
+    {% endfor %}
+{% endif %}

@@ -35,9 +35,11 @@ class ClaimType extends AbstractType
 //                ),
 //                'choice_attr' => function($val, $key, $index) {
 //                    // adds a class like attending_yes, attending_no, etc
-//                    return ['class' => 'attending_'.strtolower($key)];
+//                    return ['class' => 'incidence'];
 //                },
-////                'label_format' => 'form.address.%name%'
+////                'label_attr' => array(
+////                    'class' => 'blockdfdfhdjfhjdfj'
+////                )
 //            ))
             ->add('closingDate',DateType::class,array(
                 'label' => 'Fecha del cierre',

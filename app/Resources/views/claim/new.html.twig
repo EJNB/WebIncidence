@@ -13,7 +13,7 @@
             <div class="col-md-3">
                 <div class="input-group">
                     <input type="search" class="form-control" id="find_booking" name="booking" aria-describedby="btn_find_booking">
-                    <a class="input-group-addon" id="btn_find_booking" href="javascript:void(0);" onclick="findBookingClaim(this.previousSibling.id)">
+                    <a class="input-group-addon" id="btn_find_booking" href="javascript:void(0);" onclick="findBookingClaim()">
                         <span class="glyphicon glyphicon-search"></span>
                     </a>
                 </div>
@@ -33,109 +33,69 @@
                 <ul class="nav nav-tabs" role="tablist" id="myTab">
                     <li role="presentation"  class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Datos Generales</a></li>
                     {#<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Acciones</a></li>#}
-                    {#<li role="presentation"><a href="#costs" aria-controls="costs" role="tab" data-toggle="tab">Costos</a></li>#}
                 </ul>
             </div>
         </div>
 
         <!-- Tab panes -->
-        <div class="tab-content">
-            <!--Datos generales-->
-            <div role="tabpanel" class="tab-pane fade in active" id="home">
-                <!-- en esta primera fila van las 2 columnas con ls input la fecha y el lugar-->
-                <div class="row">
-                    <div class="col-md-4">
-                        {{ form_row(form.claimDate) }}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tab-content">
+                    <!--Datos generales-->
+                    <div role="tabpanel" class="tab-pane fade in active" id="home">
+                        <!-- en esta primera fila van las 2 columnas con ls input la fecha y el lugar-->
+                        <div class="col-md-3">
+                            {{ form_row(form.claimDate) }}
 
-                        {#<div class="form-group">#}
-                            {#{{ form_label(form.incidences) }}#}
-                            {#{{ form_errors(form.incidences) }}#}
-                            {#{{ form_widget(form.incidences) }}#}
-                        {#</div>#}
+                            {{ form_row(form.personsAmount) }}
 
-                        {{ form_row(form.personsAmount) }}
+                            <div class="form-group">
+                                {{ form_label(form.state) }}
+                                {{ form_errors(form.state) }}
+                                {{ form_widget(form.state) }}
+                            </div>
 
-                        <div class="form-group">
-                            {{ form_label(form.state) }}
-                            {{ form_errors(form.state) }}
-                            {{ form_widget(form.state) }}
-                        </div>
-                    </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-3">
-                        <label for="">Items</label>
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <span class="badge"><span class="glyphicon glyphicon-trash"></span></span>
-                                <span class="badge"><span class="glyphicon glyphicon-pencil"></span></span>
-                                Hotel - NH Capri
-                            </li>
-                            <li class="list-group-item">
-                                <span class="badge"><span class="glyphicon glyphicon-trash"></span></span>
-                                <span class="badge"><span class="glyphicon glyphicon-pencil"></span></span>
-                                Transfer - Cubanacan
-                            </li>
-                            <li class="list-group-item">
-                                <span class="badge"><span class="glyphicon glyphicon-trash"></span></span>
-                                <span class="badge"><span class="glyphicon glyphicon-pencil"></span></span>
-                                Casa - Casa La Trinidad
-                            </li>
-                        </ul>
-                    </div>
+                            {{ form_row(form.closingDate) }}
 
-                </div>
-
-
-                <!--Este div es para mostrar los selects q vienen desde ajax-->
-                <div class="row">
-
-                    <!-- en este div es donde alternare las personas para el caso 1: interna, 2: Provedor-->
-                    <div class="altern-result form-group">
-
-                    </div>
-                    <!--services booking-->
-                    <div class="col-md-3">
-                        <div class="form-group">
-
-                        </div>
-                    </div>
-                    <!--Clients div-->
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <div id="container_booking_clients" {#style="margin: 7px 24px;"#}>
-
+                            <div class="form-group">
+                                <input type="submit" value="Crear" class="btn btn-primary"/>
+                                <a href="{{ path('claim_index') }}" class="btn btn-default">Volver al listado</a>
                             </div>
                         </div>
-                    </div><!--end .col-md-3-->
-
-                </div>
-
-                <!--Esta fila es para mostrar los textarea de la descipcion y las causas-->
-                <div class="row">
-                    <div class="col-md-12">
-                        {#{{ form_row(form.description, {'attr':{'rows':'4'}}) }}#}
-                    </div>
-                </div><!--end .row-->
-                <div class="row">
-                    <div class="col-md-12">
-                        {#{{ form_row(form.causes, {'attr':{'rows':'4'}}) }}#}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            {{ form_row(form.closingDate) }}
+                        <div class="col-md-4" style="margin-left: 20px">
+                            <div class="form-group">
+                                <label for="">Items</label>
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <span class="badge"><span class="glyphicon glyphicon-trash"></span></span>
+                                        <span class="badge"><span class="glyphicon glyphicon-pencil"></span></span>
+                                        Hotel - NH Capri
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="badge"><span class="glyphicon glyphicon-trash"></span></span>
+                                        <span class="badge"><span class="glyphicon glyphicon-pencil"></span></span>
+                                        Transfer - Cubanacan
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="badge"><span class="glyphicon glyphicon-trash"></span></span>
+                                        <span class="badge"><span class="glyphicon glyphicon-pencil"></span></span>
+                                        Casa - Casa La Trinidad
+                                    </li>
+                                </ul>
+                                <a href=""><span class="badge"><span class="glyphicon glyphicon-plus"></span></span></span> </a>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                        <label style="margin-left: 25px">Incidencias</label>
+                        <div id="show-incidence">
+                            {#{{ form_widget(form.incidences) }}#}
+                        </div>
 
-            </div><!--end #home-->
+                    </div><!--end #home-->
 
-            <div class="form-group">
-                <input type="submit" value="Crear" class="btn btn-primary"/>
-                <a href="{{ path('claim_index') }}" class="btn btn-default">Volver al listado</a>
+                </div><!--role="tabpanel"-->
             </div>
-        </div><!--role="tabpanel"-->
+        </div>
+
         {{ form_end(form) }}
     </div>
 

@@ -2,6 +2,7 @@
 
 namespace System\BackendBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Response;
 use System\BackendBundle\Entity\Claim;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -33,12 +34,27 @@ class ClaimController extends Controller
      */
     public function newAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+        if($request->isXmlHttpRequest()){
+            $reference = $request->request->get('reference');
+            $dql = 'SELECT i,b FROM SystemBackendBundle:Incidence i JOIN i.booking b WHERE b.code=:code';
+            $query = $em->createQuery($dql)->setParameter('code',$reference);
+            $incidences = $query->getResult();
+            if($incidences){
+                return $this->render(':claim:incidences_by_booking.html.twig', array(
+                    'incidences' => $incidences
+                ));
+            }else{
+                return false;
+            }
+            return new Response('ok');
+        }
         $claim = new Claim();
         $form = $this->createForm('System\BackendBundle\Form\ClaimType', $claim);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
+
             $em->persist($claim);
             $em->flush();
 

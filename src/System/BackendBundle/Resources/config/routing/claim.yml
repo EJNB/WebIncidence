@@ -12,6 +12,7 @@ claim_new:
     path:     /new
     defaults: { _controller: "SystemBackendBundle:Claim:new" }
     methods:  [GET, POST]
+    options:  {expose: true}
 
 claim_edit:
     path:     /{id}/edit

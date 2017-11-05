@@ -564,6 +564,7 @@ class IncidenceController extends Controller
             $query = $em->createQuery($dql)->setParameter('code',$reference);
             $incidences = $query->getResult();
             if($incidences){
+
                 return $this->render(':incidence:incidences_by_booking.html.twig', array(
                     'incidences' => $incidences
                 ));
@@ -572,18 +573,4 @@ class IncidenceController extends Controller
             }
         }
     }
-
-//    //funcion encargada de buscar las incidencias asociadas a un booking
-//    public function getAjaxIncidencesByBookingAction($code){
-//
-//        $em = $this->getDoctrine()->getManager();
-//        $dql = 'SELECT i,b FROM SystemBackendBundle:Incidence i JOIN i.booking b WHERE b.code=:code';
-//        $query = $em->createQuery($dql)->setParameter('code',$code);
-//        $incidences = $query->getResult();
-//
-//        return $this->render(':incidence:incidences_by_booking.html.twig', array(
-//            'incidences' => $incidences
-//        ));
-//
-//    }
 }

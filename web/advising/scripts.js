@@ -169,22 +169,6 @@ function findIncidencesByBooking(booking){
     });
 }
 
-//find incidences asociadas a un booking
-// function findIncidencesByBooking(booking){
-//     var url_booking_incidences = Routing.generate('incidence_ajax_get_incidences_by_booking');
-//     $.post(url_booking_incidences, {reference:booking}, function(response) {
-//         $('div#container_incidences_by_booking').html(response);
-//         // new PNotify({
-//         //     title: 'Reference Module',
-//         //     text: 'The reference module is a basic module that demonstrates how to write a PNotify module by implementing many of its features. You can find it in pnotify.reference.js.',
-//         //     type: 'info',
-//         //     reference: {
-//         //         put_thing: true
-//         //     }
-//         // });
-//     });
-// }
-
 //find booking in turplan db
 function findBooking(data) {
     var reference = $('#find_booking').val();
@@ -226,10 +210,19 @@ function findBooking(data) {
 //
 function findBookingClaim() {
     var reference = $('#find_booking').val();
+
     if(reference){
+        //busco el booking
         var url_booking_detail = Routing.generate('incidence_ajax_get_booking_detail');
         $.post(url_booking_detail, {reference:reference}, function(response) {
             $('#container_booking_detail').html(response);
+        });
+
+        //busco las incidencias asociadas
+        var url_incidences_by_booking = Routing.generate('claim_new');
+        $.post(url_incidences_by_booking, {reference:reference}, function(response) {
+            $('#show-incidence').html(response)
+            initiCheck();
         });
     }else {
         new PNotify({
