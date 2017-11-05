@@ -8,6 +8,10 @@
         {{ form_start(form) }}
         <input type="hidden" id="select_reference" name="select_reference" value=""><!--Aqui pone el id del booking con js-->
 
+        <div class="elem-hidden">
+            {{ form_widget(form.booking) }}
+        </div>
+
         <!--busqueda del booking-->
         <div class="row">
             <div class="col-md-3">
@@ -85,9 +89,9 @@
                                 <a href=""><span class="badge"><span class="glyphicon glyphicon-plus"></span></span></span> </a>
                             </div>
                         </div>
-                        <label style="margin-left: 25px">Incidencias</label>
+                        <label {#style="margin-left: 25px"#}>Incidencias</label>
                         <div id="show-incidence">
-                            {#{{ form_widget(form.incidences) }}#}
+
                         </div>
 
                     </div><!--end #home-->
@@ -95,7 +99,6 @@
                 </div><!--role="tabpanel"-->
             </div>
         </div>
-
         {{ form_end(form) }}
     </div>
 

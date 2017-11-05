@@ -35,20 +35,27 @@ class ClaimController extends Controller
     public function newAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        if($request->isXmlHttpRequest()){
-            $reference = $request->request->get('reference');
-            $dql = 'SELECT i,b FROM SystemBackendBundle:Incidence i JOIN i.booking b WHERE b.code=:code';
-            $query = $em->createQuery($dql)->setParameter('code',$reference);
-            $incidences = $query->getResult();
-            if($incidences){
-                return $this->render(':claim:incidences_by_booking.html.twig', array(
-                    'incidences' => $incidences
-                ));
-            }else{
-                return false;
-            }
-            return new Response('ok');
-        }
+//        if($request->isXmlHttpRequest()){
+//            $reference = $request->request->get('data');
+////            $dql = 'SELECT i,b FROM SystemBackendBundle:Incidence i JOIN i.booking b WHERE b.code=:code';
+////            $query = $em->createQuery($dql)->setParameter('code',$reference);
+////            $incidences = $query->getResult();
+//            $claim = new Claim();
+//            $form = $this->createForm('System\BackendBundle\Form\ClaimType', $claim);
+//            $form->handleRequest($request);
+//            return $this->render('claim/new.html.twig', array(
+//                'claim' => $claim,
+//                'form' => $form->createView(),
+//            ));
+////            if($incidences){
+////                return $this->render(':claim:incidences_by_booking.html.twig', array(
+////                    'incidences' => $incidences
+////                ));
+////            }else{
+////                return false;
+////            }
+////            return new Response('ok');
+//        }
         $claim = new Claim();
         $form = $this->createForm('System\BackendBundle\Form\ClaimType', $claim);
         $form->handleRequest($request);

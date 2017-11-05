@@ -263,7 +263,11 @@ class Booking
 
     public function __toString()
     {
-        return $this->getName();
-        // TODO: Implement __toString() method.
+        return $this->getCode();
     }
+//    public function __toString()
+//    {
+//        return $this->getName();
+//        // TODO: Implement __toString() method.
+//    }
 }

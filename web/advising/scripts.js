@@ -207,22 +207,23 @@ function findBooking(data) {
     $('#select_reference').val(reference);
 }
 
-//
 function findBookingClaim() {
     var reference = $('#find_booking').val();
+    var val = 0;
+    $('select#system_backendbundle_claim_booking option').each(function(){
+        if($(this).text()==reference){
+            val = $(this).val();
+        }
+    });
+
+    $('select#system_backendbundle_claim_booking').selectpicker('val',val);
+    $('select#system_backendbundle_claim_booking').trigger('changed.bs.select');
 
     if(reference){
         //busco el booking
         var url_booking_detail = Routing.generate('incidence_ajax_get_booking_detail');
         $.post(url_booking_detail, {reference:reference}, function(response) {
             $('#container_booking_detail').html(response);
-        });
-
-        //busco las incidencias asociadas
-        var url_incidences_by_booking = Routing.generate('claim_new');
-        $.post(url_incidences_by_booking, {reference:reference}, function(response) {
-            $('#show-incidence').html(response)
-            initiCheck();
         });
     }else {
         new PNotify({
@@ -388,22 +389,35 @@ function calculateOtherCost(data) {
 
 $(document).ready( function() {
 
-    $('html[dir="html"]').click(function () {
-        alert();
+    //cuando haga click en el boton enviar bookin NO BORRAR
+    $('#system_backendbundle_claim_booking').on('changed.bs.select',function(event){
+        var $booking = $('#system_backendbundle_claim_booking');//lo primero es seleccionar el id del formulario
+        var $form = $(this).closest('form');
+        var data = {};
+        data[$booking.attr('name')] = $booking.val();
+        $.ajax({
+            url : $form.attr('action'),
+            type: $form.attr('method'),
+            data : data,
+            success: function(html) {
+                //alert(html);
+                console.log($(html).find('#system_backendbundle_claim_incidences'));
+                // Replace current position field ...
+                $('#show-incidence').replaceWith(
+                 //... with the returned one from the AJAX response.
+                $(html).find('#system_backendbundle_claim_incidences'));
+            }
+        });
     });
 
-    // $( "iframe.cke_wysiwyg_frame.cke_reset" ).mouseout(function () {
-    //     alert($(this).attr('aria-describedby'))
-    //     // $(this).attr('aria-describedby','');
-    // });
+    //$('div.icheckbox_square-blue').css('float','left');
+    //$('div#system_backendbundle_claim_incidences label').css('display','inline');
+    //$('div#system_backendbundle_claim_incidences label').after('<br>');
+
 
     $( "iframe.cke_wysiwyg_frame.cke_reset" ).mouseover(function () {
         $(this).attr('title',null)
-        // alert($(this).attr('title'))
-        // $(this).attr('aria-describedby','');
     });
-
-
 
     initiCheck();
 
